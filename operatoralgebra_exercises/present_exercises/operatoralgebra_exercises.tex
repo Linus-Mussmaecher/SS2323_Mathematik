@@ -10,13 +10,13 @@
 \setlist[enumerate, 1]{label=(\roman*)}
 \usepackage{etoolbox}		% toolbox for command modification
 
-% --- FONTS & TYPSETTING ---
+% --- FONTS & TYPESETTING ---
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage{dsfont}			% font with double lines for sets
 \usepackage[german,ruled,vlined,linesnumbered,commentsnumbered,algoruled]
-{algorithm2e} 				%Pseudocode
+{algorithm2e} 				%pseudo code
 \usepackage{listings}		%JavaCode
 \usepackage{csquotes}
 
@@ -32,17 +32,17 @@
 \usepackage{latexsym}		% more math symbols
 \usepackage{chngcntr}		% more math symbols
 \usepackage{mathrsfs}		% math-fonts
-%\usepackage{marvosym}		% more math symbols (conflicts with nchairx)
+%\usepackage{marvosym}		% more math symbols (conflicts with Waldmann)
 \usepackage{mathtools}		% more math symbols
 \usepackage{nchairx}		% Waldmann package for general math symbols and operators
-% theorem formatting (contained in ncharx)
+% theorem formatting (contained in Waldmann)
 %\usepackage[amsmath,thmmarks,framed,thref]{ntheorem}
 
 % --- GRAPHICS & CAPTIONS ----
 
 \usepackage{graphicx}		% including images
 \graphicspath{ {./figs/} }
-\usepackage{subcaption}		% custom caption formating
+\usepackage{subcaption}		% custom caption formatting
 \DeclareCaptionLabelFormat{custom}{ \textbf{#1 #2}}
 \captionsetup{format=hang}
 \captionsetup{width=0.9\textwidth,labelformat=custom}
@@ -57,11 +57,11 @@
 
 \usepackage{tikz}			% basic tikz for custom images
 \usetikzlibrary{cd}			% custom diagrams
-\usetikzlibrary{external}	% extrnalize images for faster compilation
+\usetikzlibrary{external}	% externalize images for faster compilation
 \tikzexternalize[prefix=figures/]
 \AtBeginEnvironment{tikzcd}{\tikzexternaldisable} %fix cd/externalize
 \AtEndEnvironment{tikzcd}{\tikzexternalenable}
-\usepackage{pgfplots}		% custom plottin
+\usepackage{pgfplots}		% custom plotting
 \usepgfplotslibrary{colormaps}
 \pgfplotsset{compat=newest}	
 \usetikzlibrary{patterns}	% custom patterns
@@ -72,9 +72,9 @@
 \usepackage{setspace}		% spacing
 %\usepackage[nobottomtitles*]{titlesec} %prevent section titles from sometimes being on the bottom of a page
 \usepackage{titlesec}
-\allowdisplaybreaks			% allow pagebreaks within math environments
+\allowdisplaybreaks			% allow page breaks within math environments
 \doublespacing				% more spacing!
-% pageskip every section
+% page skip every section
 \let\oldsection\section
 \renewcommand\section{\newpage\oldsection}
 
@@ -85,16 +85,16 @@
 \date{Summer 2023}
 
 % --- CUSTOM COMMANDS ---
-%Logik
+%Logic
 \newcommand{\then}{\Rightarrow}
 \newcommand{\since}{\Leftarrow}
 \renewcommand{\iff}{\ensuremath{\Leftrightarrow}}
 
-%hübscheres epsilon
+%pretty epsilon
 \let\oldepsilon\epsilon
 \let\epsilon\varepsilon
 \let\varepsilon\oldepsilon
-%hübscheres phi
+%pretty phi
 \let\oldphi\phi
 \let\phi\varphi
 \let\varphi\oldphi
@@ -133,15 +133,15 @@
 
 	Let $X = \closure{\{x_0\}}$, e.g. $x_0 \in X$ with $\topology{O}(X) = \{\{x_0\} \cup Y \mid Y \subset X\} \cup \{\emptyset\}$. $X$ is highly non-Hausdorff unless we already have $X = \{x_0\}$.	In this space, the constant sequence $(x_0)$ converges to any $x \in X$.
 
-	For a continouus function $f: X \to \mathds{C}$, this implies $f(x_0) \to f(x)$ for all $x \in X$, so every continouus function must already be constant. It follows that $C(X) \simeq \mathds{C}$.
+	For a continuous function $f: X \to \mathds{C}$, this implies $f(x_0) \to f(x)$ for all $x \in X$, so every continuous function must already be constant. It follows that $C(X) \simeq \mathds{C}$.
 
 	We now look at $C_0(X) = \{f \in C(X) \mid \forall_{\epsilon > 0} \{x \in X \mid  |f(x)| \geq \epsilon \} \text{ is compact.}\}$. But since all functions are constant, we can use $f(x_0)$ instead of $X$ and $\{x \in X \mid  |f(x)| \geq \epsilon \}$ is either empty or the whole space. $X$ is compact if and only if $X$ is finite. From here on, assume $X$ to be infinite. Then, only the finite subsets are compact. Thus, if we now have $f \not \equiv 0$, there exists an $|f(x_0)| > \epsilon > 0$ and thus $\{x \in X \mid  |f(x)| \geq \epsilon \} = X$ is not compact. This implies $C_0(X) = \{0\}$.
 
-	To find a non-compact topological space that has non-zero unital $C_0(X)$, consider $X = X_0 \sqcup X_1$ with $X_0$ as befor and $X_1$ compact.
+	To find a non-compact topological space that has non-zero unital $C_0(X)$, consider $X = X_0 \sqcup X_1$ with $X_0$ as before and $X_1$ compact.
 \end{exercise}
 
 \begin{theorem}
-	Let $\phi: \algebra{A} \to \algebra{B}$ be a $^*$-homomorphism betwenn $C^*$-algebras. Then we already have $\|\phi(a)\| \leq \|a\|$ for all $a \in \algebra{A}$.
+	Let $\phi: \algebra{A} \to \algebra{B}$ be a $^*$-homomorphism between $C^*$-algebras. Then we already have $\|\phi(a)\| \leq \|a\|$ for all $a \in \algebra{A}$.
 \end{theorem}
 
 \begin{exercise}[4 - Products]
@@ -149,7 +149,7 @@
 	\begin{equation*}
 		\prod_{i \in I} A_i = \{a = (a_i)_{i \in I} \mid a_i \in A_i \forall_{i \in I} \text{ and } \|a\| := \sup_{i \in I} \|a_i\| < \infty \}\text{.}
 	\end{equation*}
-	Addition, multiplication and involution are defined coordinatewise. We can prove that adding, multiplying and involving any bounded sequence yields another bounded sequence, so these are well-defined. We can also prove the $C^*$-axiom.
+	Addition, multiplication and involution are defined coordinate-wise. We can prove that adding, multiplying and involving any bounded sequence yields another bounded sequence, so these are well-defined. We can also prove the $C^*$-axiom.
 \end{exercise}
 
 \begin{remark}[Differences between product and direct sum]~\\
@@ -163,7 +163,10 @@
 	\end{equation*}
 	For finite $I$, these are all equal. We see that any element in the direct sum can be approximated by a sequence of elements in the algebraic sum. This direct sum is a closed two-sided ideal in the product.
 
-	The product has the following categorical universal property: We have \textbf{(surjective) $^*$-homomorphisms} $\pi_j:  \prod_{i \in I} A_i \to A_j$ for all $j \in I$. If $B$ is any $C^*$-algebra with $^*$-homomorphisms $\phi_j \to A_j$ for every $j \in I$, there is a unique $^*$-homomorphism $\phi: B \to \prod_{i \in I} A_i$ such that  $\pi_j \circ \phi = \phi_j$. This is equivalent to the commutativity of the following diagram:
+	The product has the following universal property:
+	We have (surjective) $^*$-homomorphisms $\pi_j:  \prod_{i \in I} A_i \to A_j$ for all $j \in I$.
+	If $B$ is any $C^*$-algebra with $^*$-homomorphisms $\phi_j \to A_j$ for every $j \in I$, there is a unique $^*$-homomorphism $\phi: B \to \prod_{i \in I} A_i$ such that  $\pi_j \circ \phi = \phi_j$.
+	This is equivalent to the commutativity of the following diagram:
 	\begin{equation*}
 		\begin{tikzcd}
 			B \arrow{r}{\phi_j} \arrow{d}{\phi} & A_j\\

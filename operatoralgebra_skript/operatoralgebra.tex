@@ -10,14 +10,14 @@
 \setlist[enumerate, 1]{label=(\roman*)}
 \usepackage{etoolbox}		% toolbox for command modification
 
-% --- FONTS & TYPSETTING ---
+% --- FONTS & TYPESETTING ---
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage{dsfont}			% font with double lines for sets
 \usepackage[german,ruled,vlined,linesnumbered,commentsnumbered,algoruled]
-{algorithm2e} 				%Pseudocode
-\usepackage{listings}		%JavaCode
+{algorithm2e} 				%pseudo code
+\usepackage{listings}		%java code
 \usepackage{csquotes}
 
 % --- URLS ---
@@ -32,17 +32,17 @@
 \usepackage{latexsym}		% more math symbols
 \usepackage{chngcntr}		% more math symbols
 \usepackage{mathrsfs}		% math-fonts
-%\usepackage{marvosym}		% more math symbols (conflicts with nchairx)
+%\usepackage{marvosym}		% more math symbols (conflicts with Waldmann)
 \usepackage{mathtools}		% more math symbols
 \usepackage{nchairx}		% Waldmann package for general math symbols and operators
-% theorem formatting (contained in ncharx)
+% theorem formatting (contained in Waldmann)
 %\usepackage[amsmath,thmmarks,framed,thref]{ntheorem}
 
 % --- GRAPHICS & CAPTIONS ----
 
 \usepackage{graphicx}		% including images
 \graphicspath{ {./figs/} }
-\usepackage{subcaption}		% custom caption formating
+\usepackage{subcaption}		% custom caption formatting
 \DeclareCaptionLabelFormat{custom}{ \textbf{#1 #2}}
 \captionsetup{format=hang}
 \captionsetup{width=0.9\textwidth,labelformat=custom}
@@ -57,11 +57,11 @@
 
 \usepackage{tikz}			% basic tikz for custom images
 \usetikzlibrary{cd}			% custom diagrams
-\usetikzlibrary{external}	% extrnalize images for faster compilation
+\usetikzlibrary{external}	% externalize images for faster compilation
 \tikzexternalize[prefix=figures/]
 \AtBeginEnvironment{tikzcd}{\tikzexternaldisable} %fix cd/externalize
 \AtEndEnvironment{tikzcd}{\tikzexternalenable}
-\usepackage{pgfplots}		% custom plottin
+\usepackage{pgfplots}		% custom plotting
 \usepgfplotslibrary{colormaps}
 \pgfplotsset{compat=newest}	
 \usetikzlibrary{patterns}	% custom patterns
@@ -72,9 +72,9 @@
 \usepackage{setspace}		% spacing
 %\usepackage[nobottomtitles*]{titlesec} %prevent section titles from sometimes being on the bottom of a page
 \usepackage{titlesec}
-\allowdisplaybreaks			% allow pagebreaks within math environments
+\allowdisplaybreaks			% allow page breaks within math environments
 %\doublespacing				% more spacing!
-% pageskip every section
+% page skip every section
 %\let\oldsection\section
 %\renewcommand\section{\newpage\oldsection}
 
@@ -85,16 +85,16 @@
 \date{Summer 2023}
 
 % --- CUSTOM COMMANDS ---
-%Logik
+%Logic
 \newcommand{\then}{\Rightarrow}
 \newcommand{\since}{\Leftarrow}
 \renewcommand{\iff}{\ensuremath{\Leftrightarrow}}
 
-%hübscheres epsilon
+%pretty epsilon
 \let\oldepsilon\epsilon
 \let\epsilon\varepsilon
 \let\varepsilon\oldepsilon
-%hübscheres phi
+%pretty phi
 \let\oldphi\phi
 \let\phi\varphi
 \let\varphi\oldphi
@@ -111,9 +111,7 @@
 
 \newpage
 
-%Murphy: C*-Algebras and Operatoralgebras
-
-The set of all linear bounded operators $\algebra{L}(H) = \algebra{B}(H)$ on a given Banachspace $H$ ist a (Banach) algebra with $S \cdot T = S \circ T$.
+The set of all linear bounded operators $\algebra{L}(H) = \algebra{B}(H)$ on a given Banach space $H$ ist a (Banach) algebra with $S \cdot T = S \circ T$.
 $M \subseteq \algebra{L}$ ist a Subalgebra such that $M^* \subseteq M$ where $T^*$ is the adjoint of $T$.
 This is also a closed subspace with respect to the strong topology. This is equivalent to $M = M''$ (when $X \subseteq \algebra{B}(H), X' = \{ T \in \algebra{B}(H) \mid TS = ST \ \forall_{ S \in X} \}$)
 
@@ -143,11 +141,11 @@ This is also a closed subspace with respect to the strong topology. This is equi
 
 \begin{lemma}[Uryson's Lemma]
 	Let $X$ be locally compact and Hausdorff.
-	For all $F \subseteq X$ closed and $K \subseteq X$ compact with $F \cap K = \emptyset$, there exists an $f: X \to [0,1]$ continouus such that $f|_K \equiv 1$ and $f|_F \equiv 0$.
+	For all $F \subseteq X$ closed and $K \subseteq X$ compact with $F \cap K = \emptyset$, there exists an $f: X \to [0,1]$ continuous such that $f|_K \equiv 1$ and $f|_F \equiv 0$.
 \end{lemma}
 
 \begin{theorem}[Tietze's extension theorem]
-	Let $X$ be locally compact, $K \subseteq X$ compact and $f: K \to \mathds{C}$ continouus. Then there exists a continouus $\tilde f: X \to \mathds{C}$ such that $\tilde f|_K = f$.
+	Let $X$ be locally compact, $K \subseteq X$ compact and $f: K \to \mathds{C}$ continuous. Then there exists a continuous $\tilde f: X \to \mathds{C}$ such that $\tilde f|_K = f$.
 \end{theorem}
 
 \begin{theorem}[Alexandroff's conpactification]
@@ -155,7 +153,7 @@ This is also a closed subspace with respect to the strong topology. This is equi
 \end{theorem}
 
 \begin{example}
-	Compactifying the real line $\mathds{R}$ yields the space $\tilde{\mathds{R}}$, which is isomorphic to the unit circle $\Pi = \mathds{S}^1$.
+	Compacting the real line $\mathds{R}$ yields the space $\tilde{\mathds{R}}$, which is isomorphic to the unit circle $\Pi = \mathds{S}^1$.
 \end{example}
 
 \begin{theorem}
@@ -174,7 +172,7 @@ This is also a closed subspace with respect to the strong topology. This is equi
 	\end{enumerate}
 	for all $a,b,c \in \algebra{A}$ and $\alpha, \beta \in \mathds{C}$. We say that $\algebra{A}$ is
 	\begin{enumerate}
-		\item \textbf{commuative}, if $ab = ba$ for all $a,b \in \algebra{A}$.
+		\item \textbf{commutative}, if $ab = ba$ for all $a,b \in \algebra{A}$.
 		\item \textbf{unital}, if there exists $1 = 1_\algebra{A} \in \algebra{A}$ such that $1 \cdot a = a \cdot 1 = a$ for all $a \in \algebra{A}$.
 	\end{enumerate}
 	~
@@ -187,7 +185,7 @@ This is also a closed subspace with respect to the strong topology. This is equi
 		      These are commutative unital algebras (with $1(x) = 1 \in \mathds{C}$).
 		\item Consider the polynomials $\mathds{C}[X] = \{ \sum_{i = 0}^{n} \lambda_i x^i \mid \lambda_i \in \mathds{C}, n \in \mathds{N} \}$ with the usuals operations.
 		      This is a commutative unital algebra.
-		\item Let $X$ be a topological space and $C(X) = \{f: X \to \mathds{C} \mid f \text{ is continouus}\} \subseteq \mathds{C}^X$ the set of continouus functions on $X$.
+		\item Let $X$ be a topological space and $C(X) = \{f: X \to \mathds{C} \mid f \text{ is continouus}\} \subseteq \mathds{C}^X$ the set of continuous functions on $X$.
 		      This is a commutative unital (sub)algebra (of $\mathds{C}^X$).
 		\item Take any vector space $A$ define a (trivial) multiplication $a \cdot b \coloneqq 0$.
 		      This is a commutative Algebra (that is not unital unless $A = 0$).
@@ -218,7 +216,7 @@ This is also a closed subspace with respect to the strong topology. This is equi
 	\begin{enumerate}
 		\item If $X$ is a compact space then $C(X)$ is a commutative unital Banach algebra with respect to the norm $\| f \|_\infty := \sup_{x \in X} |f(x)| < \infty$ (since $X$ is compact).
 		\item If $V$ is a normed (respectively Banach) vector space, e.g. $\mathds{C}^n$ or $\ell^p(\mathds{N}$), then $\algebra{L}(V) = \{T \in L(V) \mid T \text{ is bounded/continouus} \}$ with $\|T\| := \sup_{\|v\| \leq 1} \| T(v) \| < \infty$ is a normed Banach algebra.
-		\item If $X$ is a topological space, then $C_b(X) = \{f \in C(X) \mid \|f\|_\infty < \infty \}$ (bounded continouus functions) is a Banach space.
+		\item If $X$ is a topological space, then $C_b(X) = \{f \in C(X) \mid \|f\|_\infty < \infty \}$ (bounded continuous functions) is a Banach space.
 		\item Let $X$ again be a topological space. Then the set of all functions \textbf{vanishing at $\infty$},
 		      \begin{align*}
 			      C_0(X) & = \{ f \in C(X) \mid \forall_{\epsilon > 0} \exists_{K \subseteq X, K \text{ compact}} \forall_{x \notin K} |f(x)| < \epsilon \} \\
@@ -273,7 +271,7 @@ This is also a closed subspace with respect to the strong topology. This is equi
 \end{definition}
 
 \begin{definition}
-	A $C^*$-algebra is a Banach-$^*$-algebra satisfiying $\|a^* \cdot a\| = \| a \|^2$.
+	A $C^*$-algebra is a Banach-$^*$-algebra satisfying $\|a^* \cdot a\| = \| a \|^2$.
 \end{definition}
 
 Observation: Recall that $\|a \cdot b\| \leq \|a\| \cdot \| b \|$ in all normed algebras. Applying this to a $C^*$-algebra we get $\|a \cdot a^*\| \leq \|a^*\| \cdot \| a \|$. If $\algebra{A}$ is a $C^*$-algebra, then $\| a \| ^2 = \| a \cdot a^*\| \leq \|a^*\| \cdot \|a\|$, so $\| a\| = \|a^*\|$.
@@ -300,7 +298,7 @@ Observation: Recall that $\|a \cdot b\| \leq \|a\| \cdot \| b \|$ in all normed 
 		      Observation: $L^2(X, \mu) = $ \enquote{$\mu$-separable function}, $L^\infty(X, \mu) \xrightarrow{\mu} B(L^2(X,\mu)), f \mapsto \mu_f = \{g \mapsto f \cdot g\}$
 		\item A non-example: Let $\mathds{D}$ be the unit disk and $\algebra{A}(\D) = \{f \in \mathds{C}(\mathds{D}) \mid \text{ analytic in } \mathds{D}^\interior \}$
 
-		      \textbf{Moreras Theorem} from complex analysis states that $f \in C(\mathds{D})$ is analytic if and only if $\int_{\gamma} f(z) dz = 0$ for all closed and piecewise smooth paths in $\mathds{D}^\interior$. From this, it follows that $\algebra{A}(\mathds{D})$ is closed in $C(\mathds{D})$, therefore a Banach algebra. It is also a Banach-$^*$-algebra with, but $f^* = \overline{f}$ (pointwise) is not possible, as $z \mapsto \overline{z}$ is not analytic. Thus, we have to choose $f^*(z) = f(\overline{z})$.
+		      \textbf{Morera's Theorem} from complex analysis states that $f \in C(\mathds{D})$ is analytic if and only if $\int_{\gamma} f(z) dz = 0$ for all closed and piecewise smooth paths in $\mathds{D}^\interior$. From this, it follows that $\algebra{A}(\mathds{D})$ is closed in $C(\mathds{D})$, therefore a Banach algebra. It is also a Banach-$^*$-algebra with, but $f^* = \overline{f}$ (pointwise) is not possible, as $z \mapsto \overline{z}$ is not analytic. Thus, we have to choose $f^*(z) = f(\overline{z})$.
 		      But $\algebra{A}(\mathds{D})$ is not a $C^*$-algebra, as $\| f^* f\|_\infty \neq \|f\|_\infty^2$ for some $f \in \algebra{A}(\mathds{D})$.
 		\item A non-commutative example: Let $H$ be a Hilbert space and $B(H) = \algebra{L}(H) = \{T: H \to H \mid T \text{bounded, continouus, linear}\}$ and $\|H\| \coloneqq \sup_{\|z\| < 1} \|T(z)\| < \infty$. This is a $C^*$-algebra where $T^*$ is the adjoint of $T$, that is $\SP{T^* z, w} = \SP{z, Tw}$ for all $z,w \in H$.
 
@@ -348,7 +346,7 @@ Observation: Recall that $\|a \cdot b\| \leq \|a\| \cdot \| b \|$ in all normed 
 		\item $S_1(e_n) = e_{2n}$.
 		\item $S_2(e_n) = e_{2n + 1}$.
 	\end{itemize}
-	We have partitioned the natural numbers into evens and odds. This definies two (proper) isometries $S_1, S_2 \in \algebra{L}(\hilbert{H})$, that is $S_i^* S_i = \id_\hilbert{H}$, to subspaces of $\hilbert{H}$. Notice: $S_i^*S_j = 0$  for $i \neq j$ as well as $S_1 S_1^* + S_2S_2^* = \id_\hilbert{H}$.  Define $\algebra{O}_2 = C^*(S_1, S_2) = \closure{\Span}\{S_\alpha S_\beta^* \mid \alpha, \beta \text{ finite words in } \{1,2\}\}$. For example, for $\alpha = 121211$ we have $S_{\alpha} = S_1 S_2 S_1 S_2 S_1^2$. $\algebra{O}_2$ is called the \textbf{Cuntz algebra}. More generally, one can define $\algebra{O}_3, \algebra{O}_4$, ... Cuntz algebras. Joachim Cuntz proved that these are simple $C^*$-algebras with additional interesting properties we will see later.
+	We have partitioned the natural numbers into evens and odds. This defines two (proper) isometries $S_1, S_2 \in \algebra{L}(\hilbert{H})$, that is $S_i^* S_i = \id_\hilbert{H}$, to subspaces of $\hilbert{H}$. Notice: $S_i^*S_j = 0$  for $i \neq j$ as well as $S_1 S_1^* + S_2S_2^* = \id_\hilbert{H}$.  Define $\algebra{O}_2 = C^*(S_1, S_2) = \closure{\Span}\{S_\alpha S_\beta^* \mid \alpha, \beta \text{ finite words in } \{1,2\}\}$. For example, for $\alpha = 121211$ we have $S_{\alpha} = S_1 S_2 S_1 S_2 S_1^2$. $\algebra{O}_2$ is called the \textbf{Cuntz algebra}. More generally, one can define $\algebra{O}_3, \algebra{O}_4$, ... Cuntz algebras. Joachim Cuntz proved that these are simple $C^*$-algebras with additional interesting properties we will see later.
 \end{example}
 
 \begin{example}[Rotation algebras]
@@ -365,7 +363,12 @@ Observation: Recall that $\|a \cdot b\| \leq \|a\| \cdot \| b \|$ in all normed 
 \end{example}
 
 \begin{example}[$C^*$-algebras of groups]
-	Let $G$ be a (discrete) group. Look at $\hilbert{H} = \ell^2(G) = \{(a_g)_{g \in G} \mid \sum_{g \in G} |a_g|^2 < \infty\}$ (Note: This limit will only converge if there are countably (or finitely) many non-zero summands) with ONB $(\delta_g)_{g \in G}$ where $\delta_g(h) = \delta_{gh}$. Define for each $g \in G$ an operator $\lambda_g \in \algebra{L}(\ell^2 G)$ by $\lambda_g(\delta_h) = \delta_{gh}$. Notice that $h \mapsto gh$ is a bijection, and thus $\lambda_g$ is a unitary operator with $\lambda_g^* = \lambda_{g^{-1}}$. We can now define the \textbf{reduced $C^*$-algebra} of the group:
+	Let $G$ be a (discrete) group.
+	Look at $\hilbert{H} = \ell^2(G) = \{(a_g)_{g \in G} \mid \sum_{g \in G} |a_g|^2 < \infty\}$
+	(Note: This limit will only converge if there are countably (or finitely) many non-zero parts)
+	with ONB $(\delta_g)_{g \in G}$ where $\delta_g(h) = \delta_{gh}$.
+	Define for each $g \in G$ an operator $\lambda_g \in \algebra{L}(\ell^2 G)$ by $\lambda_g(\delta_h) = \delta_{gh}$.
+	Notice that $h \mapsto gh$ is a bijection, and thus $\lambda_g$ is a unitary operator with $\lambda_g^* = \lambda_{g^{-1}}$. We can now define the \textbf{reduced $C^*$-algebra} of the group:
 	\begin{equation*}
 		C_R^*(G) := C_\lambda^*(G) \subseteq \algebra{L}(\ell^2 G) = C^*(\lambda_g \mid g \in G)
 	\end{equation*}
@@ -388,7 +391,7 @@ Observation: Recall that $\|a \cdot b\| \leq \|a\| \cdot \| b \|$ in all normed 
 
 	If $\algebra{A}$ and $\algebra{B}$ are $^*$-algebras, a \textbf{$^*$-homomorphism} is a homomorphism $\phi: \algebra{A} \to \algebra{B}$ such that $\phi(a^*) = \phi(a)^*$ for all $a \in \algebra{A}$.
 
-	If $\algebra{A}, \algebra{B}$ are Banach algebras, then usually we want to have \textbf{continouus} homomorphisms. Even more, we usually ask for \textbf{contractive} homomorphisms $\phi: \algebra{A} \to \algebra{B}$, (that is $\|\phi\| \leq 1$).
+	If $\algebra{A}, \algebra{B}$ are Banach algebras, then usually we want to have \textbf{continuous} homomorphisms. Even more, we usually ask for \textbf{contractive} homomorphisms $\phi: \algebra{A} \to \algebra{B}$, (that is $\|\phi\| \leq 1$).
 \end{definition}
 
 We will be especially interested in \textbf{characters}:
@@ -398,7 +401,7 @@ We will be especially interested in \textbf{characters}:
 \end{definition}
 
 \begin{example}
-	Take any subalgebra $\algebra{A} \subseteq \mathds{C}^X$. Take $x_0 \in X$ and set $\chi_{x_0} := \mathrm{ev}_{x_0}: \algebra{A} \to \mathds{C}, f \mapsto f(x_0)$. This is not neccessarily a character, but it is for example, if $\algebra{A} = C(X)$ or $C_b(X)$ or $C_0(X)$ (if $X$ is \enquote{nice}, like Hausdorff).
+	Take any subalgebra $\algebra{A} \subseteq \mathds{C}^X$. Take $x_0 \in X$ and set $\chi_{x_0} := \mathrm{ev}_{x_0}: \algebra{A} \to \mathds{C}, f \mapsto f(x_0)$. This is not necessarily a character, but it is for example, if $\algebra{A} = C(X)$ or $C_b(X)$ or $C_0(X)$ (if $X$ is \enquote{nice}, like Hausdorff).
 \end{example}
 
 \begin{definition}
@@ -407,7 +410,7 @@ We will be especially interested in \textbf{characters}:
 \end{definition}
 
 \begin{definition}
-	A \textbf{$(^*)$-ideal} of a $^*$-algebra $\algebra{A}$ is a subspace $I \subset A$ such that $I \cdot A \subseteq I$, $A \cdot I \subseteq I$ (if only one condtion applies, we call this a \textbf{left ideal} or \textbf{right ideal}). For $^*$-ideals, we also want $I^* = I$. We notate this as $I \trianglelefteq \algebra{A}$.
+	A \textbf{$(^*)$-ideal} of a $^*$-algebra $\algebra{A}$ is a subspace $I \subset A$ such that $I \cdot A \subseteq I$, $A \cdot I \subseteq I$ (if only one condition applies, we call this a \textbf{left ideal} or \textbf{right ideal}). For $^*$-ideals, we also want $I^* = I$. We notate this as $I \trianglelefteq \algebra{A}$.
 \end{definition}
 
 \begin{example}
@@ -460,9 +463,9 @@ We will be especially interested in \textbf{characters}:
 \end{example}
 
 \begin{example}[Functional Analysis]
-	Let $\algebra{A} = \algebra{L}(\hilbert{H})$ -- where $\hilbert{H}$ is any Hilbert- or Banachspace -- and $T \in \algebra{A}$. Then $\sigma_\algebra{A}(T)$ is exactly the spectrum as defined in functional analysis.
+	Let $\algebra{A} = \algebra{L}(\hilbert{H})$ -- where $\hilbert{H}$ is any Hilbert- or Banach space -- and $T \in \algebra{A}$. Then $\sigma_\algebra{A}(T)$ is exactly the spectrum as defined in functional analysis.
 
-	If $S$ is the shilft in $\algebra{L}(\ell^2 \mathds{N})$, then we have $\sigma(S) = \mathds{D}$.
+	If $S$ is the shift in $\algebra{L}(\ell^2 \mathds{N})$, then we have $\sigma(S) = \mathds{D}$.
 \end{example}
 
 \begin{example}
@@ -526,7 +529,7 @@ We will be especially interested in \textbf{characters}:
 We now focus on invertible elements in \textbf{Banach algebras}.
 
 \begin{theorem}
-	If $\algebra{A}$ is a unital Banach algebra and $a \in \algebra{A}$ with $\|a\| < 1$ then $1 - a$ is invertibble and $(1-a)^{-1} = \sum_{n=0}^{\infty} a^n$.
+	If $\algebra{A}$ is a unital Banach algebra and $a \in \algebra{A}$ with $\|a\| < 1$ then $1 - a$ is invertible and $(1-a)^{-1} = \sum_{n=0}^{\infty} a^n$.
 \end{theorem}
 
 \begin{proof}
@@ -538,7 +541,7 @@ We now focus on invertible elements in \textbf{Banach algebras}.
 \end{proof}
 
 \begin{theorem}
-	Let $\algebra{A}$ be a non-empty, non-zero unital Banach algebra. Then $\inv(\algebra{A})$ is an open subset of $\algebra{A}$ and the function $f: \inv(\algebra{A}) \to \algebra{A}, a \mapsto a^{-1}$ is Frechet-differentiable and in particular continouus as well as $f'(a) b = -a^{-1} b a^{-1}$.
+	Let $\algebra{A}$ be a non-empty, non-zero unital Banach algebra. Then $\inv(\algebra{A})$ is an open subset of $\algebra{A}$ and the function $f: \inv(\algebra{A}) \to \algebra{A}, a \mapsto a^{-1}$ is Frechet-differentiable and in particular continuous as well as $f'(a) b = -a^{-1} b a^{-1}$.
 \end{theorem}
 
 Recall from calculus that $\frac{d}{dx} \frac{1}{x} = -\frac{1}{x^2}$. Also recall that $f: U \overset{\text{open}}{\subseteq} X \to Y$ with $X,Y$ Banach spaces is \textbf{differentiable} at $x_0 \in U$ there exists an operator $D_{x_0} = f'(x_0) \in \algebra{L}(X,Y)$ such that
