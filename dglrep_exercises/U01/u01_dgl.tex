@@ -1,0 +1,134 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{amsmath,amssymb}% more math symbols
+\usepackage{chngcntr}		% more math symbols
+\usepackage{dsfont}			% font with double lines for sets
+\usepackage{microtype}      % micro typography
+\usepackage{graphicx}		% including images
+\graphicspath{ {./figs/} }
+\usepackage{setspace}		% spacing
+\usepackage[german]{babel}	% german quotation marks etc.
+\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
+\usepackage{marvosym}		% more math symbols
+\usepackage{mathtools}		% more math symbols
+\usepackage{enumitem}		% better custom enumerations
+\setlist[enumerate, 1]{label=\roman*)}
+\usepackage{mathrsfs}
+\usepackage{tikz-cd}		% drawing custom diagrams
+\usepackage[a4paper]{geometry} % a4 paper
+\usepackage{enumitem,setspace,graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.eps,.jpg}
+
+
+\def\then{\ensuremath{\Rightarrow}} % =>;
+\def\since{\ensuremath{\Leftarrow}}
+\def\iff{\ensuremath{\Leftrightarrow}} % genau dann wenn
+\def\to{\ensuremath{\rightarrow}} % ->;
+\def\Oh{\ensuremath{\mathcal{O}}} % Landau-Notation beispielsweise $\Oh(n)$
+\def\N{\ensuremath{\mathbb{N}}}
+\def\R{\ensuremath{\mathbb{R}}}
+\def\C{\ensuremath{\mathbb{C}}}
+\def\S{\ensuremath{\mathbb{S}}}
+\def\id{\ensuremath{\text{id}}}
+\newcommand{\angles}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\includetask}[2][pages=-]{
+	\includepdf[#1]{#2}
+	\addtocounter{subsection}{1}
+}
+
+%hübscheres epsilon
+\let\oldepsilon\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\oldepsilon
+%hübscheres phi
+\let\oldphi\phi
+\let\phi\varphi
+\let\varphi\oldphi
+
+% ---
+
+% --- DIESES 3 FELDER SIND AUSZUFÜLLEN ---
+\def\sheetNumber{01}
+\def\names{Linus Mußmächer} 
+\def\sumPoints{30} 
+
+\setcounter{section}{\sheetNumber}
+
+\begin{document}
+
+\begin{doublespace}
+	\begin{center}
+		\textbf{\Large{Übungsblatt \sheetNumber}}\\
+		\textbf{\Large{Repetitorium Funktionentheorie}}\\
+		Abgabe von: \textbf{\names}\\
+		\today
+	\end{center}
+	\hfill  {\large Punkte: $\boxed{\qquad  /\; \sumPoints}$}\\
+\end{doublespace}
+
+%\vspace{3cm}
+
+%\begin{center}
+%	\includegraphics[width=0.5\textwidth]{pi.png}
+%\end{center}
+
+%\newpage
+
+\subsection{Trennung der Variablen}
+
+Es sind $g: (-\infty, 0) \to \mathds{R}, x \mapsto \frac{1}{x}$ sowie $h: (-\infty, 0) \to \mathds{R}, y \mapsto \frac{y^2+1}{2y}$ stetige Funktionen auf offenen, nicht-leeren reellen Intervallen. Damit handelt es sich bei
+\begin{equation*}
+	y'(x) = \frac{y^2 + 1}{2xy} = g(x) \cdot h(y) \qquad y(x_0) = y_0
+\end{equation*}
+um eine Differentialgleichung mit getrennten Variablen, die demnach eine eindeutige Lösung besitzt. Um diese zu bestimmen, berechnen wir zuerst die Integrale
+\begin{align*}
+	\int_{y_0}^{y(x)} \frac{2s}{s^2 + 1} ds & = \left[ \ln(|s^2 + 1|) \right]_{y_0}^{y(x)}   & \text{da } \frac{d}{ds} s^2 + 1 = 2s \\
+	                                        & = \ln(|y(x)^2 + 1|) - \ln(|y_0^2 + 1|)                                                \\
+	                                        & = \ln\left(\frac{y(x)^2 + 1}{y_0^2 + 1}\right)
+\end{align*}
+sowie
+\begin{align*}
+	\int_{x_0}^{x} \frac{1}{\tau} d\tau & = \ln(|x|) - \ln(|x_0|) \ln\left(\frac{x}{x_0}\right)
+\end{align*}
+wobei wir die Beträge weglassen können, da $y(x)^2 + 1$ sowie $y_0^2 + 1$ sicher positiv und $x,x_0$ beide negativ sind. Gleichsetzen und Auflösen nach $y(x)$ liefert:
+\begin{align*}
+	       & \ln\left(\frac{y(x)^2 + 1}{y_0^2 + 1}\right) = \ln\left(\frac{x}{x_0}\right) \\
+	\iff\  & \frac{y(x)^2 + 1}{y_0^2 + 1} = \frac{x}{x_0}                                 \\
+	\iff\  & y(x) = - \sqrt{\frac{x}{x_0} (y_0^2 + 1) - 1}\text{,}
+\end{align*}
+wobei wir aufgrund von $y_0 < 0$ den negativen Ast wählen. Diese Lösung existiert, solange das Argument der Wurzel nicht-negativ bleibt, also falls
+\begin{equation*}
+	\frac{x}{x_0} (y_0^2 + 1) \geq 1 \iff x \leq \frac{x_0}{y_0^2 + 1}
+\end{equation*}
+Das maximale Existenzintervall ist also $\left(-\infty, \frac{x_0}{y_0^2 + 1}\right]$ und
+\begin{equation*}
+	y: \left(-\infty, \frac{x_0}{y_0^2 + 1}\right] \to \R, x \mapsto  -\sqrt{\frac{x}{x_0} (y_0^2 + 1) - 1}
+\end{equation*}
+ist die maximale eindeutige Lösung des Anfangswertproblems.
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,130 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{amsmath,amssymb}% more math symbols
+\usepackage{chngcntr}		% more math symbols
+\usepackage{dsfont}			% font with double lines for sets
+\usepackage{microtype}      % micro typography
+\usepackage{graphicx}		% including images
+\graphicspath{ {./figs/} }
+\usepackage{setspace}		% spacing
+\usepackage[german]{babel}	% german quotation marks etc.
+\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
+\usepackage{marvosym}		% more math symbols
+\usepackage{mathtools}		% more math symbols
+\usepackage{enumitem}		% better custom enumerations
+\setlist[enumerate, 1]{label=\roman*)}
+\usepackage{mathrsfs}
+\usepackage{tikz-cd}		% drawing custom diagrams
+\usepackage[a4paper]{geometry} % a4 paper
+\usepackage{enumitem,setspace,graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.eps,.jpg}
+
+
+\def\then{\ensuremath{\Rightarrow}} % =>;
+\def\since{\ensuremath{\Leftarrow}}
+\def\iff{\ensuremath{\Leftrightarrow}} % genau dann wenn
+\def\to{\ensuremath{\rightarrow}} % ->;
+\def\Oh{\ensuremath{\mathcal{O}}} % Landau-Notation beispielsweise $\Oh(n)$
+\def\N{\ensuremath{\mathbb{N}}}
+\def\R{\ensuremath{\mathbb{R}}}
+\def\C{\ensuremath{\mathbb{C}}}
+\def\S{\ensuremath{\mathbb{S}}}
+\def\id{\ensuremath{\text{id}}}
+\newcommand{\angles}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\includetask}[2][pages=-]{
+	\includepdf[#1]{#2}
+	\addtocounter{subsection}{1}
+}
+
+%hübscheres epsilon
+\let\oldepsilon\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\oldepsilon
+%hübscheres phi
+\let\oldphi\phi
+\let\phi\varphi
+\let\varphi\oldphi
+
+% ---
+
+% --- DIESES 3 FELDER SIND AUSZUFÜLLEN ---
+\def\sheetNumber{01}
+\def\names{Linus Mußmächer} 
+\def\sumPoints{60} 
+
+\setcounter{section}{\sheetNumber}
+
+\begin{document}
+
+\begin{doublespace}
+	\begin{center}
+		\textbf{\Large{Übungsblatt \sheetNumber}}\\
+		\textbf{\Large{Repetitorium Funktionentheorie}}\\
+		Abgabe von: \textbf{\names}\\
+		\today
+	\end{center}
+	\hfill  {\large Punkte: $\boxed{\qquad  /\; \sumPoints}$}\\
+\end{doublespace}
+
+%\vspace{3cm}
+
+%\begin{center}
+%	\includegraphics[width=0.5\textwidth]{pi.png}
+%\end{center}
+
+%\newpage
+
+\subsection{Komplexe Identitäten}
+Es ist
+\begin{align*}
+	|z - w|^2 & = (z-w) (\overline{z-w})                                            \\
+	          & = z \overline{z} + w \overline{w} - z \overline{w} - w \overline{z} \\
+	          & = |z|^2 + |w|^2 - (z \overline{w} + \overline{z \overline{w}})      \\
+	          & = |z|^2 + |w|^2 - 2 \Re(z \overline{w})\text{.}
+\end{align*}
+Dies ist die komplexe Variante des Cosinussatzes im Dreieck, dass von $0, z, w$ gebildet wird, wobei
+\begin{align*}
+	\Re(z \overline{w}) & = \Re(|z| \exp(i \arg(z)) \cdot \overline{ |w| \exp(i \cdot \arg(w))})                \\
+	                    & = |z| \cdot |w| \cdot \Re(\exp(i \arg(z)) \cdot \overline{\exp(i \cdot \arg(w))})     \\
+	                    & = |z| \cdot |w| \cdot \Re( \exp(i (\arg(z) - \arg(w)))                                \\
+	                    & = |z| \cdot |w| \cdot \Re( \cos(\arg(z) - \arg(w)) + i \cdot \sin(\arg(z) - \arg(w))) \\
+	                    & = |z| \cdot |w| \cdot \cos(\arg(z) - \arg(w))
+\end{align*}
+gilt. Falls wir also die Länge der Seiten des von $0,z,w$ gebildeten Dreiecks $[0,w], [0,z], [z,w]$ mit $a,b,c$ bezeichnen und den Winkel zwischen $[0,z]$ und $[0,w]$ mit $\gamma$, so folgt der Cosinussatz
+\begin{equation*}
+	c^2 = a^2 + b^2 - 2 a b \cos(\gamma)
+\end{equation*}
+als Verallgemeinerung des Satzes von Pythagoras für nicht-rechtwinklige Dreiecke. Weiterhin gilt
+\begin{align*}
+	|z - w|^2 + |z + w|^2 & = |z - w|^2 + |z - (-w)|^2                                                           \\
+	                      & = |z|^2 + |w|^2 - 2 \Re(z \overline{w}) + |z|^2 + |-w|^2 - 2 \Re(z ( \overline{-w})) \\
+	                      & = |z|^2 + |w|^2 - 2 \Re(z \overline{w}) + |z|^2 + |w|^2 + 2 \Re(z \overline{w})      \\
+	                      & = 2 |z|^2 + 2 |w|^2	\text{.}
+\end{align*}
+Dies ist die Parallelogrammidentität, d.h. die Summe der Quadrate der Seiten eines Parallelogramms ist gleich der Summe der Quadrate der beiden Diagonalen. Das Parallelogramm wird hierbei von den Punkten $0, z, w, z+w$ gebildet.
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
