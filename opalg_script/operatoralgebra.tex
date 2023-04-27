@@ -111,8 +111,8 @@
 
 \newpage
 
-The set of all linear bounded operators $\algebra{L}(H) = \algebra{B}(H)$ on a given Banach space $H$ ist a (Banach) algebra with $S \cdot T = S \circ T$.
-$M \subseteq \algebra{L}$ ist a Subalgebra such that $M^* \subseteq M$ where $T^*$ is the adjoint of $T$.
+The set of all linear bounded operators $\algebra{L}(H) = \algebra{B}(H)$ on a given Banach space $H$ is a (Banach) algebra with $S \cdot T = S \circ T$.
+$M \subseteq \algebra{L}$ is a Subalgebra such that $M^* \subseteq M$ where $T^*$ is the adjoint of $T$.
 This is also a closed subspace with respect to the strong topology. This is equivalent to $M = M''$ (when $X \subseteq \algebra{B}(H), X' = \{ T \in \algebra{B}(H) \mid TS = ST \ \forall_{ S \in X} \}$)
 
 \subsection*{Some topological basics}
@@ -167,12 +167,12 @@ This is also a closed subspace with respect to the strong topology. This is equi
 \begin{definition}
 	An \textbf{algebra} is a (complex) vector space $\algebra{A}$ endowed with a bilinear and associative multiplication: $\algebra{A} \times \algebra{A} \to \algebra{A}, (a,b) \mapsto a \cdot b$. So
 	\begin{enumerate}
-		\item $(a + \alpha b) \cdot (c + \beta d) = ac + \alpha bc + \beta ad + \alpha \beta b d$.
-		\item  $(a \cdot b) \cdot c = a \cdot (b \cdot c)$.
+		\item $(a + \alpha b) \cdot (c + \beta d) = ac + \alpha bc + \beta ad + \alpha \beta b d$
+		\item  $(a \cdot b) \cdot c = a \cdot (b \cdot c)$
 	\end{enumerate}
 	for all $a,b,c \in \algebra{A}$ and $\alpha, \beta \in \mathds{C}$. We say that $\algebra{A}$ is
 	\begin{enumerate}
-		\item \textbf{commutative}, if $ab = ba$ for all $a,b \in \algebra{A}$.
+		\item \textbf{commutative}, if $ab = ba$ for all $a,b \in \algebra{A}$ and
 		\item \textbf{unital}, if there exists $1 = 1_\algebra{A} \in \algebra{A}$ such that $1 \cdot a = a \cdot 1 = a$ for all $a \in \algebra{A}$.
 	\end{enumerate}
 	~
@@ -181,9 +181,9 @@ This is also a closed subspace with respect to the strong topology. This is equi
 \begin{example}~
 	\begin{enumerate}
 		\item $\mathds{C}$, or more generally $\mathds{C}^n = \mathds{C} \oplus \dots \oplus \mathds{C}$, is an algebra.
-		\item Say $X$ is any set; let $\mathds{C}^X = \{ f: X \to \mathds{C} \}$ with pointwise multiplication $(f \cdot g)(x) = f(x) \cdot g(x)$.
+		\item Say $X$ is any set; let $\mathds{C}^X = \{ f: X \to \mathds{C} \}$ with point wise multiplication $(f \cdot g)(x) = f(x) \cdot g(x)$.
 		      These are commutative unital algebras (with $1(x) = 1 \in \mathds{C}$).
-		\item Consider the polynomials $\mathds{C}[X] = \{ \sum_{i = 0}^{n} \lambda_i x^i \mid \lambda_i \in \mathds{C}, n \in \mathds{N} \}$ with the usuals operations.
+		\item Consider the polynomials $\mathds{C}[X] = \{ \sum_{i = 0}^{n} \lambda_i x^i \mid \lambda_i \in \mathds{C}, n \in \mathds{N} \}$ with the usual operations.
 		      This is a commutative unital algebra.
 		\item Let $X$ be a topological space and $C(X) = \{f: X \to \mathds{C} \mid f \text{ is continouus}\} \subseteq \mathds{C}^X$ the set of continuous functions on $X$.
 		      This is a commutative unital (sub)algebra (of $\mathds{C}^X$).
@@ -215,7 +215,7 @@ This is also a closed subspace with respect to the strong topology. This is equi
 \begin{example}
 	\begin{enumerate}
 		\item If $X$ is a compact space then $C(X)$ is a commutative unital Banach algebra with respect to the norm $\| f \|_\infty := \sup_{x \in X} |f(x)| < \infty$ (since $X$ is compact).
-		\item If $V$ is a normed (respectively Banach) vector space, e.g. $\mathds{C}^n$ or $\ell^p(\mathds{N}$), then $\algebra{L}(V) = \{T \in L(V) \mid T \text{ is bounded/continouus} \}$ with $\|T\| := \sup_{\|v\| \leq 1} \| T(v) \| < \infty$ is a normed Banach algebra.
+		\item If $V$ is a normed (respectively Banach) vector space, e.g. $\mathds{C}^n$ or $\ell^p(\mathds{N})$, then $\algebra{L}(V) = \{T \in L(V) \mid T \text{ is bounded/continouus} \}$ with $\|T\| := \sup_{\|v\| \leq 1} \| T(v) \| < \infty$ is a normed Banach algebra.
 		\item If $X$ is a topological space, then $C_b(X) = \{f \in C(X) \mid \|f\|_\infty < \infty \}$ (bounded continuous functions) is a Banach space.
 		\item Let $X$ again be a topological space. Then the set of all functions \textbf{vanishing at $\infty$},
 		      \begin{align*}
@@ -298,9 +298,9 @@ Observation: Recall that $\|a \cdot b\| \leq \|a\| \cdot \| b \|$ in all normed 
 		      Observation: $L^2(X, \mu) = $ \enquote{$\mu$-separable function}, $L^\infty(X, \mu) \xrightarrow{\mu} B(L^2(X,\mu)), f \mapsto \mu_f = \{g \mapsto f \cdot g\}$
 		\item A non-example: Let $\mathds{D}$ be the unit disk and $\algebra{A}(\D) = \{f \in \mathds{C}(\mathds{D}) \mid \text{ analytic in } \mathds{D}^\interior \}$
 
-		      \textbf{Morera's Theorem} from complex analysis states that $f \in C(\mathds{D})$ is analytic if and only if $\int_{\gamma} f(z) dz = 0$ for all closed and piecewise smooth paths in $\mathds{D}^\interior$. From this, it follows that $\algebra{A}(\mathds{D})$ is closed in $C(\mathds{D})$, therefore a Banach algebra. It is also a Banach-$^*$-algebra with, but $f^* = \overline{f}$ (pointwise) is not possible, as $z \mapsto \overline{z}$ is not analytic. Thus, we have to choose $f^*(z) = f(\overline{z})$.
+		      \textbf{Morera's Theorem} from complex analysis states that $f \in C(\mathds{D})$ is analytic if and only if $\int_{\gamma} f(z) dz = 0$ for all closed and piece wise smooth paths in $\mathds{D}^\interior$. From this, it follows that $\algebra{A}(\mathds{D})$ is closed in $C(\mathds{D})$, therefore a Banach algebra. It is also a Banach-$^*$-algebra with, but $f^* = \overline{f}$ (point wise) is not possible, as $z \mapsto \overline{z}$ is not analytic. Thus, we have to choose $f^*(z) = f(\overline{z})$.
 		      But $\algebra{A}(\mathds{D})$ is not a $C^*$-algebra, as $\| f^* f\|_\infty \neq \|f\|_\infty^2$ for some $f \in \algebra{A}(\mathds{D})$.
-		\item A non-commutative example: Let $H$ be a Hilbert space and $B(H) = \algebra{L}(H) = \{T: H \to H \mid T \text{bounded, continouus, linear}\}$ and $\|H\| \coloneqq \sup_{\|z\| < 1} \|T(z)\| < \infty$. This is a $C^*$-algebra where $T^*$ is the adjoint of $T$, that is $\SP{T^* z, w} = \SP{z, Tw}$ for all $z,w \in H$.
+		\item A non-commutative example: Let $H$ be a Hilbert space and $B(H) = \algebra{L}(H) = \{T: H \to H \mid T \text{bounded, continuous, linear}\}$ and $\|H\| \coloneqq \sup_{\|z\| < 1} \|T(z)\| < \infty$. This is a $C^*$-algebra where $T^*$ is the adjoint of $T$, that is $\SP{T^* z, w} = \SP{z, Tw}$ for all $z,w \in H$.
 
 		      $C^*$-axiom: $\|T^* \cdot T\| \leq \|T\|^2$ since $\algebra{L}(H)$ is a Banach algebra, and we also have
 		      \begin{align*}
@@ -379,7 +379,7 @@ Observation: Recall that $\|a \cdot b\| \leq \|a\| \cdot \| b \|$ in all normed 
 
 \begin{remark}~
 	\begin{enumerate}
-		\item If $G$ is abelian, then $C_U^*(G)$ is also abelian (commutative). In particular, $C_\lambda^*$ is abelian. Later, we will prove $C_\lambda^*(G) \simeq C(\hat G)$ where $\hat G$ is the dual of $G$, i.e. $\{X: G \to \mathds{C} \text{ characters}\}$.
+		\item If $G$ is Abelian, then $C_U^*(G)$ is also abelian (commutative). In particular, $C_\lambda^*$ is abelian. Later, we will prove $C_\lambda^*(G) \simeq C(\hat G)$ where $\hat G$ is the dual of $G$, i.e. $\{X: G \to \mathds{C} \text{ characters}\}$.
 		\item For many groups, like $G = \mathds{F}_n$ (the free groups) the reduced $C^*$-algebra $C^*_\lambda(G)$ is simple.
 	\end{enumerate}
 \end{remark}
@@ -436,7 +436,8 @@ We will be especially interested in \textbf{characters}:
 \section{Spectral theory}
 
 \begin{notation}
-	If $\algebra{A}$ is a unital algebra, we write
+	If $\algebra{A}$ is 
+	a unital algebra, we write
 	\begin{equation*}
 		\inv(\algebra{A}) = \{a \in \algebra{A} \mid a \text{ is invertible in } \algebra{A}\} = \{a \in \algebra{A} \mid \exists_{a^{-1} \in \algebra{A}} a a^{-1} = 1 = a^{-1} a \}
 	\end{equation*}
@@ -472,7 +473,7 @@ We will be especially interested in \textbf{characters}:
 	Let $\algebra{A} = \mathds{C}[X]$. Here we have $\inv(\algebra{A}) = \{a_0 X^0 \mid a_0 \in \mathds{C} \setminus \{0\}\}$ the constant non-zero polynomials. If $a = \sum_{k=0}^{N} a_k x^k \in \algebra{A}$, then we have two cases:
 	\begin{equation*}
 		\sigma(a) = \left\{ \begin{matrix}
-			\{a_0\}    & a = a_0 \text{ (const.)} \\
+			\{a_0\}    & a = a_0 \text{ (constant)} \\
 			\mathds{C} & \text{otherwise}
 		\end{matrix}
 		\right.
@@ -483,7 +484,7 @@ We will be especially interested in \textbf{characters}:
 	Let $\algebra{A} = \mathds{C}(X) = \{p,q \mid p,q \in \mathds{C}[X], q \neq 0 \}$. Now we have $\inv(\algebra{A}) = \algebra{A} \setminus \{0\}$. If $a \in \algebra{A}$, then
 	\begin{equation*}
 		\sigma(a) = \left\{ \begin{matrix}
-			\{a_0\}   & a = a_0 \text{ (const.)} \\
+			\{a_0\}   & a = a_0 \text{ (constant)} \\
 			\emptyset & \text{otherwise}
 		\end{matrix}\right.
 	\end{equation*}
@@ -533,7 +534,7 @@ We now focus on invertible elements in \textbf{Banach algebras}.
 \end{theorem}
 
 \begin{proof}
-	Observe that, since $\|a\| < 1$, we have $\sum_{n = 0}^{\infty} \|a\|^n = \frac{1}{1 - \|a\|} < \infty$. This implies the (absolute) convergence of $\sum_{n = 0}^\infty$ by the characteristic property of Banach spaces. Hence $b \coloneqq \lim_{N \to \infty} \sum_{n = 0}^{N} a^n \in \algebra{A}$. No, if $N \in \mathds{N}$, then
+	Observe that, since $\|a\| < 1$, we have $\sum_{n = 0}^{\infty} \|a\|^n = \frac{1}{1 - \|a\|} < \infty$. This implies the (absolute) convergence of $\sum_{n = 0}^\infty$ by the characteristic property of Banach spaces. Hence, $b \coloneqq \lim_{N \to \infty} \sum_{n = 0}^{N} a^n \in \algebra{A}$. No, if $N \in \mathds{N}$, then
 	\begin{equation*}
 		(1-a) \left(\sum_{n = 0}^{N} a^n\right) = \left(\sum_{n = 0}^{N} a^n\right) - \left(\sum_{n = 1}^{N + 1} a^n\right) = 1 - a^{N+1} \to 1
 	\end{equation*}
@@ -552,7 +553,7 @@ Recall from calculus that $\frac{d}{dx} \frac{1}{x} = -\frac{1}{x^2}$. Also reca
 \begin{proof}
 	Take $a \in \inv(\algebra{A})$. If $b \in \algebra{A}$ such that $\|a - b\| < \|a^{-1}\|^{-1}$. From this, we have $\|b a^{-1} - 1\| = \| b a^{-1} - a a^{-1} \| = \|(b-a) a^{-1}\| \leq \|b - a\| \cdot \| a^{-1} \| < 1$. Per the previous theorem, $b a^{-1} \in \inv(\algebra{A})$. This implies that $b$ is also invertible. This shows that $\inv(\algebra{A})$ is open.
 
-	Furthermore, if $\|b\| < 1$, then also ($\|-b\| < 1$). Thus, $1 + b \in \inv(\algebra{A})$ and $(1+b)^{-1} = \sum_{n = 0}^{\infty} (-1)^n b^n$. Thus
+	Furthermore, if $\|b\| < 1$, then also ($\|-b\| < 1$). Thus, $1 + b \in \inv(\algebra{A})$ and $(1+b)^{-1} = \sum_{n = 0}^{\infty} (-1)^n b^n$. Thus,
 	\begin{equation*}
 		\| (1+b)^{-1} - 1 + b\| = \left\| \sum_{n = 0}^\infty (-1)^n b^n - 1 + b  \right\| \leq \left\| \sum_{n = 2}^\infty (-1)^n b^n \right\| \leq \sum_{n = 2}^{\infty} \|b^n\|  \leq \sum_{n = 2}^\infty \|b\|^n = \frac{\|b\|^2}{1 - \|b\|}
 	\end{equation*}
@@ -560,7 +561,7 @@ Recall from calculus that $\frac{d}{dx} \frac{1}{x} = -\frac{1}{x^2}$. Also reca
 	\begin{equation*}
 		\|(1 + a^{-1}c)^{-1} - 1 + a^{-1} c\| = \leq \frac{\| a^{-1} c\|^2}{1 = \|a^{-1} c \|} < 2 \| a ^{-1} c \|^2
 	\end{equation*}
-	Now, define $U: \algebra{A} \to \algebra{A}, b \mapsto - a^{-1} b a^{-1}$. Then this is a linear odd operation with $\|U\| \leq \|a^{-1}\|^2$ and we have
+	Now, define $U: \algebra{A} \to \algebra{A}, b \mapsto - a^{-1} b a^{-1}$. Then this is a linear odd operation with $\|U\| \leq \|a^{-1}\|^2$, and we have
 	\begin{align*}
 		\|(a + c)^{-1} - a^{-1} - U(c)\| & = \|(a+c)^{-1} - a^{-1} + a^{-1} c a^{-1}\|                  \\
 		                                 & =  \|(1 + a^{-1}c)^{-1} a^{-1} - a^{-1} + a^{-1} c a^{-1}\|  \\

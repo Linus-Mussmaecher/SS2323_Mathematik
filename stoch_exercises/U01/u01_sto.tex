@@ -90,7 +90,7 @@
 		      \item \textbf{Monotonie}: Für $t < 1$ ist $F_\alpha|_{t < 1} \equiv 0$, also monoton wachsend. Für $t \geq 1$ ist wegen $\alpha > 0$ die Funktion $t^{-\alpha}$ (streng) monoton fallend, also $1 - t^{-\alpha}$ (streng) monoton wachsend und außerdem stets positiv. Somit ist $F_\alpha$ insgesamt monoton wachsend.
 		      \item \textbf{Grenzverhalten}: Es ist
 		            \begin{equation*}
-			            \lim_{n \to -\infty} F_\alpha(n) \overset{n < 1}{=} \lim_{n \to -\infty} 0 = 0 \qquad \lim_{n \to \infty} F_\alpha(n) \overset{n > 1}{=} \lim_{n \to \infty} 1 - \underbrace{n^{-\alpha}}_{\to 0} = 1 - 0 = 1
+			            \lim_{n \to -\infty} F_\alpha(n) \overset{n < 1}{=} \lim_{n \to -\infty} 0 = 0 \qquad \lim_{n \to \infty} F_\alpha(n) \overset{n > 1}{=} \lim_{n \to \infty} 1 - \underbrace{n^{-\alpha}}_{\to 0} = 1 - 0 = 1\text{.}
 		            \end{equation*}
 	      \end{enumerate}
 	      Somit ist $F_\alpha$ eine Verteilungsfunktion. Wir berechnen das Integral $\int_{-\infty}^{t} f_\alpha(t) dt$. Für $t < 1$ folgt
@@ -104,14 +104,14 @@
 	      und somit ist $f_\alpha$ die Dichte von $F_\alpha$.
 	\item Es gilt für $\alpha \neq n$:
 	      \begin{align*}
-		      \mathds{E}[X^n] & = \int_{-\infty}^{\infty} x^n dF_\alpha(x) = \int_{-\infty}^{\infty} x^n f_\alpha(x) dx                                                                                    \\
-		                      & = \int_{1}^{\infty} x^n \cdot \alpha x^{-\alpha - 1} dx = \lim_{t \to \infty} \int_{1}^{t} \alpha x^{n - \alpha - 1} dx                                                    \\
-		                      & = \lim_{t \to \infty} \alpha \left[\frac{1}{n - \alpha} x^{n - \alpha}\right]_1^t = \lim_{t \to \infty} \frac{\alpha}{n - \alpha} \left(t^{n-\alpha} - 1^{n-\alpha}\right) \\
+		      \mathds{E}[X^n] & = \int_{-\infty}^{\infty} x^n dF_\alpha(x) = \int_{-\infty}^{\infty} x^n f_\alpha(x) dx                                                                                             \\
+		                      & = \int_{1}^{\infty} x^n \cdot \alpha x^{-\alpha - 1} dx = \lim_{t \to \infty} \int_{1}^{t} \alpha x^{n - \alpha - 1} dx                                                             \\
+		                      & = \lim_{t \to \infty} \alpha \left[\frac{1}{n - \alpha} x^{n - \alpha}\right]_1^t = \lim_{t \to \infty} \frac{\alpha}{n - \alpha} \left(t^{n-\alpha} - 1^{n-\alpha}\right) \text{.}
 	      \end{align*}
 	      Für $\alpha > n$ gilt nun $\lim_{t \to \infty} t^{n - \alpha} = 0$ und damit $\mathds{E}[X^n] = \frac{\alpha}{n - \alpha} (0 - 1) = \frac{\alpha}{\alpha - n}$. Für $\alpha < n$ wiederum ist $\lim_{t \to \infty} t^{n - \alpha} = \infty$ und damit auch $\mathds{E}[X^n] = \infty$. \\
 	      Wir betrachten noch den Fall $\alpha = n$:
 	      \begin{equation*}
-		      \mathds{E}[X^n] = \lim_{t \to \infty} \int_{1}^{t} \alpha x^{n - \alpha - 1} dx = \lim_{t \to \infty} \int_{1}^t \alpha x^{-1} dx = \alpha \int_{1}^t \left[\ln(x)\right]_1^t = \lim_{t \to \infty} \ln(t)  - \ln(1) = \infty
+		      \mathds{E}[X^n] = \lim_{t \to \infty} \int_{1}^{t} \alpha x^{n - \alpha - 1} dx = \lim_{t \to \infty} \int_{1}^t \alpha x^{-1} dx = \alpha \int_{1}^t \left[\ln(x)\right]_1^t = \lim_{t \to \infty} \ln(t)  - \ln(1) = \infty\text{.}
 	      \end{equation*}
 	      Somit ist die geforderte Gleichheit gezeigt. Sei nun $\alpha > 2$. Dann existieren das 1. und 2. Moment, und wir können die Varianz berechnen:
 	      \begin{equation*}
@@ -128,7 +128,7 @@
 	      \end{align*}
 	      und Ableiten liefert
 	      \begin{equation*}
-		      f_Y(t) = \exp(-t)
+		      f_Y(t) = \exp(-t)\text{.}
 	      \end{equation*}
 	      Somit folgt insgesamt $f_Y(t) = \exp(-t) \cdot \mathds{1}_{[0, \infty)}$, also $Y \sim \mathrm{Exp}(1)$.
 \end{enumerate}
@@ -138,7 +138,7 @@
 \begin{enumerate}[label=(\alph*)]
 	\item Wir verwenden Beispiel 3.54, da die Dichte der Normalverteilung stetig ist. Dann gilt
 	      \begin{equation*}
-		      f_{Y}(t) = \frac{f_X(\sqrt{t}) + f_X(\sqrt{-t})}{2 \sqrt{t}} \cdot \mathds{1}_{[0, \infty)}
+		      f_{Y}(t) = \frac{f_X(\sqrt{t}) + f_X(\sqrt{-t})}{2 \sqrt{t}} \cdot \mathds{1}_{[0, \infty)}\text{.}
 	      \end{equation*}
 	      Weiterhin ist
 	      \begin{align*}
@@ -147,25 +147,26 @@
 	      \end{align*}
 	      wobei wir die Betragsstriche aufgrund von $t \geq 0$ auch weglassen können. Somit folgt
 	      \begin{equation*}
-		      f_{Y}(y) = \frac{\exp\left(- y / 2\right)}{\sqrt{2 \pi y}} \cdot \mathds{1}_{[0, \infty)}
+		      f_{Y}(y) = \frac{\exp\left(- y / 2\right)}{\sqrt{2 \pi y}} \cdot \mathds{1}_{[0, \infty)}\text{.}
 	      \end{equation*}
 	\item Da die Dichte der Normalverteilung absolutstetig und $\exp: \R \to \R^+$ stetig differenzierbar mit strikt positiver Ableitung ist, können wir Satz 3.52. anwenden. Dann hat $Z$ die Dichte
 	      \begin{align*}
 		      f_Z(z) & = \frac{f_U(\exp^{-1}(z))}{|\exp'(\exp^{-1}(z))|} \cdot \mathds{1}_{(0, \infty)} = \frac{\frac{1}{\sigma \sqrt{2 \pi}} \exp\left(-\frac{1}{2} \left(\frac{\ln(z) - \mu}{\sigma}\right)^2\right)}{|z|} \cdot \mathds{1}_{(0, \infty)} \\
-		             & = \frac{1}{ \sqrt{2 \pi \sigma^2} z} \exp\left( -\frac{(\ln(z) - \mu)^2}{2\sigma^2}\right)\cdot \mathds{1}_{(0, \infty)}
+		             & = \frac{1}{ \sqrt{2 \pi \sigma^2} z} \exp\left( -\frac{(\ln(z) - \mu)^2}{2\sigma^2}\right)\cdot \mathds{1}_{(0, \infty)}\text{.}
 	      \end{align*}
 	\item Es ist
 	      \begin{align*}
-		      \mathds{E}[Z] & = \int_{-\infty}^{\infty} \exp(x) f_U(x) dx = \int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} \exp(x) \exp\left(- \frac{1}{2} \frac{(x - \mu)^2}{\sigma^2}\right) dx
+		      \mathds{E}[Z] & = \int_{-\infty}^{\infty} \exp(x) f_U(x) dx = \int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} \exp(x) \exp\left(- \frac{1}{2} \frac{(x - \mu)^2}{\sigma^2}\right) dx\text{.}
 	      \end{align*}
 	      Substitution von $x$ durch $\sigma x + \mu$ liefert
 	      \begin{align*}
-		      \mathds{E}[Z] & = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} \exp(\sigma x + \mu) \exp(-x^2/2) dx = \exp(\mu) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{1}{2} (x^2 - 2 \sigma x )\right)dx
+		      \mathds{E}[Z] & = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} \exp(\sigma x + \mu) \exp(-x^2/2) dx                                 \\
+		                    & = \exp(\mu) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{1}{2} (x^2 - 2 \sigma x )\right)dx\text{.}
 	      \end{align*}
 	      Quadratische Ergänzung:
 	      \begin{align*}
 		      \mathds{E}[Z] & = \exp(\mu) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{1}{2} (x^2 - 2 \sigma x + \sigma^2 ) + \frac{1}{2} \sigma^2\right)dx \\
-		                    & = \exp(\mu + \sigma^2/2)  \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{1}{2} (x - \sigma)^2\right)dx
+		                    & = \exp(\mu + \sigma^2/2)  \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{1}{2} (x - \sigma)^2\right)dx\text{.}
 	      \end{align*}
 	      Der Integrand entspricht nun der Dichte einer Normalverteilung $\mathcal{N}(\sigma, 1)$, wodurch das Integral den Wert $1$ haben muss. Dies zeigt $\mathds{E}[Z] = \exp(\mu + \sigma^2/2)$.
 
@@ -174,7 +175,7 @@
 		      \mathds{E}[Z^2] & = \int_{-\infty}^{\infty} (\exp(x))^2 f_U(x) dx = \int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} \exp(2x) \exp\left(- \frac{1}{2} \frac{(x - \mu)^2}{\sigma^2}\right) dx \\
 		                      & = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} \exp(2 \sigma x + 2 \mu) \exp\left(- \frac{1}{2} x^2\right) dx                                                                 \\
 		                      & = \exp(2 \mu) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}}\exp\left(- \frac{1}{2} (x^2 - 4 \sigma x + (2 \sigma)^2) + 4 \sigma^2 / 2\right) dx                                \\
-		                      & = \exp(2 \mu + 2 \sigma^2) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}}\exp\left(- \frac{1}{2} (x-2\sigma)^2\right) dx
+		                      & = \exp(2 \mu + 2 \sigma^2) \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}}\exp\left(- \frac{1}{2} (x-2\sigma)^2\right) dx\text{.}
 	      \end{align*}
 	      Wieder ist der Integrand die Dichte einer Normalverteilung $\mathcal{N}(2 \sigma, 1)$ und das Integral hat den Wert $1$. Es folgt $\mathds{E}[Z^2] = \exp(2 \mu + 2 \sigma^2)$.
 \end{enumerate}
@@ -186,7 +187,7 @@
 	      \begin{align*}
 		      \mathds{P}[X \geq t] & = \int_{t}^{\infty} f(x) dx \leq \int_{t}^{\infty} \underbrace{\exp(\overbrace{s(x-t)}^{\geq 0})}_{\geq 1} f(x) dx                                    \\
 		                           & \leq \int_{t}^{\infty} \exp(s(x-t)) f(x) dx + \underbrace{\int_{-\infty}^{t} \overbrace{\exp(s(x-t))}^{\geq 0} \overbrace{f(x)}^{\geq 0} dx}_{\geq 0} \\
-		                           & = \exp(-st) \int_{-\infty}^{\infty} \exp(sx) f(x) dx = \exp(-st) \mathds{E}[\exp(sX)]
+		                           & = \exp(-st) \int_{-\infty}^{\infty} \exp(sx) f(x) dx = \exp(-st) \mathds{E}[\exp(sX)]\text{.}
 	      \end{align*}
 	      Dies zeigt die Aussage.
 	\item Aus $X \sim \mathcal{N}(0,1)$ folgt $sX \sim \mathcal{N}(0,s^2)$. 1.2 (c) zeigt dann $\mathds{E}[\exp(sX)] = \exp(s^2/2)$.
@@ -196,7 +197,7 @@
 \subsection{}
 
 \begin{enumerate}[label=(\alph*)]
-	\item Sehr krude Skizze. Dichteverteilung in rot, Graph von $x \mapsto 1 - 1/2 \exp(-2x)$ in blau.
+	\item Sehr krude Skizze. Dichteverteilung in Rot, Graph von $x \mapsto 1 - 1/2 \exp(-2x)$ in Blau.
 	      \begin{center}
 		      \includegraphics[width=0.4\textwidth]{skizze.png}
 	      \end{center}
