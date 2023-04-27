@@ -1,0 +1,658 @@
+\documentclass[a4paper]{article}
+
+% --- OTHER ---
+
+\usepackage[english]{babel}	% language specific quotation marks etc.
+\usepackage{booktabs}       % professional-quality tables
+\usepackage[table]{xcolor}	% color
+\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
+\usepackage{enumitem}		% better custom enumerations
+\setlist[enumerate, 1]{label=(\roman*)}
+\usepackage{etoolbox}		% toolbox for command modification
+
+% --- FONTS & TYPSETTING ---
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{dsfont}			% font with double lines for sets
+\usepackage[german,ruled,vlined,linesnumbered,commentsnumbered,algoruled]
+{algorithm2e} 				%Pseudocode
+\usepackage{listings}		%JavaCode
+\usepackage{csquotes}
+
+% --- URLS ---
+
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}   	% hyperlinks
+\usepackage{url}            % simple URL typesetting
+
+% --- MATH SYMBOLS ---
+
+\usepackage{amsmath,amssymb}% more math symbols
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{latexsym}		% more math symbols
+\usepackage{chngcntr}		% more math symbols
+\usepackage{mathrsfs}		% math-fonts
+%\usepackage{marvosym}		% more math symbols (conflicts with nchairx)
+\usepackage{mathtools}		% more math symbols
+\usepackage{nchairx}		% Waldmann package for general math symbols and operators
+% theorem formatting (contained in ncharx)
+%\usepackage[amsmath,thmmarks,framed,thref]{ntheorem}
+
+% --- GRAPHICS & CAPTIONS ----
+
+\usepackage{graphicx}		% including images
+\graphicspath{ {./figs/} }
+\usepackage{subcaption}		% custom caption formating
+\DeclareCaptionLabelFormat{custom}{ \textbf{#1 #2}}
+\captionsetup{format=hang}
+\captionsetup{width=0.9\textwidth,labelformat=custom}
+
+% --- BIBLIOGRAPHY ---
+%
+%\usepackage[backend=biber, citestyle=numeric, bibstyle=numeric, sorting=none]{biblatex} 	% bibliography
+%\bibliography{references}
+%\defbibheading{myheading}[Literatur]{\section{#1}}
+
+% --- TIKZ ---
+
+\usepackage{tikz}			% basic tikz for custom images
+\usetikzlibrary{cd}			% custom diagrams
+\usetikzlibrary{external}	% extrnalize images for faster compilation
+\tikzexternalize[prefix=figures/]
+\AtBeginEnvironment{tikzcd}{\tikzexternaldisable} %fix cd/externalize
+\AtEndEnvironment{tikzcd}{\tikzexternalenable}
+\usepackage{pgfplots}		% custom plottin
+\usepgfplotslibrary{colormaps}
+\pgfplotsset{compat=newest}	
+\usetikzlibrary{patterns}	% custom patterns
+
+% --- FORMAT ---
+
+\usepackage[a4paper]{geometry} % a4 paper
+\usepackage{setspace}		% spacing
+%\usepackage[nobottomtitles*]{titlesec} %prevent section titles from sometimes being on the bottom of a page
+\usepackage{titlesec}
+\allowdisplaybreaks			% allow pagebreaks within math environments
+%\doublespacing				% more spacing!
+% pageskip every section
+%\let\oldsection\section
+%\renewcommand\section{\newpage\oldsection}
+
+% --- DATA ---
+
+\title{Introduction to Operator Algebras}
+\author{Alcides Buss\\Notes by: Linus Mußmächer\\2336440}
+\date{Summer 2023}
+
+% --- CUSTOM COMMANDS ---
+%Logik
+\newcommand{\then}{\Rightarrow}
+\newcommand{\since}{\Leftarrow}
+\renewcommand{\iff}{\ensuremath{\Leftrightarrow}}
+
+%hübscheres epsilon
+\let\oldepsilon\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\oldepsilon
+%hübscheres phi
+\let\oldphi\phi
+\let\phi\varphi
+\let\varphi\oldphi
+
+% --- DOCUMENT ---
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+%Murphy: C*-Algebras and Operatoralgebras
+
+The set of all linear bounded operators $\algebra{L}(H) = \algebra{B}(H)$ on a given Banachspace $H$ ist a (Banach) algebra with $S \cdot T = S \circ T$.
+$M \subseteq \algebra{L}$ ist a Subalgebra such that $M^* \subseteq M$ where $T^*$ is the adjoint of $T$.
+This is also a closed subspace with respect to the strong topology. This is equivalent to $M = M''$ (when $X \subseteq \algebra{B}(H), X' = \{ T \in \algebra{B}(H) \mid TS = ST \ \forall_{ S \in X} \}$)
+
+\subsection*{Some topological basics}
+
+\begin{definition}~
+	\begin{itemize}
+		\item Topology, Open
+		\item Hausdorff, locally Hausdorff
+		\item compact
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	A topological space $X$ is \textbf{locally Hausdorff} if every $x \in X$ admits a compact neighborhood basis, that is for every $x \in X$ and every open set $U \ni x$ there exists an open set $V \ni x$ with $\overline{V}$ is compact.
+\end{definition}
+
+\begin{corollary}
+	If a set $V$ is compact in any subset $U \subseteq X$, it is also compact in $X$.
+\end{corollary}
+
+\begin{example}[Snake with two heads]
+	Consider $I = [0,1]$ with the standard topology and extend the set with an element $1^+$ such that $I \cup 1^+ \setminus 1$ is isomorphic to $I$. Then $I \cup 1^+$ is locally Hausdorff and compact, but not Hausdorff.
+\end{example}
+
+\subsection*{Some results about locally compact Hausdorff spaces}
+
+\begin{lemma}[Uryson's Lemma]
+	Let $X$ be locally compact and Hausdorff.
+	For all $F \subseteq X$ closed and $K \subseteq X$ compact with $F \cap K = \emptyset$, there exists an $f: X \to [0,1]$ continouus such that $f|_K \equiv 1$ and $f|_F \equiv 0$.
+\end{lemma}
+
+\begin{theorem}[Tietze's extension theorem]
+	Let $X$ be locally compact, $K \subseteq X$ compact and $f: K \to \mathds{C}$ continouus. Then there exists a continouus $\tilde f: X \to \mathds{C}$ such that $\tilde f|_K = f$.
+\end{theorem}
+
+\begin{theorem}[Alexandroff's conpactification]
+	If $X$ is locally compact and Hausdorff, then $\tilde X \sqcup \{\infty\}$ is a compact Hausdorff space $\topology{O}(\tilde X) = \topology{O}(X) \cup \{K^\complement \cup \{\infty\} \mid K \text{ compact} \}$.
+\end{theorem}
+
+\begin{example}
+	Compactifying the real line $\mathds{R}$ yields the space $\tilde{\mathds{R}}$, which is isomorphic to the unit circle $\Pi = \mathds{S}^1$.
+\end{example}
+
+\begin{theorem}
+	Conversely, if $Y$ is a compact Hausdorff space, then for all $y_0 \in Y$, $X \coloneqq Y \setminus \{y_0\}$ is locally compact (in respect to the subspace topology).
+
+	More generally, if $Y$ is locally compact and Hausdorff, and $Z \subseteq Y$ is a difference of open and closed subsets, of $Y$ (i.e. $Z = U \setminus F$, where $U$ is open in $Y$ and $F$ is closed in $Y$), then $Z$ is locally compact.
+\end{theorem}
+
+\section{Algebras}
+
+\begin{definition}
+	An \textbf{algebra} is a (complex) vector space $\algebra{A}$ endowed with a bilinear and associative multiplication: $\algebra{A} \times \algebra{A} \to \algebra{A}, (a,b) \mapsto a \cdot b$. So
+	\begin{enumerate}
+		\item $(a + \alpha b) \cdot (c + \beta d) = ac + \alpha bc + \beta ad + \alpha \beta b d$.
+		\item  $(a \cdot b) \cdot c = a \cdot (b \cdot c)$.
+	\end{enumerate}
+	for all $a,b,c \in \algebra{A}$ and $\alpha, \beta \in \mathds{C}$. We say that $\algebra{A}$ is
+	\begin{enumerate}
+		\item \textbf{commuative}, if $ab = ba$ for all $a,b \in \algebra{A}$.
+		\item \textbf{unital}, if there exists $1 = 1_\algebra{A} \in \algebra{A}$ such that $1 \cdot a = a \cdot 1 = a$ for all $a \in \algebra{A}$.
+	\end{enumerate}
+	~
+\end{definition}
+
+\begin{example}~
+	\begin{enumerate}
+		\item $\mathds{C}$, or more generally $\mathds{C}^n = \mathds{C} \oplus \dots \oplus \mathds{C}$, is an algebra.
+		\item Say $X$ is any set; let $\mathds{C}^X = \{ f: X \to \mathds{C} \}$ with pointwise multiplication $(f \cdot g)(x) = f(x) \cdot g(x)$.
+		      These are commutative unital algebras (with $1(x) = 1 \in \mathds{C}$).
+		\item Consider the polynomials $\mathds{C}[X] = \{ \sum_{i = 0}^{n} \lambda_i x^i \mid \lambda_i \in \mathds{C}, n \in \mathds{N} \}$ with the usuals operations.
+		      This is a commutative unital algebra.
+		\item Let $X$ be a topological space and $C(X) = \{f: X \to \mathds{C} \mid f \text{ is continouus}\} \subseteq \mathds{C}^X$ the set of continouus functions on $X$.
+		      This is a commutative unital (sub)algebra (of $\mathds{C}^X$).
+		\item Take any vector space $A$ define a (trivial) multiplication $a \cdot b \coloneqq 0$.
+		      This is a commutative Algebra (that is not unital unless $A = 0$).
+		\item $M_n(\mathds{C})$ (the complex $n \times n$ matrices) with the usual multiplication are a non-commutative (unless $n=1$) unital algebra.
+		\item Let $V$ be any (complex) vector space. The set of all linear operators $L(V) := \{T: V \to V \mit T \text{ linear operator}\}$ is a unital (non-commutative for $\dim V > 1$). We observe $\algebra{L}(\mathds{C}^n) \simeq M_n(\mathds{C})$.
+		\item Let $S$ be a semigroup (i.e. a set with an associative operation $S \times S \to S$, e.g. $(\mathds{N}, +)$). Then $\mathds{C}[S] = \{ \sum_{s \in S} \lambda_s s \mid \lambda_s \in \mathds{C}, |\{s: \lambda_s \neq 0\}| < \infty \}$ (the finite formal sums of elements of $S$) with the following product
+		      \begin{equation*}
+			      \left(\sum_{s \in S'}\lambda_s s\right) \cdot \left(\sum_{t \in S} \lambda_t' t\right) := \sum_{s,t \in S} (\lambda_s \cdot \lambda'_t)(s \cdot t) \in S
+		      \end{equation*}
+		      Observe: As a vector space: $\mathds{C}[S] \subseteq \mathds{C}^S$.
+		      In general, this is neither commutative nor unital.
+	\end{enumerate}
+\end{example}
+
+\section{Normed algebras}
+
+\begin{definition}
+	An algebra $\algebra{A}$ is \textbf{normed}, if it is endowed with a (vector space) norm $\| \cdot \| \colon \algebra{A} \to [0, \infty)$ satisfying $\|a \cdot b\| \leq \|a\| \cdot \|b\|$.
+	If $\algebra{A}$ is unital with unit $1_\algebra{A}$, we usually assume $\| 1_\algebra{A} \| = 1$ except for $\algebra{A} = 0$.
+\end{definition}
+
+\begin{definition}
+	A \textbf{Banach algebra} is a normed algebra that is also complete (as a metric space with respect to the distance $d(a,b) := \| a - b\|$), i.e. every Cauchy sequence converges.
+
+\end{definition}
+
+\begin{example}
+	\begin{enumerate}
+		\item If $X$ is a compact space then $C(X)$ is a commutative unital Banach algebra with respect to the norm $\| f \|_\infty := \sup_{x \in X} |f(x)| < \infty$ (since $X$ is compact).
+		\item If $V$ is a normed (respectively Banach) vector space, e.g. $\mathds{C}^n$ or $\ell^p(\mathds{N}$), then $\algebra{L}(V) = \{T \in L(V) \mid T \text{ is bounded/continouus} \}$ with $\|T\| := \sup_{\|v\| \leq 1} \| T(v) \| < \infty$ is a normed Banach algebra.
+		\item If $X$ is a topological space, then $C_b(X) = \{f \in C(X) \mid \|f\|_\infty < \infty \}$ (bounded continouus functions) is a Banach space.
+		\item Let $X$ again be a topological space. Then the set of all functions \textbf{vanishing at $\infty$},
+		      \begin{align*}
+			      C_0(X) & = \{ f \in C(X) \mid \forall_{\epsilon > 0} \exists_{K \subseteq X, K \text{ compact}} \forall_{x \notin K} |f(x)| < \epsilon \} \\
+			             & = \{ f \in C(X) \mid \forall_{\epsilon > 0} \{x \in X \mid |f(x)| \geq \epsilon \} \text{ is compact} \}
+			      \subseteq C_b(X)
+			      \text{,}
+		      \end{align*}
+		      is also a Banach algebra.
+	\end{enumerate}
+\end{example}
+
+\begin{exercise}
+	Assume $X$ is locally compact and Hausdorff. Prove the following are equivalent:
+	\begin{enumerate}[label=(\arabic*)]
+		\item $X$ is compact.
+		\item $C(X) = C_0(X)$
+		\item $C_0(X)$ is unital.
+		\item The unit function $1 \in C_b(X)$ belongs to $C_0(X)$.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}
+	\begin{itemize}
+		\item (1) $\then$ (2): Recall the definition of $C_0(X)$. If $X$ is compact, every closed subset (especially every $\{x : |f(x)| \geq \epsilon\}$) is compact, so the condition of $C_0(X)$ is trivial.
+		\item (2) $\then$ (3): Since $C(X)$ is unital, $C_0(X)$ is as well.
+		\item (3) $\then$ (4): Suppose $C_0$ is unital, and let $f \in C_0(X)$ be the unit. Then $f \cdot g = g$ for all $g \in C_0(X)$, i.e. $f(x) g(x) = g(x) \forall_{x \in X} \forall_{g \in C_0(X)}$. By Uryson's lemma, given any $x_0 \in X$, there exists $g \in C_0(X)$ with $g(x_0) = 1$ (by looking at $K = \{x_0\}$ and taking $F$ as the complement of any relatively compact environment of $x_0$.). Then $f(x_0) = f(x_0) g(x_0) = g(x_0) = 1$. Doing this for every $x_0 \in X$ yields $f \equiv 1$.
+		\item (4) $\then$ (1): Since $1 \in C_0(X)$, for every $\epsilon > 0$ the set $\{x \mid |f(x)| \geq \epsilon\}$ is compact. Choose $\epsilon = \frac{1}{2}$. Then, $\{x \mid |f(x)| = |1| \geq \frac{1}{2}\} = X$ is compact.
+	\end{itemize}
+\end{proof}
+
+\begin{exercise}
+	Let $X$ be a locally compact Hausdorff space.
+	Prove that $C_0(X) \cong \{f \in C(X) \mid f(\infty) = 0\}$
+\end{exercise}
+
+\section{Algebras}
+
+\begin{definition}
+	A \textbf{$^*$-algebra} is a complex algebra $\algebra{A}$ with an \textbf{involution} $^*: \algebra{A} \to \algebra{A}$ satisfying
+	\begin{enumerate}
+		\item $(a + \lambda b)^* = a^* + \overline{\lambda} b^*$
+		\item $(a^*)^* = a$
+		\item $(ab)^* = b^* a^*$
+	\end{enumerate}
+	for all $a,b \in \algebra{A}$ and all $\lambda \in \mathds{C}$.
+\end{definition}
+
+\begin{definition}
+	A \textbf{normed $^*$-algebra} is a normed algebra $\algebra{A}$ with an involution (such that $\algebra{A}$ is a $^*$-algebra) also satisfying $\| a^*\| = \|a\|$ for all $a \in \algebra{A}$.
+
+	A \textbf{Banach-$^*$-algebra} is a complete normed $^*$-algebra.
+\end{definition}
+
+\begin{definition}
+	A $C^*$-algebra is a Banach-$^*$-algebra satisfiying $\|a^* \cdot a\| = \| a \|^2$.
+\end{definition}
+
+Observation: Recall that $\|a \cdot b\| \leq \|a\| \cdot \| b \|$ in all normed algebras. Applying this to a $C^*$-algebra we get $\|a \cdot a^*\| \leq \|a^*\| \cdot \| a \|$. If $\algebra{A}$ is a $C^*$-algebra, then $\| a \| ^2 = \| a \cdot a^*\| \leq \|a^*\| \cdot \|a\|$, so $\| a\| = \|a^*\|$.
+
+\begin{example}~
+	\begin{enumerate}
+		\item If $X$ is a set, then $\mathds{C}^X$ is a $^*$-algebra with $f^* = \overline{f}$ and $\algebra{C}^\infty(X)$ is a $C^*$-algebra.
+		\item If $X$ is a topological space, then $C(X) \subseteq \mathds{C}^X$ is also a $^*$-subalgebra and for $\{f \in C(X) \mid \supp(f) = \closure{\{x \in X \mid |f(x)| \neq 0\}} \text{ compact} \}$ we have
+		      \begin{equation*}
+			      C_c(X) = \subseteq C_0(X) \subseteq C_b(X) \subseteq C(X) \subseteq C^\infty(X)
+		      \end{equation*}
+		      and $C^\infty$ is a $C^*$-algebra. $C_c$ is a $^*$-algebra, but not Banach in general.
+
+		      If $X$ is compact, it follows $C_c(X) = C_0(X) = C_b(X)$.
+
+		      Observation: If $X$ is locally compact and Hausdorff, then $\closure{C_c(X)} = C_0(X)$.
+		\item Let $X$ be a measured space ($X$ is endowed with a $\sigma$-algebra). Then $B_\infty(X) = \{f \in C^\infty \mid f \text{ is measurable}\}$ is a $C^*$-algebra.
+		      If $\mu$ is a measure on $X$ (e.g. $X = \mathds{R}^n$ and $\mu$ the Lebesgue measure) then $L^\infty(X,\mu)$ are the essentially bounded functions and
+		      \begin{equation*}
+			      L^\infty(X) = \{f: X \to \mathds{C} \mid \|f\| \coloneqq \inf \{ c \geq 0 \mid \mu(\{x \mid |f(x)| > c\}) = 0 \} \}
+		      \end{equation*}
+		      is also a $C^*$-algebra.
+
+		      Observation: $L^2(X, \mu) = $ \enquote{$\mu$-separable function}, $L^\infty(X, \mu) \xrightarrow{\mu} B(L^2(X,\mu)), f \mapsto \mu_f = \{g \mapsto f \cdot g\}$
+		\item A non-example: Let $\mathds{D}$ be the unit disk and $\algebra{A}(\D) = \{f \in \mathds{C}(\mathds{D}) \mid \text{ analytic in } \mathds{D}^\interior \}$
+
+		      \textbf{Moreras Theorem} from complex analysis states that $f \in C(\mathds{D})$ is analytic if and only if $\int_{\gamma} f(z) dz = 0$ for all closed and piecewise smooth paths in $\mathds{D}^\interior$. From this, it follows that $\algebra{A}(\mathds{D})$ is closed in $C(\mathds{D})$, therefore a Banach algebra. It is also a Banach-$^*$-algebra with, but $f^* = \overline{f}$ (pointwise) is not possible, as $z \mapsto \overline{z}$ is not analytic. Thus, we have to choose $f^*(z) = f(\overline{z})$.
+		      But $\algebra{A}(\mathds{D})$ is not a $C^*$-algebra, as $\| f^* f\|_\infty \neq \|f\|_\infty^2$ for some $f \in \algebra{A}(\mathds{D})$.
+		\item A non-commutative example: Let $H$ be a Hilbert space and $B(H) = \algebra{L}(H) = \{T: H \to H \mid T \text{bounded, continouus, linear}\}$ and $\|H\| \coloneqq \sup_{\|z\| < 1} \|T(z)\| < \infty$. This is a $C^*$-algebra where $T^*$ is the adjoint of $T$, that is $\SP{T^* z, w} = \SP{z, Tw}$ for all $z,w \in H$.
+
+		      $C^*$-axiom: $\|T^* \cdot T\| \leq \|T\|^2$ since $\algebra{L}(H)$ is a Banach algebra, and we also have
+		      \begin{align*}
+			      \|T\|^2 & = \sup_{\|z\| < 1} \|T(z)\|^2 = \sup_{\|z\| < 1} \SP{Tz, Tz} = \sup_{\|z\| < 1} \SP{z, T^* T z} \\
+			              & \leq \sup_{\|z\| < 1} \|z\| \| T^*T z\| \leq \sup_{\|z\| < 1}  \|z\| \| T^*T\| \leq  \| T^*T\|
+		      \end{align*}
+		      In particular, $M_n(\mathds{C}) \simeq \algebra{L}(\mathds{C}^n)$ is a unital $C^*$-algebra.
+		\item To produce more examples, take any subset $S \subseteq \algebra{L}(H)$ and take $C^*(S) \subseteq \algebra{L}(H) = \closure{\Span\{S_i \mid S_i \in S \cup S^*, i \leq n \in \mathds{N}\}}$.
+	\end{enumerate}
+\end{example}
+
+\begin{example}
+	Let $s \in \algebra{L}(\ell^2(\mathds{N}))$. The shift $s$, defined by $s(e_i) = e_{i+1}$ for all $i \in \mathds{N}$ (where $\{e_i\}$ is the canonical basis of the sequence space), is an isometry, that is $s^* \cdot s = \id$.
+	Since $s \cdot s^* \neq \id$, it is not surjective and not a proper isometry.
+	We define
+	\begin{equation*}
+		T = C^*(s) = \closure{\Span\{s^n (s^*)^m \mid m,n \in \mathds{N}_0 \}} \subseteq \algebra{L}(\ell^2(\mathds{N}))
+	\end{equation*}
+	as the \textbf{Toeplitz algebra}.
+\end{example}
+
+\begin{example}
+	Let $H$ be a Hilbert space and $S$ the set of all finite rank operators on $H$.
+
+\end{example}
+
+\begin{example}~
+	\begin{enumerate}
+		\item \textbf{Commutative}: $C_0(X)$ for a locally Hausdorff space $X$.
+		\item \textbf{Non-commutative}: $\mathcal{L}(\hilbert{H}) = \mathcal{B}(\hilbert{H})$ for any Hilbert space $\hilbert{H}$ (with dimension greater $1$).
+		\item \textbf{More generally}: Take any subset $S \subseteq \mathcal{L}(\hilbert{H})$ and construct $C^*(S) \subseteq \mathcal{L}(H)$ as
+		      \begin{equation*}
+			      \closure{\Span}\{S_1, \dots, S_n\mid S_i \in S \cap S^*\}
+		      \end{equation*}
+	\end{enumerate}
+\end{example}
+
+\begin{example}[Cuntz algebras]
+	Take again $\hilbert{H} = \ell^2\mathds{N} = \{(\lambda_n)_{n \in \mathds{N}_0} \mid \sum_{n = 0}^{\infty} |\lambda_n|^2 < \infty\}$ where $\SP{\lambda, \lambda'} = \sum_{i \in \mathds{N}_0} \overline{\lambda_i} \lambda_i'$ and which has the orthonormal base $(e_n)_{n \in \mathds{N}}$ where $(e_n) = (\delta_{in})_{i \in \mathds{N}_0}$.
+
+	On this algebra, define
+	\begin{itemize}
+		\item $S_1(e_n) = e_{2n}$.
+		\item $S_2(e_n) = e_{2n + 1}$.
+	\end{itemize}
+	We have partitioned the natural numbers into evens and odds. This definies two (proper) isometries $S_1, S_2 \in \algebra{L}(\hilbert{H})$, that is $S_i^* S_i = \id_\hilbert{H}$, to subspaces of $\hilbert{H}$. Notice: $S_i^*S_j = 0$  for $i \neq j$ as well as $S_1 S_1^* + S_2S_2^* = \id_\hilbert{H}$.  Define $\algebra{O}_2 = C^*(S_1, S_2) = \closure{\Span}\{S_\alpha S_\beta^* \mid \alpha, \beta \text{ finite words in } \{1,2\}\}$. For example, for $\alpha = 121211$ we have $S_{\alpha} = S_1 S_2 S_1 S_2 S_1^2$. $\algebra{O}_2$ is called the \textbf{Cuntz algebra}. More generally, one can define $\algebra{O}_3, \algebra{O}_4$, ... Cuntz algebras. Joachim Cuntz proved that these are simple $C^*$-algebras with additional interesting properties we will see later.
+\end{example}
+
+\begin{example}[Rotation algebras]
+	Let $\hilbert{H} = \ell^2(\mathds{Z})$ (bi-infinite sequences) with basis $(e_n)_{n \in \mathds{Z}}$  Define:
+	\begin{itemize}
+		\item $U(e_n) := e_{n+1}$ (bilateral shift)
+		\item $V(e_n) := \lambda^n e_n$ where $\lambda\in\mathds{C}$ is some fixed number $|\lambda| = 1$.
+	\end{itemize}
+	This defines two \textit{unitary} operators: $U U^* = 1 = U^* U$ and $V^* V = 1 = V^*V$. If $\exp(2 \pi i \theta), \theta \in \mathds{R}$ define $A_\theta := C^*(U,V) \subseteq \algebra{L}(\ell^2 \mathds{N})$.
+
+	There is a special relation between $U$ and $V$ where $UV = \lambda VU = \exp(2 \pi i \theta) V U$. From this relation, we can describe $A_\theta = \closure{\Span}\{\sum_{n,m \in \mathds{Z}}^{\text{finite}} a_{n,m} U^n V^m \mid a_{n,m} \in \mathds{C}\}$.
+
+	Furthermore, if $\theta \in \mathds{R} \setminus \mathds{Q}$, $A_\theta$ is simple.
+\end{example}
+
+\begin{example}[$C^*$-algebras of groups]
+	Let $G$ be a (discrete) group. Look at $\hilbert{H} = \ell^2(G) = \{(a_g)_{g \in G} \mid \sum_{g \in G} |a_g|^2 < \infty\}$ (Note: This limit will only converge if there are countably (or finitely) many non-zero summands) with ONB $(\delta_g)_{g \in G}$ where $\delta_g(h) = \delta_{gh}$. Define for each $g \in G$ an operator $\lambda_g \in \algebra{L}(\ell^2 G)$ by $\lambda_g(\delta_h) = \delta_{gh}$. Notice that $h \mapsto gh$ is a bijection, and thus $\lambda_g$ is a unitary operator with $\lambda_g^* = \lambda_{g^{-1}}$. We can now define the \textbf{reduced $C^*$-algebra} of the group:
+	\begin{equation*}
+		C_R^*(G) := C_\lambda^*(G) \subseteq \algebra{L}(\ell^2 G) = C^*(\lambda_g \mid g \in G)
+	\end{equation*}
+	Here, we have the relation $\lambda_g \cdot \lambda_h = \lambda_{gh}$ and thus $C_R^*(G) = \{\sum a_g \lambda_g \mid a_g \in \mathds{C}\}$.
+
+	In general, take $U: G \to \algebra{L}(H), g \mapsto U_g$ a \textbf{unitary representation of $G$} with $U_g U_h = U_{gh}$ and $U_1 = \id$ as well as $U_g^{-1} = U_{g^{-1}}$. Then $C^*_U(G) := \{\sum_{g \in G} a_g U_g \mid a_g \in \mathds{C}\} \subseteq \algebra{L}(H)$. There exists a \textbf{universal unitary representation} $C^*_\mathrm{max}(G)$, a full $C^*$-algebra of $G$.
+\end{example}
+
+\begin{remark}~
+	\begin{enumerate}
+		\item If $G$ is abelian, then $C_U^*(G)$ is also abelian (commutative). In particular, $C_\lambda^*$ is abelian. Later, we will prove $C_\lambda^*(G) \simeq C(\hat G)$ where $\hat G$ is the dual of $G$, i.e. $\{X: G \to \mathds{C} \text{ characters}\}$.
+		\item For many groups, like $G = \mathds{F}_n$ (the free groups) the reduced $C^*$-algebra $C^*_\lambda(G)$ is simple.
+	\end{enumerate}
+\end{remark}
+
+\section{Homomorphisms of algebras}
+
+\begin{definition}
+	If $\algebra{A}, \algebra{B}$ are algebras, a \textbf{homomorphism} from $\algebra{A}$ to $\algebra{B}$ is a linear map $\phi: \algebra{A} \to \algebra{B}$ such that $\phi(ab) = \phi(a) \phi(b)$ for any $a,b \in \algebra{A}$.
+
+	If $\algebra{A}$ and $\algebra{B}$ are $^*$-algebras, a \textbf{$^*$-homomorphism} is a homomorphism $\phi: \algebra{A} \to \algebra{B}$ such that $\phi(a^*) = \phi(a)^*$ for all $a \in \algebra{A}$.
+
+	If $\algebra{A}, \algebra{B}$ are Banach algebras, then usually we want to have \textbf{continouus} homomorphisms. Even more, we usually ask for \textbf{contractive} homomorphisms $\phi: \algebra{A} \to \algebra{B}$, (that is $\|\phi\| \leq 1$).
+\end{definition}
+
+We will be especially interested in \textbf{characters}:
+
+\begin{definition}
+	A \textbf{character} of an algebra $\algebra{A}$ is a non-zero homomorphism $\chi: \algebra{A} \to \mathds{C}$.
+\end{definition}
+
+\begin{example}
+	Take any subalgebra $\algebra{A} \subseteq \mathds{C}^X$. Take $x_0 \in X$ and set $\chi_{x_0} := \mathrm{ev}_{x_0}: \algebra{A} \to \mathds{C}, f \mapsto f(x_0)$. This is not neccessarily a character, but it is for example, if $\algebra{A} = C(X)$ or $C_b(X)$ or $C_0(X)$ (if $X$ is \enquote{nice}, like Hausdorff).
+\end{example}
+
+\begin{definition}
+	A  ($^*$)-isomorphism between two $(^*)$-algebras $\algebra{A}$ and $\algebra{B}$ is a bijective $(^*)$- homomorphism $
+		\phi: \algebra{A} \overset{\sim}{\to} \algebra{B}$.
+\end{definition}
+
+\begin{definition}
+	A \textbf{$(^*)$-ideal} of a $^*$-algebra $\algebra{A}$ is a subspace $I \subset A$ such that $I \cdot A \subseteq I$, $A \cdot I \subseteq I$ (if only one condtion applies, we call this a \textbf{left ideal} or \textbf{right ideal}). For $^*$-ideals, we also want $I^* = I$. We notate this as $I \trianglelefteq \algebra{A}$.
+\end{definition}
+
+\begin{example}
+	If $\phi: \algebra{A} \to \algebra{B}$ is a $(^*)$-homomorphism, then $\ker \phi \trianglelefteq \algebra{A}$.
+\end{example}
+
+\begin{example}
+	If $I \trianglelefteq \algebra{A}$ for $\algebra{A}$ a $(^*)$-algebra
+	\begin{equation*}
+		\algebra{A} / I = \{a + I \mid a \in \algebra{A}\}
+	\end{equation*}
+	with $(a + I) \cdot (b + I) := ab + I$ and $(a + I)^* = a^* + I$ is a $(^*)$-algebra.
+\end{example}
+
+\begin{theorem}
+	If $\algebra{A}$ is a Banach-$^*$-algebra, then $I \trianglelefteq \algebra{A}$ is a closed ideal, then the quotient $I / \algebra{A}$ is also a Banach-$^*$-algebra.
+\end{theorem}
+
+\begin{proof}
+	Later.
+\end{proof}
+
+\section{Spectral theory}
+
+\begin{notation}
+	If $\algebra{A}$ is a unital algebra, we write
+	\begin{equation*}
+		\inv(\algebra{A}) = \{a \in \algebra{A} \mid a \text{ is invertible in } \algebra{A}\} = \{a \in \algebra{A} \mid \exists_{a^{-1} \in \algebra{A}} a a^{-1} = 1 = a^{-1} a \}
+	\end{equation*}
+	This is a group. Sometimes we also write $GL(\algebra{A})$.
+\end{notation}
+
+\begin{definition}
+	Given a unital algebra $\algebra{A}$ and $a \in \algebra{A}$, we define its \textbf{spectrum} (in $\algebra{A}$) as
+	\begin{equation*}
+		\sigma_\algebra{A}(a) = \sigma(a) = \{\lambda \in \mathds{C} \mid \lambda \cdot 1 - a \notin \inv(\algebra{A})\}
+	\end{equation*}
+	and the resolvent of $a$ (in $\algebra{A}$) as
+	\begin{equation*}
+		\rho_\algebra{A}(a) = \rho(a) = \algebra{A} \setminus \sigma_\algebra{A}(a) = \{\lambda \in \mathds{C} \mid \lambda - a \in \inv(\algebra{A})\}
+	\end{equation*}
+\end{definition}
+
+\begin{example}[Linear Algebra]
+	Let $\algebra{A} = M_m(\mathds{C})$ and $a \in \algebra{A}$. Then we have
+	\begin{equation*}
+		\sigma(a) = \{\lambda \in \mathds{C} \mid \lambda - a \notin \inv(\algebra{A})\} = \{\lambda \in \mathds{C} \mid \det(\lambda - a) = 0\}
+	\end{equation*}
+	and these are the roots of the characteristic polynomial $\det(\lambda - a)$. This is exactly the usual spectrum from linear algebra.
+\end{example}
+
+\begin{example}[Functional Analysis]
+	Let $\algebra{A} = \algebra{L}(\hilbert{H})$ -- where $\hilbert{H}$ is any Hilbert- or Banachspace -- and $T \in \algebra{A}$. Then $\sigma_\algebra{A}(T)$ is exactly the spectrum as defined in functional analysis.
+
+	If $S$ is the shilft in $\algebra{L}(\ell^2 \mathds{N})$, then we have $\sigma(S) = \mathds{D}$.
+\end{example}
+
+\begin{example}
+	Let $\algebra{A} = \mathds{C}[X]$. Here we have $\inv(\algebra{A}) = \{a_0 X^0 \mid a_0 \in \mathds{C} \setminus \{0\}\}$ the constant non-zero polynomials. If $a = \sum_{k=0}^{N} a_k x^k \in \algebra{A}$, then we have two cases:
+	\begin{equation*}
+		\sigma(a) = \left\{ \begin{matrix}
+			\{a_0\}    & a = a_0 \text{ (const.)} \\
+			\mathds{C} & \text{otherwise}
+		\end{matrix}
+		\right.
+	\end{equation*}
+\end{example}
+
+\begin{example}
+	Let $\algebra{A} = \mathds{C}(X) = \{p,q \mid p,q \in \mathds{C}[X], q \neq 0 \}$. Now we have $\inv(\algebra{A}) = \algebra{A} \setminus \{0\}$. If $a \in \algebra{A}$, then
+	\begin{equation*}
+		\sigma(a) = \left\{ \begin{matrix}
+			\{a_0\}   & a = a_0 \text{ (const.)} \\
+			\emptyset & \text{otherwise}
+		\end{matrix}\right.
+	\end{equation*}
+\end{example}
+
+\begin{example}
+	Let $\algebra{A} = C(X)$ for any topological space $X$. Then
+	\begin{equation*}
+		\inv(\algebra{A}) = \{f \in C(X) \mid \forall_{x \in X} f(x) \neq 0\}
+	\end{equation*}
+	and
+	\begin{equation*}
+		\sigma(f) = \{\lambda \in \mathds{C} \mid \lambda - f \notin \inv(\algebra{A})\} = \{\lambda \in \mathds{C} \mid \exists_{x \in X} f(x) = \lambda\} = \image(f) = f(X)\text{.}
+	\end{equation*}
+\end{example}
+
+\begin{example}
+	Let $X$ be any topological space and consider $\algebra{A} = C_b(X)$. Then
+	\begin{equation*}
+		\inv(C_b(X)) = \{f \in C_b(X) \mid \exists_{\epsilon > 0} \forall_{x \in X} |f(x)| \geq \epsilon \}
+	\end{equation*}
+	and
+	\begin{equation*}
+		\sigma(f) = \{\lambda \in \mathds{C} \mid \lambda - f \in \inv(\algebra{A}) \} = \{\lambda \in \mathds{C} \mid \exists_{(x_n)} f(x_n) \to \lambda\} = \closure{\image(f)} = \closure{f(X)} \text{.}
+	\end{equation*}
+	This is a compact subset of $\mathds{C}$.
+\end{example}
+
+\begin{theorem}[Algebraic spectral mapping theorem]
+	Let $\algebra{A}$ be an algebra, $a \in \algebra{A}$ and $p \in \mathds{C}[X], p(X) = \sum_{k = 0}^{n} \lambda_k X^k$ and define $p(a) = \sum_{k = 0}^{n} \lambda_k a^k$. Recall that the mapping $\mathds{C}[X] \to \algebra{A}, p \mapsto p(a)$ is a unital homomorphism.
+
+	Then $\sigma(p(a)) = p(\sigma(a))$ assuming $\sigma(a) \neq \emptyset$.
+\end{theorem}
+
+\begin{proof}
+	If $p(X) = \lambda_0$ constant, this is clear (the spectrum is exactly $\lambda_0$ on both sides). Assume $p(x)$ is not constant. Fix $\mu \in \mathds{C}$ and write
+	\begin{equation*}
+		\mu - p(x) = \lambda_0 (x - \lambda_1) \cdots (x - \lambda_n)
+	\end{equation*}
+	as per the fundamental theorem of algebra (note that these are not the same $\lambda$ as before) with $\lambda_0 \neq 0$.  Then $\mu - p(a) = \lambda_0 (a - \lambda_1)\cdots(a - \lambda_n)$. Since these expressions commute, this product is invertible if and only if $(a - \lambda_i)$ is invertible for every $i$. So $\mu \in \sigma(p(a)) \iff \mu - p(a)$ is not invertible if and only if there exists an $i$ for which $\lambda_i - a$ is not invertible, so $\lambda_i \in \sigma(a)$. But the $\lambda_i$ are exactly the numbers satisfying $p(\lambda) = \mu$. Thus, $\mu$ is in $\sigma(p(a))$ if it is in the image of $\sigma(a)$ under $p$. Therefore, we conclude $\sigma(p(a)) = p(\sigma(a))$.
+\end{proof}
+
+We now focus on invertible elements in \textbf{Banach algebras}.
+
+\begin{theorem}
+	If $\algebra{A}$ is a unital Banach algebra and $a \in \algebra{A}$ with $\|a\| < 1$ then $1 - a$ is invertibble and $(1-a)^{-1} = \sum_{n=0}^{\infty} a^n$.
+\end{theorem}
+
+\begin{proof}
+	Observe that, since $\|a\| < 1$, we have $\sum_{n = 0}^{\infty} \|a\|^n = \frac{1}{1 - \|a\|} < \infty$. This implies the (absolute) convergence of $\sum_{n = 0}^\infty$ by the characteristic property of Banach spaces. Hence $b \coloneqq \lim_{N \to \infty} \sum_{n = 0}^{N} a^n \in \algebra{A}$. No, if $N \in \mathds{N}$, then
+	\begin{equation*}
+		(1-a) \left(\sum_{n = 0}^{N} a^n\right) = \left(\sum_{n = 0}^{N} a^n\right) - \left(\sum_{n = 1}^{N + 1} a^n\right) = 1 - a^{N+1} \to 1
+	\end{equation*}
+	because of $\|a\| < 1$. This yields $(1-a)b = 1$.
+\end{proof}
+
+\begin{theorem}
+	Let $\algebra{A}$ be a non-empty, non-zero unital Banach algebra. Then $\inv(\algebra{A})$ is an open subset of $\algebra{A}$ and the function $f: \inv(\algebra{A}) \to \algebra{A}, a \mapsto a^{-1}$ is Frechet-differentiable and in particular continouus as well as $f'(a) b = -a^{-1} b a^{-1}$.
+\end{theorem}
+
+Recall from calculus that $\frac{d}{dx} \frac{1}{x} = -\frac{1}{x^2}$. Also recall that $f: U \overset{\text{open}}{\subseteq} X \to Y$ with $X,Y$ Banach spaces is \textbf{differentiable} at $x_0 \in U$ there exists an operator $D_{x_0} = f'(x_0) \in \algebra{L}(X,Y)$ such that
+\begin{equation*}
+	\lim_{h \to 0} \frac{f\|(x_0 + h) - f(x_0) - D_{x_0}(h)\|}{\|h\|} = 0
+\end{equation*}
+
+\begin{proof}
+	Take $a \in \inv(\algebra{A})$. If $b \in \algebra{A}$ such that $\|a - b\| < \|a^{-1}\|^{-1}$. From this, we have $\|b a^{-1} - 1\| = \| b a^{-1} - a a^{-1} \| = \|(b-a) a^{-1}\| \leq \|b - a\| \cdot \| a^{-1} \| < 1$. Per the previous theorem, $b a^{-1} \in \inv(\algebra{A})$. This implies that $b$ is also invertible. This shows that $\inv(\algebra{A})$ is open.
+
+	Furthermore, if $\|b\| < 1$, then also ($\|-b\| < 1$). Thus, $1 + b \in \inv(\algebra{A})$ and $(1+b)^{-1} = \sum_{n = 0}^{\infty} (-1)^n b^n$. Thus
+	\begin{equation*}
+		\| (1+b)^{-1} - 1 + b\| = \left\| \sum_{n = 0}^\infty (-1)^n b^n - 1 + b  \right\| \leq \left\| \sum_{n = 2}^\infty (-1)^n b^n \right\| \leq \sum_{n = 2}^{\infty} \|b^n\|  \leq \sum_{n = 2}^\infty \|b\|^n = \frac{\|b\|^2}{1 - \|b\|}
+	\end{equation*}
+	Now let $a \in \inf(\algebra{A})$ and $c \in \algebra{A}$ such that $\|c\| < \frac{1}{2} \|a^{-1}\|^{-1}$. Then $\|a^-1 c\| \leq \|a^{-1}\| \| c\| \leq \frac{1}{2}$. So if $b = a^{-1}$, then
+	\begin{equation*}
+		\|(1 + a^{-1}c)^{-1} - 1 + a^{-1} c\| = \leq \frac{\| a^{-1} c\|^2}{1 = \|a^{-1} c \|} < 2 \| a ^{-1} c \|^2
+	\end{equation*}
+	Now, define $U: \algebra{A} \to \algebra{A}, b \mapsto - a^{-1} b a^{-1}$. Then this is a linear odd operation with $\|U\| \leq \|a^{-1}\|^2$ and we have
+	\begin{align*}
+		\|(a + c)^{-1} - a^{-1} - U(c)\| & = \|(a+c)^{-1} - a^{-1} + a^{-1} c a^{-1}\|                  \\
+		                                 & =  \|(1 + a^{-1}c)^{-1} a^{-1} - a^{-1} + a^{-1} c a^{-1}\|  \\
+		                                 & \leq \|(1 + a^{-1}c)^{-1} -1 + a^{-1} c  \| \cdot \|a^{-1}\| \\
+		                                 & \leq 2 \|a^{-1} c\|^2 \|a^{-1}\| \leq 2 \|a^{-1}\|^3 \|c\|^2
+	\end{align*}
+	and thus
+	\begin{equation*}
+		\lim_{c \to 0} \frac{\|(a + c)^{-1} - a^{-1} - U(c)\|}{\|c\|} = 0
+	\end{equation*}
+\end{proof}
+
+\begin{example}
+	If we choose $\algebra{A} = \mathds{C}[X]$ and the norm $\|p\| = \sup_{\lambda \in [0,1]} |p(x)|$.
+	Then $(\algebra{A}, \|\cdot \|)$ is a normed (but not Banach) algebra.
+	For example, we see that $\lim_{m \to 0} 1 + X/m = 1 \in \inv(\algebra{A})$, but $1 + X/m \notin \inv(\algebra{A})$ and thus $\inv(\algebra{A})$ is not open (because the complement is not closed).
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,238 @@
+\documentclass[a4paper]{article}
+
+% --- OTHER ---
+
+\usepackage[german]{babel}	% german quotation marks etc.
+\usepackage{booktabs}       % professional-quality tables
+\usepackage[table]{xcolor}	% color
+\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
+\usepackage{enumitem}		% better custom enumerations
+\setlist[enumerate, 1]{label=(\roman*)}
+\usepackage{etoolbox}		% toolbox for command modification
+
+% --- FONTS & TYPSETTING ---
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{dsfont}			% font with double lines for sets
+\usepackage[german,ruled,vlined,linesnumbered,commentsnumbered,algoruled]
+{algorithm2e} 				%Pseudocode
+\usepackage{listings}		%JavaCode
+\usepackage{csquotes}
+
+% --- URLS ---
+
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}   	% hyperlinks
+\usepackage{url}            % simple URL typesetting
+
+% --- MATH SYMBOLS ---
+
+\usepackage{amsmath,amssymb}% more math symbols
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{latexsym}		% more math symbols
+\usepackage{chngcntr}		% more math symbols
+\usepackage{mathrsfs}		% math-fonts
+%\usepackage{marvosym}		% more math symbols (conflicts with nchairx)
+\usepackage{mathktools}		% more math symbols
+\usepackage{nchairx}		% Waldmann package for general math symbols and operators
+% theorem formatting (contained in ncharx)
+%\usepackage[amsmath,thmmarks,framed,thref]{ntheorem}
+
+% --- GRAPHICS & CAPTIONS ----
+
+\usepackage{graphicx}		% including images
+\graphicspath{ {./figs/} }
+\usepackage{subcaption}		% custom caption formating
+\DeclareCaptionLabelFormat{custom}{ \textbf{#1 #2}}
+\captionsetup{format=hang}
+\captionsetup{width=0.9\textwidth,labelformat=custom}
+
+% --- BIBLIOGRAPHY ---
+%
+%\usepackage[backend=biber, citestyle=numeric, bibstyle=numeric, sorting=none]{biblatex} 	% bibliography
+%\bibliography{references}
+%\defbibheading{myheading}[Literatur]{\section{#1}}
+
+% --- TIKZ ---
+
+\usepackage{tikz}			% basic tikz for custom images
+\usetikzlibrary{cd}			% custom diagrams
+\usetikzlibrary{external}	% extrnalize images for faster compilation
+\tikzexternalize[prefix=figures/]
+\AtBeginEnvironment{tikzcd}{\tikzexternaldisable} %fix cd/externalize
+\AtEndEnvironment{tikzcd}{\tikzexternalenable}
+\usepackage{pgfplots}		% custom plottin
+\usepgfplotslibrary{colormaps}
+\pgfplotsset{compat=newest}	
+\usetikzlibrary{patterns}	% custom patterns
+
+% --- FORMAT ---
+
+\usepackage[a4paper]{geometry} % a4 paper
+\usepackage{setspace}		% spacing
+%\usepackage[nobottomtitles*]{titlesec} %prevent section titles from sometimes being on the bottom of a page
+\usepackage{titlesec}
+\allowdisplaybreaks			% allow pagebreaks within math environments
+\doublespacing				% more spacing!
+% pageskip every section
+\let\oldsection\section
+\renewcommand\section{\newpage\oldsection}
+
+% --- DATA ---
+
+\title{Exercises to Introduction to Operator Algebras}
+\author{Alcides Buss\\Notes by: Linus Mußmächer\\2336440}
+\date{Summer 2023}
+
+% --- CUSTOM COMMANDS ---
+%Logik
+\newcommand{\then}{\Rightarrow}
+\newcommand{\since}{\Leftarrow}
+\renewcommand{\iff}{\ensuremath{\Leftrightarrow}}
+
+%hübscheres epsilon
+\let\oldepsilon\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\oldepsilon
+%hübscheres phi
+\let\oldphi\phi
+\let\phi\varphi
+\let\varphi\oldphi
+
+%matrix
+\newcommand{\qmatrix}[1]{\ensuremath{\left(\begin{matrix}#1\end{matrix}\right)}}
+
+% --- DOCUMENT ---
+
+\begin{document}
+
+\maketitle
+
+
+\tableofcontents
+
+\newpage
+
+\section{Exercise sheet 1}
+
+\begin{exercise}
+	(1)
+\end{exercise}
+
+\begin{proof}
+	\textbf{Case 1}: If $b_1, b_2 \in A$, then $b_i = \alpha_i a$ for certain $\alpha_i \in \mathbb{C}$. Thus, $b_1 \cdot b_2 = \alpha_1 \alpha_2 a^2 = 0$. Thus, the multiplication is trivial. From this, it immediately follows that $\phi: \algebra{A} \to \algebra{M}, \lambda a \mapsto \qmatrix{0 & \lambda \\ 0 & 0}$ is an isomorphism.
+
+	\textbf{Case 2}: $\lambda \neq 0$, and $a^2 = \lambda a$. Let $b = \frac{1}{\lambda} a$, then $b \cdot a = a = a \cdot b$. But then, for any $c = \mu a \in \algebra{A}$, we have $b c = \mu b a = \mu a = c = c b$, so the algebra is unital and isomorphic to $\mathbb{C}$.
+\end{proof}
+
+%Per sheet 3-4 tasks in the next week, two weeks => Bonus
+%Nothing concerning the exam
+
+\begin{exercise}[2]
+	We consider pathological examples for $C_0(X)$.
+
+	Let $X = \closure{\{x_0\}}$, e.g. $x_0 \in X$ with $\topology{O}(X) = \{\{x_0\} \cup Y \mid Y \subset X\} \cup \{\emptyset\}$. $X$ is highly non-Hausdorff unless we already have $X = \{x_0\}$.	In this space, the constant sequence $(x_0)$ converges to any $x \in X$.
+
+	For a continouus function $f: X \to \mathds{C}$, this implies $f(x_0) \to f(x)$ for all $x \in X$, so every continouus function must already be constant. It follows that $C(X) \simeq \mathds{C}$.
+
+	We now look at $C_0(X) = \{f \in C(X) \mid \forall_{\epsilon > 0} \{x \in X \mid  |f(x)| \geq \epsilon \} \text{ is compact.}\}$. But since all functions are constant, we can use $f(x_0)$ instead of $X$ and $\{x \in X \mid  |f(x)| \geq \epsilon \}$ is either empty or the whole space. $X$ is compact if and only if $X$ is finite. From here on, assume $X$ to be infinite. Then, only the finite subsets are compact. Thus, if we now have $f \not \equiv 0$, there exists an $|f(x_0)| > \epsilon > 0$ and thus $\{x \in X \mid  |f(x)| \geq \epsilon \} = X$ is not compact. This implies $C_0(X) = \{0\}$.
+
+	To find a non-compact topological space that has non-zero unital $C_0(X)$, consider $X = X_0 \sqcup X_1$ with $X_0$ as befor and $X_1$ compact.
+\end{exercise}
+
+\begin{theorem}
+	Let $\phi: \algebra{A} \to \algebra{B}$ be a $^*$-homomorphism betwenn $C^*$-algebras. Then we already have $\|\phi(a)\| \leq \|a\|$ for all $a \in \algebra{A}$.
+\end{theorem}
+
+\begin{exercise}[4 - Products]
+	Let $(A_i)_{i \in I}$ be a family of $C^*$-algebras and define
+	\begin{equation*}
+		\prod_{i \in I} A_i = \{a = (a_i)_{i \in I} \mid a_i \in A_i \forall_{i \in I} \text{ and } \|a\| := \sup_{i \in I} \|a_i\| < \infty \}\text{.}
+	\end{equation*}
+	Addition, multiplication and involution are defined coordinatewise. We can prove that adding, multiplying and involving any bounded sequence yields another bounded sequence, so these are well-defined. We can also prove the $C^*$-axiom.
+\end{exercise}
+
+\begin{remark}[Differences between product and direct sum]~\\
+	In addition to the product space, we define
+	\begin{equation*}
+		\bigoplus_{i \in I} A_i = \left\{(a_i) \in \prod_{i \in I} A_i \mid \forall_{\epsilon > 0} \exists_{\text{finite }F \subseteq I} \forall_{i \notin F} \|a_i\| < \epsilon\right\}\text{.}
+	\end{equation*}
+	This is a closed subspace of $\prod_{i \in I} A_i$ as the closure of $\bigoplus_{i \in I}^{alg} A_i$, where
+	\begin{equation*}
+		\bigoplus_{i \in I}^{alg} A_i = \left\{(a_i) \in \prod_{i \in I} A_i \mid \exists_{\text{finite }F \subseteq I} \forall_{i \notin F} \|a_i\| = 0\right\}\text{.}
+	\end{equation*}
+	For finite $I$, these are all equal. We see that any element in the direct sum can be approximated by a sequence of elements in the algebraic sum. This direct sum is a closed two-sided ideal in the product.
+
+	The product has the following categorical universal property: We have \textbf{(surjective) $^*$-homomorphisms} $\pi_j:  \prod_{i \in I} A_i \to A_j$ for all $j \in I$. If $B$ is any $C^*$-algebra with $^*$-homomorphisms $\phi_j \to A_j$ for every $j \in I$, there is a unique $^*$-homomorphism $\phi: B \to \prod_{i \in I} A_i$ such that  $\pi_j \circ \phi = \phi_j$. This is equivalent to the commutativity of the following diagram:
+	\begin{equation*}
+		\begin{tikzcd}
+			B \arrow{r}{\phi_j} \arrow{d}{\phi} & A_j\\
+			A  \arrow[swap]{ur}{\pi_j}
+		\end{tikzcd}
+	\end{equation*}
+\end{remark}
+
+\begin{exercise}[5]
+	$X$ is a locally compact Hausdorff space that can be written as $X = U \cup V$ with open and disjoint $U,V$ (so $U,V$ are clopen). We want to prove $C_0(X) \simeq C_0(U) \oplus C_0(V)$. To build this map, we map $f \mapsto (f|_U, f|_V)$. We check that this is well-defined and a $^*$-isomorphism.
+\end{exercise}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
