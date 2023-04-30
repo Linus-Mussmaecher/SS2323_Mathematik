@@ -23,6 +23,88 @@
 
 \newpage
 
+\section{Topological Basics}
+
+Let $X$ be a topological space, that is there exists a subset $\topology{O}(X) \in \mathds{P}(X)$. 
+
+\begin{definition}
+	$X$ is \textbf{Hausdorff} if for all $x,y \in X$ there exist open sets $U,V \in \topology{O}(X)$ such that $x \in U, y \in V$ and $U \cap V = \emptyset$.
+
+	$X$ is \textbf{locally Hausdorff} if for all $x \in X$ there exists an open neighborhood $U \in \topology{O}(X)$ such that $U$ is Hausdorff with the relative topology from $X$.
+\end{definition}
+
+\begin{example}[Snake with two heads]
+	We consider the space $[0,1] \cup \{1^+\}$ equipped with a topology such that both the subspace $[0,1]$ and $[0,1] \setminus \{1\} \cup \{1^+\}$ are isomorphic to $[0,1]$. Then $X$ is compact, locally Hausdorff but not Hausdorff.
+\end{example}
+
+\begin{definition}
+	$X$ is compact if for every open cover $(U_i)_{i \in I}$ there exists a finite open subcover.
+
+	$X$ is locally compact if for every $x \in X$ there exists a neighborhood basis of $x$ consisting of open relatively compact subsets of $X$, that is for every open neighborhood $U$ of $x$ there exists and open neighborhood $V$ of $x$ such that $\closure{V}$ is compact and $\closure{V} \subset U$.
+\end{definition}
+
+Observation: For a locally Hausdorff $X$, $X$ is locally compact if and only if for all $x \in X$ there exists an open neighborhood $U$  of $x$ such that $\closure{U}$ is compact.
+
+\subsection{Results about locally compact Hausdorff spaces}
+
+Let $X$ be Hausdorff and locally compact.
+
+\begin{proposition}[Uryson's Lemma]
+	For all closed $F \subset X$ and all compact $K \subseteq X$ with $F \cap K = \emptyset$, there is a continuous function $f: X \to [0,1]$ such that $f|_K \equiv 1$ and $f|_F \equiv 0$.
+\end{proposition}
+
+\begin{proposition}[Tietze's extension theorem]
+	For all $K \subseteq X$ compact and $f: K \to \mathds{C}$ continuous, there exists and $\tilde f: X \to \mathds{C}$ continuous such that $\tilde f|_K \equiv f$.
+\end{proposition}
+
+\begin{proposition}[Alexandroff's compactification theorem]
+	$\tilde X = X \cup \{\infty\}$ ($\infty \notin K$) is a compact Hausdorff space with $\topology{O}_{\tilde X} = \topology{O}_X \cup \{ K^\complement \cup \{\infty\} \mid K \subseteq X \text{compact} \}$.
+
+	For example, compactifying $\mathds{R}$ yields the unit circle $\mathds{S}^1$.
+\end{proposition}
+
+\begin{proposition}
+	Conversely, if $Y$ is a compact Hausdorff space, then for all $y_0 \in Y$ the space $X = Y \setminus \{ y_0 \}$ is a locally compact Hausdorff space.
+\end{proposition}
+
+\begin{proposition}
+	More generally, if $Y$ is a locally compact Hausdorff space and $Z \subseteq Y$ is a difference of open and closed subsets of $Y$ (i.e. $Z = U \setminus F$ or $Z = F \setminus U$ where $U \subseteq Y$ is open and $F \subseteq Y$ is closed) then $Z$ is locally compact.
+\end{proposition}
+
+\begin{exercise}
+	Let $X$ be a locally compact Hausdorff space. The following are equivalent:
+	\begin{enumerate}[label=(\arabic*)]
+		\item $X$ is compact.
+		\item $C(X) = C_0(X)$ ($=C_b(X)$).
+		\item $C_0(X)$ is unital.
+		\item $1 \in C_0(X)$ where $1(x) = 1 \in \mathds{C}$ for all $x \in X$. 
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}~
+	\begin{itemize}
+		\item (1) $\then$ (2): Recall:
+		\begin{equation*}
+			C_0(X) = \{f \in C(X) \mid \forall_{\epsilon > 0} \{x \in X \mid |f(x)| \geq \epsilon \} \text{ is compact} \}
+		\end{equation*}
+		If $X$ is compact, then every closed subset of $X$ is compact, so all sets of form $\{ x \in X \mid |f(x)| \geq \epsilon \}$ are compact, and we have $C(X) = C_0(X)$.
+		\item (2) $\then$ (3): This is trivial because $C(X)$ is always unital.
+		\item (3) $\then$ (4): Suppose $C_0(X)$ is unital and let $f \in C_0(X)$ be the unit.
+		Then $f \cdot g = g$ for all $g \in C_0(X)$, that is $f(x) g(x) = 1$ for all $x \in X, g \in C_0(X)$.
+		By Uryson's Lemma, given $x_0 \in X$, there exists a $g \in C_0(X)$ with $g(x_0) = 1$ (by looking at $K = \{x_0\}$, take any precompact open neighborhood $U$ of $x$ and look at $ F := U^\complement \subseteq X$).
+		Then we have $f(x_0) = f(x_0) g(x_0) = g(x_0) = 1$.
+		As this is possible for every $x_0 \in X$, we have $f \equiv 1$.
+		\item (4) $\then$ (1): Suppose $f = 1 \in C_0(X)$.
+		Then choosing $\epsilon = \frac{1}{2}$ shows that $X = \{ x \in X \mid |f(x)| \geq \frac{1}{2} \}$ is compact.
+	\end{itemize}
+
+\end{proof}
+
+\begin{exercise}
+	Let $X$ be a locally compact Hausdorff space. Prove that $C_0(X) \simeq \{f \in C(\tilde X) \mid f(\infty) = 0 \}$.
+\end{exercise}
+
+
 \section{Exercise sheet 1}
 
 \begin{exercise}
