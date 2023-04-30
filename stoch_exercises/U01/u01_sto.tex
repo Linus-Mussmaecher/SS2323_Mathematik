@@ -1,85 +1,20 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 
-\usepackage[utf8]{inputenc} % allow utf-8 input
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}       % hyperlinks
-\usepackage{url}            % simple URL typesetting
-\usepackage{booktabs}       % professional-quality tables
-\usepackage{amsfonts}       % blackboard math symbols
-\usepackage{amsmath,amssymb}% more math symbols
-\usepackage{chngcntr}		% more math symbols
-\usepackage{dsfont}			% font with double lines for sets
-\usepackage{microtype}      % micro typography
-\usepackage{graphicx}		% including images
-\graphicspath{ {./figs/} }
-\usepackage{setspace}		% spacing
-\usepackage[german]{babel}	% german quotation marks etc.
-\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
-\usepackage{marvosym}		% more math symbols
-\usepackage{mathtools}		% more math symbols
-\usepackage{enumitem}		% better custom enumerations
-\setlist[enumerate, 1]{label=\roman*)}
-\usepackage{mathrsfs}
-\usepackage{tikz-cd}		% drawing custom diagrams
-\usepackage[a4paper]{geometry} % a4 paper
-\usepackage{enumitem,setspace,graphicx}
-\DeclareGraphicsExtensions{.pdf,.png,.eps,.jpg}
+% --- DATA ---
 
-
-\def\then{\ensuremath{\Rightarrow}} % =>;
-\def\since{\ensuremath{\Leftarrow}}
-\def\iff{\ensuremath{\Leftrightarrow}} % genau dann wenn
-\def\to{\ensuremath{\rightarrow}} % ->;
-\def\Oh{\ensuremath{\mathcal{O}}} % Landau-Notation beispielsweise $\Oh(n)$
-\def\N{\ensuremath{\mathbb{N}}}
-\def\R{\ensuremath{\mathbb{R}}}
-\def\C{\ensuremath{\mathbb{C}}}
-\def\S{\ensuremath{\mathbb{S}}}
-\def\id{\ensuremath{\text{id}}}
-\newcommand{\angles}[1]{\left\langle #1 \right\rangle}
-
-\newcommand{\includetask}[2][pages=-]{
-	\includepdf[#1]{#2}
-	\addtocounter{subsection}{1}
-}
-
-%pretty epsilon
-\let\oldepsilon\epsilon
-\let\epsilon\varepsilon
-\let\varepsilon\oldepsilon
-%pretty phi
-\let\oldphi\phi
-\let\phi\varphi
-\let\varphi\oldphi
-
-% ---
-
-% --- DIESES 3 FELDER SIND AUSZUFÜLLEN ---
+\def\lecture{Stochastik 2}
+\def\authors{Linus Mußmächer}
 \def\sheetNumber{01}
-\def\names{Linus Mußmächer} 
-\def\sumPoints{30} 
+%\def\sumPoints{30} 
 
-\setcounter{section}{\sheetNumber}
+% --- PREAMBLE ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+\input{../../preambles/exercise_preamble.tex}
 
 \begin{document}
 
-\begin{doublespace}
-	\begin{center}
-		\textbf{\Large{Übungsblatt \sheetNumber}}\\
-		\textbf{\Large{Stochastik 2}}\\
-		Abgabe von: \textbf{\names}\\
-		\today
-	\end{center}
-	%	\hfill  {\large Punkte: $\boxed{\qquad  /\; \sumPoints}$}\\
-\end{doublespace}
-
-%\vspace{3cm}
-
-%\begin{center}
-%	\includegraphics[width=0.5\textwidth]{pi.png}
-%\end{center}
-
-%\newpage
+\makeexheaderger
 
 \subsection{Zentralübung}
 
@@ -149,7 +84,7 @@
 	      \begin{equation*}
 		      f_{Y}(y) = \frac{\exp\left(- y / 2\right)}{\sqrt{2 \pi y}} \cdot \mathds{1}_{[0, \infty)}\text{.}
 	      \end{equation*}
-	\item Da die Dichte der Normalverteilung absolutstetig und $\exp: \R \to \R^+$ stetig differenzierbar mit strikt positiver Ableitung ist, können wir Satz 3.52. anwenden. Dann hat $Z$ die Dichte
+	\item Da die Dichte der Normalverteilung absolutstetig und $\exp: \mathds{R} \to \mathds{R}^+$ stetig differenzierbar mit strikt positiver Ableitung ist, können wir Satz 3.52. anwenden. Dann hat $Z$ die Dichte
 	      \begin{align*}
 		      f_Z(z) & = \frac{f_U(\exp^{-1}(z))}{|\exp'(\exp^{-1}(z))|} \cdot \mathds{1}_{(0, \infty)} = \frac{\frac{1}{\sigma \sqrt{2 \pi}} \exp\left(-\frac{1}{2} \left(\frac{\ln(z) - \mu}{\sigma}\right)^2\right)}{|z|} \cdot \mathds{1}_{(0, \infty)} \\
 		             & = \frac{1}{ \sqrt{2 \pi \sigma^2} z} \exp\left( -\frac{(\ln(z) - \mu)^2}{2\sigma^2}\right)\cdot \mathds{1}_{(0, \infty)}\text{.}
@@ -203,15 +138,18 @@
 	      \end{center}
 	\item Wir betrachten
 	      \begin{align*}
-		      \int_{\R} f d\mu & = \int_{R^-} \underbrace{f}_{=0} d\mu + \int_{\R^+ \setminus \N_0} f d\mu + \int_{\N_0} f d\mu\text{.}
+		      \int_{\mathds{R}} f d\mu & = \int_{R^-} \underbrace{f}_{=0} d\mu + \int_{\mathds{R}^+ \setminus \mathds{N}_0} f d\mu + \int_{\mathds{N}_0} f d\mu\text{.}
 	      \end{align*}
-	      Auf $\R \setminus \N_0$ entspricht $\mu$ dem Lebesgue-Maß, da $\delta_k|_{\R\setminus \N_0} \equiv 0$ für alle $k \in \N_0$. Da $\N_0$ bezüglich des Lebesgue-Maßes eine Nullmenge darstellt, können wir also, um das zweite Integral zu erhalten, auch bezüglich des Lebesgue-Maßes von $0$ bis $\infty$ über $\exp(-2x)$ integrieren. Außerdem lässt sich $f$ auf jeder Menge der Form $\{k\}, k \in \N_0$ durch die konstante Funktion $\frac{1}{2e} \frac{1}{k!}$ darstellen. Somit ergibt sich
+	      Auf $\mathds{R} \setminus \mathds{N}_0$ entspricht $\mu$ dem Lebesgue-Maß, da $\delta_k|_{\mathds{R} \setminus \mathds{N}_0} \equiv 0$ für alle $k \in \mathds{N}_0$.
+		  Da $\mathds{N}_0$ bezüglich des Lebesgue-Maßes eine Nullmenge darstellt, können wir also, um das zweite Integral zu erhalten, auch bezüglich des Lebesgue-Maßes von $0$ bis $\infty$ über $\exp(-2x)$ integrieren.
+		  Außerdem lässt sich $f$ auf jeder Menge der Form $\{k\}, k \in \mathds{N}_0$ durch die konstante Funktion $\frac{1}{2e} \frac{1}{k!}$ darstellen.
+		  Somit ergibt sich
 	      \begin{align*}
-		      \int_{\R} f d\mu & = 0 + \int_{0}^{\infty} \exp(-2x) dx + \sum_{k=0}^{\infty} \int_{\{k\}} f d\mu                                                                       \\
+		      \int_{\mathds{R}} f d\mu & = 0 + \int_{0}^{\infty} \exp(-2x) dx + \sum_{k=0}^{\infty} \int_{\{k\}} f d\mu                                                                       \\
 		                       & = \left[-\frac{1}{2} \exp(-2x)\right]_0^\infty + \sum_{k=0}^{\infty} \frac{1}{2e} \frac{1}{k!} \underbrace{\mu(\{k\})}_{=1}                          \\
 		                       & = -\frac{1}{2} \cdot 0 + \frac{1}{2} \cdot 1 + \frac{1}{2e} \underbrace{\sum_{k = 0}^{\infty} \frac{1^k}{k!}}_{=e^1} = \frac{1}{2} + \frac{1}{2} = 1
 	      \end{align*}
-	      und damit $\mathds{P}(\R) = 1$.
+	      und damit $\mathds{P}(\mathds{R}) = 1$.
 \end{enumerate}
 
 \end{document}

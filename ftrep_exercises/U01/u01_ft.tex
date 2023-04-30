@@ -1,85 +1,22 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 
-\usepackage[utf8]{inputenc} % allow utf-8 input
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}       % hyperlinks
-\usepackage{url}            % simple URL typesetting
-\usepackage{booktabs}       % professional-quality tables
-\usepackage{amsfonts}       % blackboard math symbols
-\usepackage{amsmath,amssymb}% more math symbols
-\usepackage{chngcntr}		% more math symbols
-\usepackage{dsfont}			% font with double lines for sets
-\usepackage{microtype}      % micro typography
-\usepackage{graphicx}		% including images
-\graphicspath{ {./figs/} }
-\usepackage{setspace}		% spacing
-\usepackage[german]{babel}	% german quotation marks etc.
-\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
-\usepackage{marvosym}		% more math symbols
-\usepackage{mathtools}		% more math symbols
-\usepackage{enumitem}		% better custom enumerations
-\setlist[enumerate, 1]{label=\roman*)}
-\usepackage{mathrsfs}
-\usepackage{tikz-cd}		% drawing custom diagrams
-\usepackage[a4paper]{geometry} % a4 paper
-\usepackage{enumitem,setspace,graphicx}
-\DeclareGraphicsExtensions{.pdf,.png,.eps,.jpg}
+% --- LANGUAGE ---
 
+\usepackage[german]{babel}	% language specific quotation marks etc.
 
-\def\then{\ensuremath{\Rightarrow}} % =>;
-\def\since{\ensuremath{\Leftarrow}}
-\def\iff{\ensuremath{\Leftrightarrow}} % genau dann wenn
-\def\to{\ensuremath{\rightarrow}} % ->;
-\def\Oh{\ensuremath{\mathcal{O}}} % Landau-Notation beispielsweise $\Oh(n)$
-\def\N{\ensuremath{\mathbb{N}}}
-\def\R{\ensuremath{\mathbb{R}}}
-\def\C{\ensuremath{\mathbb{C}}}
-\def\S{\ensuremath{\mathbb{S}}}
-\def\id{\ensuremath{\text{id}}}
-\newcommand{\angles}[1]{\left\langle #1 \right\rangle}
+% --- DATA ---
 
-\newcommand{\includetask}[2][pages=-]{
-	\includepdf[#1]{#2}
-	\addtocounter{subsection}{1}
-}
-
-%hübscheres epsilon
-\let\oldepsilon\epsilon
-\let\epsilon\varepsilon
-\let\varepsilon\oldepsilon
-%hübscheres phi
-\let\oldphi\phi
-\let\phi\varphi
-\let\varphi\oldphi
-
-% ---
-
-% --- DIESES 3 FELDER SIND AUSZUFÜLLEN ---
+\def\lecture{Repetitorium zur Funktionentheorie}
+\def\authors{Linus Mußmächer}
 \def\sheetNumber{01}
-\def\names{Linus Mußmächer} 
-\def\sumPoints{60} 
+\def\sumPoints{30} 
 
-\setcounter{section}{\sheetNumber}
+% --- PREAMBLE ---
+\input{../../preambles/exercise_preamble.tex}
 
 \begin{document}
 
-\begin{doublespace}
-	\begin{center}
-		\textbf{\Large{Übungsblatt \sheetNumber}}\\
-		\textbf{\Large{Repetitorium Funktionentheorie}}\\
-		Abgabe von: \textbf{\names}\\
-		\today
-	\end{center}
-	\hfill  {\large Punkte: $\boxed{\qquad  /\; \sumPoints}$}\\
-\end{doublespace}
-
-%\vspace{3cm}
-
-%\begin{center}
-%	\includegraphics[width=0.5\textwidth]{pi.png}
-%\end{center}
-
-%\newpage
+\makeexheaderger
 
 \subsection{Komplexe Identitäten}
 Es ist
@@ -113,7 +50,7 @@ Dies ist die Parallelogrammidentität, d.h. die Summe der Quadrate der Seiten ei
 \subsection{}
 
 \begin{enumerate}
-	\item Da $z \mapsto z$ und $z \mapsto \overline{z}$ stetig sind, ist auch die Abbildung $f: \C \to \R, z \mapsto \sqrt{z \cdot \overline{z}} + 1/2 (z + \overline{z}) = |z| + \Re(z)$ stetig. Dann ist das Urbild der offenen Menge $(1, \infty) \subseteq \R$ unter $f$ offen, also $\{z \in \mathds{C} \mid f(z) > 1\}$ offen. Dann ist ihr Komplement $A = \{z \in \mathds{C} \mid f(z) \leq 1\}$ also abgeschlossen in $\mathds{C}$.
+	\item Da $z \mapsto z$ und $z \mapsto \overline{z}$ stetig sind, ist auch die Abbildung $f: \mathds{C} \to \mathds{R}, z \mapsto \sqrt{z \cdot \overline{z}} + 1/2 (z + \overline{z}) = |z| + \Re(z)$ stetig. Dann ist das Urbild der offenen Menge $(1, \infty) \subseteq \mathds{R}$ unter $f$ offen, also $\{z \in \mathds{C} \mid f(z) > 1\}$ offen. Dann ist ihr Komplement $A = \{z \in \mathds{C} \mid f(z) \leq 1\}$ also abgeschlossen in $\mathds{C}$.
 	
 	$A$ ist nicht kompakt, denn für alle $a \in \mathds{R}_{<0}$ gilt $|a| - \Re(a) = 0 \leq 1$, d.h. die gesamte negative reelle Achse ist in $A$ enthalten. Diese ist aber nicht beschränkt und damit nicht kompakt, womit auch $A$ selbst nicht kompakt sein kann.
 	\item 

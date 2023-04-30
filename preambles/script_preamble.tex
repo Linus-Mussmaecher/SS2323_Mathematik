@@ -1,0 +1,89 @@
+% --- LANGUAGE ---
+
+% Needs to be set individually!
+%\usepackage[english]{babel}	% language specific quotation marks etc.
+
+% --- OTHER ---
+
+\usepackage{booktabs}       % professional-quality tables
+\usepackage[table]{xcolor}	% color
+\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
+\usepackage{enumitem}		% better custom enumerations
+\setlist[enumerate, 1]{label=(\roman*)}
+\usepackage{etoolbox}		% toolbox for command modification
+
+% --- FONTS & TYPESETTING ---
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{dsfont}			% font with double lines for sets
+\usepackage[german,ruled,vlined,linesnumbered,commentsnumbered,algoruled]
+{algorithm2e} 				%pseudo code
+\usepackage{listings}		%java code
+\usepackage{csquotes}
+
+% --- URLS ---
+
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}   	% hyperlinks
+\usepackage{url}            % simple URL typesetting
+
+% --- MATH SYMBOLS ---
+
+\usepackage{amsmath,amssymb}% more math symbols
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{latexsym}		% more math symbols
+\usepackage{chngcntr}		% more math symbols
+\usepackage{mathrsfs}		% math-fonts
+%\usepackage{marvosym}		% more math symbols (conflicts with Waldmann)
+\usepackage{mathtools}		% more math symbols
+\usepackage{nchairx}		% Waldmann package for general math symbols and operators
+% theorem formatting (contained in Waldmann)
+%\usepackage[amsmath,thmmarks,framed,thref]{ntheorem}
+
+% --- GRAPHICS & CAPTIONS ----
+
+\usepackage{graphicx}		% including images
+\graphicspath{ {./figs/} }
+\usepackage{subcaption}		% custom caption formatting
+\DeclareCaptionLabelFormat{custom}{ \textbf{#1 #2}}
+\captionsetup{format=hang}
+\captionsetup{width=0.9\textwidth,labelformat=custom}
+
+% --- TIKZ ---
+
+\usepackage{tikz}			% basic tikz for custom images
+\usetikzlibrary{cd}			% custom diagrams
+\usetikzlibrary{external}	% externalize images for faster compilation
+\tikzexternalize[prefix=figures/]
+\AtBeginEnvironment{tikzcd}{\tikzexternaldisable} %fix cd/externalize
+\AtEndEnvironment{tikzcd}{\tikzexternalenable}
+\usepackage{pgfplots}		% custom plotting
+\usepgfplotslibrary{colormaps}
+\pgfplotsset{compat=newest}	
+\usetikzlibrary{patterns}	% custom patterns
+
+% --- FORMAT ---
+
+\usepackage[a4paper]{geometry} % a4 paper
+\usepackage{setspace}		% spacing
+\usepackage[nobottomtitles*]{titlesec} %prevent section titles from sometimes being on the bottom of a page
+\usepackage{titlesec}
+\allowdisplaybreaks			% allow page breaks within math environments
+
+% --- CUSTOM COMMANDS ---
+%Logic
+\newcommand{\then}{\Rightarrow}
+\newcommand{\since}{\Leftarrow}
+\renewcommand{\iff}{\ensuremath{\Leftrightarrow}}
+
+%pretty epsilon
+\let\oldepsilon\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\oldepsilon
+%pretty phi
+\let\oldphi\phi
+\let\phi\varphi
+\let\varphi\oldphi
+
+%matrix
+\newcommand{\qmatrix}[1]{\ensuremath{\left(\begin{matrix}#1\end{matrix}\right)}}

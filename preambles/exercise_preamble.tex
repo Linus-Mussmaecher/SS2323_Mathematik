@@ -1,0 +1,126 @@
+% === USAGE ===
+
+% when using this preamble, setup your environment variables like this beforehand:
+
+
+% \title{Stochastik 2}  %Title of exercise 
+% \def\lecture{Stochastik 2}
+% \def\authors{Linus Mußmächer}
+% \def\sheetNumber{02}
+% \def\sumPoints{30}      % maximum number of points (leave undefined)
+
+% then use one of these commands (german or english) to print the header:
+
+% \makeexheaderger
+
+% and finally use subsections for your subtasks - they will be numbered as <sheetNumber><task number> by themselves
+
+% if you have an exercise as an external .pdf, use \includetask to include it and increase the task counter
+
+
+% --- OTHER ---
+
+\usepackage{booktabs}       % professional-quality tables
+\usepackage[table]{xcolor}	% color
+\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
+\usepackage{enumitem}		% better custom enumerations
+\setlist[enumerate, 1]{label=(\roman*)}
+\usepackage{etoolbox}		% toolbox for command modification
+
+% --- FONTS & TYPESETTING ---
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{dsfont}			% font with double lines for sets
+\usepackage[german,ruled,vlined,linesnumbered,commentsnumbered,algoruled]
+{algorithm2e} 				%pseudo code
+\usepackage{listings}		%java code
+\usepackage{csquotes}
+
+% --- URLS ---
+
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}   	% hyperlinks
+\usepackage{url}            % simple URL typesetting
+
+% --- MATH SYMBOLS ---
+
+\usepackage{amsmath,amssymb}% more math symbols
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{latexsym}		% more math symbols
+\usepackage{chngcntr}		% more math symbols
+\usepackage{mathrsfs}		% math-fonts
+\usepackage{mathtools}		% more math symbols
+\usepackage{nchairx}		% Waldmann package for general math symbols
+
+% --- GRAPHICS & CAPTIONS ----
+
+\usepackage{graphicx}		% including images
+\graphicspath{ {./figs/} }
+\usepackage{subcaption}		% custom caption formatting
+\DeclareCaptionLabelFormat{custom}{ \textbf{#1 #2}}
+\captionsetup{format=hang}
+\captionsetup{width=0.9\textwidth,labelformat=custom}
+\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
+
+% --- FORMAT ---
+
+\usepackage[a4paper]{geometry} % a4 paper
+\usepackage{setspace}		% spacing
+\usepackage{titlesec}
+\allowdisplaybreaks			% allow page breaks within math environments
+
+% --- CUSTOM COMMANDS ---
+%Logic
+\newcommand{\then}{\Rightarrow}
+\newcommand{\since}{\Leftarrow}
+\renewcommand{\iff}{\ensuremath{\Leftrightarrow}}
+
+%pretty epsilon
+\let\oldepsilon\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\oldepsilon
+%pretty phi
+\let\oldphi\phi
+\let\phi\varphi
+\let\varphi\oldphi
+
+\newcommand{\includetask}[2][pages=-]{
+    \includepdf[#1]{#2}
+    \addtocounter{subsection}{1}
+}
+
+% set-up for exercise specific stuff
+\ifdef{\sheetNumber}{
+    \setcounter{section}{\sheetNumber}
+}{}
+
+\usepackage{titling}
+\newcommand{\makeexheaderger}{
+    \begin{doublespace}
+        \begin{center}
+            \textbf{\Large{Übungsblatt \sheetNumber}}\\
+            \textbf{\Large\lecture}\\
+            Abgabe von: \textbf{\authors}\\
+            \today
+        \end{center}
+        \ifdef {\sumPoints}
+        {
+            \hfill  \large Punkte: $\boxed{\qquad  /\; \sumPoints}$\\
+        }{}
+    \end{doublespace}
+}
+
+\newcommand{\makeexheadereng}{
+    \begin{doublespace}
+        \begin{center}
+            \textbf{\Large{Exercise Sheet \sheetNumber}}\\
+            \textbf{\Large\lecture}\\
+            Abgabe von: \textbf{\authors}\\
+            \today
+        \end{center}
+        \ifdef {\sumPoints}
+        {
+            \hfill  \large Points: $\boxed{\qquad  /\; \sumPoints}$\\
+        }{}
+    \end{doublespace}
+}

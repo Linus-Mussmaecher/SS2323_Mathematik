@@ -1,85 +1,22 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 
-\usepackage[utf8]{inputenc} % allow utf-8 input
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}       % hyperlinks
-\usepackage{url}            % simple URL typesetting
-\usepackage{booktabs}       % professional-quality tables
-\usepackage{amsfonts}       % blackboard math symbols
-\usepackage{amsmath,amssymb}% more math symbols
-\usepackage{chngcntr}		% more math symbols
-\usepackage{dsfont}			% font with double lines for sets
-\usepackage{microtype}      % micro typography
-\usepackage{graphicx}		% including images
-\graphicspath{ {./figs/} }
-\usepackage{setspace}		% spacing
-\usepackage[german]{babel}	% german quotation marks etc.
-\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
-\usepackage{marvosym}		% more math symbols
-\usepackage{mathtools}		% more math symbols
-\usepackage{enumitem}		% better custom enumerations
-\setlist[enumerate, 1]{label=\roman*)}
-\usepackage{mathrsfs}
-\usepackage{tikz-cd}		% drawing custom diagrams
-\usepackage[a4paper]{geometry} % a4 paper
-\usepackage{enumitem,setspace,graphicx}
-\DeclareGraphicsExtensions{.pdf,.png,.eps,.jpg}
+% --- LANGUAGE ---
 
+\usepackage[german]{babel}	% language specific quotation marks etc.
 
-\def\then{\ensuremath{\Rightarrow}} % =>;
-\def\since{\ensuremath{\Leftarrow}}
-\def\iff{\ensuremath{\Leftrightarrow}} % genau dann wenn
-\def\to{\ensuremath{\rightarrow}} % ->;
-\def\Oh{\ensuremath{\mathcal{O}}} % Landau-Notation beispielsweise $\Oh(n)$
-\def\N{\ensuremath{\mathbb{N}}}
-\def\R{\ensuremath{\mathbb{R}}}
-\def\C{\ensuremath{\mathbb{C}}}
-\def\S{\ensuremath{\mathbb{S}}}
-\def\id{\ensuremath{\text{id}}}
-\newcommand{\angles}[1]{\left\langle #1 \right\rangle}
+% --- DATA ---
 
-\newcommand{\includetask}[2][pages=-]{
-	\includepdf[#1]{#2}
-	\addtocounter{subsection}{1}
-}
-
-%hübscheres epsilon
-\let\oldepsilon\epsilon
-\let\epsilon\varepsilon
-\let\varepsilon\oldepsilon
-%hübscheres phi
-\let\oldphi\phi
-\let\phi\varphi
-\let\varphi\oldphi
-
-% ---
-
-% --- DIESES 3 FELDER SIND AUSZUFÜLLEN ---
+\def\lecture{Repetitorium zu Differenzialgleichungen}
+\def\authors{Linus Mußmächer}
 \def\sheetNumber{01}
-\def\names{Linus Mußmächer} 
 \def\sumPoints{30} 
 
-\setcounter{section}{\sheetNumber}
+% --- PREAMBLE ---
+\input{../../preambles/exercise_preamble.tex}
 
 \begin{document}
 
-\begin{doublespace}
-	\begin{center}
-		\textbf{\Large{Übungsblatt \sheetNumber}}\\
-		\textbf{\Large{Repetitorium Funktionentheorie}}\\
-		Abgabe von: \textbf{\names}\\
-		\today
-	\end{center}
-	\hfill  {\large Punkte: $\boxed{\qquad  /\; \sumPoints}$}\\
-\end{doublespace}
-
-%\vspace{3cm}
-
-%\begin{center}
-%	\includegraphics[kwidth=0.5\textwidth]{pi.png}
-%\end{center}
-
-%\newpage
+\makeexheaderger
 
 \subsection{Trennung der Variablen}
 
@@ -109,7 +46,7 @@ wobei wir aufgrund von $y_0 < 0$ den negativen Ast wählen. Diese Lösung existi
 \end{equation*}
 Das maximale Existenzintervall ist also $\left(-\infty, \frac{x_0}{y_0^2 + 1}\right]$ und
 \begin{equation*}
-	y: \left(-\infty, \frac{x_0}{y_0^2 + 1}\right] \to \R, x \mapsto  -\sqrt{\frac{x}{x_0} (y_0^2 + 1) - 1}
+	y: \left(-\infty, \frac{x_0}{y_0^2 + 1}\right] \to \mathds{R}, x \mapsto  -\sqrt{\frac{x}{x_0} (y_0^2 + 1) - 1}
 \end{equation*}
 ist die maximale eindeutige Lösung des Anfangswertproblems.
 
@@ -121,7 +58,7 @@ ist die maximale eindeutige Lösung des Anfangswertproblems.
 		      x' = x^2 \qquad x(0) = x_0
 	      \end{equation*}
 	      $f$ ist hier stetig und stetig differenzierbar, damit lokal lipschitzstetig, und genügt damit den Anforderungen. Separation der Variablen liefert hier die Lösung $\phi(t) = \frac{x_0}{1 - x_0 t}$. Diese ist insbesondere an der Stelle $\frac{1}{x_0}$ nicht definiert, wählen wir also beispielsweise $x_0 = 5$ so existiert $\phi$ nur auf dem Teilintervall $(-1, 1/5)$, nicht auf ganz $(-1,1)$.
-	\item Die Aussage ist korrekt. Die Funktion $f(t,x) = \exp(15 t) \cos(x(t)^7)$ ist auf ganz $\R \times \R$ definiert (und dort stetig und bezüglich $x$ lokal lipschitzstetig). Wegen $|cos(x)| \leq 1$ ist $f$ außerdem linear beschränkt, d.h. $|f(t,x)| \leq \exp(15 t)$ (man wähle in Satz 3.9 $a(t)  = 0$ und $b(t) = \exp(15 t)$). Satz 3.9 zeigt, dass dann jede Lösung der DGL auf ganz $\R$ existiert.
+	\item Die Aussage ist korrekt. Die Funktion $f(t,x) = \exp(15 t) \cos(x(t)^7)$ ist auf ganz $\mathds{R} \times \mathds{R}$ definiert (und dort stetig und bezüglich $x$ lokal lipschitzstetig). Wegen $|cos(x)| \leq 1$ ist $f$ außerdem linear beschränkt, d.h. $|f(t,x)| \leq \exp(15 t)$ (man wähle in Satz 3.9 $a(t)  = 0$ und $b(t) = \exp(15 t)$). Satz 3.9 zeigt, dass dann jede Lösung der DGL auf ganz $\mathds{R}$ existiert.
 \end{enumerate}
 
 \end{document}
