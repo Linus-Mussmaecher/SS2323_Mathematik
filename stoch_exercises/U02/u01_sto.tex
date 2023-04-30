@@ -1,0 +1,237 @@
+\documentclass[a4paper]{article}
+
+% --- OTHER ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+\usepackage{booktabs}       % professional-quality tables
+\usepackage[table]{xcolor}	% color
+\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
+\usepackage{enumitem}		% better custom enumerations
+\setlist[enumerate, 1]{label=(\roman*)}
+\usepackage{etoolbox}		% toolbox for command modification
+
+% --- FONTS & TYPESETTING ---
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{dsfont}			% font with double lines for sets
+\usepackage[german,ruled,vlined,linesnumbered,commentsnumbered,algoruled]
+{algorithm2e} 				%pseudo code
+\usepackage{listings}		%java code
+\usepackage{csquotes}
+
+% --- URLS ---
+
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue, urlcolor=blue]{hyperref}   	% hyperlinks
+\usepackage{url}            % simple URL typesetting
+
+% --- MATH SYMBOLS ---
+
+\usepackage{amsmath,amssymb}% more math symbols
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{latexsym}		% more math symbols
+\usepackage{chngcntr}		% more math symbols
+\usepackage{mathrsfs}		% math-fonts
+%\usepackage{marvosym}		% more math symbols (conflicts with Waldmann)
+\usepackage{mathtools}		% more math symbols
+\usepackage{nchairx}		% Waldmann package for general math symbols and operators
+% theorem formatting (contained in Waldmann)
+%\usepackage[amsmath,thmmarks,framed,thref]{ntheorem}
+
+% --- GRAPHICS & CAPTIONS ----
+
+\usepackage{graphicx}		% including images
+\graphicspath{ {./figs/} }
+\usepackage{subcaption}		% custom caption formatting
+\DeclareCaptionLabelFormat{custom}{ \textbf{#1 #2}}
+\captionsetup{format=hang}
+\captionsetup{width=0.9\textwidth,labelformat=custom}
+\usepackage{pdfpages}		% to include entire pdf pages in appendix etc.
+
+% --- BIBLIOGRAPHY ---
+%
+%\usepackage[backend=biber, citestyle=numeric, bibstyle=numeric, sorting=none]{biblatex} 	% bibliography
+%\bibliography{references}
+%\defbibheading{myheading}[Literatur]{\section{#1}}
+
+% --- TIKZ ---
+
+% \usepackage{tikz}			% basic tikz for custom images
+% \usetikzlibrary{cd}			% custom diagrams
+% \usetikzlibrary{external}	% externalize images for faster compilation
+% \tikzexternalize[prefix=figures/]
+% \AtBeginEnvironment{tikzcd}{\tikzexternaldisable} %fix cd/externalize
+% \AtEndEnvironment{tikzcd}{\tikzexternalenable}
+% \usepackage{pgfplots}		% custom plotting
+% \usepgfplotslibrary{colormaps}
+% \pgfplotsset{compat=newest}	
+% \usetikzlibrary{patterns}	% custom patterns
+
+% --- FORMAT ---
+
+\usepackage[a4paper]{geometry} % a4 paper
+\usepackage{setspace}		% spacing
+%\usepackage[nobottomtitles*]{titlesec} %prevent section titles from sometimes being on the bottom of a page
+\usepackage{titlesec}
+\allowdisplaybreaks			% allow page breaks within math environments
+%\doublespacing				% more spacing!
+% page skip every section
+%\let\oldsection\section
+%\renewcommand\section{\newpage\oldsection}
+
+% --- DATA ---
+
+\title{Übungen zur Stochastik}
+\author{Linus Mußmächer}
+\date{\today}
+\def\sheetNumber{02}
+\def\names{Linus Mußmächer} 
+\def\sumPoints{30} 
+
+\setcounter{section}{\sheetNumber}
+
+% --- CUSTOM COMMANDS ---
+%Logic
+\newcommand{\then}{\Rightarrow}
+\newcommand{\since}{\Leftarrow}
+\renewcommand{\iff}{\ensuremath{\Leftrightarrow}}
+
+%pretty epsilon
+\let\oldepsilon\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\oldepsilon
+%pretty phi
+\let\oldphi\phi
+\let\phi\varphi
+\let\varphi\oldphi
+
+\newcommand{\includetask}[2][pages=-]{
+	\includepdf[#1]{#2}
+	\addtocounter{subsection}{1}
+}
+
+% --- DOCUMENT ---
+
+\begin{document}
+
+\begin{doublespace}
+	\begin{center}
+		\textbf{\Large{Übungsblatt \sheetNumber}}\\
+		\textbf{\Large{Stochastik 2}}\\
+		Abgabe von: \textbf{\names}\\
+		\today
+	\end{center}
+	%	\hfill  {\large Punkte: $\boxed{\qquad  /\; \sumPoints}$}\\
+\end{doublespace}
+
+%\vspace{3cm}
+
+%\begin{center}
+%	\includegraphics[width=0.5\textwidth]{pi.png}
+%\end{center}
+
+%\newpage
+
+\subsection{Zentralübung}
+
+Es sei $f$ die Dichte von $X$. Dann ist aufgrund der Symmetrie von $X$ gerade, d.h. $f(x) = f(-x)$ für alle $x \in \mathds{R}$. Es folgt für die charakteristische Funktion von $X$:
+\begin{align*}
+	\phi_X(t) = \mathds{E}[\exp(i \langle t, X \rangle)] & = \int_{-\infty}^{\infty} \exp(i\langle t, X \rangle) f(x) dx                                                                                     \\
+	                                                     & = \int_{-\infty}^{0} \exp(i\langle t, X \rangle) f(x) dx + \int_{0}^{\infty} \exp(i\langle t, X \rangle) f(x) dx                                  \\
+	                                                     & = \int_{0}^{\infty} \exp(-i\langle t, X \rangle) f(-x) dx + \int_{0}^{\infty} \exp(i\langle t, X \rangle) f(x) dx                                 \\
+	                                                     & = \int_{0}^{\infty} (\overline{\exp(i\langle t, X \rangle)} + \exp(i\langle t, X \rangle)) f(x) dx
+	\\
+	                                                     & = \int_{0}^{\infty} \underbrace{2 \Re(\exp(i\langle t, X \rangle))}_{\in \mathds{R}} \underbrace{f(x)}_{\in \mathds{R}} dx \in \mathds{R}\text{.}
+\end{align*}
+Dies zeigt $\phi_X(t) \in \mathds{R}$ für alle $t \in \mathds{R}$, also ist $\phi_X$ rein reellwertig.
+
+\addtocounter{subsection}{1}
+
+\subsection{}
+
+\begin{enumerate}
+	\item Wir berechnen zuerst die Verteilung von $X_{(1)}$. Hierzu beachten wir, dass das Minimum von $X_1, \dots, X_n$ genau dann größer oder gleich $t \in \mathds{R}$ ist, wenn jeder der Werte $X_1, \dots, X_n$ größer oder gleich $t$ ist.
+
+	      \begin{align*}
+		      F_{(1)}(t)              & = P(X_{(1)} \leq t) = 1 - P(X_{(1) \geq t})                                                                                                                                                              \\
+		      \text{(Unabhängigkeit)} & = 1- P(X_1 \geq t \wedge X_2 \geq t \wedge \dots \wedge X_n \geq t)                                                                                                                                      \\
+		                              & = 1 - \prod_{i=1}^{n} P(X_i \geq t) = 1- \prod_{i=1}^{n} 1 - P(X_i \leq t)                                                                                                                             & \\
+		      \text{(3.47)}           & = 1 - \left(\prod_{i = 1}^{n} 1 - \left( 1 - \exp(- \lambda_i t) \mathds{1}_{[0, \infty)}(t)\right) \right)                                                                                              \\
+		                              & = \left( 1 - \prod_{i = 1}^{n} \exp(- \lambda_i t) \right) \mathds{1}_{[0, \infty)}(t) = \left( 1 - \exp\left( -t \cdot \sum_{i =1}^{n} \lambda_i  \right) \right) \mathds{1}_{[0, \infty)}(t)\text{.}
+	      \end{align*}
+	      Dies entspricht einer Exponentialverteilung mit Parameter $\sum_{i=1}^{n} \lambda_i$. Diese hat bekanntermaßen den Erwartungswert $\mathds{E}[X_{(1)}] = \left(\sum_{i=1}^{n} \lambda_i\right)^{-1}$.
+	\item
+
+	      Wir betrachten zuerst nur den Fall für zwei Variablen $X_1, X_2$. Dann ist $X_1 + X_2 = \max(X_1, X_2) + \min(X_1, X_2)$ und die Linearität des Erwartungswertes liefert
+	      \begin{align*}
+		      \mathds{E}[X_{(2)}] & = \mathds{E}[\max(X_1, X_2)] = \mathds{E}[X_1 + X_2 - \min(X_1, X_2)] \\ &= \mathds{E}[X_1] + \mathds{E}[X_2] - \mathds{E}[\min(X_1, X_2)]
+		      = \frac{1}{\lambda} + \frac{1}{\lambda} - \frac{1}{\lambda + \lambda} = \frac{1}{\lambda}(1 + \frac{1}{2})
+	      \end{align*}
+	      unter Verwendung von (a).
+	      Für allgemeines $X_{(n)}$ betrachten wir zuerst wieder die Verteilung und nutzen, dass das Maximum von $X_1, \dots, X_n$ genau dann kleiner oder gleich $t \in \mathds{R}$ ist, wenn alle Einzelvariablen kleiner oder gleich $t$ sind.
+	      \begin{align*}
+		      F_{(n)}(t)              & = P(X_{(n)} \leq t ) = P(X_1 \leq t \wedge \dots X_n \leq t)           \\
+		      \text{(Unabhängigkeit)} & = \prod_{i = 1}^{n} P(X_i \leq t)                                       \overset{\text{(3.47)}  }{=} \prod_{i = 1}^{n} (1 - \exp(-\lambda t)) \mathds{1}_{[0, \infty)}(t) \\
+		                              & = (1 - \exp(-\lambda t))^n \mathds{1}_{[0, \infty)}(t)
+	      \end{align*}
+	      Bezeichnen wir die Dichte dieser Verteilung mit $f_{(n)}$, so erhalten wir unseren Erwartungswert als ein Integral, das wir mithilfe des Satzes von Fubini-Tonelli umformen:
+	      \begin{align*}
+		      \mathds{E}[X_{(n)}] & = \int_{-\infty}^{\infty} t \cdot f_{(n)} (t) dt = \int_{0}^{\infty} t \cdot f_{(n)}(t) dt             \\
+		                          & = \int_{0}^{\infty} \int_{x}^{\infty} f_{(n)} (t) dt dx = \int_{0}^{\infty} \mathds{P}(X_{(n)} \geq x) \\
+		                          & = \int_{0}^{\infty} 1 - \mathds{P}(X_{(n)} \leq x) = \int_{0}^{\infty} 1 - F_{(n)}(t) dt\text{.}
+	      \end{align*}
+	      Dieses Integral lässt sich vielleicht direkt berechnen, aber es scheint kompliziert. Stattdessen wollen wir unter Verwendung von $\mathds{E}[X_{(2)}]$ (Erwartungswert des Maximums der ersten zwei Zufallsvariablen) den Wert $\mathds{E}[X_{(n)}]$ induktiv berechnen, indem wir das folgende Integral verwenden:
+	      \begin{align*}
+		      \mathds{E}[X_{(k)} - X_{(k-1)}] & = \int_{0}^{\infty} F_{(k-1)}(t) - F_{(k)}(t) dt                               \\
+		                                      & = \int_{0}^{\infty} (1 - \exp(-\lambda t))^{k-1} - (1 - \exp(-\lambda t))^k dt \\
+		                                      & = \int_{0}^{\infty} (1 - \exp(-\lambda t))^{k-1} \exp(-\lambda t) dt
+	      \end{align*}
+	      Substitution mit $x(t) = 1 - \exp(-\lambda t)$ und $\frac{d}{dt}x(t) = \lambda \exp(- \lambda t)$ liefert dann
+	      \begin{align*}
+		      \mathds{E}[X_{(k)} - X_{(k-1)}] & = \int_{0}^{1} \frac{1}{\lambda} x^{k-1} dx = \frac{1}{\lambda} \left[ \frac{x^k}{k} \right]_0^1 = \frac{1}{\lambda} \frac{1}{k}\text{.}
+	      \end{align*}
+	      Nun folgt unsere Aussage per Induktion. Den Induktionsanfang für $n = 2$ haben wir bereits eingangs gezeigt, und falls die Aussage für beliebiges aber festes $n-1 \in \mathds{N}$ bereits gezeigt ist, so erhalten wir für $n$:
+	      \begin{equation*}
+		      \mathds{E}[X_{(n)}] = \mathds{E}[X_{(n-1)}] + \mathds{E}[X_{(n)} - X_{(n-1)}] = \frac{1}{\lambda} \sum_{k =1 }^{n-1} \frac{1}{k} + \frac{1}{\lambda} \frac{1}{n} = \frac{1}{\lambda} \sum_{k =1 }^{n} \frac{1}{k}\text{.}
+	      \end{equation*}
+	      Dies zeigt die Aussage.
+\end{enumerate}
+
+\subsection{}
+
+\begin{enumerate}
+	\item Wir wissen bereits aus Beispiel 1.13, dass $\phi_{\delta_x}(t) = \exp(i t x)$ für das Dirac-Maß auf $\mathds{R}$. Unter Verwendung von $\cos(t) = \frac{1}{2} (\exp(-it) + \exp(-it))$ können wir daher folgern, dass $\cos$ die charakteristische Funktion der (diskreten) Zufallsvariable $X$ ist, die nach $\mu_X = \frac{1}{2}(\delta_{-1} + \delta_{1})$ verteilt ist und damit $P(X = -1) = P(X=1) = 1/2$ und $P(X = x) = 0$ für $x \notin \{-1,1\}$ erfüllt. Zum Beweis rechnen wir diese Behauptung noch nach:
+	      \begin{equation*}
+		      \phi_X(t) = \mathds{E}[\exp(itX)] = \frac{1}{2} \exp(it\cdot 1) + \frac{1}{2} \exp(it \cdot (-1)) = \frac{1}{2} (\exp(it) + \exp(-it))  = \cos(t)\text{.}
+	      \end{equation*}
+	      Weiterhin können wir $Y = \sum_{i = 1}^{n} X_i$ definieren, wobei $X_i$ voneinander unabhängige zu $X$ gleichverteilte Zufallsvariablen seien. Satz 1.15 zeigt dann
+	      \begin{equation*}
+		      \phi_Y(t) = \prod_{i=1}^{n} \phi_{X_i}(t) = \phi_X(t)^n = \cos(t)^n\text{.}
+	      \end{equation*}
+	      Somit ist die Aussage falsch.
+	\item Sei $f_Z$ die Dichte von $Z$, dann ist $f_Z(t) = \mathds{E}[\exp(itZ)] = \int_{-infty}^{\infty} \exp(itx) f_Z(x) dx$. Definieren wir $\tilde Z$ als Zufallsvariable mit der Dichte $f_{\tilde Z} = \frac{1}{2} (f_Z(t) + f_Z(-t))$, so erhalten wir
+	      \begin{align*}
+		      \phi_{\tilde Z}(t) & = \mathds{E[\exp(it\tilde Zi)]} = \int_{-\infty}^{\infty} \exp(itx) \frac{1}{2} (f_Z(x) + f_Z(-x)) dx                           \\
+		                         & = \frac{1}{2} \left( \int_{-\infty}^{\infty} \exp(itx)  f_Z(x) dx + \int_{-\infty}^{\infty} \exp(i(-t)(-x))  f_Z(-x) dx \right) \\
+		                         & = \frac{1}{2} \left( \phi_Z(t) + \phi_Z(-t) \right) = \Re(\phi_Z(t))\text{.}
+	      \end{align*}
+	      Somit ist die Aussage korrekt.
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
