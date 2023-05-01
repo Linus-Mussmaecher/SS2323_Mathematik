@@ -53,7 +53,15 @@ Dies ist die Parallelogrammidentität, d.h. die Summe der Quadrate der Seiten ei
 	\item Da $z \mapsto z$ und $z \mapsto \overline{z}$ stetig sind, ist auch die Abbildung $f: \mathds{C} \to \mathds{R}, z \mapsto \sqrt{z \cdot \overline{z}} + 1/2 (z + \overline{z}) = |z| + \Re(z)$ stetig. Dann ist das Urbild der offenen Menge $(1, \infty) \subseteq \mathds{R}$ unter $f$ offen, also $\{z \in \mathds{C} \mid f(z) > 1\}$ offen. Dann ist ihr Komplement $A = \{z \in \mathds{C} \mid f(z) \leq 1\}$ also abgeschlossen in $\mathds{C}$.
 	
 	$A$ ist nicht kompakt, denn für alle $a \in \mathds{R}_{<0}$ gilt $|a| - \Re(a) = 0 \leq 1$, d.h. die gesamte negative reelle Achse ist in $A$ enthalten. Diese ist aber nicht beschränkt und damit nicht kompakt, womit auch $A$ selbst nicht kompakt sein kann.
-	\item 
+	\item Das Wurzelkriterium liefert uns
+	\begin{equation*}
+	\frac{1}{R} = \lim_{n \to \infty} \sqrt[n]{\left(\frac{n-1}{n}\right)^{5n^2}} = \lim_{n \to \infty} \left(\frac{n-1}{n}\right)^{5n} = \lim_{n \to \infty} \frac{1}{\left(\frac{n}{n-1}\right)^{5n}}\text{.}
+	\end{equation*}
+	Durch Indexverschiebung erhalten wir daraus
+	\begin{equation*}
+		\frac{1}{R} = \lim_{n \to \infty} \frac{1}{\left(\frac{n+1}{n}\right)^{5(n+1)}} =  \lim_{n \to \infty} \Bigg( \frac{1}{ \underbrace{\left( 1 + \frac{1}{n} \right)^n }_{\to e} } \Bigg)^5 \cdot \underbrace{\left(\frac{n}{n+1}\right)^5}_{\to 1} = \frac{1}{e^5}\text{,}
+	\end{equation*}
+	also den Konvergenzradius $R = e^5$.
 \end{enumerate}
 
 \end{document}
