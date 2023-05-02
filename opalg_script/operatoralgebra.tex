@@ -23,7 +23,7 @@
 
 \newpage
 
-The set of all linear bounded operators $\algebra{L}(H) = \algebra{B}(H)$ on a given Banach space $H$ is a (Banach) algebra with $S \cdot T = S \circ T$.
+The set of all linear bounded operators $\algebra{L}(H) = \algebra{B}(H)$ on a given Banach space $H$ is a (Banach) algebra kkwith $S \cdot T = S \circ T$.
 $M \subseteq \algebra{L}$ is a Subalgebra such that $M^* \subseteq M$ where $T^*$ is the adjoint of $T$.
 This is also a closed subspace with respect to the strong topology. This is equivalent to $M = M''$ (when $X \subseteq \algebra{B}(H), X' = \{ T \in \algebra{B}(H) \mid TS = ST \ \forall_{ S \in X} \}$)
 
@@ -491,6 +491,131 @@ Recall from calculus that $\frac{d}{dx} \frac{1}{x} = -\frac{1}{x^2}$. Also reca
 	Then $(\algebra{A}, \|\cdot \|)$ is a normed (but not Banach) algebra.
 	For example, we see that $\lim_{m \to 0} 1 + X/m = 1 \in \inv(\algebra{A})$, but $1 + X/m \notin \inv(\algebra{A})$ and thus $\inv(\algebra{A})$ is not open (because the complement is not closed).
 \end{example}
+
+\begin{theorem}
+	If $\algebra{A}$ is a Banach algebra with unit $1$, then for all $a \in \algebra{A}$ the spectrum $\sigma(a) \subseteq \mathds{C}$ is closed and $\sigma(a) \subseteq \overline{B(0, \| a \|)} = D(0, \|a\|) \coloneq \{\lambda \in \mathds{C} \mid |\lambda| \leq \|a\| \} $. Therefore, $\sigma(a)$ is compact by the Heine-Borell theorem.
+\end{theorem}
+
+\begin{proof}
+	By definition
+	\begin{equation*}
+		\sigma(a) = \{ \lambda \in \mathds{C} \mid \lambda - a \notin \inv(\algebra{A}) \}
+	\end{equation*}
+	is the inverse image of the closed subset $\algebra{A} \setminus \inv(\algebra{A}) \subseteq \algebra{A}$ by the continuous function $\lambda \mapsto \lambda - a$.
+	Therefore, $\sigma(a)$ is closed.
+
+	Now if $|\lambda| \leq \|a\|$ then $\|\lambda^{-1} a\| < 1$.
+	Then $1 - \lambda^{-1} a \in \inv(\algebra{A})$.
+	Multiplying by $\lambda$ yields $\lambda - a \in \inv(\algebra{A})$.
+	Thus, $\{\lambda \in \mathds{C} \mid |\lambda| > \|a\|\} \subseteq \rho(a)$ and thus $\sigma(a) \subseteq D(0, \|a\|)$. 
+\end{proof}
+
+\begin{lemma}
+	Let $\algebra{A}$ be a unital Banach algebra and $a \in \algebra{A}$.
+	Then, the map $R_a: \rho(a) \subseteq \mathds{C} \to \algebra{A}, \lambda \mapsto (a - \lambda)^{-1}$ is Frechet-differentiable.
+\end{lemma}
+
+\begin{proof}
+	This follows from the following general result:
+
+	If $g: U \overset{\text{open}}{\subseteq} X \to Y$ and $f: V \overset{\text{open}}{\subseteq} Y \to Z$ for Banach spaces $X,Y,Z$ with $g(U) \subseteq V$ are differentiable at $x_0 \in U$ or respectively $y_0 = g(x_0) \in V$, then $f \circ g$ is differentiable and $(f \circ g)' (x_0) = f'(g(x_0)) g'(x_0)$. 
+\end{proof}
+
+Observation: For $R_a(\lambda) = (a - \lambda)^{-1}$ we get $R_a'(\lambda) = (a - \lambda)^{-2}$.
+We have $\mathcal{L}(\mathds{C}, \algebra{A}) \simeq \algebra{A}$ by $T \mapsto T(1)$.
+Recall that if $f(a) = a^{-1}$ yields $f'(a) b = - a^{-1} b a^{-1}$.
+
+\begin{theorem}[Gelfand]
+	If $\algebra{A} \neq 0$ is a unital Banach algebra and $a \in \algebra{A}$ then $\sigma(a) \neq \emptyset$.
+\end{theorem}
+
+\begin{proof}
+	Suppose $\sigma(a) = \emptyset$.
+	Idea: Show that $R_a: \rho(a) \subseteq \mathds{C} \to \algebra{A}, \lambda \mapsto (a - \lambda)^{-1} = \frac{1}{a - \lambda}$ is bounded and differentiable and achieve a contradiction by Liouville's theorem. 
+
+	Claim: $\| (a - \lambda)^{-1}\| < \|a\|^{-1}$ if $|\lambda| > 2 \|a\|$.
+	Indeed, if $|\lambda| > 2 \|a\|$ then $\| \lambda^{-1} a \| < \frac{1}{2}$, and in particular $1 - \lambda^{-1} a \in \inv(\algebra{A})$ and
+	\begin{equation*}
+		\left\| (1 - \lambda^{-1} a)^{-1} - 1 \right\| = \left\| \sum_{n = 1}^{\infty} (\lambda^{-1} a)^{-1} \right\| \leq \sum_{n = 1}^{\infty} \|\lambda^{-1} a\|^n = \frac{\| \lambda^{-1} a \|}{1 - \|\lambda^{-1} a\|} \leq 2 \|\lambda^{-1} a\| < 1\text{.}
+	\end{equation*} 
+	From here we deduce that $\|(1 - \lambda^{-1}a)^{-1}\| < 2$ and thus
+	\begin{equation*}
+		\|(a - \lambda)^{-1}\| < \|\lambda^{-1} (\lambda^{-1}a - 1)^{-1}\| = \frac{\|(1 - \lambda^{-1} a)^{-1}\|}{|\lambda|} < \frac{2}{\lambda} < \frac{1}{\|\lambda\|}\text{.}
+	\end{equation*}
+
+	So $R_a: \mathds{C} \to \algebra{A}$ is bounded outside $\closure{B(0, 2 \|a\|}$.
+	Since $R_a$ is continuous, it is bounded on $\mathds{C} \to \algebra{A}$.
+	Let $\phi \in \algebra{A}^*$ be a bounded linear functional in $\mathcal{L}(\algebra{A}, \mathds{C})$. 
+	Thus, $\phi$ is differentiable with $\phi'(a) = \phi$ for all $a \in \algebra{A}$.
+	Then $\phi \circ R_a$ is differentiable and bounded, so it is an \enquote{integer} function.
+	By Liouville's theorem, $\phi \circ R_a$ is constant.
+	Therefore, $\phi \circ R_a(x) = \phi \circ R_a(y)$ for all $x,y \in \algebra{A}$.
+	Especially, we have $\phi((a - \lambda)^{-1}) = \phi(a^{-1})$ for all $\phi$.
+	Hahn-Banach shows $(a - \lambda)^{-1} = a^{-1}$ for all $\lambda$, proving $a - \lambda = a$ for all $a,\lambda$.
+	This is a contradiction.
+\end{proof}
+
+\begin{theorem}[Gelfand-Mazur]
+	If $\algebra{A}$ is a unital Banach algebra and every $a \neq 0$ admits an inverse ($\algebra{A}$ is a field), then $\algebra{A} = \mathds{C} \cdot 1$.
+\end{theorem}
+
+\begin{proof}
+	By the assumption, $\inv(\algebra{A}) = \algebra{A} \setminus \{0\}$.
+	By the previous theorem, if $a \in \algebra{A}$ there exists some $\lambda \in \sigma(a)$, so $a - \lambda \notin \inv(\algebra{A})$, so $a - \lambda = 0$ and thus $a = \lambda \cdot 1$.
+\end{proof}
+
+\begin{corollary}
+	Let $\mathds{C}(X) = \left\{ \frac{p(x)}{q(x)} \mid p(x), q(x) \in \mathds{Q}[X] \right\}$ is a field, but it cannot be turned into a Banach algebra.
+\end{corollary}
+
+\begin{theorem}[Adjointing units - unitization of algebras]
+	Let $\algebra{A}$ be any algebra.
+	Consider $\tilde{ \algebra{A}} = \algebra{A} \oplus \mathds{C}$ as a vector space.
+	We write elements of $\tilde{\algebra{A}}$ as $a + \lambda \cdot 1 \coloneq (a, \lambda)$. Think of $a = (a,0)$ and $\lambda = (a, \lambda)$. 
+	Define
+	\begin{align*}
+		(a + \lambda 1) (b + \lambda' 1) &= (ab + \lambda' a + \lambda ab + b) + \lambda \cdot \lambda'\text{.}
+	\end{align*}
+	Ten (exercise $\tilde{\algebra{A})}$ becomes a unital algebra with $1_\algebra{A} = 1 = (0,1)$. 
+
+	Notice that $\algebra{A}$ is an ideal in $\tilde{\algebra{A}}$.
+
+	Moreover, we get a short exact sequence
+	\begin{equation*}
+		0 \to \algebra{A} \hookrightarrow \tilde{\algebra{A}} \to \mathds{C} \to 0
+	\end{equation*}
+	so $1 + \lambda \mapsto \lambda$.
+
+ 	If $\algebra{A}$ is a normed algebra, then $\tilde{\algebra{A}}$ is normed by $\|a + \lambda \cdot 1\| \coloneq \|a\| + |\lambda|$
+
+	If $\algebra{A}$ is Banach and closed, then so is $\algebra{A}$.
+
+	If $\algebra{A}$ is a $^*$-algebra, then so is $\tilde{\algebra{A}}$ with $(a + \lambda 1)^*$. 
+
+	If $\algebra{A}$ is a (Banach) normed $^*$-algebra, then so is $\tilde A$.
+
+	If $\algebra{A}$ is a $C^*$-algebra, in general the norm given above is not a Norm on $\algebra{A}$, but $\|a + \lambda \cdot 1\| \coloneq \sup_{b \in \algebra{A}, b \in \algebra{B}, b \leq 1} \|a b + \lambda b\|$ is. 
+\end{theorem}
+
+\begin{exercise}\label{exe:AplusC}
+	If $\algebra{A}$ is already unital, then $\tilde A \simeq A \oplus \mathds{C}$ as algebras by $a + \lambda \cdot 1 \mapsto (a + \lambda 1_\algebra{A}, -\lambda) $. 
+\end{exercise}
+
+\begin{definition}
+	If $\algebra{A}$ is any algebra, then $\sigma(a) \coloneq \sigma_{\tilde A}(a)  = \sigma_{\tilde A}(a,0)$.
+	Thus, we can identify $A \hookrightarrow \tilde A$.
+\end{definition}
+
+\begin{corollary}~
+	\begin{enumerate}
+		\item If $A$ is any algebra, then we always have $0 \in \sigma_A(a)$ because if $a \in A$ then $a \notin \inv(\tilde{\algebra{A}})$ as $A \trianglelefteq \tilde{\algebra{A}}$. 
+		\item If $\algebra{A}$ is already unital, then $a \in \algebra{A}$, then $\sigma_A(a) = \sigma_{\tilde A}(a)$.
+		From \ref{exe:AplusC} we know that $a - \lambda \cdot  1 \in \inv(\tilde{\algebra{A}})$ if and only if $a - \lambda 1_\algebra{A} \in \inv(\algebra{A})$ and $\lambda (1 - 1_\algebra{A})  \in \inv(\mathds{C})$.
+		Then $\rho_\algebra{A} = \{\lambda \in \rho_{\tilde{\algebra{A}}} \mid \lambda \neq 0\}$.
+		Therefore, $\sigma_\algebra{A}(a) = \{0\} \cup \sigma_{\tilde{\algebra{A}}}(a)$.
+	\end{enumerate}
+\end{corollary}
+
 
 
 
