@@ -95,7 +95,7 @@ Dies zeigt $\phi_X(t) \in \mathds{R}$ für alle $t \in \mathds{R}$, also ist $\p
 		      \phi_Y(t) = \prod_{i=1}^{n} \phi_{X_i}(t) = \phi_X(t)^n = \cos(t)^n\text{.}
 	      \end{equation*}
 	      Somit ist die Aussage falsch.
-	\item Sei $f_Z$ die Dichte von $Z$, dann ist $f_Z(t) = \mathds{E}[\exp(itZ)] = \int_{-infty}^{\infty} \exp(itx) f_Z(x) dx$. Definieren wir $\tilde Z$ als Zufallsvariable mit der Dichte $f_{\tilde Z} = \frac{1}{2} (f_Z(t) + f_Z(-t))$, so erhalten wir
+	\item Sei $f_Z$ die Dichte von $Z$, dann ist $f_Z(t) = \mathds{E}[\exp(itZ)] = \int_{-\infty}^{\infty} \exp(itx) f_Z(x) dx$. Definieren wir $\tilde Z$ als Zufallsvariable mit der Dichte $f_{\tilde Z} = \frac{1}{2} (f_Z(t) + f_Z(-t))$, so erhalten wir
 	      \begin{align*}
 		      \phi_{\tilde Z}(t) & = \mathds{E[\exp(it\tilde Zi)]} = \int_{-\infty}^{\infty} \exp(itx) \frac{1}{2} (f_Z(x) + f_Z(-x)) dx                           \\
 		                         & = \frac{1}{2} \left( \int_{-\infty}^{\infty} \exp(itx)  f_Z(x) dx + \int_{-\infty}^{\infty} \exp(i(-t)(-x))  f_Z(-x) dx \right) \\
