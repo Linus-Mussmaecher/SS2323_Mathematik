@@ -18,16 +18,18 @@
 
 \makeexheaderger
 
+Würde 2.1/2.3/2.4 auch vorrechnen.
+
 \subsection{Zentralübung}
 
 Es sei $f$ die Dichte von $X$. Dann ist aufgrund der Symmetrie von $X$ gerade, d.h. $f(x) = f(-x)$ für alle $x \in \mathds{R}$. Es folgt für die charakteristische Funktion von $X$:
 \begin{align*}
-	\phi_X(t) = \mathds{E}[\exp(i \langle t, X \rangle)] & = \int_{-\infty}^{\infty} \exp(i\langle t, X \rangle) f(x) dx                                                                                     \\
-	                                                     & = \int_{-\infty}^{0} \exp(i\langle t, X \rangle) f(x) dx + \int_{0}^{\infty} \exp(i\langle t, X \rangle) f(x) dx                                  \\
-	                                                     & = \int_{0}^{\infty} \exp(-i\langle t, X \rangle) f(-x) dx + \int_{0}^{\infty} \exp(i\langle t, X \rangle) f(x) dx                                 \\
-	                                                     & = \int_{0}^{\infty} (\overline{\exp(i\langle t, X \rangle)} + \exp(i\langle t, X \rangle)) f(x) dx
+	\phi_X(t) = \mathds{E}[\exp(i \langle t, X \rangle)] & = \int_{-\infty}^{\infty} \exp(i\langle t, x \rangle) f(x) dx                                                                                     \\
+	                                                     & = \int_{-\infty}^{0} \exp(i\langle t, x \rangle) f(x) dx + \int_{0}^{\infty} \exp(i\langle t, x \rangle) f(x) dx                                  \\
+	                                                     & = \int_{0}^{\infty} \exp(-i\langle t, x \rangle) f(-x) dx + \int_{0}^{\infty} \exp(i\langle t, x \rangle) f(x) dx                                 \\
+	                                                     & = \int_{0}^{\infty} (\overline{\exp(i\langle t, x \rangle)} + \exp(i\langle t, x \rangle)) f(x) dx
 	\\
-	                                                     & = \int_{0}^{\infty} \underbrace{2 \Re(\exp(i\langle t, X \rangle))}_{\in \mathds{R}} \underbrace{f(x)}_{\in \mathds{R}} dx \in \mathds{R}\text{.}
+	                                                     & = \int_{0}^{\infty} \underbrace{2 \Re(\exp(i\langle t, x \rangle))}_{\in \mathds{R}} \underbrace{f(x)}_{\in \mathds{R}} dx \in \mathds{R}\text{.}
 \end{align*}
 Dies zeigt $\phi_X(t) \in \mathds{R}$ für alle $t \in \mathds{R}$, also ist $\phi_X$ rein reellwertig.
 
