@@ -348,7 +348,7 @@ We will be especially interested in \textbf{characters}:
 \section{Spectral theory}
 
 \begin{notation}
-	If $\algebra{A}$ is 
+	If $\algebra{A}$ is
 	a unital algebra, we write
 	\begin{equation*}
 		\inv(\algebra{A}) = \{a \in \algebra{A} \mid a \text{ is invertible in } \algebra{A}\} = \{a \in \algebra{A} \mid \exists_{a^{-1} \in \algebra{A}} a a^{-1} = 1 = a^{-1} a \}
@@ -507,7 +507,7 @@ Recall from calculus that $\frac{d}{dx} \frac{1}{x} = -\frac{1}{x^2}$. Also reca
 	Now if $|\lambda| \leq \|a\|$ then $\|\lambda^{-1} a\| < 1$.
 	Then $1 - \lambda^{-1} a \in \inv(\algebra{A})$.
 	Multiplying by $\lambda$ yields $\lambda - a \in \inv(\algebra{A})$.
-	Thus, $\{\lambda \in \mathds{C} \mid |\lambda| > \|a\|\} \subseteq \rho(a)$ and thus $\sigma(a) \subseteq D(0, \|a\|)$. 
+	Thus, $\{\lambda \in \mathds{C} \mid |\lambda| > \|a\|\} \subseteq \rho(a)$ and thus $\sigma(a) \subseteq D(0, \|a\|)$.
 \end{proof}
 
 \begin{lemma}
@@ -518,7 +518,7 @@ Recall from calculus that $\frac{d}{dx} \frac{1}{x} = -\frac{1}{x^2}$. Also reca
 \begin{proof}
 	This follows from the following general result:
 
-	If $g: U \overset{\text{open}}{\subseteq} X \to Y$ and $f: V \overset{\text{open}}{\subseteq} Y \to Z$ for Banach spaces $X,Y,Z$ with $g(U) \subseteq V$ are differentiable at $x_0 \in U$ or respectively $y_0 = g(x_0) \in V$, then $f \circ g$ is differentiable and $(f \circ g)' (x_0) = f'(g(x_0)) g'(x_0)$. 
+	If $g: U \overset{\text{open}}{\subseteq} X \to Y$ and $f: V \overset{\text{open}}{\subseteq} Y \to Z$ for Banach spaces $X,Y,Z$ with $g(U) \subseteq V$ are differentiable at $x_0 \in U$ or respectively $y_0 = g(x_0) \in V$, then $f \circ g$ is differentiable and $(f \circ g)' (x_0) = f'(g(x_0)) g'(x_0)$.
 \end{proof}
 
 Observation: For $R_a(\lambda) = (a - \lambda)^{-1}$ we get $R_a'(\lambda) = (a - \lambda)^{-2}$.
@@ -531,13 +531,13 @@ Recall that if $f(a) = a^{-1}$ yields $f'(a) b = - a^{-1} b a^{-1}$.
 
 \begin{proof}
 	Suppose $\sigma(a) = \emptyset$.
-	Idea: Show that $R_a: \rho(a) \subseteq \mathds{C} \to \algebra{A}, \lambda \mapsto (a - \lambda)^{-1} = \frac{1}{a - \lambda}$ is bounded and differentiable and achieve a contradiction by Liouville's theorem. 
+	Idea: Show that $R_a: \rho(a) \subseteq \mathds{C} \to \algebra{A}, \lambda \mapsto (a - \lambda)^{-1} = \frac{1}{a - \lambda}$ is bounded and differentiable and achieve a contradiction by Liouville's theorem.
 
 	Claim: $\| (a - \lambda)^{-1}\| < \|a\|^{-1}$ if $|\lambda| > 2 \|a\|$.
 	Indeed, if $|\lambda| > 2 \|a\|$ then $\| \lambda^{-1} a \| < \frac{1}{2}$, and in particular $1 - \lambda^{-1} a \in \inv(\algebra{A})$ and
 	\begin{equation*}
 		\left\| (1 - \lambda^{-1} a)^{-1} - 1 \right\| = \left\| \sum_{n = 1}^{\infty} (\lambda^{-1} a)^{-1} \right\| \leq \sum_{n = 1}^{\infty} \|\lambda^{-1} a\|^n = \frac{\| \lambda^{-1} a \|}{1 - \|\lambda^{-1} a\|} \leq 2 \|\lambda^{-1} a\| < 1\text{.}
-	\end{equation*} 
+	\end{equation*}
 	From here we deduce that $\|(1 - \lambda^{-1}a)^{-1}\| < 2$ and thus
 	\begin{equation*}
 		\|(a - \lambda)^{-1}\| < \|\lambda^{-1} (\lambda^{-1}a - 1)^{-1}\| = \frac{\|(1 - \lambda^{-1} a)^{-1}\|}{|\lambda|} < \frac{2}{\lambda} < \frac{1}{\|\lambda\|}\text{.}
@@ -545,7 +545,7 @@ Recall that if $f(a) = a^{-1}$ yields $f'(a) b = - a^{-1} b a^{-1}$.
 
 	So $R_a: \mathds{C} \to \algebra{A}$ is bounded outside $\closure{B(0, 2 \|a\|}$.
 	Since $R_a$ is continuous, it is bounded on $\mathds{C} \to \algebra{A}$.
-	Let $\phi \in \algebra{A}^*$ be a bounded linear functional in $\mathcal{L}(\algebra{A}, \mathds{C})$. 
+	Let $\phi \in \algebra{A}^*$ be a bounded linear functional in $\mathcal{L}(\algebra{A}, \mathds{C})$.
 	Thus, $\phi$ is differentiable with $\phi'(a) = \phi$ for all $a \in \algebra{A}$.
 	Then $\phi \circ R_a$ is differentiable and bounded, so it is an \enquote{integer} function.
 	By Liouville's theorem, $\phi \circ R_a$ is constant.
@@ -571,12 +571,12 @@ Recall that if $f(a) = a^{-1}$ yields $f'(a) b = - a^{-1} b a^{-1}$.
 \begin{theorem}[Adjointing units - unitization of algebras]
 	Let $\algebra{A}$ be any algebra.
 	Consider $\tilde{ \algebra{A}} = \algebra{A} \oplus \mathds{C}$ as a vector space.
-	We write elements of $\tilde{\algebra{A}}$ as $a + \lambda \cdot 1 \coloneq (a, \lambda)$. Think of $a = (a,0)$ and $\lambda = (a, \lambda)$. 
+	We write elements of $\tilde{\algebra{A}}$ as $a + \lambda \cdot 1 \coloneq (a, \lambda)$. Think of $a = (a,0)$ and $\lambda = (a, \lambda)$.
 	Define
 	\begin{align*}
-		(a + \lambda 1) (b + \lambda' 1) &= (ab + \lambda' a + \lambda ab + b) + \lambda \cdot \lambda'\text{.}
+		(a + \lambda 1) (b + \lambda' 1) & = (ab + \lambda' a + \lambda ab + b) + \lambda \cdot \lambda'\text{.}
 	\end{align*}
-	Ten (exercise $\tilde{\algebra{A})}$ becomes a unital algebra with $1_\algebra{A} = 1 = (0,1)$. 
+	Ten (exercise $\tilde{\algebra{A})}$ becomes a unital algebra with $1_\algebra{A} = 1 = (0,1)$.
 
 	Notice that $\algebra{A}$ is an ideal in $\tilde{\algebra{A}}$.
 
@@ -586,33 +586,40 @@ Recall that if $f(a) = a^{-1}$ yields $f'(a) b = - a^{-1} b a^{-1}$.
 	\end{equation*}
 	so $1 + \lambda \mapsto \lambda$.
 
- 	If $\algebra{A}$ is a normed algebra, then $\tilde{\algebra{A}}$ is normed by $\|a + \lambda \cdot 1\| \coloneq \|a\| + |\lambda|$
+	If $\algebra{A}$ is a normed algebra, then $\tilde{\algebra{A}}$ is normed by $\|a + \lambda \cdot 1\| \coloneq \|a\| + |\lambda|$
 
 	If $\algebra{A}$ is Banach and closed, then so is $\algebra{A}$.
 
-	If $\algebra{A}$ is a $^*$-algebra, then so is $\tilde{\algebra{A}}$ with $(a + \lambda 1)^*$. 
+	If $\algebra{A}$ is a $^*$-algebra, then so is $\tilde{\algebra{A}}$ with $(a + \lambda 1)^*$.
 
 	If $\algebra{A}$ is a (Banach) normed $^*$-algebra, then so is $\tilde A$.
 
-	If $\algebra{A}$ is a $C^*$-algebra, in general the norm given above is not a Norm on $\algebra{A}$, but $\|a + \lambda \cdot 1\| \coloneq \sup_{b \in \algebra{A}, b \in \algebra{B}, b \leq 1} \|a b + \lambda b\|$ is. 
+	If $\algebra{A}$ is a $C^*$-algebra, in general the norm given above is not a Norm on $\algebra{A}$, but $\|a + \lambda \cdot 1\| \coloneq \sup_{b \in \algebra{A}, b \in \algebra{B}, b \leq 1} \|a b + \lambda b\|$ is.
 \end{theorem}
 
 \begin{exercise}\label{exe:AplusC}
-	If $\algebra{A}$ is already unital, then $\tilde A \simeq A \oplus \mathds{C}$ as algebras by $a + \lambda \cdot 1 \mapsto (a + \lambda 1_\algebra{A}, -\lambda) $. 
+	If $\algebra{A}$ is already unital, then $\tilde A \simeq A \oplus \mathds{C}$ as algebras by $a + \lambda \cdot 1 \mapsto (a + \lambda 1_\algebra{A}, -\lambda) $.
 \end{exercise}
 
 \begin{definition}
-	If $\algebra{A}$ is any algebra, then $\sigma(a) \coloneq \sigma_{\tilde A}(a)  = \sigma_{\tilde A}(a,0)$.
+	If $\algebra{A}$ is any algebra, then $\sigma_A(a) \coloneq \sigma_{\tilde A}(a)  = \sigma_{\tilde A}(a,0)$.
 	Thus, we can identify $A \hookrightarrow \tilde A$.
 \end{definition}
 
 \begin{corollary}~
 	\begin{enumerate}
-		\item If $A$ is any algebra, then we always have $0 \in \sigma_A(a)$ because if $a \in A$ then $a \notin \inv(\tilde{\algebra{A}})$ as $A \trianglelefteq \tilde{\algebra{A}}$. 
-		\item If $\algebra{A}$ is already unital, then $a \in \algebra{A}$, then $\sigma_A(a) = \sigma_{\tilde A}(a)$.
-		From \ref{exe:AplusC} we know that $a - \lambda \cdot  1 \in \inv(\tilde{\algebra{A}})$ if and only if $a - \lambda 1_\algebra{A} \in \inv(\algebra{A})$ and $\lambda (1 - 1_\algebra{A})  \in \inv(\mathds{C})$.
-		Then $\rho_\algebra{A} = \{\lambda \in \rho_{\tilde{\algebra{A}}} \mid \lambda \neq 0\}$.
-		Therefore, $\sigma_\algebra{A}(a) = \{0\} \cup \sigma_{\tilde{\algebra{A}}}(a)$.
+		\item If $A$ is any algebra, then we always have $0 \in \sigma_A(a)$ because if $a \in A$ then $a \notin \inv(\tilde{\algebra{A}})$ as $A \trianglelefteq \tilde{\algebra{A}}$.
+		\item 
+
+		Observation: If $\algebra{A}$ is unital, then $\tilde{ \algebra{A}} = \{a + \lambda 1 \mid a \in \algebra{A}, \lambda \in \mathds{C}\} \simeq \algebra{A} \oplus \mathds{C}$ as algebras via $a + \lambda 1 \mapsto (a + \lambda 1_\algebra{A}, \lambda)$.
+		For $p = 1_\algebra{A} \in Z(\tilde{\algebra{A}})$, we have $\tilde{\algebra{A}} \simeq p \tilde{ \algebra{A}} \oplus (1-p) \tilde{\algebra{A}}$.
+		This yields $(a + \lambda 1)(1 - 1_\algebra{A}) = a - a + \lambda ( 1 - 1_\algebra{A}) = \lambda q$ for $q \coloneq 1 - 1_\algebra{A}$.
+		Thus, we have $\sigma_{\tilde{\algebra{A}}} = \sigma_\algebra{A}(a) \cup \{0\}$.
+		
+		      % \item If $\algebra{A}$ is \textbf{not} already unital and $a \in \algebra{A}$, then $\sigma_A(a) = \sigma_{\tilde A}(a)$.
+		      % From \ref{exe:AplusC} we know that $a - \lambda \cdot  1 \in \inv(\tilde{\algebra{A}})$ if and only if $a - \lambda 1_\algebra{A} \in \inv(\algebra{A})$ and $\lambda (1 - 1_\algebra{A})  \in \inv(\mathds{C})$.
+		      % Then $\rho_\algebra{A} = \{\lambda \in \rho_{\tilde{\algebra{A}}} \mid \lambda \neq 0\}$.
+		      % Therefore, $\sigma_\algebra{A}(a) = \{0\} \cup \sigma_{\tilde{\algebra{A}}}(a)$.
 	\end{enumerate}
 \end{corollary}
 

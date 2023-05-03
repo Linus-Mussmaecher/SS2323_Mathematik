@@ -107,8 +107,7 @@ Let $X$ be Hausdorff and locally compact.
 
 \section{Exercise sheet 1}
 
-\begin{exercise}
-	(1)
+\begin{exercise}[1.1]
 \end{exercise}
 
 \begin{proof}
@@ -120,7 +119,7 @@ Let $X$ be Hausdorff and locally compact.
 %Per sheet 3-4 tasks in the next week, two weeks => Bonus
 %Nothing concerning the exam
 
-\begin{exercise}[2]
+\begin{exercise}[1.2]
 	We consider pathological examples for $C_0(X)$.
 
 	Let $X = \closure{\{x_0\}}$, e.g. $x_0 \in X$ with $\topology{O}(X) = \{\{x_0\} \cup Y \mid Y \subset X\} \cup \{\emptyset\}$. $X$ is highly non-Hausdorff unless we already have $X = \{x_0\}$.	In this space, the constant sequence $(x_0)$ converges to any $x \in X$.
@@ -136,7 +135,7 @@ Let $X$ be Hausdorff and locally compact.
 	Let $\phi: \algebra{A} \to \algebra{B}$ be a $^*$-homomorphism between $C^*$-algebras. Then we already have $\|\phi(a)\| \leq \|a\|$ for all $a \in \algebra{A}$.
 \end{theorem}
 
-\begin{exercise}[4 - Products]
+\begin{exercise}[1.4 - Products]
 	Let $(A_i)_{i \in I}$ be a family of $C^*$-algebras and define
 	\begin{equation*}
 		\prod_{i \in I} A_i = \{a = (a_i)_{i \in I} \mid a_i \in A_i \forall_{i \in I} \text{ and } \|a\| := \sup_{i \in I} \|a_i\| < \infty \}\text{.}
@@ -167,8 +166,98 @@ Let $X$ be Hausdorff and locally compact.
 	\end{equation*}
 \end{remark}
 
-\begin{exercise}[5]
+\begin{exercise}[1.5]
 	$X$ is a locally compact Hausdorff space that can be written as $X = U \cup V$ with open and disjoint $U,V$ (so $U,V$ are clopen). We want to prove $C_0(X) \simeq C_0(U) \oplus C_0(V)$. To build this map, we map $f \mapsto (f|_U, f|_V)$. We check that this is well-defined and a $^*$-isomorphism.
+\end{exercise}
+
+\begin{exercise}[2.6]
+	Let $X$ be a locally compact Hausdorff space and $\widetilde{C_0(X)} \simeq C(\tilde{X})$ with $\tilde{X} \coloneq X \sqcup \{\infty\}$ with the topology $\topology{O}_{\tilde{X}} = \topology{O}_X \cup \{ \tilde{X} \setminus K \mid K \subseteq X \text{ kompakt}\}$.
+
+	Observation: If $X$ is already compact, then $\infty$ is an isolated point of $\tilde X$ (i.e. $\{\infty\}$ is clopen).
+
+	If $\algebra{A}$ is a $C^*$-algebra, then $\tilde{\algebra{A}}$ (this is not the same $\tilde{~}$ as on the $X$!) is a $C^*$-algebra with 
+	\begin{equation*}
+		\|a + \lambda 1\|_{C^*} \coloneq \sup_{b \in \algebra{A}, \|b\| \leq 1} \| ab + \lambda b\|_\algebra{A}
+	\end{equation*}
+	We check that $\tilde{\algebra{A}}$ is a $C^*$-algebra.
+	\begin{itemize}
+		\item $C^*$-axiom: $\|a + \lambda 1\|_{C^*}^2 != \|(a + \lambda 1)^* (a + \lambda 1)\|_{C^*}$. We have
+		\begin{align*}
+			\|a + \lambda \cdot 1\|_{C^*} &= \|(a^*a + \overline{\lambda} a + \lambda a^*) + |\lambda|^2 \cdot 1 \|_{C^*}\\
+			&= \sup_{b \in \algebra{A}, \|b\| \leq 1} \| a^*a b + \overline{\lambda} a b + \lambda a^*b + |\lambda|^2 \cdot b\|_\algebra{A}
+		\end{align*}
+		On the other hand:
+		\begin{align*}
+			\|a + \lambda \cdot 1\|_{C^*}^2 &\coloneq \sup_{\|b\| \leq 1} \|ab + \lambda b\|_\algebra{A}^2\\
+			&= \sup_{\|b\| \leq 1} \| (ab + \lambda b)^* (ab + \lambda b)\|_\algebra{A}\\
+			&= \sup_{\|b\| \leq 1} \| b^* a^* a b + \overline{\lambda} b^* ab + \lambda b^* a^* b + |\lambda|^2 b^* b\|_\algebra{A}\\
+			&\leq \sup_{\|b\| \leq 1} \|b^*\|_\algebra{A} \cdot \| a^* a b + \overline{\lambda} a b + \lambda  a^* b + |\lambda|^2 b\|_\algebra{A} \\
+			&\leq \sup_{\|b\| \leq 1} \| a^* a b + \overline{\lambda} a b + \lambda a^* b + |\lambda|^2 b\|_\algebra{A}\\
+			&= \|a + \lambda \cdot 1\|_{C^*}^2
+		\end{align*}
+		\item The other conditions are easy to check and are left for the student.		
+	\end{itemize}
+	We still want to prove $\phi: \widetilde{C_0(X)} \to C(\tilde X), f + \lambda \cdot 1 \mapsto f_\lambda$ with $f_\lambda(x) \coloneq \lambda$ for $x = \infty$ and $f_\lambda(x) = f(x) + \lambda$ otherwise.
+	Nothe that once again these are not the same $\tilde{~}$.
+	\begin{itemize}
+		\item $f$ is well-defined:
+		We have to check that $f_\lambda$ is continuous in $\tilde X$.
+		Take any sequence $X \ni x_i \to \infty$ in $\tilde X$. We have to show $f_\lambda(x_i) \to f_\lambda(\infty) = \lambda$. Since $f_\lambda(x_i) = f(x_i) + \lambda$ this is equivalent to $f(x_i) \to 0$.
+		But as $f \in C_0(X)$, we have that for every $\epsilon > 0$ the set $K_\epsilon(f) = \{ x \mid |f(x)| \geq \epsilon  \}$ is compact.
+		Since $x_i$ will eventually leave this compact set (or it would not diverge to $\infty$), we know that $f(x_i)$ eventually becomes smaller than (any) $\epsilon$.
+		So we have $f(x_i) \to 0$ and thus $f_\lambda(x_i) \to f_\lambda(\infty)$.
+		So $f_\lambda$ is continuous in $\infty$. The continuity on every other point follows immediately from the continuity of $f$.
+		\item $\phi$ is a $^*$-isomorphism:
+		\begin{itemize}
+			\item Linearity: $\phi$ is clearly linear as we can check component-wise:
+			\begin{equation*}
+				(f_1 + f_2)_\lambda = (f_1)_\lambda + (f_2)_\lambda
+			\end{equation*}
+			\item Homomorphism: For every $x \in X$ we have
+			\begin{align*}
+				\phi((f + \lambda \cdot 1) \cdot (g + \lambda' \cdot 1))(x) &= \phi((fg + \lambda' f + \lambda g) + \lambda \lambda' \cdot 1)(x)\\
+				&= (fg + \lambda' f + \lambda g)(x) + \lambda \lambda' \\				
+				&= (fg)(x) + \lambda' f(x) + \lambda g(x) + \lambda \lambda' \\
+				&= (f(x) + \lambda) \cdot (g(x) + \lambda')\\
+				&= (\phi(f + \lambda) \cdot \phi(g + \lambda'))(x) \text{.}
+			\end{align*}
+			In the case of $x = \infty$, this equality of course also holds. Thus we have $\phi((f + \lambda)(g + \lambda'))  = \phi(f + \lambda) \phi(g + \lambda')$.
+			\item $^*$-homomorphism: 
+			\begin{equation*}
+				\phi(f + \lambda)^*(x) = \phi(f^* + \overline{\lambda} \cdot 1)(x)
+			\end{equation*}
+			For $x \in X$ this follows by $\overline{f(x)} + \overline{\lambda} =  f^*(x) + \overline{\lambda}$, for $x = \infty$ we have $\overline{\lambda} = \overline{\lambda}$. 
+			\item Injective: $f_\lambda(0)$ leads to $f_\lambda(x) = 0$ for all $x \in \tilde X$, since if $x = \infty$ then $\lambda$ must be $0$ and $f(x) = 0$ for all $x \in X$. Thus $f = 0$ and $\lambda = 0$.
+			\item Surjective: Take $g \in C(\tilde X)$  and choose $\lambda = g(\infty)$ and $f(x) \coloneq g(x) - \lambda$. and check $f \in C_0(X)$.
+		\end{itemize}
+		\item We can also prove that $\phi$ is isometric for the $C^*$-norm:
+		\begin{equation*}
+			\|f + \lambda \cdot 1\| \coloneq \sup_{g \in C_0(X), \|g\| \leq 1} \|fg + \lambda g \|_\infty
+		\end{equation*}
+		Look at
+		\begin{align*}
+			\| \phi(f + \lambda 1)\| &= \sup_{x \in \tilde{X}} | f_\lambda(x)| = \max \{ |\lambda|, \sup_{x \in X} |f(x) + \lambda| \}\\
+			&\overset{(*)}{=} \sup_{x \in X} |f(x) + \lambda|
+		\end{align*}
+		and 
+		\begin{align*}
+			\| f + \lambda \cdot 1\|_{C^*} &= \sup_{\|g\| \leq 1} \|fg + \lambda g\|_{C_0(X)}\\
+			&= \sup_{|g(x)| \leq 1 \forall_x} \sup_{x \in X} \| f(x) g(x) + \lambda g(x) \|\\
+			&= \sup_{x \in X} |f(x) + \lambda|\\
+			&\overset{(**)}{=} \sup_{x \in X} |f(x) + \lambda|
+		\end{align*}
+		This proof may need to be divided into two cases:
+		\begin{itemize}
+			\item $X$ is not compact: We can find a net $(x_i) \subseteq X$ with $f(x_i) \to 0$ and $(*)$ follows and use a $g(x) \approx 1$ for $(**)$.
+			\item $X$ is compact: Choose $g \equiv 1$ for $(**)$ and think about $(*)$ later.
+		\end{itemize}
+	\end{itemize}
+\end{exercise}
+
+\begin{exercise}[1.8]
+	It is difficult to prove $I^* = I$. The idea is to prove $I = C_0(U)$ where $C_0(U) = \{ f \in C_0(X) \mid f|_{U^\complement} \equiv 0 \}$. 
+
+	One can also prove $C_0(X)/C_0(U) \simeq C_0(F)$ (as $C_0$ of the subspace) where $F = U^\complement$.
 \end{exercise}
 
 \end{document}
