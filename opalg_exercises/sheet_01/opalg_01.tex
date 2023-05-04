@@ -18,6 +18,10 @@
 
 \makeexheadereng
 
+\begin{center}
+    \includegraphics*[width=0.4\textwidth]{pi.png}
+\end{center}
+
 \setcounter{subsection}{4}
 \subsection{}
 
@@ -67,5 +71,63 @@
 \end{itemize}
 
 \subsection{}
+
+We first show the prerequisites of the Stone-Weierstrass theorem.
+\begin{enumerate}
+    \item $I$ is a $C^*$-subalgebra of $C_0(U)$.
+    $I$ is a subset of $C_0(U)$.
+    If it were not, we would have an $f \in I, f \notin C_0(U)$ and there would exist a point $x_0 \notin U$ with $f(x_0) \neq 0$.
+    But then $x_0$ would not be in $U^\complement$ by the definition of $U$.
+    Furthermore, $I$ is an ideal, so it is closed with respect to addition and scalar multiplication (so it is a subspace) as well as multiplication (so it is a subalgebra).
+    As $I$ is a closed subspace of $C_0(U)$, which is a closed subspace of the Banach space $C_0(X)$, $I$ is Banach.
+    The involution and its property can be inherited from $C_0(X)$.
+
+    It remains to show that $I$ is closed with respect to this involution.
+    For this, we use the provided hint.
+    It is $f \in I$, then note that $f^* \in C_0(X)$ and $f$ and $f^*$ are both bounded. We can write $f^* f_n$ as
+    \begin{equation*}
+        f^* f_n = f^* (f f^*)^{\frac{1}{n}} = f \cdot (\underbrace{f^{\frac{1}{n} - 1} (f^*)^{\frac{1}{n} + 1}}_{\coloneq g})
+    \end{equation*}
+    and set $g(x) := 0$ on the zeroes of $f$. Then we have $g \in C_0(X)$ and also
+    \begin{equation*}
+        |g(x)| = |f(x)^{\frac{1}{n} - 1} (f^*)(x)^{\frac{1}{n} + 1}| = |f(x)|^{\frac{1}{n} - 1} |\overline{f(x)}|^{\frac{1}{n} + 1} = |f(x)|^{\frac{2}{n}}
+    \end{equation*}
+    so $\{x \in X \mid |g(x)| \geq \epsilon\} = \{x \in X \mid |f(x)| \geq \epsilon^{\frac{n}{2}}\}$ is compact for every $\epsilon > 0$.
+    This shows $g \in C_0(X)$ and therefore $f^* f_n = f g \in I$ (because of the ideal property) for every $n \in \mathds{N}$.
+    The limit $\lim_{n \to \infty} f^* f_n$ converges in $C_0(X)$ to $f^*$, as $(f^* f)^{\frac{1}{n}} = |f|^{\frac{2}{n}}$ converges to the characteristic function of the support of $f$, i.e. to $0$ if $f(x) = 0$ and to $1$ otherwise.
+    Since all elements $f^* f_n$ of the sequence are in $I$ and since $I$ is closed, the limit $f^*$ is also contained in $I$.
+    This shows $I^* \subseteq I$ and therefore $I^* = I$, so $I$ is closed in respect to the involution.
+    \item Given $x \in U$, there is $f \in I$ with $f(x) \neq 0$.
+    Assume that such an $f$ did not exist, then for all $f \in I$ we have $f(x) = 0$.
+    Per Definition of $U^\complement$, this implies $x \in U^\complement$, contradicting $x \in U$.
+    \item $I$ separates points of $U$. Let $x,y$ be arbitrary points in $U$.
+    As proven above, there exists a function $f \in I$ with $f(x) \neq 0$.
+    As $X$ is Hausdorff, there also exists an open neighborhood $V$ of $x$ that does not contain $y$ and (without loss of generality) is a subset of $U$.
+    Then Uryson's Lemma proves the existence of a function $g$ that is $1$ on the compact set $\{x\}$ and that is $0$ on the closed set $V^\complement \supset U^\complement$.
+    The latter condition yields $g \in C_0(U)$, so the ideal property implies $fg \in I$.
+    Additionally, we have $(fg)(x) = f(x) g(x) = f(x) \neq 0$ and $(fg)(y) = f(x) g(x) = f(x) \cdot 0 = 0$ (since $y \in V^\complement$). So $fg$ separates $x$ and $y$.
+\end{enumerate}
+So $I$ is a dense subspace of $C_0(U)$ by Stone-Weierstrass.
+But since $I$ is closed, we have $I = \closure{I} = C_0(U)$.
+
+Let $U \subset V$ be open sets in $X$.
+Then we have $V^\complement \subset U^\complement$, so any function in $C_0(X)$ that is $0$ outside $U$ is also $0$ outside $V$, and we have $C_0(U) \subset C_0(V)$.
+Conversely, let $U \nsubseteq V$ be open sets in $X$, so there exists a point $x \in U, x \notin V$.
+Then Uryson's Lemma shows the existence of a function $f$ that is $1$ on the compact set $\{x\}$ and $0$ on the closed set $U^\complement$.
+Since $f$ is $0$ outside $U$, we have $f \in C_0(U)$.
+However, $f$ is non-zero on the point $x$ outside $V$, so $f$ cannot be in $C_0(V)$.
+Therefore, we have $C_0(U) \nsubseteq C_0(V)$.
+This shows $U \subseteq V \iff C_0(U) \subseteq C_0(V)$.
+
+Lastly, let I be any maximal (and therefore closed) ideal in $C_0(X)$.
+Then $I = C_0(U)$ for some $U \neq X$ (or $C_0(X)$ would be the whole space and thus not maximal) and $X \setminus U$ is a closed, non-empty set.
+If $X \setminus U$ contains only a single element, our maximal ideal is of the form $C_0(X \setminus \{x\})$ for some $x \in X \setminus U$, and we are done.
+If $X \setminus U$ contains more than one element, choose any fixed $x \in X \setminus U$.
+Then, $X \setminus \{x\} \supset X \setminus U$ and thus $C_0(X\setminus\{x\}) \supset C_0(U)$.
+Therefore, $C_0(U)$ cannot be a maximal ideal, as it has a super-ideal that is not yet the entire space.
+So all maximal ideals of $C_0(X)$ must have form $C_0(X\setminus\{x\})$.
+
+
+
 
 \end{document}
