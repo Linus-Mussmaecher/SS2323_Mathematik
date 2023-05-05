@@ -601,30 +601,102 @@ Recall that if $f(a) = a^{-1}$ yields $f'(a) b = - a^{-1} b a^{-1}$.
 	If $\algebra{A}$ is already unital, then $\tilde A \simeq A \oplus \mathds{C}$ as algebras by $a + \lambda \cdot 1 \mapsto (a + \lambda 1_\algebra{A}, -\lambda) $.
 \end{exercise}
 
+% \begin{definition}
+% 	If $\algebra{A}$ is any algebra, then $\sigma_A(a) \coloneq \sigma_{\tilde A}(a)  = \sigma_{\tilde A}(a,0)$.
+% 	Thus, we can identify $A \hookrightarrow \tilde A$.
+% \end{definition}
+
+% \begin{corollary}~
+% 	\begin{enumerate}
+% 		\item If $A$ is any algebra, then we always have $0 \in \sigma_A(a)$ because if $a \in A$ then $a \notin \inv(\tilde{\algebra{A}})$ as $A \trianglelefteq \tilde{\algebra{A}}$.
+% 		\item 
+
+% 		Observation: If $\algebra{A}$ is unital, then $\tilde{ \algebra{A}} = \{a + \lambda 1 \mid a \in \algebra{A}, \lambda \in \mathds{C}\} \simeq \algebra{A} \oplus \mathds{C}$ as algebras via $a + \lambda 1 \mapsto (a + \lambda 1_\algebra{A}, \lambda)$.
+% 		For $p = 1_\algebra{A} \in Z(\tilde{\algebra{A}})$, we have $\tilde{\algebra{A}} \simeq p \tilde{ \algebra{A}} \oplus (1-p) \tilde{\algebra{A}}$.
+% 		This yields $(a + \lambda 1)(1 - 1_\algebra{A}) = a - a + \lambda ( 1 - 1_\algebra{A}) = \lambda q$ for $q \coloneq 1 - 1_\algebra{A}$.
+% 		Thus, we have $\sigma_{\tilde{\algebra{A}}} = \sigma_\algebra{A}(a) \cup \{0\}$.
+		
+% 		      % \item If $\algebra{A}$ is \textbf{not} already unital and $a \in \algebra{A}$, then $\sigma_A(a) = \sigma_{\tilde A}(a)$.
+% 		      % From \ref{exe:AplusC} we know that $a - \lambda \cdot  1 \in \inv(\tilde{\algebra{A}})$ if and only if $a - \lambda 1_\algebra{A} \in \inv(\algebra{A})$ and $\lambda (1 - 1_\algebra{A})  \in \inv(\mathds{C})$.
+% 		      % Then $\rho_\algebra{A} = \{\lambda \in \rho_{\tilde{\algebra{A}}} \mid \lambda \neq 0\}$.
+% 		      % Therefore, $\sigma_\algebra{A}(a) = \{0\} \cup \sigma_{\tilde{\algebra{A}}}(a)$.
+% 	\end{enumerate}
+% \end{corollary}
+
 \begin{definition}
-	If $\algebra{A}$ is any algebra, then $\sigma_A(a) \coloneq \sigma_{\tilde A}(a)  = \sigma_{\tilde A}(a,0)$.
-	Thus, we can identify $A \hookrightarrow \tilde A$.
+	Re-Definition: If $\algebra{A}$ is non-unital, then $\tilde{A} + \mathds{C} \cdot 1$ is a $(*-)$Banach algebra, and we define $\sigma_A(a) \coloneq \sigma_{\tilde{\algebra{A}}}(a)$.
 \end{definition}
 
-\begin{corollary}~
+Observation: If $\algebra{A}$ is already unital, then for $\tilde{A} \simeq \algebra{A} \oplus \mathds{C}$ we have $\sigma_{\tilde{\algebra{A}}}(a) = \sigma_\algebra{A}(a) \cup \{ 0\}$.
+
+\begin{remark}
+	If $\algebra{A}$ is a $C^*$-algebra, then $\tilde{\algebra{A}}$ is a $C^*$-algebra.
 	\begin{enumerate}
-		\item If $A$ is any algebra, then we always have $0 \in \sigma_A(a)$ because if $a \in A$ then $a \notin \inv(\tilde{\algebra{A}})$ as $A \trianglelefteq \tilde{\algebra{A}}$.
-		\item 
-
-		Observation: If $\algebra{A}$ is unital, then $\tilde{ \algebra{A}} = \{a + \lambda 1 \mid a \in \algebra{A}, \lambda \in \mathds{C}\} \simeq \algebra{A} \oplus \mathds{C}$ as algebras via $a + \lambda 1 \mapsto (a + \lambda 1_\algebra{A}, \lambda)$.
-		For $p = 1_\algebra{A} \in Z(\tilde{\algebra{A}})$, we have $\tilde{\algebra{A}} \simeq p \tilde{ \algebra{A}} \oplus (1-p) \tilde{\algebra{A}}$.
-		This yields $(a + \lambda 1)(1 - 1_\algebra{A}) = a - a + \lambda ( 1 - 1_\algebra{A}) = \lambda q$ for $q \coloneq 1 - 1_\algebra{A}$.
-		Thus, we have $\sigma_{\tilde{\algebra{A}}} = \sigma_\algebra{A}(a) \cup \{0\}$.
-		
-		      % \item If $\algebra{A}$ is \textbf{not} already unital and $a \in \algebra{A}$, then $\sigma_A(a) = \sigma_{\tilde A}(a)$.
-		      % From \ref{exe:AplusC} we know that $a - \lambda \cdot  1 \in \inv(\tilde{\algebra{A}})$ if and only if $a - \lambda 1_\algebra{A} \in \inv(\algebra{A})$ and $\lambda (1 - 1_\algebra{A})  \in \inv(\mathds{C})$.
-		      % Then $\rho_\algebra{A} = \{\lambda \in \rho_{\tilde{\algebra{A}}} \mid \lambda \neq 0\}$.
-		      % Therefore, $\sigma_\algebra{A}(a) = \{0\} \cup \sigma_{\tilde{\algebra{A}}}(a)$.
+		\item If $ \algebra{A}$ is unital, then $\tilde{\algebra{A}} \simeq \algebra{A} \oplus \mathds{C}$ and $\|a + \lambda \cdot 1\| = \max\{\|a + \lambda \cdot 1\|, |\lambda|\}$.
+		\item If $\algebra{A}$ is not unital, then $\|a + \lambda \cdot 1\| = \sup_{\|b\| \leq 1} \|ab + \lambda b\|$.
 	\end{enumerate}
-\end{corollary}
+\end{remark}
 
+\section{Spectral Radius}
 
+\begin{definition}
+	Let $\algebra{A}$ be an algebra. Given $a \in \algebra{A}$, we define:
+	\begin{equation*}
+		\pi(a) \coloneq \sup \{ |\lambda| \mid \lambda \in \sigma_\algebra{A}(a) \}
+	\end{equation*}
+	as the \textbf{spectral radius} of $a$ if $\emptyset \neq \sigma_\algebra{A}(a)$ is bounded (e.g. if $\algebra{A}$ is Banach).
+\end{definition}
 
+Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
+
+\begin{example}~
+	\begin{enumerate}
+		\item Let $f \in \algebra{A} = C_0(X)$ using $\sigma_A(f) = \closure{f(X)}$. Thus,
+		\begin{equation*}
+			\pi(f) = \sup \{ |\lambda| \mid \lambda \in \closure{f(X)} = \sup_{x \in X} |f(x)| = \|f\|_{C_0(X)}
+ 		\end{equation*}
+		\item Let $\algebra{A} = M_2(\mathds{C})$ and $a = \qmatrix{0 & 1 \\ 0 & 0}$. Then $\sigma_\algebra{A} = \{0\}$ and $\pi(a) = 0$, but $\|a\| = 1 \neq 0$.
+	\end{enumerate}
+\end{example}
+
+\begin{theorem}[Beurling-Gelfand]
+	Let $\algebra{A}$ be a Banach algebra, then
+	\begin{equation*}
+		\pi(a) = \inf_{n \in \mathds{N}} \|a^n\|^{\frac{1}{n}} = \lim_{n \to \infty} \|a^n\|^{\frac{1}{n}}
+	\end{equation*}
+\end{theorem}
+
+\begin{proof}
+	TODO
+\end{proof}
+
+\begin{example}
+	Let $A = C^1([0,1]) = \{ I \in C[0,1] \mid \exists_{f'(t)} \forall_{t \in [0,1]}, t \mapsto f'(t) \text{ continuous} \}$ with $\|f\| = \|f\|_\infty + \|f'\|_\infty$. 
+
+	Then $\algebra{A}$ is unital, commutative and a Banach algebra. Consider $x \in \algebra{A}$, $x(t) = t$. We have $x^n(t) = t^n$ and
+	\begin{align*}
+		\|x^n\| &= \sup_{t \in [0,1]} |t^n| + \sup_{t \in [0,1]} |n t^{n-1}| = 1 + n\\
+		\pi(x) &= \lim_{n \to \infty} (1+n)^\frac{1}{n} = 1\\
+		\| x \| &= 2
+	\end{align*}
+	Observation: $\sigma(x) = \image(x) = [0,1]$.
+\end{example}
+
+\begin{theorem}
+	Let $\algebra{B} \nsubseteq \algebra{A}$ be an inclusion of unital Banach algebras with $1 = 1_\algebra{A} = 1_\algebra{B}$. Then $\sigma_\algebra{A}(b) \subseteq \sigma_\algebra{B}(b)$ for all $b \in \algebra{B}$ and the inclusion may be proper. If $\sigma_\algebra{A}(b)$ is simply connected (not holes), then $\sigma_\algebra{A}(b) = \sigma_\algebra{B}(b)$.\\
+	The holes of a compact subset $K \subseteq \mathds{C}$ are the bounded connected components of $\mathds{C} \setminus K$. So saying that $K$ has no holes means that $\mathds{C} \setminus K$ is connected.
+\end{theorem}
+
+\begin{proof}
+	See Murphy, 1.2.8.
+\end{proof}
+
+\begin{example}
+	Let $\algebra{B} \coloneq A(\mathds{D}) = \{f \in C(\mathds{D}) \mid f \text{ analytic on } \mathds{D}^\interior\}$ and $\algebra{A} = C(\mathds{S}^1)$.
+	Then we have an embedding by $\iota: \algebra{B} \hookrightarrow \algebra{A}, f \mapsto f|_{\mathds{S}^1}$.
+
+	By the principle of maximum modules, $\iota$ is an embedding of (unital) Banach algebras.
+\end{example}
 
 
 

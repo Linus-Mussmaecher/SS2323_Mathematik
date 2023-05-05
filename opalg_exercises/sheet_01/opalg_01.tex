@@ -2,7 +2,7 @@
 
 % --- DATA ---
 
-\def\lecture{Operatoralgebra}
+\def\lecture{Operator Algebras}
 \def\authors{Linus Mußmächer, Minona Schäfer}
 \def\sheetNumber{01}
 %\def\sumPoints{30} 
@@ -16,13 +16,60 @@
 
 \begin{document}
 
-\makeexheaderger
+\makeexheadereng
 
 \begin{center}
     \includegraphics*[width=0.4\textwidth]{pi.png}
 \end{center}
 
-\setcounter{subsection}{7}
+\setcounter{subsection}{4}
+\subsection{}
+
+\begin{itemize}
+    \item First, we notice that if $p$ is idempotent we have $(1-p)^2 = 1 - 2p + p^2 = 1 - 2p + p = 1-p$, so $1-p$ is also idempotent. Now consider the following two functions:
+    \begin{align*}
+        \phi: &\algebra{A} \to p \algebra{A} \oplus (1-p) \algebra{A}, a \mapsto pa \oplus (1-p)a\\
+        \psi: &p \algebra{A} \oplus (1-p) \algebra{A} \to \algebra{A}, pa \oplus (1-p)b \mapsto pa + b - pb
+    \end{align*}
+    Concatenation of these two functions yields
+    \begin{align*}
+        \psi(\phi(a)) &= \psi(pa \oplus (1-p)a) = pa + a - pa = a\\
+        \phi(\psi(pa \oplus (1-p)b)) &= phi(pa + b - pb) = p (pa + b - pb) \oplus (1-p)(pa + b - pb)\\
+        &= p^2 a + pb - p^2b \oplus pa - p^2a + b - pb - pb + p^2 b\\
+        &= p a + pb - pb \oplus pa - pa + b - pb - pb + pb\\
+        &= pa \oplus (1-p) b
+    \end{align*}
+    showing that $\phi$ is a bijective mapping. Furthermore, $\phi$ we have
+    \begin{align*}
+        \phi(a \cdot b) &= p a b \oplus (1-p) ab = p^2 ab \oplus (1-p)^2 ab = (pa)(pb) \oplus ((1-p)a)((1-p)b)\\
+        &= (pa \oplus (1-p)a) (pb \oplus (1-p)b) = \phi(a) \phi(b)
+    \end{align*}
+    and $\phi$ is a homomorphism. Because $p \oplus (1-p)$ is the unit in $p \algebra{A} \oplus (1-p) \algebra{A}$ and $\phi(1) = p \oplus (1-p)$, $\phi$ is also compatible with the unit.
+    \item Consider the functions $c_U$ and $c_V$, where $c_U|_U \equiv 1$ and $c_U|_V \equiv 0$ and likewise for $c_V$. These are continuous, idempotent and $c_U = 1 - c_V$ also holds. Note that these are in fact \textbf{not} elements of $C_0(X)$ as $U,V$ need not necessarily be compact. However, above we have not used $p \in \algebra{A}$ except for the fact that $p$ admits a well-defined multiplication with elements of $\algebra{A}$ yielding only elements of $\algebra{A}$. Since $c_U,c_V$ are still continuous the multiplication of $C(X)$ can be used here. By the argument above we then have $C_0(X) \simeq c_U C_0(X) \oplus c_V C_0(X) \simeq C_0(U) \oplus C_0(V)$ with 
+    \begin{equation*}
+        \phi: C_0(X) \to C_0(U) \oplus C_0(V), f \mapsto (f \cdot c_U)|_U \oplus (f \cdot c_V)|_V = f|_U \oplus f|_V
+    \end{equation*}
+    an isomorphism of unital algebras. To show that this is also an isomorphism of $C^*$-algebras, we also have to show that $\phi$ is continuous and commutes with $^*$. For the continuity, consider
+    \begin{equation*}
+        \| \phi(f) \| = \max\{ \| f|_U \|, \| f|_V \| \} = \max \{ \sup_{x \in U} | f(x) |, \sup_{x \in V} | f(x) | \} = \sup_{x \in X} |f(x)| = \|f\|
+    \end{equation*}
+    so $\phi$ is in fact even isometric (and thus bounded and continuous). Furthermore, we have
+    \begin{equation*}
+        \phi(f)^* = \overline{f|_U \oplus f|_V} = \overline{f|_U} \oplus \overline{f|_V} = \overline{f}|_U \oplus \overline{f}|_V =  \phi(\overline{f})
+    \end{equation*}
+    and $\phi$ is an isomorphism of $C^*$-algebras.
+\end{itemize}
+
+
+
+\addtocounter{subsection}{1}
+\subsection{}
+
+\begin{itemize}
+    \item Assume $U$ is dense in $X$ and consider $a \in C_0(X)$ with $aI = 0$ (and thus $Ia = 0$ since $C_0(X)$ is commutative). Let $x_0 \in U$ be any point in $U$. We want to prove that $a(x_0) = 0$. Since $U$ is open, its complement $U^\complement$ is closed. Applying Uryson's Lemma to the compact set $\{x_0\}$ and the closed set $U^\complement$ (these sets are disjunct because of $x_0 \in U$) yields the existence of a function $f: X \to \mathds{C}$ with $f(x_0) = 1$ and $f|_{U^\complement} \equiv 0$. Since we have $f \in C_0(U) = I$ because of the latter condition and because ideals are strongly closed with respect to multiplication, we have $a f \in aI = 0$, so $a f$ is the zero function and in particular $a(x_0) f(x_0) = 0 \then a(x_0) = 0$. Repeating this chain of reasoning for any $x_0 \in U$ shows that $a|_U \equiv 0$ and since $U$ is dense in $X$ and $a$ is continuous, we have $a \equiv 0$. This shows that $I$ is an essential ideal.
+    \item Proof by contraposition. Let $U$ be non-dense in $X$, i.e. there exists a point $x_0 \in X$ admitting an open neighborhood $V \subset X \setminus U$. We once again use Uryson's Lemma, this time for the two disjunct sets $\{x_0\}$ (compact) and $V^\complement$ (closed), proving the existence of a function $a: X \to \mathds{C}$ with $a|_{V^\complement} \equiv 0$ and $a(x_0) = 1$, which is therefore not equivalent to the zero function. However, for any $f \in I$ we have $a \cdot f \equiv 0$ since $f$ is zero on $U^\complement$ and $a$ is zero on $U \subseteq V^\complement$. Therefore, we have $aI = 0$ but $a \neq 0$ and $I$ cannot be an essential ideal of $C_0(X)$.
+\end{itemize}
+
 \subsection{}
 
 We first show the prerequisites of the Stone-Weierstrass theorem.
