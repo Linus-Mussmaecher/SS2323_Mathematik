@@ -61,6 +61,23 @@ ist die maximale eindeutige Lösung des Anfangswertproblems.
 	\item Die Aussage ist korrekt. Die Funktion $f(t,x) = \exp(15 t) \cos(x(t)^7)$ ist auf ganz $\mathds{R} \times \mathds{R}$ definiert (und dort stetig und bezüglich $x$ lokal lipschitzstetig). Wegen $|cos(x)| \leq 1$ ist $f$ außerdem linear beschränkt, d.h. $|f(t,x)| \leq \exp(15 t)$ (man wähle in Satz 3.9 $a(t)  = 0$ und $b(t) = \exp(15 t)$). Satz 3.9 zeigt, dass dann jede Lösung der DGL auf ganz $\mathds{R}$ existiert.
 \end{enumerate}
 
+\subsection{Autonome Lösungen}
+\begin{enumerate}
+	\item Die rechte Seite der DGL ist ein Polynom (in der Variablen $f$) und daher stetig und stetig differenzierbar, also lokal lipschitzstetig. Außerdem handelt es sich um eine autonome Differenzialgleichung. Weiterhin ist $\mathds{R}$ ein offenes Intervall und $\mathds{R} \subseteq \mathds{R}^1$ eine offene Teilmenge. Somit sind die Voraussetzungen des globalen Existenz- und Eindeutigkeitssatzes von Picard-Lindelöf erfüllt und für alle $(t_0, f_0) \in \mathds{R} \times \mathds{R}$, insbesondere also für alle $(0, f_0)$, existiert eine maximale eindeutige Lösung des geforderten Anfangswertproblems.
+	\item Da es sich um eine autonome Differenzialgleichung handelt, dürfen sich die Trajektorien der (eindeutigen) Lösungen zu verschiedenen Anfangswerten nicht schneiden. Da die rechte Seite der Differenzialgleichungen Nullstellen bei $-1, 0, 1$ hat existieren weiterhin konstante Lösungen in diesen Ruhelagen, d.h. insbesondere ist $c_1(t) = 1$ eine Lösung der Differenzialgleichungen zum Anfangswert $f_0 = 1$. Eine Lösung $f$ zu einem Anfangswert $f_0 < 1$ darf daher $c_1$ nicht schneiden, insbesondere darf daher kein $t$ im Definitionsbereich von $f$ existieren mit $f(t) = 1$. Wegen $f(0) = f_0 < 1$ und dem Zwischenwertsatz schließt dies auch die Existenz eines $t$ im Definitionsbereich von $f$ mit $f(t) > 1$ aus.
+	\item Wir zeigen zuerst, dass $f$ nach oben unbeschränkt ist. Falls der maximale Definitionsbereich von $f$ kleiner $\infty$ ist, so folgt dies direkt aus dem Satz über das Verhalten der Lösungen im Großen ($\mathds{R}^2$ hat keinen Rand).
+	Ist $f$ auf ganz $\mathds{R}^2$ definiert, so können wir folgern: 
+	$f > 1$ und daher $f' = f^3 - f > 0$ sowie $f'' = 3 f^2 - 1 > 2$, d.h. ist linksgekrümmt und streng monoton steigend, also $f \to \infty$ für $t \to \infty$.
+	
+	Sei nun $a > 1$ beliebig. Ist $a > f_0$, so folgt aus $f(0) = f_0$, der Unbeschränktheit von $f$ und dem Zwischenwertsatz die Existenz des gesuchten $t$ mit $f(t) = a$.
+
+	Ist $1 < a < f_0$, so existiert eine eindeutige Lösung $g$ des Anfangswertproblems $f(0) = a$, die ebenfalls die obigen Eigenschaften erfüllt, d.h. es existiert ein $t_0$ im Definitionsbereich von $g$ mit $g(t_0) = f_0$. Dann ist aber aufgrund der Autonomie der Differenzialgleichung $f(t) = g(t - t_0)$ eine (d.h. die eindeutige) Lösung des Anfangswertproblems $f(0) = f_0$, diese Lösung ist also in $-t_0$ definiert und erfüllt dort $f(-t_0) = a$.
+
+	Ist $a = f_0$, so ist nichts zu zeigen.
+
+	Dies zeigt die Aussage für alle $a > 1$.
+\end{enumerate}
+
 \end{document}
 
 
