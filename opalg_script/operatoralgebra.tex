@@ -667,7 +667,43 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 \end{theorem}
 
 \begin{proof}
-	TODO
+	We may assume $\algebra{A}$ is unital (otherwise we consider $\tilde{\algebra{A}}$). If $\lambda \in \sigma(a)$, then
+	\begin{equation*}
+		\lambda^n \in \sigma(a^n) \then |\lambda^n| \leq \| a^n \| \then |\lambda| \leq \|a\|^{\frac{1}{n}} \quad \forall_{n \in \mathds{N}}
+	\end{equation*}
+	and therefore
+	\begin{equation*}
+		\pi(a) \leq \inf_{n \in \mathds{N}} \|a^n\|^{\frac{1}{n}} \leq \liminf_{n \to \infty} \|a^n\|^{\frac{1}{n}}\text{.}
+	\end{equation*}
+	We prove now that $\limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq \pi(a)$. Set $\Delta \coloneq B\left(0, \frac{1}{\pi(a)}\right)$. Where per convention we set $\frac{1}{\pi(a)} = \infty$ if $\pi(a) = 0$. If $\lambda \in \Delta$, then $1 - \lambda a \in \inv(\algebra{A})$ (because $|\lambda| < \frac{1}{\pi(a)}$ implies $|\lambda^{-1}| > \pi(a)$ and therefore $\lambda^{-1} \notin \sigma(a) \then \lambda^{-1} - a \in \inv{A} \then 1 - \lambda a \in \inv(A)$).
+
+	Now fix $\phi \in \algebra{A}^*$. Then $f: \Delta \to \mathds{C}, \lambda \mapsto \phi((1 - \lambda a)^{-1})$ is analytic, so it can be written as
+	\begin{equation*}
+		f(x) = \sum_{n = 0}^{\infty} a_n \lambda^n, a_n = \frac{f^{(n)}(0)}{n!} \in \mathds{C}, \lambda \in \Delta\text{.}
+	\end{equation*}
+	On the other hand, if 
+	\begin{equation*}
+		|\lambda| < \frac{1}{\|a\|} \leq \frac{1}{\pi(a)}
+	\end{equation*}
+	then $\|\lambda a \| < 1$, so
+	\begin{equation*}
+		(1 - \lambda a)^{-1} = \sum_{n = 0}^{\infty} \lambda^n a^n \then f(\lambda) = \phi((1 - \lambda)^{-1}) = \sum_{k = 0}^{\infty} \phi(a^n) \lambda^n
+	\end{equation*}
+	for $|\lambda| < \frac{1}{\|\lambda\|}$.
+
+	By uniqueness of the Taylor series expansion, it follows that
+	\begin{equation*}
+		a_n = \phi(a^n)	 \forall_{n \in \mathds{N}}\text{.}
+	\end{equation*}
+	In particular, $(\phi(a^n) \lambda^n)$ converges to zero for all $\lambda \in \Delta$ and thus $(\phi(a^n) \lambda^n)$ is bounded for all $\lambda \in \Delta$.
+
+	From the principle of uniform convergence, it follows that $(a^n \lambda^n)$ is bounded. So there exists an $M = M_\lambda$ such that
+	\begin{align*}
+		& \|\lambda^n a^n\| \leq M \forall_{n \in \mathds{N}}\\
+		\then & \| \lambda^n \|^{\frac{1}{n}} \leq \frac{M^{\frac{1}{n}}}{|\lambda|} \forall_{n \in \mathds{N}}, \forall_{\lambda \in \Delta, \lambda \neq 0}\\
+		\then & \limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq \frac{1}{\lambda} \forall_{\lambda \in \Delta \text{ i.e. } |\lambda| < \frac{1}{\pi(a)}}
+	\end{align*}
+	Letting $\lambda < \frac{1}{\pi(a)}$ yields $\limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq \pi(a)$.
 \end{proof}
 
 \begin{example}
@@ -696,7 +732,42 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 	Then we have an embedding by $\iota: \algebra{B} \hookrightarrow \algebra{A}, f \mapsto f|_{\mathds{S}^1}$.
 
 	By the principle of maximum modules, $\iota$ is an embedding of (unital) Banach algebras.
+	Consider: $f(z) = z$ for $z \in \mathds{D}$.
+	(Observation: $\closure{Alg}(1,z) = A(\mathds{D})$)
+	Then:
+	\begin{equation*}
+		\sigma_{A(\mathds{D})}(f) = f(\mathds{D}) = \mathds{D}
+	\end{equation*}
+	and $\sigma_{C(\mathds{S}^1)}(f|_{\mathds{S}^1}) = \mathds{S}^1$.
 \end{example}
+
+\begin{definition}[Exponentials]
+	Let $\algebra{A}$ be a unital Banach algebra, given $a \in \algebra{A}$ we define
+	\begin{equation*}
+		e^a = \exp(a) = \sum_{n = 0}^{\infty} \frac{a^n}{n!}
+	\end{equation*}
+	Note $\left\| \frac{a^n}{n!} \right\| \leq \frac{\|a\|^n}{n!}$, so the series converges and $\| \exp(a) \| \leq \exp(\|a\|)$.
+\end{definition}
+
+\begin{theorem}~
+	\begin{enumerate}
+		\item Let $\algebra{A}$ be a unital Banach algebra. If $a \in \algebra{A}$, then $f: \mathds{R} \to \algebra{A}, t \mapsto \exp(ta)$ is the unique solution of 
+		\begin{equation*}
+			\left\{ \begin{matrix}
+				f'(t) &= a f(t)\\
+				f(0) &= 1
+			\end{matrix} \right.
+		\end{equation*}
+		\item $e^a \in \inv(\algebra{A})$ and $(e^a)^{-1} = e^{-a}$.
+		\item If $a,b \in \algebra{A}$ then $e^{a + b} = e^a \cdot e^b$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	See Murphy, 1.2.9.
+\end{proof}
+
+
 
 
 
