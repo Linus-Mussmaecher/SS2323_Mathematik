@@ -1,0 +1,51 @@
+\documentclass[a4paper]{article}
+
+% --- DATA ---
+
+\def\lecture{Stochastik 2}
+\def\authors{Linus Mußmächer}
+\def\sheetNumber{03}
+%\def\sumPoints{30} 
+
+% --- PREAMBLE ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+\input{../../preambles/exercise_preamble.tex}
+
+% --- DOCUMENT ---
+
+\begin{document}
+
+\makeexheaderger
+
+\subsection{Zentralübung}
+
+\begin{enumerate}
+    \item Sei $X_0$ eine Zufallsvariable mit charakteristischer Funktion $\phi$, d.h. $\mathds{E}[\exp(itX)] = \phi(t)$. Sei nun $\{X_k \mid k \in \mathds{N} \}$ eine (abzählbare) Menge an paarweise unabhängigen, zu $X$ gleichverteilten Zufallsvariablen. Weiterhin sei $N$ eine Poisson-verteilte Zufallsvariable mit Parameter $\lambda$, d.h. $\mathds{P}(N = k) = \exp(\lambda) \cdot \frac{\lambda^k}{k!}$ und $\phi_N(t) = \exp(\lambda(\exp(it) - 1))$. $N$ sei weiterhin von allen $X_k$ unabhängig. Dann betrachten wir eine Zufallsvariable mit der folgenden Definition:
+    \begin{equation*}
+        X = \sum_{k = 1}^{\infty} \mathds{1}(N \geq k) X_k = \sum_{k = 1}^{N} X_k \text{.}
+    \end{equation*}
+    Dann ist 
+    \begin{equation*}
+        \mathds{E}[X] = \sum_{n = 0}^{\infty} \left( \mathds{P}(N = n) \sum_{k = 1}^{n} E[X_k] \right)
+    \end{equation*}
+    sowie 
+    \begin{align*}
+        \phi_X(t) = \mathds{E}[\exp(i t X)] &\overset{(*)}{=} \sum_{n = 0}^{\infty} \left( \mathds{P}(N = n) \mathds{E} \left[ \exp \left( i t \cdot \sum_{k = 1}^{n} X_i \right) \right]  \right)
+        = \sum_{n = 0}^{\infty} \left( \exp(- \lambda) \frac{\lambda^n}{n!} \phi(t)^n  \right)\\
+        &= \exp(- \lambda) \sum_{n = 0}^{\infty} \left( \frac{(\lambda \cdot \phi(t))^n}{n!}   \right)
+        = \exp(- \lambda) \exp(\lambda \phi(t))\\
+        &= \exp(\lambda(\phi(t) - 1))\text{,}
+    \end{align*}
+    wobei wir in $(*)$ dasselbe Prinzip wie in (ii) anwenden. Damit ist $e^{\lambda(\phi - 1)}$ wieder eine charakteristische Funktion.
+    \item Wir berechnen
+    \begin{align*}
+        \mathds{E}[\exp(it Z)]     
+        &= \mathds{P}(Y = 0) \cdot \mathds{E}[\exp(itX_1)] + \mathds{P}(Y = 1) \cdot \mathds{E}[\exp(itX_2)]\\
+        &= \alpha \phi_1(t) + (1 - \alpha) \phi_2(t)
+    \end{align*}
+\end{enumerate}
+
+
+
+\end{document}
