@@ -37,7 +37,7 @@
         = \exp(- \lambda) \exp(\lambda \phi(t))\\
         &= \exp(\lambda(\phi(t) - 1))\text{,}
     \end{align*}
-    wobei wir in $(*)$ dasselbe Prinzip wie in (ii) anwenden. Damit ist $e^{\lambda(\phi - 1)}$ wieder eine charakteristische Funktion.
+    wobei wir in $(*)$ bedingte Erwartung verwenden. Damit ist $e^{\lambda(\phi - 1)}$ wieder eine charakteristische Funktion.
     \item Wir berechnen
     \begin{align*}
         \mathds{E}[\exp(it Z)]     
@@ -46,6 +46,35 @@
     \end{align*}
 \end{enumerate}
 
+\addtocounter{subsection}{1}
 
+\subsection{}
+
+Es ist $\mathds{E}[\exp(itX)] = \phi_X(t)$ sowie $\mathds{E}[\exp(itX)] = \sum_{n = - \infty}^{\infty} \exp(itn) \cdot \mathds{P}(X = n)$ nach der Transformationsformel. Gleichsetzen liefert
+\begin{equation*}
+    \phi_X(t) = \sum_{n = - \infty}^{\infty} \exp(itn) \cdot \mathds{P}(X = n)\text{.}
+\end{equation*}
+Wir berechnen (unter Ausnutzung der Holomorphie des Integranden)
+\begin{align*}
+    \frac{1}{2\pi} \int_{-\pi}^{\pi} \exp(-itn) \phi_X(t) dt
+    &= \frac{1}{2 \pi} \int_{-\pi}^{\pi} \sum_{k=-\infty}^{\infty} \exp(it(k-n)) \mathds{P}(X = k) dt\\
+    &= \frac{1}{2 \pi} \sum_{k=-\infty}^{\infty} \mathds{P}(X = k)  \int_{-\pi}^{\pi}  \exp(it(k-n)) dt\text{.}\\
+\end{align*}
+Für $k \neq n$ beschreibt $\exp(it(k-n))$ (integriert von $-\pi$ bis $\pi$) einen geschlossenen Weg $n-k$-mal entlang des Randes der Einheitskreisscheibe. Da die Funktion $f: z \mapsto z$ auf der Einheitskreisscheibe holomorph ist, folgt $\int_{-\pi}^{\pi}  \exp(it(k-n)) dt = 0$ nach dem Cauchy-Integralsatz. Somit verbleibt nur der Summand für $k = n$:
+\begin{align*}
+    \frac{1}{2\pi} \int_{-\pi}^{\pi} \exp(-itn) \phi_X(t) dt
+    &= \frac{1}{2 \pi} \int_{-\pi}^{\pi} \sum_{k=-\infty}^{\infty} \exp(it(k-n)) \mathds{P}(X = k) dt\\
+    &= \frac{1}{2 \pi} \sum_{k=-\infty}^{\infty} \mathds{P}(X = k)  \int_{-\pi}^{\pi}  \exp(it(k-n)) dt\text{.}\\
+    &= \frac{1}{2 \pi} \mathds{P}(X = n) \int_{-\pi}^{\pi} \exp(i t \cdot 0) dt \\
+    &= \frac{1}{2 \pi} \mathds{P}(X = n) 2 \pi = \mathds{P}(X = n)
+\end{align*}
+und somit ist die Aussage gezeigt.
+
+\subsection{}
+
+Nach Aufgabe 2.4 eine auf der Menge $\{-1,1\}$ Laplace-verteilte Zufallsvariable die charakteristische Funktion $\cos(t)$, und demnach die Summe aus drei so verteilten Zufallsvariablen die charakteristische Funktion $\cos(t)^3$. Wegen der Eindeutigkeit von charakteristischen Funktionen ist $X$ demnach derartig verteilt, hat also Wertebereich $-3, -1, 1, 3$, wobei diese Werte mit Wahrscheinlichkeit $\frac{1}{8}$ für $X=-3,3$ und $\frac{3}{8}$ für $X = -1,1$ auftreten. Dann gilt:
+\begin{align*}
+    \mathds{E}[]
+\end{align*}
 
 \end{document}
