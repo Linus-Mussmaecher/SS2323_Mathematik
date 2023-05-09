@@ -23,7 +23,7 @@
 
 \newpage
 
-The set of all linear bounded operators $\algebra{L}(H) = \algebra{B}(H)$ on a given Banach space $H$ is a (Banach) algebra kkwith $S \cdot T = S \circ T$.
+The set of all linear bounded operators $\algebra{L}(H) = \algebra{B}(H)$ on a given Banach space $H$ is a (Banach) algebra with $S \cdot T = S \circ T$.
 $M \subseteq \algebra{L}$ is a Subalgebra such that $M^* \subseteq M$ where $T^*$ is the adjoint of $T$.
 This is also a closed subspace with respect to the strong topology. This is equivalent to $M = M''$ (when $X \subseteq \algebra{B}(H), X' = \{ T \in \algebra{B}(H) \mid TS = ST \ \forall_{ S \in X} \}$)
 
@@ -833,17 +833,17 @@ Then $\algebra{A} / \ring{I} \simeq \mathds{C}$ and $\chi \in \Omega(\algebra{A}
 		Take $\ring{I} \triangleleft  \algebra{A}$ a maximal ideal.
 		Then $\ring{I} = \closure{\ring{I}}$ because $\closure{\ring{I}} \neq \algebra{A}$, otherwise $1 \in \closure{\ring{I}}$ and since $\inv(\algebra{A})$ is open in $\algebra{A}$, we get $\ring{I} \cap \inv(\algebra{A}) \neq \emptyset$.
 		But then we have an invertible element in the ideal $\ring{I}$ already, but this implies the contradiction $\ring{I} = \algebra{A}$. 
+		Therefore, $\algebra{A} / \ring{I}$ is a commutative, unital Banach algebra which is simple ($\ring{I}$ is maximal).
+		\begin{quote}
+			Exercise: If $\ring{I} \triangleleft \algebra{A}$, then $\algebra{A} / \ring{I}$ is field if and only if there exists no $\ring{J} \triangleleft \algebra{A}$ such that $\ring{I} \triangleleft \ring{J}$.
+		\end{quote}
+		Thus, $\algebra{A} / \ring{I}$ is a field and $\algebra{A} / \ring{I} \simeq \mathds{C}$.
+		Then the composition
+		\begin{equation*}
+			\algebra{A} \xrightarrow{q} \algebra{A} / \ring{I} \simeq \mathds{C}
+		\end{equation*}
+		is a character with $ \ker(\chi) = \ring{I}$.
 	\end{itemize}
-	Therefore, $\algebra{A} / \ring{I}$ is a commutative, unital Banach algebra which is simple ($\ring{I}$ is maximal).
-	\begin{quote}
-		Exercise: If $\ring{I} \triangleleft \algebra{A}$, then $\algebra{A} / \ring{I}$ is field if and only if there exists no $\ring{J} \triangleleft \algebra{A}$ such that $\ring{I} \triangleleft \ring{J}$.
-	\end{quote}
-	Thus, $\algebra{A} / \ring{I}$ is a field and $\algebra{A} / \ring{I} \simeq \mathds{C}$.
-	Then the composition
-	\begin{equation*}
-		\algebra{A} \xrightarrow{q} \algebra{A} / \ring{I} \simeq \mathds{C}
-	\end{equation*}
-	is a character with $ \ker(\chi) = \ring{I}$.
 \end{proof}
 
 \begin{exercise}
@@ -854,9 +854,9 @@ In particular, we can apply this to $\ring{I} = 0$ in $\algebra{A} \neq 0$ (with
 
 \subsection*{Topology on $\Omega(\algebra{A})$}
 
-We have for $\algebra{A}$ a Banach algebra. We can add a unit to receive $\tilde{\algebra{A}}$, which i Banach algebra.
+We have for $\algebra{A}$ a Banach algebra. We can add a unit to receive $\tilde{\algebra{A}}$, which is a Banach algebra.
 
-Observe: If $\chi \in \Omega(\algebra{A})$, then there exists a unique $\tilde{X} \in \Omega(\tilde{\algebra{A}})$ via $\tilde{X}(a + \lambda \cdot) = \chi(a) + \lambda$. Thus $\|\chi\| \leq \|\tilde{X}\| = 1$ (Note that it may still be greater than $1$. See exercises 2023-05-09).
+Observe: If $\chi \in \Omega(\algebra{A})$, then there exists a unique $\tilde{X} \in \Omega(\tilde{\algebra{A}})$ via $\tilde{X}(a + \lambda \cdot 1) = \chi(a) + \lambda$. Thus, $\|\chi\| \leq \|\tilde{X}\| = 1$ (Note that it may still be smaller than $1$. See exercises 2023-05-09).
 
 In any case, 
 \begin{equation*}
@@ -869,7 +869,7 @@ and $\algebra{A}^*$ corries the weak $^*$-topology. $\phi_i \to \phi$ in $\algeb
 \end{definition}
 
 \begin{proposition}
-	$\Omega(\algebra{A})$ is a locally compact Hausdorff space. If $\algebra{A}$ is untrue, the n$\Omega(\algebra{(A)})$ is compact.
+	$\Omega(\algebra{A})$ is a locally compact Hausdorff space. If $\algebra{A}$ is unital, then $\Omega(\algebra{(A)})$ is compact.
 \end{proposition}
 
 \begin{proof}
@@ -889,11 +889,11 @@ and $\algebra{A}^*$ corries the weak $^*$-topology. $\phi_i \to \phi$ in $\algeb
 Observation: Given a Banach algebra $\algebra{A}$, we have a homeomorphism 
 \begin{equation*}
 	\Omega(\tilde{\algebra{A}}) \to \Omega(\algebra{A}) \sqcup \{ \chi_\infty\}, \phi \mapsto \left\{  \begin{matrix}
-		\phi|_\algebra{A} & \phi|_{\algebra{A}} = 0\\
-		\chi_\infty & \phi_|\algebra{A} = 0
+		\phi|_\algebra{A} & \phi|_{\algebra{A}} \neq 0\\
+		\chi_\infty & \phi|_\algebra{A} = 0
 	\end{matrix}\right. \text{,}
 \end{equation*}
-where $\chi_\infty(a + \lambda \cdot 1) = \lambda$. Thus, $\Omega(\algebra{A} \sqcup \{\chi_\infty)$ is already the unitization of $\Omega(\algebra{A})$. 
+where $\chi_\infty(a + \lambda \cdot 1) = \lambda$. Thus, $\Omega(\algebra{A}) \sqcup \{\chi_\infty\}$ is already the unitization of $\Omega(\algebra{A})$. 
 
 \begin{theorem}
 	Let $\algebra{A}$ be a Banach algebra. Then for every $a \in \algebra{A}$.
@@ -902,27 +902,26 @@ where $\chi_\infty(a + \lambda \cdot 1) = \lambda$. Thus, $\Omega(\algebra{A} \s
 	\end{equation*}
 	If $\algebra{A}$ is commutative, then
 	\begin{itemize}
-		\item $\{ \chi(a) \mid \chi \in \Omega(\algebra{A})\} = \sigma$ in case $\algebra{A}$ is unital.
-		\item $\{ \chi(a) \mid \chi \in \Omega(\algebra{A})\} \cup \{0\} = \sigma_\algebra{A}(a)$.
+		\item $\{ \chi(a) \mid \chi \in \Omega(\algebra{A})\} = \sigma(a)$ in case $\algebra{A}$ is unital.
+		\item $\{ \chi(a) \mid \chi \in \Omega(\algebra{A})\} \cup \{0\} = \sigma_{\algebra{A}}(a)$.
 	\end{itemize}
 \end{theorem}
 
-\begin{proof}
+\begin{proof}~
 	\begin{itemize}
-		\item $\algebra{A}$ is unital, $a \in \algebra{A}$. $\chi(a = \chi(a) \cdot 1) = 0$, so $\chi(a - \chi(a) \cdot 1 ) = 0$, so $\chi(a) \in \sigma(a)$.
+		\item $\algebra{A}$ is unital and $a \in \algebra{A}$. $\chi(a - \chi(a) \cdot 1) = 0$, so $\chi(a) \in \sigma(a)$, so $\{ \chi(a) \mid x \in \Omega(a) \}  \subseteq \sigma(a)$.
 		
-		Then $\{ \chi(a) \mid x \in \Omega(a) \}  \subseteq \sigma(a)$. Now if $\lambda \in \sigma(a)$, consider $\ring{I} \coloneq (a = \lambda 1) \algebra{A} \triangleleft \algebra{A}$ if $\algebra{A}$ is commutative.
-
-		By Zorns Lemma, we get $I \subseteq J \triangleleft \algebra{A}$. And thus $J = \ker(\chi)$, and some $\chi \in \Omega(\algebra{A})$. Thus we have $a - \lambda \cdot 1 \in \ring{I} \subseteq J = \ker(\chi)$ so $\chi(a) = \lambda$.
+		Now if $\lambda \in \sigma(a)$, consider $\ring{I} \coloneq (a - \lambda \cdot 1) \algebra{A} \triangleleft \algebra{A}$ if $\algebra{A}$ is commutative.
+		By Zorns Lemma, we get $I \subseteq J \triangleleft \algebra{A}$ with $J = \ker(\chi)$ for some $\chi \in \Omega(\algebra{A})$. Thus we have $a - \lambda \cdot 1 \in \ring{I} \subseteq J = \ker(\chi)$ so $\chi(a) = \lambda$.
 
 		\item $\algebra{A}$ is not unital. Consider $\tilde{\algebra{A}}$. By the first part,
-		\begin{align*}
-			\sigma_\algebra{A}(a) &= \sigma_{\tilde{\algebra{A}}}(a) \\&\supseteq \{\chi(a) \mid \chi \in \Omega(\tilde{\algebra{A}}) \} = \{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}
-		\end{align*}
+		\begin{equation*}
+			\sigma_\algebra{A}(a) = \sigma_{\tilde{\algebra{A}}}(a) \supseteq \{\chi(a) \mid \chi \in \Omega(\tilde{\algebra{A}}) \} = \{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}
+		\end{equation*}
 		If $\algebra{A}$ is commutative, by the first part again: 
-		\begin{align*}
-			\sigma_\algebra{A} = \sigma_{\tilde{\algebra{A}}} = \{\chi(a) \mid \chi \in \Omega(\tilde{\algebra{A}})\} = \{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}
-		\end{align*}
+		\begin{equation*}
+			\sigma_\algebra{A}(a) = \sigma_{\tilde{\algebra{A}}}(a) = \{\chi(a) \mid \chi \in \Omega(\tilde{\algebra{A}})\} = \{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}
+		\end{equation*}
 	\end{itemize}
 \end{proof}
 
