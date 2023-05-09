@@ -74,7 +74,10 @@ und somit ist die Aussage gezeigt.
 
 Nach Aufgabe 2.4 eine auf der Menge $\{-1,1\}$ Laplace-verteilte Zufallsvariable die charakteristische Funktion $\cos(t)$, und demnach die Summe aus drei so verteilten Zufallsvariablen die charakteristische Funktion $\cos(t)^3$. Wegen der Eindeutigkeit von charakteristischen Funktionen ist $X$ demnach derartig verteilt, hat also Wertebereich $-3, -1, 1, 3$, wobei diese Werte mit Wahrscheinlichkeit $\frac{1}{8}$ für $X=-3,3$ und $\frac{3}{8}$ für $X = -1,1$ auftreten. Dann gilt:
 \begin{align*}
-    \mathds{E}[]
+    \mathds{E}[\exp(itY)] &= \sum_{y=-\infty}^{\infty} \exp(ity) P(Y = y) dt \\
+    &= \sum_{x=-\infty}^{\infty} \exp(it (x^3 - 3 x^2 + 1)) P(X = x) dt \\
+    &= \sum_{x \in \{ -3, -1, 1, 3 \}} \exp(it (x^3 - 3 x^2 + 1)) P(X = x) dt \\
+    &= \frac{1}{8} \exp(-53it)  + \frac{3}{8}\exp(-3it)  + \frac{3}{8}\exp(-it)  + \frac{1}{8}\exp(it)
 \end{align*}
 
 \end{document}
