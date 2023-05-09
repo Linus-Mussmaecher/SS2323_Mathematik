@@ -768,7 +768,163 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 \end{proof}
 
 
+\section{Gelfand Representation for commutative Banach algebras}
 
+\underline{Idea}: Given a commutative algebra $\algebra{A}$, we want to represent $\algebra{A}$ by a homomorphism $\phi: \algebra{A} \to C_0(X)$ for $X$ some locally compact Hausdorff space. We hope that $\phi$ is injective, or even isometric, on an isomorphism. But what is $X$, and what is $\phi$?
+
+Notice that, if $\algebra{A} = C_0(X)$ already, then for each $x \in X$ we get a character $\mathrm{ev}_x: \algebra{A} \to \mathds{C}, f \mapsto f(x)$.
+
+\begin{definition}
+	Given an algebra $\algebra{A}$, we define 
+	\begin{equation*}
+		\hat{\algebra{A}} = \Omega(\algebra{A}) \coloneq \{\chi: \algebra{A} \to \mathds{C} \mid \chi \text{ non-zero homomorphism}\}\text{.}
+	\end{equation*}
+\end{definition}
+
+\begin{example}~
+	\begin{enumerate}
+		\item For $\algebra{A} = C_0(X)$ we get a map
+		\begin{equation*}
+			X \to \Omega(\algebra{A}), x \mapsto \mathrm{ev}_x
+		\end{equation*}
+		that is a bijection. After we give $\Omega(\algebra{A})$ an appropriate topology, it will also be a homomorphism.
+		\item Let $\algebra{A} = M_2(\mathds{C})$ (or any $M_n(\mathds{C})$). This is a simple algebra, so non-zero homomorphisms $\chi: \algebra{X} \to \mathds{C}$ do not exist (same for any $\algebra{A}$ with dimension $>1$).
+		
+		So in this case we have $\Omega(\algebra{A}) = \emptyset$. This can also happen in commutative algebras. 
+		\item Consider
+		\begin{equation*}
+			\algebra{A} = \left\{ \qmatrix{0 & \lambda \\ 0 & 0} \mid \lambda \in \mathds{C}  \right\}
+		\end{equation*}
+		Then for all $a \in \algebra{A}$ we have $a^2 = 0$, so if $\chi: \algebra{A} \to \mathds{C}$ is an homomorphism, then $\chi(a)^2 = \chi(a^2) = 0$, so $\chi(a) = 0$ for all $a \in \algebra{A}$.
+		So again, $\Omega(\algebra{A}) = \emptyset$ (and $\algebra{A}$ is commutative with $\dim \algebra{A} = 1$).
+	\end{enumerate}
+\end{example}
+
+Question: Given an abstract algebra $\algebra{A}$ how do we possibly find its characters? 
+
+Idea: Assume that $\ring{I} \triangleleft \algebra{A}$ is a maximal ideal and $\algebra{A}$ is a unital Banach algebra.
+Then $\algebra{A} / \ring{I} \simeq \mathds{C}$ and $\chi \in \Omega(\algebra{A})$. 
+
+\begin{theorem}
+	Let $\algebra{A}$ be a unital non-zero Banach algebra.
+	If $\chi \in \Omega(\algebra{A})$ then $\| \chi \| = \sup_{\|a\| = 1} |\chi(a)| = 1$ and $\ker(\chi) \triangleleft \algebra{A}$.
+	So $\chi \in \algebra{A}^*$ (the topological dual of $\Omega(\algebra{A}) \subseteq D_{\algebra{A}^*}(0,1)$).
+
+	Moreover, if $\algebra{A}$ is a unital Banach commutative algebra, then $\Omega(\algebra{A}) \ni \chi \mapsto \ker(\chi) \triangleleft \algebra{A}$ is a bijection between of characters of $\algebra{A}$ and maximal ideals of $\algebra{A}$.
+\end{theorem}
+
+\begin{proof}
+	If $a \in \algebra{A}$ and $\chi$ a character, then $\chi(a) \in \sigma(\algebra{A})$, because $\chi(a - \chi(a) \cdot 1) = \chi(a) - \chi(a) \cdot \chi(1) = 0$, so $a - \chi(a) \cdot 1 \in \ker(\chi) \triangleleft \algebra{A}$ and thus $a - \chi(a) \cdot 1 \notin \inv(\algebra{A})$.
+
+	Therefore: $|\chi(a)| \leq \pi(a) \leq \|a\|$. So $\|\chi\| \leq 1$. Since $\chi(1) = 1$ and $\|1\| = 1$ we have $\|\chi\| = 1$.
+
+	Now, apply linear algebra. Then $\ker (\chi)$ is a maximal proper subspace, in particular a maximal ideal.
+	And $\ker(\chi)$ is closed, because $\chi$ is continuous.
+	Now assume that $\algebra{A}$ is commutative (in addition to unital and Banach).
+	Then we have the mapping 
+	\begin{equation*}
+		\phi: \Omega(\algebra{A}) \to \mathrm{MaxIdeals}(\algebra{A}), \chi \to \ker(\chi)\text{.}
+	\end{equation*}
+	\begin{itemize}
+		\item $\phi$ is injective.
+		If $\ker(\chi_1) = \ker(\chi_2)$ for $\chi_1, \chi_2 \in \algebra{A}$, then for every $a \in \algebra{A}$ we have $a - \chi_1(a) \cdot 1 \in \ker(\chi_1) =\ker(\chi_2)$.
+		Thus, $\chi_2(a = \chi_1(a) \cdot 1) = 0$ and therefore $\chi_2(a) = \chi_1(a)$ for every $\algebra{A}$. 
+		\item $\phi$ is surjective.
+		Take $\ring{I} \triangleleft  \algebra{A}$ a maximal ideal.
+		Then $\ring{I} = \closure{\ring{I}}$ because $\closure{\ring{I}} \neq \algebra{A}$, otherwise $1 \in \closure{\ring{I}}$ and since $\inv(\algebra{A})$ is open in $\algebra{A}$, we get $\ring{I} \cap \inv(\algebra{A}) \neq \emptyset$.
+		But then we have an invertible element in the ideal $\ring{I}$ already, but this implies the contradiction $\ring{I} = \algebra{A}$. 
+	\end{itemize}
+	Therefore, $\algebra{A} / \ring{I}$ is a commutative, unital Banach algebra which is simple ($\ring{I}$ is maximal).
+	\begin{quote}
+		Exercise: If $\ring{I} \triangleleft \algebra{A}$, then $\algebra{A} / \ring{I}$ is field if and only if there exists no $\ring{J} \triangleleft \algebra{A}$ such that $\ring{I} \triangleleft \ring{J}$.
+	\end{quote}
+	Thus, $\algebra{A} / \ring{I}$ is a field and $\algebra{A} / \ring{I} \simeq \mathds{C}$.
+	Then the composition
+	\begin{equation*}
+		\algebra{A} \xrightarrow{q} \algebra{A} / \ring{I} \simeq \mathds{C}
+	\end{equation*}
+	is a character with $ \ker(\chi) = \ring{I}$.
+\end{proof}
+
+\begin{exercise}
+	An application of Zorn's Lemma. Show that every ideal $I \triangleleft \algebra{A}$ in a unital algebra $\algebra{A}$ is contained in a maximal ideal.
+\end{exercise}
+
+In particular, we can apply this to $\ring{I} = 0$ in $\algebra{A} \neq 0$ (with $\algebra{A}$ is unital and commutative) and thus $\Omega(\algebra{A}) \neq \emptyset$.
+
+\subsection*{Topology on $\Omega(\algebra{A})$}
+
+We have for $\algebra{A}$ a Banach algebra. We can add a unit to receive $\tilde{\algebra{A}}$, which i Banach algebra.
+
+Observe: If $\chi \in \Omega(\algebra{A})$, then there exists a unique $\tilde{X} \in \Omega(\tilde{\algebra{A}})$ via $\tilde{X}(a + \lambda \cdot) = \chi(a) + \lambda$. Thus $\|\chi\| \leq \|\tilde{X}\| = 1$ (Note that it may still be greater than $1$. See exercises 2023-05-09).
+
+In any case, 
+\begin{equation*}
+	\Omega(\algebra{A}) = D_{\algebra{A}^*}(0,1) = \phi\{\phi \in \algebra{A}^* = \{ \phi \in \algebra{A}^* \mid \| \phi \| \leq 1 \}
+\end{equation*}
+and $\algebra{A}^*$ corries the weak $^*$-topology. $\phi_i \to \phi$ in $\algebra{^*}$. 
+
+\begin{definition}
+	Given a Banach algebra $\algebra{A}$, we endow $\Omega(\algebra{A})$ with the weak $^*$-topology and call thus this the \textbf{Gelfand spectrum} of $\algebra{A}$.
+\end{definition}
+
+\begin{proposition}
+	$\Omega(\algebra{A})$ is a locally compact Hausdorff space. If $\algebra{A}$ is untrue, the n$\Omega(\algebra{(A)})$ is compact.
+\end{proposition}
+
+\begin{proof}
+	By Banach-Alaoglu-Theorem, $D_{\algebra{A}^*}(0,1)$ is compact and Hausdorff with the weak $^*$-topology.
+	Let
+	\begin{align*}
+		S &\coloneq \{\chi: A \to \mathds{C} \mid \chi \text{ hom.} \}\\
+		&= \Omega(\algebra{A}) \cup \{0\}
+	\end{align*}
+	Then $S \subseteq D_{\algebra{A}^*}(0,1)$.
+	So $\chi(ab) = \lim_{i \to \infty} K_i = \lim_{i \to \infty} \chi_i(a) \chi_i(b) = \chi(a) \chi(b)$ and therefore $x \in S$.
+	Thus, $S$ is a compact Hausdorff space and $\Omega(\algebra{A}) = S \setminus \{0\}$ is relatively compact.
+
+	If $\algebra{A}$ is unital, then $\Omega(\algebra{A}) \subseteq D_{\algebra{A}^*}(0,1)$ is closed. Then we have $(X_i) \subseteq \Omega(\algebra{A})$ and $X_i \to X \in \algebra{A}^*$ and thus $X \in S = \hom(\algebra{A}, \mathds{C})$.
+\end{proof}
+
+Observation: Given a Banach algebra $\algebra{A}$, we have a homeomorphism 
+\begin{equation*}
+	\Omega(\tilde{\algebra{A}}) \to \Omega(\algebra{A}) \sqcup \{ \chi_\infty\}, \phi \mapsto \left\{  \begin{matrix}
+		\phi|_\algebra{A} & \phi|_{\algebra{A}} = 0\\
+		\chi_\infty & \phi_|\algebra{A} = 0
+	\end{matrix}\right. \text{,}
+\end{equation*}
+where $\chi_\infty(a + \lambda \cdot 1) = \lambda$. Thus, $\Omega(\algebra{A} \sqcup \{\chi_\infty)$ is already the unitization of $\Omega(\algebra{A})$. 
+
+\begin{theorem}
+	Let $\algebra{A}$ be a Banach algebra. Then for every $a \in \algebra{A}$.
+	\begin{equation*}
+		\{ \chi (a) \mid \chi \in \Omega(\algebra{A}) \} \subseteq \sigma(a)
+	\end{equation*}
+	If $\algebra{A}$ is commutative, then
+	\begin{itemize}
+		\item $\{ \chi(a) \mid \chi \in \Omega(\algebra{A})\} = \sigma$ in case $\algebra{A}$ is unital.
+		\item $\{ \chi(a) \mid \chi \in \Omega(\algebra{A})\} \cup \{0\} = \sigma_\algebra{A}(a)$.
+	\end{itemize}
+\end{theorem}
+
+\begin{proof}
+	\begin{itemize}
+		\item $\algebra{A}$ is unital, $a \in \algebra{A}$. $\chi(a = \chi(a) \cdot 1) = 0$, so $\chi(a - \chi(a) \cdot 1 ) = 0$, so $\chi(a) \in \sigma(a)$.
+		
+		Then $\{ \chi(a) \mid x \in \Omega(a) \}  \subseteq \sigma(a)$. Now if $\lambda \in \sigma(a)$, consider $\ring{I} \coloneq (a = \lambda 1) \algebra{A} \triangleleft \algebra{A}$ if $\algebra{A}$ is commutative.
+
+		By Zorns Lemma, we get $I \subseteq J \triangleleft \algebra{A}$. And thus $J = \ker(\chi)$, and some $\chi \in \Omega(\algebra{A})$. Thus we have $a - \lambda \cdot 1 \in \ring{I} \subseteq J = \ker(\chi)$ so $\chi(a) = \lambda$.
+
+		\item $\algebra{A}$ is not unital. Consider $\tilde{\algebra{A}}$. By the first part,
+		\begin{align*}
+			\sigma_\algebra{A}(a) &= \sigma_{\tilde{\algebra{A}}}(a) \\&\supseteq \{\chi(a) \mid \chi \in \Omega(\tilde{\algebra{A}}) \} = \{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}
+		\end{align*}
+		If $\algebra{A}$ is commutative, by the first part again: 
+		\begin{align*}
+			\sigma_\algebra{A} = \sigma_{\tilde{\algebra{A}}} = \{\chi(a) \mid \chi \in \Omega(\tilde{\algebra{A}})\} = \{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}
+		\end{align*}
+	\end{itemize}
+\end{proof}
 
 
 
