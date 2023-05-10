@@ -260,6 +260,42 @@ Let $X$ be Hausdorff and locally compact.
 	One can also prove $C_0(X)/C_0(U) \simeq C_0(F)$ (as $C_0$ of the subspace) where $F = U^\complement$.
 \end{exercise}
 
+\begin{exercise}
+	Prove that $\algebra{A}/\ring{I}$ is normed algebra, and
+	\begin{enumerate}
+		\item if $\algebra{A}$ is Banach and $I \trianglelefteq A$ is closed, then $\algebra{A} / \ring{I}$ is Banach.
+		\item if $\algebra{A}$ is unital and Banach, then $\algebra{A} / \ring{I}$ is unital.
+	\end{enumerate}
+	
+	unital if $\algebra{A}$ is, Banach if $\algebra{A}$ is and $\ring{I} \trianglelefteq \algebra{A}$ closed.
+\end{exercise}
+
+\begin{proof}
+	Consider $\algebra{A}/\ring{I}$ with $(a + \ring{I})(b + \ring{I}) = ab + \ring{I}$.
+	For the norm, use $\|a + \ring{I}\| = \dist(a, \ring{I}) = \inf_{x \in \ring{I}} \|a - x\|$.
+	This is submultiplicative. For every $\epsilon > 0$, there exist $x,y \in \ring{I}$ for which we have
+	\begin{equation*}
+		(\epsilon + \|a + \ring{I}\|) \cdot (\epsilon + \|b + \ring{I}\|) \geq \|a + x\| \cdot \|b + y\| \geq \|(a+x)(b+y) \| \geq \|ab + \underbrace{ay + xb + xy}_{\in \ring{I}} \| \geq \|ab + \ring{I}\|
+	\end{equation*}
+	and taking the limit yields the desired result.
+
+	Result (i) follows from functional analysis, that a space is Banach if and only if the convergence of $\sum_{k = 0}^{\infty} a_n$ is equivalent to the convergence of $\sum_{k =0}^{\infty} \|a_n\|$.
+
+	Now let $\algebra{A}$ also be unital, then $\algebra{A} / \ring{I}$ is unital.
+	If $\ring{I} = \algebra{A}$, the algebra is the zero-algebra.
+	Thus, let $\ring{I}$ be a proper ideal.
+	The fact that $1 = 1_\algebra{A} + \ring{I}$ is a unit is clear, but we need to prove $\| 1_\ring{A} + \ring{I}\| = 1$.
+	Observe that, if $x \in \ring{I} \triangleleft \algebra{A}$ then $x \notin \inv(\algebra{A})$ and $\|1_\algebra{A} + x\| \geq 1$.
+	Because otherwise, we have $\| 1_\algebra{A} + x \| < 1$ and then (because $\algebra{A}$ is Banach) $x = a - 1_\algebra{A} \in \inv(\algebra{A})$.
+	Hence $\|1_\algebra{A}\| = \inf_{x \in \ring{I}} \|1_\algebra{A} + x \| \geq 1$.
+	In addition, we have $1 \leq \|1_\algebra{A} + \ring{I}\| = \inf_{x \in \ring{I}} \|1_\algebra{A} - x \| \leq \|1_\algebra{A} + 0\| \leq 1$. This proves $\|1\| = \|1_\algebra{A} + \ring{I}\| = 1$.
+\end{proof}
+
+\begin{exercise}
+	Consider $\chi \in \Omega(\algebra{A})$. We have proved $\|\chi\| \leq 1$.  It may happen that $
+\end{exercise}
+
+
 \end{document}
 
 
