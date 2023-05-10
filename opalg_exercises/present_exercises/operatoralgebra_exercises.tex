@@ -291,9 +291,85 @@ Let $X$ be Hausdorff and locally compact.
 	In addition, we have $1 \leq \|1_\algebra{A} + \ring{I}\| = \inf_{x \in \ring{I}} \|1_\algebra{A} - x \| \leq \|1_\algebra{A} + 0\| \leq 1$. This proves $\|1\| = \|1_\algebra{A} + \ring{I}\| = 1$.
 \end{proof}
 
+In the following, $\mathds{D}$ is the \textbf{closed} unit circle.
+
 \begin{exercise}
-	Consider $\chi \in \Omega(\algebra{A})$. We have proved $\|\chi\| \leq 1$.  It may happen that $
+	Consider $\chi \in \Omega(\algebra{A})$.
+	We have proved $\|\chi\| \leq 1$. 
+	It may happen that $\|\chi\| < 1$.
+	We need a non-unital algebra for this, because we have $\|\chi\| = 1$ if $1 \in \algebra{A}$.
+
+	Consider $S = (\mathds{N}, +)$ as an additive semigroup. Then
+	\begin{equation*}
+		\ell^1(S) = \{(a_n)_{n \in \mathds{N}} \mid \sum_{n = 0}^{\infty} |a_n| < \infty\}
+	\end{equation*}
+	is a unital Banach algebrea with $\delta_n \cdot \delta_m = \delta_{n + m}$ for all $n,m \in \mathds{N}$ where 
+	\begin{equation*}
+		\delta_n(m) = \left\{ \begin{matrix}
+			1 & m = n \\ 0 & m \neq 0
+		\end{matrix} \right.
+	\end{equation*}
+	Observe $\ell^1(S) = \closure{\mathrm{alg}}\{\delta_0, \delta_1\}$ because of $\delta_1^n = \delta_n$.
+	The unit of the algebra is $\delta_0$.
+	What are the characters of $\ell^1(S)$?
+
+	We can write any $a \in \ell^1(S)$ as $	a = \sum_{n=0}^{\infty} a_n \delta_n$. So if $\chi \in \Omega(\ell^1(S))$ then
+	\begin{equation*}
+		\chi(a) = \sum_{n = 0}^{\infty} a_n \chi(\delta_n) \in \mathds{C}\text{.}
+	\end{equation*}
+	In particular, $\chi(1) = 1$ so $\chi(\delta_0) = 1$.
+	This leads to $\chi(\delta_n) = \chi(\delta_1^n) = \chi(\delta_1)^n = \chi(\delta_1)^n$.
+	So if we set $z \coloneq \chi(\delta_1) \in \mathds{C}$, we have $\chi(a) = \sum_{n = 0}^{\infty} a_n z^n$.
+	Observe $|z| = |\chi(\delta_1)| \leq \|\delta_1\| = 1$ (because the Image of a character is a subset of the spectrum, which is bounded by the norm) so $z$ must be in $\mathds{D}$. By conventioning $z^0 = 1$ for every $z \in \mathds{C}$, we can even choose $z = 0$.
+
+	Conversely, if $z \in \mathds{D}$, we define $\chi_z(a) \coloneq \sum_{n = 0}^{\infty} a_n z^n \in \mathds{C}$. Then $\chi_z(\delta_n) = z^n$ and
+	\begin{equation*}
+		\chi_z(\delta_n \cdot \delta_m) = \chi(\delta_{n + m}) = z^{n+m} = z^n \cdot z^m = \chi_z(\delta_n) \cdot \chi_z(\delta_m)
+	\end{equation*}
+	So we get a map $\mathds{D} \to \Omega(\ell^1(S)) \subseteq \ell^1(S)^*, z \mapsto \chi_z$ that is bijective and continuous.
+	If $z_i \to z$ in $\mathds{D}$, we need to prove $\chi_{z_i} \to \chi_z$ in respect to the weak $^*$-topology.
+	So we need to evaluate and prove $\chi_{z_i} (a) \to \chi_z(a)$, or $\sum_{n=0}^{\infty} a_n z_i^n \to \sum_{n = 0}^{\infty} a_m z^m$. Partial sums would obviously converge, so $\chi_{z_i}$ converges on a dense subspace of $\ell^1(S)$.
+	The uniform boundedness principle (if a bounded set of operators converge on a dense subset $T_i \to T$, $\sup_i \| T_i \| < \infty$, they converge everywhere) shows that the infinite sums also converge.
+	In general, showing that an operator converges on a dense set of an algebra always shows the convergence on any point of the algebra.
+
+	Observe $\sigma(\delta_1) = \{\chi(\delta_1) \mid \chi \in \Omega(\ell^1(S)) \} = \mathds{D}$ and $\sigma(\delta_1) = \mathds{D}$ as well.
+
+	Concerning the norm, we know that 
+	\begin{equation*}
+		|\chi_z(a)| = \left| \sum_{n = 0}^{\infty} a_n z^n \right| \leq \sum_{n=0}^{\infty} |a_n| |z|^n \leq \sum_{n=0}^{\infty} |a_n| = \|a\|
+	\end{equation*}
+	for all $a \in \ell^1(S)$, so $\|\chi_z\| \leq 1$.
+	For $a = (a_0, 0, 0, \dots)$ we have $|\chi_z(a)| = |a_0| = \|a\|$, so $\|\chi_z\| = 1$ for any $z \in \mathds{C}$ (and thus for any $\chi = \chi_z \in \Omega(\ell^1(S)))$.
 \end{exercise}
+
+\begin{remark}[Gelfand-Representation]
+	In general, we seek a mapping $\algebra{A} \to C_0(X), a \mapsto \hat{a}$, taking $X = \hat{\algebra{A}} = \Omega(\algebra{A})$ and $\hat{a}(\chi) = \chi(a)$.
+	
+	If we apply the Gelfand representation here, we have
+	\begin{equation*}
+		\ell^1(S) \to C(\mathds{D}), a \mapsto \hat{a} \text{ where } \hat{a}(z) = \chi_z(a) = \sum_{n=0}^{\infty} a_n z^n
+	\end{equation*}
+\end{remark}
+
+\begin{example}[Norms $<1$]
+	Consider 
+	\begin{equation*}
+		\ell^1_0(S) = \closure{\mathrm{alg}}(\delta_1) = \left\{ \sum_{n = 1}^{\infty} a_n \delta_n \mid a_n \in \mathds{C} \right\} \triangleleft \ell^1(S)
+	\end{equation*}
+	Observe $\widetilde{\ell^1_0(S)} \simeq \ell^1(S)$. Recall $\Omega(\tilde{\algebra{A}} = \Omega(\algebra{A}) \sqcup \{\chi_\infty\}$.
+	So we are looking for our $\chi_\infty$, which is $\chi_\infty(a_0, a_1, \dots) = a_0$ -- that is $\chi_0$ and corresponds to $z=0$ in the unit circle.
+	It follows $\Omega(\ell^1_0(S)) \simeq \mathds{D} \setminus \{ 0 \}$ and $\chi_0 \in \Omega(\ell^1(S)) \setminus \Omega(\ell^1_0(S))$. 
+
+	We compute $\| \chi_z \| = \sup_{\|a\|_1 \leq 1} |\chi_z(a)|$. Consider:
+	\begin{equation*}
+		|\chi_z(a)| = \left| \sum_{n = 1}^\infty a_n z^n \right| = \left| z \left(\sum_{n=1}^{\infty} a_n z^{n-1} \right) \right| \leq |z| \cdot \| a \|_1
+	\end{equation*}
+	so because of $\chi_z(\delta_1) = z$, we have $\|\chi_z\| = |z|$, which can be smaller than $1$.
+\end{example}
+
+\begin{remark}
+	Do we have $\ell^1(S) \hookrightarrow A(\mathds{D}), a \mapsto \hat{a}$ where $\hat{a}(z) \coloneq \sum_{n = 0}^\infty a_n z^n$?
+\end{remark}
 
 
 \end{document}
