@@ -420,7 +420,7 @@ We will be especially interested in \textbf{characters}:
 	\end{equation*}
 	and
 	\begin{equation*}
-		\sigma(f) = \{\lambda \in \mathds{C} \mid \lambda - f \in \inv(\algebra{A}) \} = \{\lambda \in \mathds{C} \mid \exists_{(x_n)} f(x_n) \to \lambda\} = \closure{\image(f)} = \closure{f(X)} \text{.}
+		\sigma(f) = \{\lambda \in \mathds{C} \mid \lambda - f \notin \inv(\algebra{A}) \} = \{\lambda \in \mathds{C} \mid \exists_{(x_n)} f(x_n) \to \lambda\} = \closure{\image(f)} = \closure{f(X)} \text{.}
 	\end{equation*}
 	This is a compact subset of $\mathds{C}$.
 \end{example}
@@ -574,7 +574,7 @@ Recall that if $f(a) = a^{-1}$ yields $f'(a) b = - a^{-1} b a^{-1}$.
 	We write elements of $\tilde{\algebra{A}}$ as $a + \lambda \cdot 1 \coloneq (a, \lambda)$. Think of $a = (a,0)$ and $\lambda = (a, \lambda)$.
 	Define
 	\begin{align*}
-		(a + \lambda 1) (b + \lambda' 1) & = (ab + \lambda' a + \lambda ab + b) + \lambda \cdot \lambda'\text{.}
+		(a + \lambda 1) (b + \lambda' 1) & = (ab + \lambda' a + \lambda b) + \lambda \cdot \lambda'\text{.}
 	\end{align*}
 	Ten (exercise $\tilde{\algebra{A})}$ becomes a unital algebra with $1_\algebra{A} = 1 = (0,1)$.
 
@@ -588,7 +588,7 @@ Recall that if $f(a) = a^{-1}$ yields $f'(a) b = - a^{-1} b a^{-1}$.
 
 	If $\algebra{A}$ is a normed algebra, then $\tilde{\algebra{A}}$ is normed by $\|a + \lambda \cdot 1\| \coloneq \|a\| + |\lambda|$
 
-	If $\algebra{A}$ is Banach and closed, then so is $\algebra{A}$.
+	If $\algebra{A}$ is Banach and closed, then so is $\tilde{\algebra{A}}$.
 
 	If $\algebra{A}$ is a $^*$-algebra, then so is $\tilde{\algebra{A}}$ with $(a + \lambda 1)^*$.
 
@@ -759,7 +759,7 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 			\end{matrix} \right.
 		\end{equation*}
 		\item $e^a \in \inv(\algebra{A})$ and $(e^a)^{-1} = e^{-a}$.
-		\item If $a,b \in \algebra{A}$ then $e^{a + b} = e^a \cdot e^b$.
+		\item If $a,b \in \algebra{A}$ then $e^{a + b} = e^a \cdot e^b$ (here some commutativity is neccessary).
 	\end{enumerate}
 \end{theorem}
 
