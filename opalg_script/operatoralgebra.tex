@@ -5,6 +5,8 @@
 \usepackage[english]{babel}	% language specific quotation marks etc.
 \input{../preambles/script_preamble}
 
+\newcommand{\unitcircle}{\mathds{S}^1}
+
 % --- DATA ---
 
 \title{Introduction to Operator Algebras}
@@ -1052,16 +1054,63 @@ As a convention, if $\Gamma(\algebra{A}) = \empty$, then $C_0(\Omega(\algebra{A}
 			\Gamma: \algebra{A} = \ell^1(\mathds{Z}) \to C(\Omega(\algebra{A})) \simeq C(\mathds{S}^1), a \mapsto  \left( \hat a: z \mapsto \sum_{n \in \mathds{Z}} a_n z^n \right)
 		\end{equation*}
 
+		$\Gamma$ is always a contractive algebra homomorphism, as $\|\hat{a}\|_\infty \leq \|a\|_1$.
+		$\Gamma$ is a $^*$-homomorphism where $\ell^1(\mathds{Z})$ carries the involution $a^* = \left(\sum_{n \in \mathds{Z} a_n \delta_n}\right) = \sum_{n \in \mathds{Z}} \overline{a}_n \delta_{-n}$ because of $\delta_n^* = \delta_{-n}$.
+		The involution of $C(\unitcircle)$ is complex conjugation. But on the unit circle, $\overline{z} = z^{-1}$, so we have a $^*$-homomorphism.
+
 		$\Gamma$ is \underline{injective}. If $f \in C(\mathds{S}^1)$, we can define its \enquote{inverse Fourier-Transform}
 		\begin{equation*}
-			\check{f} \coloneq \int_{\mathds{S}^1} f(z) \overline{z}^n dz = \frac{1}{2 \pi} \int_{0}^{1} f(\exp(2 \pi i t)) \exp(- 2 \pi i t n) dt 
+			\check{f}(n) = \int_{\mathds{S}^1} f(z) z^{-n} dz = \frac{1}{2 \pi} \int_0^{2 \pi} f(\exp(it)) \exp(-int) dt
 		\end{equation*}
+		This is \textbf{not} the line integral from functional analysis, as the derivative of the path is not included.
 		You can now check that $(\hat{a})^{\check{~}}(n) = a_n$.
-		In particular, $(\hat{\delta_m})^{\check{~}}(n) = \delta_{m,n}$ and therefore $(z^m)^{\check{~}}(n) = \delta_{m,n}$ so $\int_{\mathds{S}^1} z^{m-n} dz = \delta_{m,n}$?
+		$g \mapsto \int_{\mathds{S}^1} g$ is a continuous function on $C(\unitcircle)$ and we have
+		\begin{align*}
+			\hat{a}(z) &= \sum_{n \in \mathds{Z}} a_n z^n = \lim_{F \subseteq \mathds{Z} \text{ finite}} \sum_{n \in F} a_n z^n 
+			= \lim_{N \to \infty} \sum_{n = -N}^N a_n z^n
+		\end{align*}
+		so
+		\begin{align*}
+			(\hat{a})^{\check{~}} (n) = \sum_{m \in \mathds{Z}} a_m (\hat{\delta_m})^{\check{~}} (n)
+		\end{align*}
+		Because of $\int_{\unitcircle} z^k = \delta_{k, 0}$, we have 
+		\begin{align*}
+			\int_{\unitcircle} z^m z^n dz = \delta_{n,m}
+		\end{align*}
+		and using $\hat{\delta_m}(z) = z^m$ we can show $(\hat{\delta_m})^{\check{~}} (n) = \delta_{n,m}$ and thus 
+		\begin{align*}
+			(\hat{a})^{\check{~}} (n) = \sum_{m \in \mathds{Z}} a_m (\hat{\delta_m})^{\check{~}} (n) = \sum_{m \in \mathds{Z}} a_m \delta_{m,n} = a_m
+		\end{align*}
+		This shows that we can re-gain the elements of the sequence from $\hat{a}$, so $\Gamma: (a_n) \mapsto \hat{a}$ must be injective.
 
-		$\Gamma$ is not surjective.
+		$\Gamma$ has dense range because the polynomials are dense in $C(\unitcircle)$ because of Stone-Weierstraß theorem.
 
-		$\Gamma$ is not isometric.
+		$\Gamma$ is \underline{not isometric}.
+		%Choose $a = a_0 \delta_0 + a_1 \delta_1 + a_2 \delta_2 \in \ell^1(\mathds{Z})$, then $\hat{a}(z) = a_0 + a_1 z + a_2 z^n$.
+		If $\Gamma$ was isometric, then $\Gamma$ were an isometric $^*$-homomorphism with dense range.
+		Since isometric homomorphisms have closed image, $\Gamma$ were surjective and thus an isometric $^*$-isomorphism $\ell^1(\mathds{Z}) = C(\unitcircle)$.
+		Then $\ell^1(\mathds{Z})$ would be a $C^*$-algebra with the $\ell^1(\mathds{Z})$-norm, and thus $\|a^* a\|_1 = \|a\|_1^2$ (with the involution as described above). Then, using the $C^*$-property of $C(\unitcircle)$ and isometry of $\Gamma$, we have
+		\begin{align*}
+			\|a^* a\|_1 = \|\Gamma(a^* a)\|_\infty = \|\Gamma(a)^* \Gamma(a) \|_\infty = \|\Gamma(a)\|_\infty^2 - \|a\|_1^2\text{.}
+		\end{align*}
+		Now we only need to find $a \in \ell^1(\mathds{Z})$ with $\|a^* a \|_1 \neq \|a\|_1^2$.
+		Choose $a = \alpha \delta_0 + \beta \delta_1 + \gamma \delta_{-1} = \alpha + \beta \delta_1 + \gamma \delta_{-1}$ (not writing $\delta_0$ as it is the unit).
+		\begin{align*}
+			a^* a = (\overline{\alpha} + \overline{\beta} \delta_{-1} + \overline{\gamma} \delta_1) (\alpha + \beta \delta_1 + \gamma \delta_{-1}) = \dots 
+		\end{align*}
+		and thus
+		\begin{equation*}
+			\|a^* a\|_1 = |\alpha|^2 + |\beta|^2 + |\gamma|^2 + 2 |\overline{\alpha} \beta + \alpha \overline{\gamma} | + 2 |\gamma \beta|
+		\end{equation*}
+		while
+		\begin{equation*}
+			\|a\|_1^2 = (|\alpha| + |\beta| + |\gamma|)^2\text{.}
+		\end{equation*}
+		Now choosing $\alpha = i$ and $\beta = \gamma = 1$ yields $\| a^* a\|_1 = 5$ and $\|a\|_1^2 = 9$.
+
+		This is also a valid counterexample for the isometry directly, because $a$ has Norm $3$, but $\Gamma(a) = (z \mapsto \frac{1}{z} + i + z = 2 \Re(z) + i)$ has maximum $2 + i$ with Norm $\sqrt{5}<3$ on the unit circle.
+
+		$\Gamma$ is \underline{not surjective}. This is complicated.
 	\end{enumerate}
 \end{example}
 
