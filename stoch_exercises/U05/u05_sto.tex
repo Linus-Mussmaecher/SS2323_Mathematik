@@ -1,0 +1,69 @@
+\documentclass[a4paper]{article}
+
+% --- DATA ---
+
+\def\lecture{Stochastik 2}
+\def\authors{Linus Mußmächer}
+\def\sheetNumber{05}
+%\def\sumPoints{30} 
+
+% --- PREAMBLE ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+\input{../../preambles/exercise_preamble.tex}
+
+% --- DOCUMENT ---
+
+\begin{document}
+
+\makeexheaderger
+
+\subsection{Zentralübung}
+
+\begin{enumerate}
+    \item Es ist 
+    \begin{equation*}
+        \qmatrix{\tilde{X} \\ \tilde{Y}} = \qmatrix{a & 1 \\ 1 & 2} \qmatrix{X \\ Y} + \qmatrix{0 \\ 0}
+    \end{equation*}
+    und die Matrix hat für $a \neq \frac{1}{2}$ vollen Rang, da Determinante $2a - 1$.
+    Somit ist die Verteilung von $(\tilde{X}, \tilde{Y})^T$ nach 2.17:
+    \begin{align*}
+        \qmatrix{\tilde{X} \\ \tilde{Y}} &\sim \mathcal{N} \left( \qmatrix{a & 1 \\ 1 & 2} \cdot \qmatrix{0 \\ -1}, \qmatrix{a & 1 \\ 1 & 2} \qmatrix{1 & -1 \\ -1 & 4} \qmatrix{a & 1 \\ 1 & 2}^T  \right)\\
+        &= \mathcal{N}\left( \qmatrix{-1 \\ -2}, \qmatrix{a & 1 \\ 1 & 2} \cdot \qmatrix{a -1 & -1 \\ 4 - a & 7} \right)\\
+        &= \mathcal{N}\left( \qmatrix{-1 \\ -2}, \qmatrix{a^2 - 2a + 4 & 7-a \\ 7 - a & 13} \right)\text{.}
+    \end{align*}
+    Im Fall $a = 7$ sind $\tilde{X}, \tilde{Y}$ damit unkorreliert, was im Falle multivariater Normalverteilungen der Unabhängigkeit entspricht.
+    \item Wir wiederholen dieselbe Rechnung für $\qmatrix{1 & 1 \\ 2 & -1}$ (voller Rang, da Determinante $-3$):
+    \begin{align*}
+        \qmatrix{\hat{X} \\ \hat{Y}} &\sim \mathcal{N} \left( \qmatrix{1 & 1 \\ 2 & -1} \cdot \qmatrix{0 \\ -1}, \qmatrix{1 & 1 \\ 2 & -1} \qmatrix{1 & -1 \\ -1 & 4} \qmatrix{1 & 1 \\ 2 & -1}^T  \right)\\
+        &= \mathcal{N}\left( \qmatrix{-1 \\ 1}, \qmatrix{1 & 1 \\ 2 & -1} \cdot \qmatrix{0 & 3 \\ 3 & -6} \right)\\
+        &= \mathcal{N}\left( \qmatrix{-1 \\ 1}, \qmatrix{3 & -3 \\ -3 & 12} \right)\text{.}
+    \end{align*}
+\end{enumerate}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
