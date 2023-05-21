@@ -1,0 +1,109 @@
+\documentclass[a4paper]{article}
+
+% --- LANGUAGE ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+
+% --- DATA ---
+
+\def\lecture{Repetitorium zur Funktionentheorie}
+\def\authors{Linus Mußmächer}
+\def\sheetNumber{02}
+\def\sumPoints{30} 
+
+% --- PREAMBLE ---
+\input{../../preambles/exercise_preamble.tex}
+
+\begin{document}
+
+\makeexheaderger
+
+\subsection{Ein Integral}
+
+Wir stellen zuerst den Cosinus komplex dar:
+\begin{align*}
+	\int_{0}^{2 pi} (\cos t)^{2n} dt &= \frac{1}{2^{2n}} \int_{0}^{2 \pi} (\exp(it) + \exp(-it))^{2n} dt 
+	\intertext{
+		Dies entspricht einem Wegintegral über $f(z) = \frac{(z + \overline{z})^{2n}}{iz}$ entlang des Weges $\gamma: [0,2\pi] \to \mathds{D}, t \mapsto \exp(it)$, wie auch durch Substitution ersichtlich wird.
+	}
+	&= \frac{1}{i2^{2n}} \int_\gamma \frac{(z + \overline{z})^{2n}}{z} dz = \frac{1}{i2^{2n}} \int_\gamma \frac{(z + z^{-1})^{2n}}{z} dz
+	\intertext{
+		Die Funktion $f(z)$ ist im Einheitskreis, dem Inneren von $\gamma$, meromorph mit einer einzigen isolierten Singularität im Nullpunkt. Wir verwenden den Residuensatz.
+	}
+	&= \frac{1}{i2^{2n}} \cdot 2 \pi i \cdot n(0, \gamma) \cdot \res(0, f)
+\end{align*}
+Es gilt $n(0, \gamma) = 1$. Um das Residuum zu bestimmen, betrachten wir die Potenzreihenentwicklung von $f$ mittels des binomischen Lehrsatzes:
+\begin{equation*}
+	f(z) = \frac{(z + z^{-1})^{2n}}{z} = \sum_{k = 0}^{2n} \binom{2n}{k} z^{2n - k} z^{-k} z^{-1} = \sum_{k = 0}^{2n} \binom{2n}{k} z^{2n - 2k -1}
+\end{equation*}
+die für uns interessante Potenz $-1$ tritt hier genau für $k = n$ auf, also folgt
+\begin{equation*}
+	\res(0, f) = \binom{2n}{n} = \frac{(2n!)}{n! (2n-n!)} = \frac{(2n)!}{(n!)^2}
+\end{equation*}
+und dies zeigt
+\begin{equation*}
+	\int_{0}^{2 \pi} (\cos t)^{2n} = \frac{1}{i2^{2n}} \cdot 2 \pi i \cdot 1 \cdot \frac{(2n)!}{(n!)^2} = \frac{\pi}{2^{2n-1}} \cdot \frac{(2n!)}{(n!)^2}\text{,}
+\end{equation*}
+was zu beweisen war.
+
+\subsection{Einige Integrale}
+
+Wir verwenden für alle Kurvenintegrale den Residuensatz.
+
+\begin{enumerate}
+	\item Der gegebene Integrand $f(z) = \frac{\exp(iz^2) - 1}{z^2}$ ist meromorph mit einer isolierten Singularität im Nullpunkt (den im Kreisring $A_{0,2}(0)$ ist der Integrand mangels Nennernullstellen holomorph). Der Weg $\gamma$ umrundet diesen (mit Radius $2$) genau zweimal, also gilt
+	\begin{equation*}
+		\int_\gamma f(z) dz = 4 \pi i \res(0, f)\text{.}
+	\end{equation*}
+	Um das Residuum zu bestimmen, entwickeln wir die Funktion um den Nullpunkt:
+	\begin{equation*}
+		f(z) = \frac{\exp(iz^2) - 1}{z^2} = \frac{\exp(iz^2)}{z^2} - \frac{1}{z^2} = \sum_{n = 0}^{\infty} \frac{i^n z^{2n - 2}}{n!} - \frac{1}{z^2}\text{.}
+	\end{equation*}
+	Wir sehen, dass keiner der Summanden den Exponenten $-1$ hat, also gilt $res(0, f(z)) = 0$ und damit auch
+	\begin{equation*}
+		\int_{\gamma} \frac{\exp(iz^2) - 1}{z^2} dz = 0
+	\end{equation*}
+	\item Der gegebene Integrand $g(z) = \frac{\exp(z)}{(z-i)^3}$ hat lediglich bei $z = i$ eine Nennernullstelle, ist also im Kreisring $A_{0,1}(i)$ holomorph und damit im Inneren von $\eta$, dem Kreis $K_1(i)$, meromorph. $\eta$ umrundet den Punkt $i$ genau einmal in mathematisch negativer Richtung, der Residuensatz liefert also
+	\begin{equation*}
+		\int_\eta g(z) dz = - 2 \pi i \cdot \res (i, g)\text{.}
+	\end{equation*}
+	Wieder bestimmen wir die Reihenentwicklung um $i$. Da $\exp$ auf ganz $\mathds{C}$ und damit insbesondere in $K_1(i)$ holomorph ist, existiert eine in $K_1(i)$ konvergente Potenzreihe $\sum_{k =0}^{a_k} a_k (z-i)^k = \exp(z) $. Für die Koeffizienten gilt hier $a_k = \frac{\exp^{(k)}(i)}{k!}$. Dies liefert:
+	\begin{equation*}
+		g(z) = \sum_{k =0}^{\infty} a_k (z-i)^{k-3} 
+	\end{equation*}
+	und damit hat $g$ im Punkt $i$ das Residuum $a_2 = \frac{1}{2} \exp^{(2)}(i) = \frac{1}{2} \exp(i)$. Damit folgt
+	\begin{equation*}
+		\int_\eta g(z) dz = - \pi i e^i
+	\end{equation*}
+	\item Die Funktion $\frac{1}{z}$ ist auf $A_{0,2}(0)$ mangels Nennernullstellen holomorph, also ist es dort auch $\exp(1/z)$. Somit ist der Integrand $h(z) = \exp(1/z)$ auf $K_2(0)$, dem Inneren von $\gamma$, meromorph und der Residuensatz liefert mit $n(0, \gamma) = 2$
+	\begin{equation*}
+		\int_\gamma h(z) dz = 4 \pi i \res(0, h)\text{.}
+	\end{equation*}
+	Mit der Reihenentwicklung der Exponentialfunktion erhalten wir außerdem
+	\begin{equation*}
+		h(z) = \sum_{n = 0}^{\infty} \frac{(1/z)^n}{n!} = \sum_{n = -\infty}^{0} \frac{1}{(-n)!} z^n
+	\end{equation*}
+	und damit $\res(0, h) = 1$. Dies zeigt
+	\begin{equation*}
+		\int_\gamma h(z) dz = 4 \pi i\text{.}
+	\end{equation*}
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
