@@ -64,7 +64,30 @@
 \subsection{}
 
 
+\subsection{}
 
+Wir wollen weiterhin stupide Satz 2.17 anwenden und stellen daher $(X_1, X_2)^T$ als Matrix-Vektor-Produkt mit $(\zeta_1, \zeta_2)^T \sim \mathcal{N}\left(\qmatrix{0 \\ 0}, \qmatrix{1 & 0 \\ 0 & 1}\right)$ dar:
+\begin{equation*}
+    \qmatrix{X_1 \\ X_2} = \qmatrix{1 & 1 \\ 2 & 1} \qmatrix{\zeta_1\\ \zeta_2}\text{.}
+\end{equation*}
+Die Matrix hat Determinante $-1$, sodass 2.17 weiterhin anwendbar ist. Es folgt
+\begin{align*}
+    \qmatrix{X_1 \\ X_2} &\sim \mathcal{N} \left( \qmatrix{1 & 1 \\ 2 & 1} \qmatrix{0 \\ 0}, \qmatrix{1 & 1 \\ 2 & 1} \qmatrix{1 & 0 \\ 0 & 1} \qmatrix{1 & 1 \\ 2 & 1}^T \right)\\
+    &= \mathcal{N} \left( \qmatrix{0 \\ 0}, \qmatrix{1 & 1 \\ 2 & 1} \qmatrix{1 & 2 \\ 1 & 1} \right)\\
+    &= \mathcal{N} \left( \qmatrix{0 \\ 0}, \qmatrix{2 & 3 \\ 3 & 4} \right)\text{.}
+\end{align*}
+Analog gilt für $(Y_1, Y_2)^T$:
+\begin{equation*}
+    \qmatrix{Y_1 \\ Y_2} = \qmatrix{\sqrt{2} & 0 \\ \frac{3}{\sqrt{2}} & \frac{1}{\sqrt{2}}} \qmatrix{\zeta_1 \\ \zeta_2}
+\end{equation*}
+mit Determinante $1 - \frac{3}{\sqrt{2}} \neq 0$, also folgt wieder mit 2.17:
+\begin{align*}
+    \qmatrix{Y_1 \\ Y_2} &\sim \mathcal{N} \left( \qmatrix{\sqrt{2} & 0 \\ \frac{3}{\sqrt{2}} & \frac{1}{\sqrt{2}}} \qmatrix{0 \\ 0}, \qmatrix{\sqrt{2} & 0 \\ \frac{3}{\sqrt{2}} & \frac{1}{\sqrt{2}}} \qmatrix{1 & 0 \\ 0 & 1} \qmatrix{\sqrt{2} & 0 \\ \frac{3}{\sqrt{2}} & \frac{1}{\sqrt{2}}}^T \right)\\
+    &= \mathcal{N} \left( \qmatrix{0 \\ 0}, \qmatrix{\sqrt{2} & 0 \\ \frac{3}{\sqrt{2}} & \frac{1}{\sqrt{2}}} \qmatrix{\sqrt{2} & \frac{3}{\sqrt{2}} \\ 0 & \frac{1}{\sqrt{2}}}   \right)\\
+    &= \mathcal{N}\left( \qmatrix{0 \\ 0}, \qmatrix{2 &  3 \\ 3 & 4} \right)
+    \text{.}
+\end{align*}
+Die beiden Zufallsvektoren haben also die gleiche Verteilung.
 
 \end{document}
 
