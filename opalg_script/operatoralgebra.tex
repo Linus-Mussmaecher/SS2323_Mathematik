@@ -617,7 +617,7 @@ Recall that if $f(a) = a^{-1}$ yields $f'(a) b = - a^{-1} b a^{-1}$.
 % 		For $p = 1_\algebra{A} \in Z(\tilde{\algebra{A}})$, we have $\tilde{\algebra{A}} \simeq p \tilde{ \algebra{A}} \oplus (1-p) \tilde{\algebra{A}}$.
 % 		This yields $(a + \lambda 1)(1 - 1_\algebra{A}) = a - a + \lambda ( 1 - 1_\algebra{A}) = \lambda q$ for $q \coloneq 1 - 1_\algebra{A}$.
 % 		Thus, we have $\sigma_{\tilde{\algebra{A}}} = \sigma_\algebra{A}(a) \cup \{0\}$.
-		
+
 % 		      % \item If $\algebra{A}$ is \textbf{not} already unital and $a \in \algebra{A}$, then $\sigma_A(a) = \sigma_{\tilde A}(a)$.
 % 		      % From \ref{exe:AplusC} we know that $a - \lambda \cdot  1 \in \inv(\tilde{\algebra{A}})$ if and only if $a - \lambda 1_\algebra{A} \in \inv(\algebra{A})$ and $\lambda (1 - 1_\algebra{A})  \in \inv(\mathds{C})$.
 % 		      % Then $\rho_\algebra{A} = \{\lambda \in \rho_{\tilde{\algebra{A}}} \mid \lambda \neq 0\}$.
@@ -654,9 +654,9 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 \begin{example}~
 	\begin{enumerate}
 		\item Let $f \in \algebra{A} = C_0(X)$ using $\sigma_A(f) = \closure{f(X)}$. Thus,
-		\begin{equation*}
-			\pi(f) = \sup \{ |\lambda| \mid \lambda \in \closure{f(X)} = \sup_{x \in X} |f(x)| = \|f\|_{C_0(X)}
- 		\end{equation*}
+		      \begin{equation*}
+			      \pi(f) = \sup \{ |\lambda| \mid \lambda \in \closure{f(X)} = \sup_{x \in X} |f(x)| = \|f\|_{C_0(X)}
+		      \end{equation*}
 		\item Let $\algebra{A} = M_2(\mathds{C})$ and $a = \qmatrix{0 & 1 \\ 0 & 0}$. Then $\sigma_\algebra{A} = \{0\}$ and $\pi(a) = 0$, but $\|a\| = 1 \neq 0$.
 	\end{enumerate}
 \end{example}
@@ -683,7 +683,7 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 	\begin{equation*}
 		f(x) = \sum_{n = 0}^{\infty} a_n \lambda^n, a_n = \frac{f^{(n)}(0)}{n!} \in \mathds{C}, \lambda \in \Delta\text{.}
 	\end{equation*}
-	On the other hand, if 
+	On the other hand, if
 	\begin{equation*}
 		|\lambda| < \frac{1}{\|a\|} \leq \frac{1}{\pi(a)}
 	\end{equation*}
@@ -701,21 +701,21 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 
 	From the principle of uniform convergence, it follows that $(a^n \lambda^n)$ is bounded. So there exists an $M = M_\lambda$ such that
 	\begin{align*}
-		& \|\lambda^n a^n\| \leq M \forall_{n \in \mathds{N}}\\
-		\then & \| \lambda^n \|^{\frac{1}{n}} \leq \frac{M^{\frac{1}{n}}}{|\lambda|} \forall_{n \in \mathds{N}}, \forall_{\lambda \in \Delta, \lambda \neq 0}\\
+		      & \|\lambda^n a^n\| \leq M \forall_{n \in \mathds{N}}                                                                                           \\
+		\then & \| \lambda^n \|^{\frac{1}{n}} \leq \frac{M^{\frac{1}{n}}}{|\lambda|} \forall_{n \in \mathds{N}}, \forall_{\lambda \in \Delta, \lambda \neq 0} \\
 		\then & \limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq \frac{1}{\lambda} \forall_{\lambda \in \Delta \text{ i.e. } |\lambda| < \frac{1}{\pi(a)}}
 	\end{align*}
 	Letting $\lambda < \frac{1}{\pi(a)}$ yields $\limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq \pi(a)$.
 \end{proof}
 
 \begin{example}
-	Let $A = C^1([0,1]) = \{ I \in C[0,1] \mid \exists_{f'(t)} \forall_{t \in [0,1]}, t \mapsto f'(t) \text{ continuous} \}$ with $\|f\| = \|f\|_\infty + \|f'\|_\infty$. 
+	Let $A = C^1([0,1]) = \{ I \in C[0,1] \mid \exists_{f'(t)} \forall_{t \in [0,1]}, t \mapsto f'(t) \text{ continuous} \}$ with $\|f\| = \|f\|_\infty + \|f'\|_\infty$.
 
 	Then $\algebra{A}$ is unital, commutative and a Banach algebra. Consider $x \in \algebra{A}$, $x(t) = t$. We have $x^n(t) = t^n$ and
 	\begin{align*}
-		\|x^n\| &= \sup_{t \in [0,1]} |t^n| + \sup_{t \in [0,1]} |n t^{n-1}| = 1 + n\\
-		\pi(x) &= \lim_{n \to \infty} (1+n)^\frac{1}{n} = 1\\
-		\| x \| &= 2
+		\|x^n\| & = \sup_{t \in [0,1]} |t^n| + \sup_{t \in [0,1]} |n t^{n-1}| = 1 + n \\
+		\pi(x)  & = \lim_{n \to \infty} (1+n)^\frac{1}{n} = 1                         \\
+		\| x \| & = 2
 	\end{align*}
 	Observation: $\sigma(x) = \image(x) = [0,1]$.
 \end{example}
@@ -753,13 +753,13 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 
 \begin{theorem}~
 	\begin{enumerate}
-		\item Let $\algebra{A}$ be a unital Banach algebra. If $a \in \algebra{A}$, then $f: \mathds{R} \to \algebra{A}, t \mapsto \exp(ta)$ is the unique solution of 
-		\begin{equation*}
-			\left\{ \begin{matrix}
-				f'(t) &= a f(t)\\
-				f(0) &= 1
-			\end{matrix} \right.
-		\end{equation*}
+		\item Let $\algebra{A}$ be a unital Banach algebra. If $a \in \algebra{A}$, then $f: \mathds{R} \to \algebra{A}, t \mapsto \exp(ta)$ is the unique solution of
+		      \begin{equation*}
+			      \left\{ \begin{matrix}
+				      f'(t) & = a f(t) \\
+				      f(0)  & = 1
+			      \end{matrix} \right.
+		      \end{equation*}
 		\item $e^a \in \inv(\algebra{A})$ and $(e^a)^{-1} = e^{-a}$.
 		\item If $a,b \in \algebra{A}$ then $e^{a + b} = e^a \cdot e^b$ (here some commutativity is neccessary).
 	\end{enumerate}
@@ -777,7 +777,7 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 Notice that, if $\algebra{A} = C_0(X)$ already, then for each $x \in X$ we get a character $\mathrm{ev}_x: \algebra{A} \to \mathds{C}, f \mapsto f(x)$.
 
 \begin{definition}
-	Given an algebra $\algebra{A}$, we define 
+	Given an algebra $\algebra{A}$, we define
 	\begin{equation*}
 		\hat{\algebra{A}} = \Omega(\algebra{A}) \coloneq \{\chi: \algebra{A} \to \mathds{C} \mid \chi \text{ non-zero homomorphism}\}\text{.}
 	\end{equation*}
@@ -786,26 +786,26 @@ Notice that, if $\algebra{A} = C_0(X)$ already, then for each $x \in X$ we get a
 \begin{example}~
 	\begin{enumerate}
 		\item For $\algebra{A} = C_0(X)$ we get a map
-		\begin{equation*}
-			X \to \Omega(\algebra{A}), x \mapsto \mathrm{ev}_x
-		\end{equation*}
-		that is a bijection. After we give $\Omega(\algebra{A})$ an appropriate topology, it will also be a homomorphism.
+		      \begin{equation*}
+			      X \to \Omega(\algebra{A}), x \mapsto \mathrm{ev}_x
+		      \end{equation*}
+		      that is a bijection. After we give $\Omega(\algebra{A})$ an appropriate topology, it will also be a homomorphism.
 		\item Let $\algebra{A} = M_2(\mathds{C})$ (or any $M_n(\mathds{C})$). This is a simple algebra, so non-zero homomorphisms $\chi: \algebra{X} \to \mathds{C}$ do not exist (same for any $\algebra{A}$ with dimension $>1$).
-		
-		So in this case we have $\Omega(\algebra{A}) = \emptyset$. This can also happen in commutative algebras. 
+
+		      So in this case we have $\Omega(\algebra{A}) = \emptyset$. This can also happen in commutative algebras.
 		\item Consider
-		\begin{equation*}
-			\algebra{A} = \left\{ \qmatrix{0 & \lambda \\ 0 & 0} \mid \lambda \in \mathds{C}  \right\}
-		\end{equation*}
-		Then for all $a \in \algebra{A}$ we have $a^2 = 0$, so if $\chi: \algebra{A} \to \mathds{C}$ is an homomorphism, then $\chi(a)^2 = \chi(a^2) = 0$, so $\chi(a) = 0$ for all $a \in \algebra{A}$.
-		So again, $\Omega(\algebra{A}) = \emptyset$ (and $\algebra{A}$ is commutative with $\dim \algebra{A} = 1$).
+		      \begin{equation*}
+			      \algebra{A} = \left\{ \qmatrix{0 & \lambda \\ 0 & 0} \mid \lambda \in \mathds{C}  \right\}
+		      \end{equation*}
+		      Then for all $a \in \algebra{A}$ we have $a^2 = 0$, so if $\chi: \algebra{A} \to \mathds{C}$ is an homomorphism, then $\chi(a)^2 = \chi(a^2) = 0$, so $\chi(a) = 0$ for all $a \in \algebra{A}$.
+		      So again, $\Omega(\algebra{A}) = \emptyset$ (and $\algebra{A}$ is commutative with $\dim \algebra{A} = 1$).
 	\end{enumerate}
 \end{example}
 
-Question: Given an abstract algebra $\algebra{A}$ how do we possibly find its characters? 
+Question: Given an abstract algebra $\algebra{A}$ how do we possibly find its characters?
 
 Idea: Assume that $\ring{I} \triangleleft \algebra{A}$ is a maximal ideal and $\algebra{A}$ is a unital Banach algebra.
-Then $\algebra{A} / \ring{I} \simeq \mathds{C}$ and $\chi \in \Omega(\algebra{A})$. 
+Then $\algebra{A} / \ring{I} \simeq \mathds{C}$ and $\chi \in \Omega(\algebra{A})$.
 
 \begin{theorem}
 	Let $\algebra{A}$ be a unital non-zero Banach algebra.
@@ -823,28 +823,28 @@ Then $\algebra{A} / \ring{I} \simeq \mathds{C}$ and $\chi \in \Omega(\algebra{A}
 	Now, apply linear algebra. Then $\ker (\chi)$ is a maximal proper subspace, in particular a maximal ideal.
 	And $\ker(\chi)$ is closed, because $\chi$ is continuous.
 	Now assume that $\algebra{A}$ is commutative (in addition to unital and Banach).
-	Then we have the mapping 
+	Then we have the mapping
 	\begin{equation*}
 		\phi: \Omega(\algebra{A}) \to \mathrm{MaxIdeals}(\algebra{A}), \chi \to \ker(\chi)\text{.}
 	\end{equation*}
 	\begin{itemize}
 		\item $\phi$ is injective.
-		If $\ker(\chi_1) = \ker(\chi_2)$ for $\chi_1, \chi_2 \in \algebra{A}$, then for every $a \in \algebra{A}$ we have $a - \chi_1(a) \cdot 1 \in \ker(\chi_1) =\ker(\chi_2)$.
-		Thus, $\chi_2(a = \chi_1(a) \cdot 1) = 0$ and therefore $\chi_2(a) = \chi_1(a)$ for every $\algebra{A}$. 
+		      If $\ker(\chi_1) = \ker(\chi_2)$ for $\chi_1, \chi_2 \in \algebra{A}$, then for every $a \in \algebra{A}$ we have $a - \chi_1(a) \cdot 1 \in \ker(\chi_1) =\ker(\chi_2)$.
+		      Thus, $\chi_2(a = \chi_1(a) \cdot 1) = 0$ and therefore $\chi_2(a) = \chi_1(a)$ for every $\algebra{A}$.
 		\item $\phi$ is surjective.
-		Take $\ring{I} \triangleleft  \algebra{A}$ a maximal ideal.
-		Then $\ring{I} = \closure{\ring{I}}$ because $\closure{\ring{I}} \neq \algebra{A}$, otherwise $1 \in \closure{\ring{I}}$ and since $\inv(\algebra{A})$ is open in $\algebra{A}$, we get $\ring{I} \cap \inv(\algebra{A}) \neq \emptyset$.
-		But then we have an invertible element in the ideal $\ring{I}$ already, but this implies the contradiction $\ring{I} = \algebra{A}$. 
-		Therefore, $\algebra{A} / \ring{I}$ is a commutative, unital Banach algebra which is simple ($\ring{I}$ is maximal).
-		\begin{quote}
-			Exercise: If $\ring{I} \triangleleft \algebra{A}$, then $\algebra{A} / \ring{I}$ is field if and only if there exists no $\ring{J} \triangleleft \algebra{A}$ such that $\ring{I} \triangleleft \ring{J}$.
-		\end{quote}
-		Thus, $\algebra{A} / \ring{I}$ is a field and $\algebra{A} / \ring{I} \simeq \mathds{C}$.
-		Then the composition
-		\begin{equation*}
-			\algebra{A} \xrightarrow{q} \algebra{A} / \ring{I} \simeq \mathds{C}
-		\end{equation*}
-		is a character with $ \ker(\chi) = \ring{I}$.
+		      Take $\ring{I} \triangleleft  \algebra{A}$ a maximal ideal.
+		      Then $\ring{I} = \closure{\ring{I}}$ because $\closure{\ring{I}} \neq \algebra{A}$, otherwise $1 \in \closure{\ring{I}}$ and since $\inv(\algebra{A})$ is open in $\algebra{A}$, we get $\ring{I} \cap \inv(\algebra{A}) \neq \emptyset$.
+		      But then we have an invertible element in the ideal $\ring{I}$ already, but this implies the contradiction $\ring{I} = \algebra{A}$.
+		      Therefore, $\algebra{A} / \ring{I}$ is a commutative, unital Banach algebra which is simple ($\ring{I}$ is maximal).
+		      \begin{quote}
+			      Exercise: If $\ring{I} \triangleleft \algebra{A}$, then $\algebra{A} / \ring{I}$ is field if and only if there exists no $\ring{J} \triangleleft \algebra{A}$ such that $\ring{I} \triangleleft \ring{J}$.
+		      \end{quote}
+		      Thus, $\algebra{A} / \ring{I}$ is a field and $\algebra{A} / \ring{I} \simeq \mathds{C}$.
+		      Then the composition
+		      \begin{equation*}
+			      \algebra{A} \xrightarrow{q} \algebra{A} / \ring{I} \simeq \mathds{C}
+		      \end{equation*}
+		      is a character with $ \ker(\chi) = \ring{I}$.
 	\end{itemize}
 \end{proof}
 
@@ -860,11 +860,11 @@ We have for $\algebra{A}$ a Banach algebra. We can add a unit to receive $\tilde
 
 Observe: If $\chi \in \Omega(\algebra{A})$, then there exists a unique $\tilde{X} \in \Omega(\tilde{\algebra{A}})$ via $\tilde{X}(a + \lambda \cdot 1) = \chi(a) + \lambda$. Thus, $\|\chi\| \leq \|\tilde{X}\| = 1$ (Note that it may still be smaller than $1$. See exercises 2023-05-09).
 
-In any case, 
+In any case,
 \begin{equation*}
 	\Omega(\algebra{A}) \subseteq D_{\algebra{A}^*}(0,1) = \{ \phi \in \algebra{A}^* \mid \| \phi \| \leq 1 \}
 \end{equation*}
-and $\algebra{A}^*$ carries the weak $^*$-topology (the smallest topology to make all point-evaluations continuous, that is for a net $(\phi_i)  \subset \algebra{^*}$ weakly converging to $\phi \in \algebra{A}^*$ if and only if $\phi_i(a) \to \phi(a)$ for all $a \in A$). 
+and $\algebra{A}^*$ carries the weak $^*$-topology (the smallest topology to make all point-evaluations continuous, that is for a net $(\phi_i)  \subset \algebra{^*}$ weakly converging to $\phi \in \algebra{A}^*$ if and only if $\phi_i(a) \to \phi(a)$ for all $a \in A$).
 
 \begin{definition}
 	Given a Banach algebra $\algebra{A}$, we endow $\Omega(\algebra{A})$ with the weak $^*$-topology and call this the \textbf{Gelfand spectrum} of $\algebra{A}$.
@@ -878,8 +878,8 @@ and $\algebra{A}^*$ carries the weak $^*$-topology (the smallest topology to mak
 	By Banach-Alaoglu-Theorem, $D_{\algebra{A}^*}(0,1)$ is compact and Hausdorff with the weak $^*$-topology.
 	Let
 	\begin{align*}
-		S &\coloneq \{\chi: A \to \mathds{C} \mid \chi \text{ hom.} \}\\
-		&= \Omega(\algebra{A}) \cup \{0\}
+		S & \coloneq \{\chi: A \to \mathds{C} \mid \chi \text{ hom.} \} \\
+		  & = \Omega(\algebra{A}) \cup \{0\}
 	\end{align*}
 	Then $S \subseteq D_{\algebra{A}^*}(0,1)$.
 	So $\chi(ab) = \lim_{i \to \infty} K_i = \lim_{i \to \infty} \chi_i(a) \chi_i(b) = \chi(a) \chi(b)$ and therefore $x \in S$.
@@ -891,11 +891,11 @@ and $\algebra{A}^*$ carries the weak $^*$-topology (the smallest topology to mak
 Observation: Given a Banach algebra $\algebra{A}$, we have an isomorphism
 \begin{equation*}
 	\Omega(\tilde{\algebra{A}}) \to \Omega(\algebra{A}) \sqcup \{ \chi_\infty\}, \phi \mapsto \left\{  \begin{matrix}
-		\phi|_\algebra{A} & \phi|_{\algebra{A}} \neq 0\\
-		\chi_\infty & \phi|_\algebra{A} = 0
+		\phi|_\algebra{A} & \phi|_{\algebra{A}} \neq 0 \\
+		\chi_\infty       & \phi|_\algebra{A} = 0
 	\end{matrix}\right. \text{,} \label{obs:unitization_iso}
 \end{equation*}
-where $\chi_\infty(a + \lambda \cdot 1) = \lambda$. Thus, $\Omega(\algebra{A}) \sqcup \{\chi_\infty\}$ is already the unitization of $\Omega(\algebra{A})$. 
+where $\chi_\infty(a + \lambda \cdot 1) = \lambda$. Thus, $\Omega(\algebra{A}) \sqcup \{\chi_\infty\}$ is already the unitization of $\Omega(\algebra{A})$.
 
 \begin{theorem}
 	Let $\algebra{A}$ be a Banach algebra. Then for every $a \in \algebra{A}$.
@@ -912,18 +912,18 @@ where $\chi_\infty(a + \lambda \cdot 1) = \lambda$. Thus, $\Omega(\algebra{A}) \
 \begin{proof}~
 	\begin{itemize}
 		\item $\algebra{A}$ is unital and $a \in \algebra{A}$. $\chi(a - \chi(a) \cdot 1) = 0$, so $\chi(a) \in \sigma(a)$, so $\{ \chi(a) \mid x \in \Omega(a) \}  \subseteq \sigma(a)$.
-		
-		Now if $\lambda \in \sigma(a)$, consider $\ring{I} \coloneq (a - \lambda \cdot 1) \algebra{A} \triangleleft \algebra{A}$ if $\algebra{A}$ is commutative.
-		By Zorns Lemma, we get $I \subseteq J \triangleleft \algebra{A}$ with $J = \ker(\chi)$ for some $\chi \in \Omega(\algebra{A})$. Thus we have $a - \lambda \cdot 1 \in \ring{I} \subseteq J = \ker(\chi)$ so $\chi(a) = \lambda$.
+
+		      Now if $\lambda \in \sigma(a)$, consider $\ring{I} \coloneq (a - \lambda \cdot 1) \algebra{A} \triangleleft \algebra{A}$ if $\algebra{A}$ is commutative.
+		      By Zorns Lemma, we get $I \subseteq J \triangleleft \algebra{A}$ with $J = \ker(\chi)$ for some $\chi \in \Omega(\algebra{A})$. Thus we have $a - \lambda \cdot 1 \in \ring{I} \subseteq J = \ker(\chi)$ so $\chi(a) = \lambda$.
 
 		\item $\algebra{A}$ is not unital. Consider $\tilde{\algebra{A}}$. By the first part,
-		\begin{equation*}
-			\sigma_\algebra{A}(a) = \sigma_{\tilde{\algebra{A}}}(a) \supseteq \{\chi(a) \mid \chi \in \Omega(\tilde{\algebra{A}}) \} = \{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}
-		\end{equation*}
-		If $\algebra{A}$ is commutative, by the first part again: 
-		\begin{equation*}
-			\sigma_\algebra{A}(a) = \sigma_{\tilde{\algebra{A}}}(a) = \{\chi(a) \mid \chi \in \Omega(\tilde{\algebra{A}})\} = \{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}
-		\end{equation*}
+		      \begin{equation*}
+			      \sigma_\algebra{A}(a) = \sigma_{\tilde{\algebra{A}}}(a) \supseteq \{\chi(a) \mid \chi \in \Omega(\tilde{\algebra{A}}) \} = \{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}
+		      \end{equation*}
+		      If $\algebra{A}$ is commutative, by the first part again:
+		      \begin{equation*}
+			      \sigma_\algebra{A}(a) = \sigma_{\tilde{\algebra{A}}}(a) = \{\chi(a) \mid \chi \in \Omega(\tilde{\algebra{A}})\} = \{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}
+		      \end{equation*}
 	\end{itemize}
 \end{proof}
 
@@ -933,15 +933,15 @@ where $\chi_\infty(a + \lambda \cdot 1) = \lambda$. Thus, $\Omega(\algebra{A}) \
 	Given a Banach algebra $\algebra{A}$ and $a \in \algebra{A}$, we define $\hat a: \Omega(\algebra{A}) \to \mathds{C}, \chi \mapsto \chi(a)$.
 \end{definition}
 
-Observe that $\hat a \in C(\Omega(\algebra{A}))$, because if $\chi_i \to \chi$ then we have $\hat a(\chi_i) = \chi_i(a) \to \chi(a) = \hat a(\chi)$. So we have a map $\Gamma: \algebra{A} \to C(\Omega(\algebra{A}))$. This map is called the \textbf{Gelfand transform} of $\algebra{A}$. 
+Observe that $\hat a \in C(\Omega(\algebra{A}))$, because if $\chi_i \to \chi$ then we have $\hat a(\chi_i) = \chi_i(a) \to \chi(a) = \hat a(\chi)$. So we have a map $\Gamma: \algebra{A} \to C(\Omega(\algebra{A}))$. This map is called the \textbf{Gelfand transform} of $\algebra{A}$.
 
 \begin{theorem}[Gelfand Representation]
 	$\image(\Gamma) \subseteq C_0(\Omega(\algebra{A}))$ and $\Gamma: \algebra{A} \to C_0(\Omega(\algebra{A}))$ is a contractive homomorphism, i.e. $\|\Gamma(a) \| \leq \pi(a) \leq \|a\|$ for every Banach algebra $\algebra{A}$.
-	If moreover $\algebra{A}$ is commutative, then $\|\Gamma(a)\| = \pi(a)$. 
+	If moreover $\algebra{A}$ is commutative, then $\|\Gamma(a)\| = \pi(a)$.
 	Also, for all $a \in \algebra{A}$, we have
 	\begin{equation*}
 		\sigma(a) = \left\{ \begin{matrix}
-			\image(\hat a) & \algebra{A} \text{ unital} \\
+			\image(\hat a)            & \algebra{A} \text{ unital} \\
 			\image(\hat a) \cup \{0\} & \text{otherwise}
 		\end{matrix}  \right. \text{.}
 	\end{equation*}
@@ -959,17 +959,17 @@ Observe that $\hat a \in C(\Omega(\algebra{A}))$, because if $\chi_i \to \chi$ t
 		(\Gamma(a) \Gamma(b))(\chi) = (\hat a \cdot \hat b)(\chi) = \hat a(\chi) \hat b (\chi) = \chi(a) \chi(b) = \chi(ab) = \hat{ab} (\chi) = \Gamma(ab)(\chi)\text{.}
 	\end{equation*}
 
-	\underline{$\Gamma$ is contractive}: Given $a \in \algebra{A}$, $\chi \in \Omega(\algebra{A})$, we have $\hat a (\chi) = \chi(a) \in \sigma(a)$, so $\|\hat a (\chi) \| \leq \pi(a)$ yielding $\|\Gamma(a)\|_\infty = \|\hat a\|_\infty \leq \pi(a) \leq \|a\|$. If $\algebra{A}$ is commutative, we have 
+	\underline{$\Gamma$ is contractive}: Given $a \in \algebra{A}$, $\chi \in \Omega(\algebra{A})$, we have $\hat a (\chi) = \chi(a) \in \sigma(a)$, so $\|\hat a (\chi) \| \leq \pi(a)$ yielding $\|\Gamma(a)\|_\infty = \|\hat a\|_\infty \leq \pi(a) \leq \|a\|$. If $\algebra{A}$ is commutative, we have
 	\begin{equation*}
 		\sigma(a) = \left\{ \begin{matrix}
-			\{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} & 1 \in \algebra{A}\\
+			\{\chi(a) \mid \chi \in \Omega(\algebra{A}) \}             & 1 \in \algebra{A} \\
 			\{\chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0 \} & \text{otherwise}
 		\end{matrix} \right. = \left\{ \begin{matrix}
-			\{ \hat a(\chi) \mid \chi \in \Omega(\algebra{A}) \} & 1 \in \algebra{A} \\
+			\{ \hat a(\chi) \mid \chi \in \Omega(\algebra{A}) \}            & 1 \in \algebra{A} \\
 			\{ \hat a(\chi) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\} & \text{otherwise}
 		\end{matrix} \right.
 	\end{equation*}
-	and thus 
+	and thus
 	\begin{equation*}
 		\|\Gamma(a)\| = \|\hat a \|_\infty = \sup_{\chi \in \Omega(\algebra{A})} | \chi(a) | = \sup_{\lambda \in \sigma(a)} |\lambda| = \pi(a)
 	\end{equation*}
@@ -981,23 +981,23 @@ As a convention, if $\Gamma(\algebra{A}) = \empty$, then $C_0(\Omega(\algebra{A}
 	\begin{enumerate}
 		\item If $\algebra{A} = M_n(\mathds{C})$ with $n > 1$ or $\algebra{A}$ is any unital simple Banach algebra with $\dim \algebra{A} > 1$, then $\Omega(\algebra{A}) = \emptyset$ so $\Gamma \equiv 0$.
 		\item Take the commutative subalgebra
-		\begin{equation*}
-			\algebra{A} = \left\{ \qmatrix{0 & \lambda \\ 0 & 0} \mid \lambda \in \mathds{C} \right\} \subseteq M_2(\mathds{C})
-		\end{equation*} 
-		then $\algebra{A}$ is not unital, commutative, Banach and $\dim \algebra{A} = 1$. Once again, $\Omega(\algebra{A}) = \emptyset$ and thus $\Gamma \equiv 0$. 
+		      \begin{equation*}
+			      \algebra{A} = \left\{ \qmatrix{0 & \lambda \\ 0 & 0} \mid \lambda \in \mathds{C} \right\} \subseteq M_2(\mathds{C})
+		      \end{equation*}
+		      then $\algebra{A}$ is not unital, commutative, Banach and $\dim \algebra{A} = 1$. Once again, $\Omega(\algebra{A}) = \emptyset$ and thus $\Gamma \equiv 0$.
 		\item Take
-		\begin{equation*}
-			\algebra{A} = \left\{ \qmatrix{\lambda & \alpha \\ 0 & \lambda} \mid \lambda, \alpha \in \mathds{C} \right\} \subseteq M_2(\mathds{C})
-		\end{equation*}
-		is a unital, commutative Banach algebra with $\dim \algebra{A} = 2$. We have
-		\begin{equation*}
-			\Omega(\algebra{A}) = \{\chi_\infty\} \qquad \chi_\infty: \algebra{A} \to \mathds{C},  \qmatrix{\lambda & \alpha \\ 0 & \lambda}  \mapsto \lambda
-		\end{equation*}
-		and thus
-		\begin{equation*}
-			\Gamma: \algebra{A} \to C_0(\Omega(\algebra{A})) = C_0(\{\chi_\infty\}) \simeq \mathds{C}, a = \qmatrix{\lambda & \alpha \\ 0 & \lambda} \mapsto \hat a \equiv \lambda
-		\end{equation*}
-		This shows that $\Gamma$ is not injective, as $\dim \algebra{A} = 2$ but $\dim \Gamma(\algebra{A}) = 1$.
+		      \begin{equation*}
+			      \algebra{A} = \left\{ \qmatrix{\lambda & \alpha \\ 0 & \lambda} \mid \lambda, \alpha \in \mathds{C} \right\} \subseteq M_2(\mathds{C})
+		      \end{equation*}
+		      is a unital, commutative Banach algebra with $\dim \algebra{A} = 2$. We have
+		      \begin{equation*}
+			      \Omega(\algebra{A}) = \{\chi_\infty\} \qquad \chi_\infty: \algebra{A} \to \mathds{C},  \qmatrix{\lambda & \alpha \\ 0 & \lambda}  \mapsto \lambda
+		      \end{equation*}
+		      and thus
+		      \begin{equation*}
+			      \Gamma: \algebra{A} \to C_0(\Omega(\algebra{A})) = C_0(\{\chi_\infty\}) \simeq \mathds{C}, a = \qmatrix{\lambda & \alpha \\ 0 & \lambda} \mapsto \hat a \equiv \lambda
+		      \end{equation*}
+		      This shows that $\Gamma$ is not injective, as $\dim \algebra{A} = 2$ but $\dim \Gamma(\algebra{A}) = 1$.
 	\end{enumerate}
 \end{example}
 
@@ -1016,107 +1016,288 @@ As a convention, if $\Gamma(\algebra{A}) = \empty$, then $C_0(\Omega(\algebra{A}
 	\begin{enumerate}
 		\setcounter{enumi}{3}
 		\item $\algebra{A} = \ell^1(\mathds{Z}) = \{ (a_n)_{n \in \mathds{Z}} \mid \sum_{n \in \mathds{Z}} |a_n| < \infty$.
-		\begin{quote}
-			Recall from exercises, that $\Omega(\ell^1(\mathds{Z})) \simeq \mathds{D}$ with $\mathds{D} \to \Omega(\ell^1(\mathds{Z})), z \mapsto \chi_z$ defined as $\chi_z(a) = \hat a (z) = \sum_{n=0}^{\infty}a_n z^n$.
+		      \begin{quote}
+			      Recall from exercises, that $\Omega(\ell^1(\mathds{Z})) \simeq \mathds{D}$ with $\mathds{D} \to \Omega(\ell^1(\mathds{Z})), z \mapsto \chi_z$ defined as $\chi_z(a) = \hat a (z) = \sum_{n=0}^{\infty}a_n z^n$.
 
-			We define a multiplication $\delta_m \cdot \delta_n = \delta_{n + m}$. Then $\delta_0$ is the unit and $\delta_1$ is a generator of $\algebra{A} = \ell^1(\mathds{Z})$.
+			      We define a multiplication $\delta_m \cdot \delta_n = \delta_{n + m}$. Then $\delta_0$ is the unit and $\delta_1$ is a generator of $\algebra{A} = \ell^1(\mathds{Z})$.
 
-			The elements $\delta_m - (\dots, 0, 1, 0, \dots )$ form a basis for $\algebra{A}$.
-			We have $a = \sum_{n \in \mathds{Z}} a_n \delta_n$ and for $\chi \in \algebra{A}^*$ it follows $\chi(a) = \sum_{n \in \mathds{Z}} a_n \chi(\delta_n)$.
-		\end{quote}
+			      The elements $\delta_m - (\dots, 0, 1, 0, \dots )$ form a basis for $\algebra{A}$.
+			      We have $a = \sum_{n \in \mathds{Z}} a_n \delta_n$ and for $\chi \in \algebra{A}^*$ it follows $\chi(a) = \sum_{n \in \mathds{Z}} a_n \chi(\delta_n)$.
+		      \end{quote}
 
-		We now want to calculate the spectrum.
-		We have seen that $\chi(\delta_0) = \chi(1_\algebra{A}) = 1$ and $\chi(\delta_n) = \chi(\delta_1^n)  \chi(\delta_1)^n$.
-		Therefore, $\chi$ is determined by $z = \chi(\delta_1) \in \mathds{C}$.
-		We know at least that $|z| = |\chi(\delta_1)| \leq \|\delta_1\| = 1$, so $z \in \mathds{D}$.
-		Claim: $z \in \Pi = \mathds{S}^1$.
-		\begin{quote}
-			General fact: If $a \in \inv \algebra{A}$ for $\algebra{A}$ a unital Banach algebra, then $\sigma(a^{-1}) = \sigma(a)^{-1} = \{ \lambda^{-1} \mid \lambda \in \sigma(a) \}$.
-		\end{quote}
-		Observe that $\mathds{S}^1 = \inv(\algebra{A})$ with $\delta_1^{-1} = \delta_{-1}$.
-		So $\sigma(\delta) \subseteq \mathds{D}$ and $\sigma(\delta_1)^{-1} = \sigma(\delta_{-1}) \subseteq \mathds{D}$, so $\sigma(\delta_1) \subseteq \mathds{S}^1$. 
-		So $z = \chi(\delta_1) \in \sigma(\delta_1) \subseteq \mathds{S}^1$.
-		Conversely, if $z \in \mathds{S}^1$, then $\chi_z: \algebra{A} \to \mathds{C}, \chi_z(a) = \sum_{n \in \mathds{Z}} a_n z^n \in \mathds{C}$ is well-defined (as the sum converges) and is a character, as 
-		\begin{equation*}
-			\chi_z(\delta_n \cdot \delta_m) = \chi(\delta_{n + m}) = z^{n+m} = z^n z^m = \chi_z(\delta_n) \cdot \chi+z(\delta_m)
-		\end{equation*}
-		and checking in the basis also proves the homomorphism property for all of $\algebra{A}$. Notice that $z = \chi_z(\delta_1)$. This shows the injectivity of 
-		\begin{equation*}
-			\Pi \simeq \Omega(\algebra{A}) = \Omega(\ell^1(\mathds{Z})), z \mapsto \chi_z, \chi(\delta_1) \leftarrow \chi
-		\end{equation*}
-		which is continuous and therefore a homeomorphism (isomorphism), as both spaces are compact.
-		Notice 
-		\begin{equation*}
-			\sigma(\delta_1) = \{\chi(\delta_1) \mid \chi \in \Omega(\algebra{A}) \}  = \{\chi_z(\delta_1) \mid z \in \mathds{S}^1 \} = \mathds{S}^1
-		\end{equation*}
-		The Gelfand transformation is now
-		\begin{equation*}
-			\Gamma: \algebra{A} = \ell^1(\mathds{Z}) \to C(\Omega(\algebra{A})) \simeq C(\mathds{S}^1), a \mapsto  \left( \hat a: z \mapsto \sum_{n \in \mathds{Z}} a_n z^n \right)
-		\end{equation*}
+		      We now want to calculate the spectrum.
+		      We have seen that $\chi(\delta_0) = \chi(1_\algebra{A}) = 1$ and $\chi(\delta_n) = \chi(\delta_1^n)  \chi(\delta_1)^n$.
+		      Therefore, $\chi$ is determined by $z = \chi(\delta_1) \in \mathds{C}$.
+		      We know at least that $|z| = |\chi(\delta_1)| \leq \|\delta_1\| = 1$, so $z \in \mathds{D}$.
+		      Claim: $z \in \Pi = \mathds{S}^1$.
+		      \begin{quote}
+			      General fact: If $a \in \inv \algebra{A}$ for $\algebra{A}$ a unital Banach algebra, then $\sigma(a^{-1}) = \sigma(a)^{-1} = \{ \lambda^{-1} \mid \lambda \in \sigma(a) \}$.
+		      \end{quote}
+		      Observe that $\mathds{S}^1 = \inv(\algebra{A})$ with $\delta_1^{-1} = \delta_{-1}$.
+		      So $\sigma(\delta) \subseteq \mathds{D}$ and $\sigma(\delta_1)^{-1} = \sigma(\delta_{-1}) \subseteq \mathds{D}$, so $\sigma(\delta_1) \subseteq \mathds{S}^1$.
+		      So $z = \chi(\delta_1) \in \sigma(\delta_1) \subseteq \mathds{S}^1$.
+		      Conversely, if $z \in \mathds{S}^1$, then $\chi_z: \algebra{A} \to \mathds{C}, \chi_z(a) = \sum_{n \in \mathds{Z}} a_n z^n \in \mathds{C}$ is well-defined (as the sum converges) and is a character, as
+		      \begin{equation*}
+			      \chi_z(\delta_n \cdot \delta_m) = \chi(\delta_{n + m}) = z^{n+m} = z^n z^m = \chi_z(\delta_n) \cdot \chi+z(\delta_m)
+		      \end{equation*}
+		      and checking in the basis also proves the homomorphism property for all of $\algebra{A}$. Notice that $z = \chi_z(\delta_1)$. This shows the injectivity of
+		      \begin{equation*}
+			      \Pi \simeq \Omega(\algebra{A}) = \Omega(\ell^1(\mathds{Z})), z \mapsto \chi_z, \chi(\delta_1) \leftarrow \chi
+		      \end{equation*}
+		      which is continuous and therefore a homeomorphism (isomorphism), as both spaces are compact.
+		      Notice
+		      \begin{equation*}
+			      \sigma(\delta_1) = \{\chi(\delta_1) \mid \chi \in \Omega(\algebra{A}) \}  = \{\chi_z(\delta_1) \mid z \in \mathds{S}^1 \} = \mathds{S}^1
+		      \end{equation*}
+		      The Gelfand transformation is now
+		      \begin{equation*}
+			      \Gamma: \algebra{A} = \ell^1(\mathds{Z}) \to C(\Omega(\algebra{A})) \simeq C(\mathds{S}^1), a \mapsto  \left( \hat a: z \mapsto \sum_{n \in \mathds{Z}} a_n z^n \right)
+		      \end{equation*}
 
-		$\Gamma$ is always a contractive algebra homomorphism, as $\|\hat{a}\|_\infty \leq \|a\|_1$.
-		$\Gamma$ is a $^*$-homomorphism where $\ell^1(\mathds{Z})$ carries the involution $a^* = \left(\sum_{n \in \mathds{Z} a_n \delta_n}\right) = \sum_{n \in \mathds{Z}} \overline{a}_n \delta_{-n}$ because of $\delta_n^* = \delta_{-n}$.
-		The involution of $C(\unitcircle)$ is complex conjugation. But on the unit circle, $\overline{z} = z^{-1}$, so we have a $^*$-homomorphism.
+		      $\Gamma$ is always a contractive algebra homomorphism, as $\|\hat{a}\|_\infty \leq \|a\|_1$.
+		      $\Gamma$ is a $^*$-homomorphism where $\ell^1(\mathds{Z})$ carries the involution $a^* = \left(\sum_{n \in \mathds{Z} a_n \delta_n}\right) = \sum_{n \in \mathds{Z}} \overline{a}_n \delta_{-n}$ because of $\delta_n^* = \delta_{-n}$.
+		      The involution of $C(\unitcircle)$ is complex conjugation. But on the unit circle, $\overline{z} = z^{-1}$, so we have a $^*$-homomorphism.
 
-		$\Gamma$ is \underline{injective}. If $f \in C(\mathds{S}^1)$, we can define its \enquote{inverse Fourier-Transform}
-		\begin{equation*}
-			\check{f}(n) = \int_{\mathds{S}^1} f(z) z^{-n} dz = \frac{1}{2 \pi} \int_0^{2 \pi} f(\exp(it)) \exp(-int) dt
-		\end{equation*}
-		This is \textbf{not} the line integral from functional analysis, as the derivative of the path is not included.
-		You can now check that $(\hat{a})^{\check{~}}(n) = a_n$.
-		$g \mapsto \int_{\mathds{S}^1} g$ is a continuous function on $C(\unitcircle)$ and we have
-		\begin{align*}
-			\hat{a}(z) &= \sum_{n \in \mathds{Z}} a_n z^n = \lim_{F \subseteq \mathds{Z} \text{ finite}} \sum_{n \in F} a_n z^n 
-			= \lim_{N \to \infty} \sum_{n = -N}^N a_n z^n
-		\end{align*}
-		so
-		\begin{align*}
-			(\hat{a})^{\check{~}} (n) = \sum_{m \in \mathds{Z}} a_m (\hat{\delta_m})^{\check{~}} (n)
-		\end{align*}
-		Because of $\int_{\unitcircle} z^k = \delta_{k, 0}$, we have 
-		\begin{align*}
-			\int_{\unitcircle} z^m z^n dz = \delta_{n,m}
-		\end{align*}
-		and using $\hat{\delta_m}(z) = z^m$ we can show $(\hat{\delta_m})^{\check{~}} (n) = \delta_{n,m}$ and thus 
-		\begin{align*}
-			(\hat{a})^{\check{~}} (n) = \sum_{m \in \mathds{Z}} a_m (\hat{\delta_m})^{\check{~}} (n) = \sum_{m \in \mathds{Z}} a_m \delta_{m,n} = a_m
-		\end{align*}
-		This shows that we can re-gain the elements of the sequence from $\hat{a}$, so $\Gamma: (a_n) \mapsto \hat{a}$ must be injective.
+		      $\Gamma$ is \underline{injective}. If $f \in C(\mathds{S}^1)$, we can define its \enquote{inverse Fourier-Transform}
+		      \begin{equation*}
+			      \check{f}(n) = \int_{\mathds{S}^1} f(z) z^{-n} dz = \frac{1}{2 \pi} \int_0^{2 \pi} f(\exp(it)) \exp(-int) dt
+		      \end{equation*}
+		      This is \textbf{not} the line integral from functional analysis, as the derivative of the path is not included.
+		      You can now check that $(\hat{a})^{\check{~}}(n) = a_n$.
+		      $g \mapsto \int_{\mathds{S}^1} g$ is a continuous function on $C(\unitcircle)$ and we have
+		      \begin{align*}
+			      \hat{a}(z) & = \sum_{n \in \mathds{Z}} a_n z^n = \lim_{F \subseteq \mathds{Z} \text{ finite}} \sum_{n \in F} a_n z^n
+			      = \lim_{N \to \infty} \sum_{n = -N}^N a_n z^n
+		      \end{align*}
+		      so
+		      \begin{align*}
+			      (\hat{a})^{\check{~}} (n) = \sum_{m \in \mathds{Z}} a_m (\hat{\delta_m})^{\check{~}} (n)
+		      \end{align*}
+		      Because of $\int_{\unitcircle} z^k = \delta_{k, 0}$, we have
+		      \begin{align*}
+			      \int_{\unitcircle} z^m z^n dz = \delta_{n,m}
+		      \end{align*}
+		      and using $\hat{\delta_m}(z) = z^m$ we can show $(\hat{\delta_m})^{\check{~}} (n) = \delta_{n,m}$ and thus
+		      \begin{align*}
+			      (\hat{a})^{\check{~}} (n) = \sum_{m \in \mathds{Z}} a_m (\hat{\delta_m})^{\check{~}} (n) = \sum_{m \in \mathds{Z}} a_m \delta_{m,n} = a_m
+		      \end{align*}
+		      This shows that we can re-gain the elements of the sequence from $\hat{a}$, so $\Gamma: (a_n) \mapsto \hat{a}$ must be injective.
 
-		$\Gamma$ has dense range because the polynomials are dense in $C(\unitcircle)$ because of Stone-Weierstraß theorem.
+		      $\Gamma$ has dense range because the polynomials are dense in $C(\unitcircle)$ because of Stone-Weierstraß theorem.
 
-		$\Gamma$ is \underline{not isometric}.
-		%Choose $a = a_0 \delta_0 + a_1 \delta_1 + a_2 \delta_2 \in \ell^1(\mathds{Z})$, then $\hat{a}(z) = a_0 + a_1 z + a_2 z^n$.
-		If $\Gamma$ was isometric, then $\Gamma$ were an isometric $^*$-homomorphism with dense range.
-		Since isometric homomorphisms have closed image, $\Gamma$ were surjective and thus an isometric $^*$-isomorphism $\ell^1(\mathds{Z}) = C(\unitcircle)$.
-		Then $\ell^1(\mathds{Z})$ would be a $C^*$-algebra with the $\ell^1(\mathds{Z})$-norm, and thus $\|a^* a\|_1 = \|a\|_1^2$ (with the involution as described above). Then, using the $C^*$-property of $C(\unitcircle)$ and isometry of $\Gamma$, we have
-		\begin{align*}
-			\|a^* a\|_1 = \|\Gamma(a^* a)\|_\infty = \|\Gamma(a)^* \Gamma(a) \|_\infty = \|\Gamma(a)\|_\infty^2 - \|a\|_1^2\text{.}
-		\end{align*}
-		Now we only need to find $a \in \ell^1(\mathds{Z})$ with $\|a^* a \|_1 \neq \|a\|_1^2$.
-		Choose $a = \alpha \delta_0 + \beta \delta_1 + \gamma \delta_{-1} = \alpha + \beta \delta_1 + \gamma \delta_{-1}$ (not writing $\delta_0$ as it is the unit).
-		\begin{align*}
-			a^* a = (\overline{\alpha} + \overline{\beta} \delta_{-1} + \overline{\gamma} \delta_1) (\alpha + \beta \delta_1 + \gamma \delta_{-1}) = \dots 
-		\end{align*}
-		and thus
-		\begin{equation*}
-			\|a^* a\|_1 = |\alpha|^2 + |\beta|^2 + |\gamma|^2 + 2 |\overline{\alpha} \beta + \alpha \overline{\gamma} | + 2 |\gamma \beta|
-		\end{equation*}
-		while
-		\begin{equation*}
-			\|a\|_1^2 = (|\alpha| + |\beta| + |\gamma|)^2\text{.}
-		\end{equation*}
-		Now choosing $\alpha = i$ and $\beta = \gamma = 1$ yields $\| a^* a\|_1 = 5$ and $\|a\|_1^2 = 9$. This shows that $\ell^1(\mathds{Z})$ does not fulfil the $^*$-property and cannot be a $C^*$-algebra. This is a contradiction, so $\Gamma$ cannot be isometric.
+		      $\Gamma$ is \underline{not isometric}.
+		      %Choose $a = a_0 \delta_0 + a_1 \delta_1 + a_2 \delta_2 \in \ell^1(\mathds{Z})$, then $\hat{a}(z) = a_0 + a_1 z + a_2 z^n$.
+		      If $\Gamma$ was isometric, then $\Gamma$ were an isometric $^*$-homomorphism with dense range.
+		      Since isometric homomorphisms have closed image, $\Gamma$ were surjective and thus an isometric $^*$-isomorphism $\ell^1(\mathds{Z}) = C(\unitcircle)$.
+		      Then $\ell^1(\mathds{Z})$ would be a $C^*$-algebra with the $\ell^1(\mathds{Z})$-norm, and thus $\|a^* a\|_1 = \|a\|_1^2$ (with the involution as described above). Then, using the $C^*$-property of $C(\unitcircle)$ and isometry of $\Gamma$, we have
+		      \begin{align*}
+			      \|a^* a\|_1 = \|\Gamma(a^* a)\|_\infty = \|\Gamma(a)^* \Gamma(a) \|_\infty = \|\Gamma(a)\|_\infty^2 - \|a\|_1^2\text{.}
+		      \end{align*}
+		      Now we only need to find $a \in \ell^1(\mathds{Z})$ with $\|a^* a \|_1 \neq \|a\|_1^2$.
+		      Choose $a = \alpha \delta_0 + \beta \delta_1 + \gamma \delta_{-1} = \alpha + \beta \delta_1 + \gamma \delta_{-1}$ (not writing $\delta_0$ as it is the unit).
+		      \begin{align*}
+			      a^* a = (\overline{\alpha} + \overline{\beta} \delta_{-1} + \overline{\gamma} \delta_1) (\alpha + \beta \delta_1 + \gamma \delta_{-1}) = \dots
+		      \end{align*}
+		      and thus
+		      \begin{equation*}
+			      \|a^* a\|_1 = |\alpha|^2 + |\beta|^2 + |\gamma|^2 + 2 |\overline{\alpha} \beta + \alpha \overline{\gamma} | + 2 |\gamma \beta|
+		      \end{equation*}
+		      while
+		      \begin{equation*}
+			      \|a\|_1^2 = (|\alpha| + |\beta| + |\gamma|)^2\text{.}
+		      \end{equation*}
+		      Now choosing $\alpha = i$ and $\beta = \gamma = 1$ yields $\| a^* a\|_1 = 5$ and $\|a\|_1^2 = 9$. This shows that $\ell^1(\mathds{Z})$ does not fulfil the $^*$-property and cannot be a $C^*$-algebra. This is a contradiction, so $\Gamma$ cannot be isometric.
 
-		This is also a valid counterexample for the isometry directly, because $a$ has Norm $3$, but $\Gamma(a) = (z \mapsto \frac{1}{z} + i + z = 2 \Re(z) + i)$ has maximum $2 + i$ with Norm $\sqrt{5}<3$ on the unit circle.
-		$\Gamma$ is \underline{not surjective}. This is complicated.
+		      This is also a valid counterexample for the isometry directly, because $a$ has Norm $3$, but $\Gamma(a) = (z \mapsto \frac{1}{z} + i + z = 2 \Re(z) + i)$ has maximum $2 + i$ with Norm $\sqrt{5}<3$ on the unit circle.
+		      $\Gamma$ is \underline{not surjective}. This is complicated.
 	\end{enumerate}
 \end{example}
 
+Recall: For $\algebra{A}$ a Banach algebra, we have a Gelfand representation
+\begin{equation*}
+	\Gamma: \algebra{A} \to C_0(\Omega(\algebra{A})), a \mapsto (\hat{a}: \Omega(\algebra{A}) \to \mathds{C}, \chi \mapsto \chi(a))
+\end{equation*}
+where $\Omega(\algebra{A}) = \{\chi: \algebra{A} \to \mathds{C} \mid \text{ non-zero hom} \} \subseteq D_{\algebra{A}^*}(0,1)$ with the weak $^*$-topology.
+$\Gamma$ is a contractive homomorphism, and if $\algebra{A}$ is commutative $\|\Gamma(a)\| = \pi(a) \leq \|a\|$ for all $a \in \algebra{A}$.
 
+We now want to consider commutative $C^*$-algebras.
 
+\begin{theorem}[Gelfand]
+	If $\algebra{A}$ is a commutative $C^*$-algebra, then $\Gamma: \algebra{A} \to C_0(\Omega(\algebra{A}))$ is an isometric $^*$-isomorphism.
+\end{theorem}
 
+For this proof we require a set of lemmas.
 
+\begin{lemma}
+	If $a \in \algebra{A}$, $\algebra{A}$ a $C^*$-algebra, with $a = a^*$ then $\pi(a) = \|a\|$.
+\end{lemma}
+
+\begin{proof}
+	Use $\pi(a) = \lim_{n \to \infty} \|a^n\|^{\frac{1}{n}}$.
+	Notice $\|a^2\| = \|a^* a \| = \|a\|^2$ and $\|a^4\| = \|(a^2)^* a^2\| = \|a^2\|^2 = \|a\|^4$ and likewise for all powers that are powers of $2$ we have $\|a^{2^n}\| = \|a\|^{2^n}$.
+	So $\pi(a) = \lim_{n \to \infty} \|a^{2^n}\|^{\frac{1}{2^n}} = \|a\|$ is the limit of the subsequence and therefore the limit of the sequence.
+\end{proof}
+
+\begin{remark}
+	In general, $\|a\| \neq \pi(a)$ if $a \neq a^*$ in a $C^*$-algebra, e.g.
+	$a = \qmatrix{0 & 1 \\ 0 & 0} \in M_2(\mathds{C})$.
+	But if $a^* a = a a^*$ ($a$ is normal), then $\|a\| = \pi(a)$.
+\end{remark}
+
+\begin{proof}
+	Exercise.
+\end{proof}
+
+\begin{corollary}
+	There exists at most one norm that makes a $^*$-algebra $\algebra{A}$ into a $C^*$-algebra.
+\end{corollary}
+
+\begin{proof}
+	If $\algebra{A}$ is a $C^*$-algebra with norm $\| \cdot \|$, then for all $a \in \algebra{A}$ we have $\|a\| = \|a a^*\|^{\frac{1}{2}}$. Note that $a^*a$ is self-adjoint, so by the previous lemma we have
+	\begin{equation*}
+		\|a\| = \|a a^*\|^{\frac{1}{2}} = \pi(a^* a)^\frac{1}{2} = \sup_{\lambda \in \sigma(a^* a)} |\lambda|^{\frac{1}{2}}
+	\end{equation*}
+	and this only depends on the algebra structure, not its norm.
+\end{proof}
+
+\begin{corollary}
+	If $\phi: \algebra{A} \to \algebra{B}$ is a $^*$-homomorphism from a Banach-$^*$-algebra $\algebra{A}$ into a $C^*$-algebra $\algebra{B}$ then $\phi$ is contractive, i.e. $\|\phi(a)\|_\algebra{B} \leq \|a\|_\algebra{A}$ for all $a \in \algebra{A}$
+\end{corollary}
+
+\begin{proof}
+	Replacing $\algebra{A}, \algebra{B}$ by their unitizations $\tilde{\algebra{A}}$ and $\tilde{\algebra{B}}$ and extending $\phi$ to $\tilde{\phi}: \tilde{A} \to \tilde{B}, a + \lambda 1_\algebra{B} \mapsto \phi(a) + \lambda 1_\algebra{B}$ shows that we can just assume $\algebra{A}, \algebra{B}, \phi$ to be unital.
+	
+	Now, if $a \in \inv(\algebra{A})$, then $\phi(a) \in \inv(\algebra{B})$, so it follows
+	\begin{equation*}
+		\lambda \in \rho_\algebra{A}(a) \iff a - \lambda \in \inv(\algebra{A}) \iff \phi(a) - \lambda \in \inv(\algebra{B}) \iff \lambda \in \rho_\algebra{B}(\phi(a))
+	\end{equation*}
+	so $\rho_\algebra{A}(a) \subseteq \rho_\algebra{B}(\phi(a))$ and $\sigma_\algebra{A}(a) \supseteq \sigma_\algebra{B}(\phi(a))$.
+	It follows for the spectral radius: $\pi(\phi(a)) \leq \pi(a)$.
+	As $\algebra{B}$ is a $C^*$-algebra, this implies
+	%$\|\phi(a)\|_\algebra{B} = \pi(\phi(a)) \leq \pi(a) \leq \|a\|_\algebra{A}$. %% WRONG => needs self-adjoint
+	\begin{align*}
+		\|\phi(a)\|_\algebra{B}^2 &= \|\phi(a)^* \phi(a)\|_\algebra{B} = \|\phi(a^*a)\|_\algebra{B} = \pi(\phi(a^* a)) \\ &\leq \pi(a^* a) \leq \|a^* a\|_\algebra{A} \leq \|a^*\|_\algebra{A} \cdot \|a\|_\algebra{A} = \|a\|_\algebra{A}^2
+	\end{align*}
+	and therefore $\|\phi(a)\|_\algebra{B} \leq \|a\|_\algebra{A}$.
+\end{proof}
+
+\begin{lemma}
+	If $\algebra{A}$ is a $C^*$-algebra and $a \in \algebra{A}$, then 
+	\begin{enumerate}
+		\item If $a$ is self-adjoint, $\sigma(a) \subseteq \mathds{R}$.
+		\item If $\algebra{A}$ is unital and $u \in \mathcal{U}(\algebra{A})$ is unitary (that is, $u^* u = u u^* = 1$) then $\sigma(u) \subseteq \unitcircle$.
+		\item If $a \in \inv(\algebra{A})$, then $\sigma(a^{-1}) = \sigma(a)^{-1} = \{z^{-1} \mid z \in \sigma(a) \}$.
+		\item $\sigma(a^*) = \overline{\sigma(a)}$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	As exercise (iii, iv)
+	\begin{enumerate}
+		\item[(ii)] If $u \in \mathcal{U}(\algebra{A})$, then $\sigma(a) \subseteq \mathds{D} = \{z \in \mathds{C} \mid |z| \leq 1 \}$ because 
+		\begin{equation*}
+			\|u\| = \|u^* u\|^{\frac{1}{2}} = \|1\|^\frac{1}{2} = 1\text{.}
+		\end{equation*}
+		So, since $u \in \mathcal{U}(\algebra{A})$, $u^{-1}=u^* \in \mathcal{U}(\algebra{A})$ and therefore $\sigma(u)^{-1} = \sigma(u^{-1}) \subseteq \mathds{D}$.
+		This implies $\|\lambda\| = 1$ for all $\lambda \in \sigma(u)$ and thus $\sigma(u) \subseteq \unitcircle$.
+		\item Assume that $\algebra{A}$ is unital, otherwise work in $\tilde{\algebra{A}}$. If $a$ is self-adjoint then $u = \exp(i a) = \sum_{n=0}^{\infty} \frac{i^n a^n}{n!} \in \mathcal{U}(\algebra{A})$ because $
+		\exp(i a)^* = \exp(- i a)$ and therefore $u^* u = \exp(-i a) \exp(i a) = \exp(0) = 1 = u u^*$.
+		Because of (i) we know $\sigma(u) \subseteq \unitcircle$.
+		Now, let $\lambda \in \sigma(u)$ and define $b = \sum_{n=1}^{\infty} \frac{i^n (a-\lambda)^n}{n!} = \exp(i(a = \lambda)) - 1$ as well as $c = \sum_{n = 1}^{\infty} \frac{i^n (a = \lambda)^{n-1}}{n!} \in \algebra{A}$ .
+		Consider
+		\begin{align*}
+			\exp(i a) - \exp(i \lambda 1) &= (\exp(i (a - \lambda)) - 1)  \exp(i \lambda) = b \exp(i \lambda)\\
+			&= \left( \sum_{n = 1}^{\infty} \frac{i^n (a = \lambda)^n}{n!} \right) \exp(i \lambda) \\ 
+			&= (a - \lambda) \left( \sum_{n = 1}^{\infty} \frac{i^n (a - \lambda)^{n-1}}{n!} \right) \exp(i \lambda)\\
+			&= (a - \lambda) c \exp(i \lambda)\text{.}
+		\end{align*}
+		Since $\lambda \in \sigma(a)$ and $c, (a - \lambda)$ commute, $\exp(i a) - \exp(i \lambda)$ is not invertible (or $a - \lambda$ would also be invertible) and we have $\exp(i \lambda) \in \sigma(u) \subseteq \unitcircle$.
+		But for this to happen, we require $\lambda \in \mathds{R}$.
+	\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+	If $\algebra{A}$ is a $C^*$-algebra and $\chi \in \Omega(\algebra{A})$, then $\chi(a^*) = \overline{\chi(a)}$ for all $a \in \algebra{A}$.
+	So $\chi$ is a $^*$-homomorphism.
+\end{corollary}
+
+\begin{proof}
+	If $a \in \algebra{A}$ is self-adjoint, then $\chi(a) \in \sigma(a) \subseteq \mathds{R}$ so $\overline{\chi(a)} = \chi(a) = \chi(a^*)$.
+
+	Now, if $a \in \algebra{A}$ is any element we can write it as $a = b + i c$ where $b = \frac{a + a^*}{2}$ and $c = \frac{a - a^*}{2i}$ so that $b,c$ are self-adjoint. Now $\chi(b),\chi(c) \in \mathds{R}$ so
+	\begin{equation*}
+		\chi(a^*) = \chi(b - ic) = \chi(b) - i \cdot \chi(c) = \overline{\chi(b) + i \chi(c)} = \overline{\chi(b + ic)} = \overline{\chi(a)}
+	\end{equation*}
+\end{proof}
+
+\begin{corollary}
+	If $\algebra{A}$ is a commutative $C^*$-algebra and $\algebra{A} \neq 0$, then $\Omega(\algebra{A}) \neq \emptyset$.
+\end{corollary}
+
+\begin{proof}
+	If $\algebra{A} \neq 0$ there is some self-adjoint non-zero element $a \in \algebra{A}$ so that $\pi(a) = \|a\| \neq 0$. But $\sigma(a) \subseteq \{ \chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}$.
+	%(with equality if $\algebra{A}$ is not unital, in the unital case $\sigma(a)$ is the first set).
+	But for this to be true there must exist a character $\chi \in \Omega(\algebra{A})$, so $\Omega(\algebra{A}) \neq \emptyset$.
+\end{proof}
+
+\begin{proof}[Gelfand]~
+	\begin{itemize}
+		\item \textbf{$\Gamma$ is a $^*$-homomorphism}:
+		Consider 
+		\begin{equation*}
+			\Gamma(a)^*(\chi) = \hat{a}^*(x) = \overline{\hat{a}(\chi)} = \overline{\chi(a)} = \chi(a^*) = \hat{a^*}(\chi) =  \Gamma(a^*)(\chi)
+		\end{equation*}
+		so $\Gamma(a)^* = \Gamma(a^*)$.
+		\item \textbf{$\Gamma$ is isometric}:
+		We have
+		\begin{equation*}
+			\|\Gamma(a)\|^2 = \|\Gamma(a)^* \Gamma(a)\| = \|\Gamma(a^* a)\| = \pi(a^* a) = \|a^* a\| = \|a\|^2
+		\end{equation*}
+		using our lemmas and the $C^*$-property.
+		\item \textbf{$\Gamma$ is surjective}:
+		Let $\algebra{B} \coloneq \image(\Gamma) \subseteq C_0(\algebra{A})$.
+		Then $\algebra{B}$ is a $C^*$-subalgebra of $C_0(\Omega(\algebra{A}))$.
+		Then
+		\begin{itemize}
+			\item $\algebra{B}$ does not vanish at any point, i.e. for every point $\chi \in \Omega(\algebra{A})$ there is a $b \in \algebra{B}$ with $\chi(b) \neq 0$. 
+			
+			As $\chi \in \Omega(\algebra{A})$ means $\chi \neq 0$, there exists an $a \in \algebra{A}$ with $\chi(a) \neq 0$.
+			But we can rewrite this as $b(\chi) = \hat{a}(\chi) = \chi(a) \neq 0$ for $b = \hat{a}$.
+			\item $\algebra{B}$ sperates points in $\Omega(\algebra{A})$, i.e. for every $\chi_1 \neq \chi_2$ in $\Omega(\algebra{A})$ there exists $b \in \algebra{B}$ with $b(\chi_1) \neq b(\chi_2)$.
+			
+			If $\chi_1 \neq \chi_2$ there exists $a \in \algebra{A}$ with $\chi_1(a) \neq \chi_2(a)$.
+			Taking $b = \hat{a}$ yields the result.
+		\end{itemize}
+		The result $B = C_0(\Omega(\algebra{A}))$ follows from the Stone-Weierstraß-theorem:
+		\begin{quote}
+			If $X$ is a locally compact Hausdorff space and $B \subseteq C_0(X)$ is a $^*$-subalgebra satisfying
+			\begin{itemize}
+				\item $B$ does not vanish on any point of $X$.
+				\item $B$ separates points of $\algebra{A}$.
+			\end{itemize}
+			then $B$ is dense in $C_0(X)$.
+		\end{quote}
+		So $\image(\Gamma)$ is dense and closed in $C_0(\Omega(\algebra{A}))$, so $\Gamma$ is surjective.
+	\end{itemize}
+\end{proof}
+
+\begin{remark}
+	Conclusion: Every commutative $C^*$-algebra is (up to $^*$-isomorphism) of the form $C_0(X)$ for a locally compact Hausdorff space $X$.
+	If we now start with $A = C_0(X)$, then $\Omega(C_0(X)) \simeq X$.
+	So there is a bijection between locally compact Hausdorff spaces and commutative $C^*$-algebras.
+	We prove this with a very canonical mapping:
+	\begin{equation*}
+		\Phi: X \to \Omega(C_0(X)), x \mapsto (\mathrm{ev}_x: C_0(X) \to \mathds{C}, f \mapsto f(x))\text{.}
+	\end{equation*}
+	The \textbf{continuity} is easy to see:
+	Take $x_i \to x$ in $X$, then $\mathrm{ev}_{x_i} \to \mathrm{ev}_x$ in the weak $^*$-topology.
+	Then, for all $f \in C_0(X)$ we have $\mathrm{ev}_{x_i}(f) \to \mathrm{ev}_x(f)$ because $f$ is continuous and therefore $f(x_i) \to f(x)$.
+
+	The \textbf{injectivity} of $f$ is also easy to see.
+	$x \mapsto \mathrm{ev}_x$ is injective because if $x_1 \neq x_2$ there exists a function $f \in C_0(X)$ that separates them, but then $\mathrm{ev}_{x_1}(f) \neq \mathrm{ev}_{x_2}(f)$, so $\mathrm{ev}_{x_1} \neq \mathrm{ev}_{x_2}$.
+
+	This map is \textbf{surjective} and \textbf{open}, but this is more difficult to prove.
+\end{remark}
 
 
 
