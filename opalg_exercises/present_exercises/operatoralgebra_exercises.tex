@@ -381,6 +381,24 @@ In the following, $\mathds{D}$ is the \textbf{closed} unit circle.
 \end{exercise}
 
 
+\begin{remark}
+	Talk about functoriality.
+	If $X,Y$ are compact Hausdorff spaces and $f: X \to Y$ is continuous then 
+	\begin{equation*}
+		f_*: C(Y) \to C(X), g \mapsto g \circ f
+	\end{equation*}
+	You can check that $f_*$ is a unital $^*$-homomorphism. 
+	So we receive a functor from the compact spaces	to the unital commutative $C^*$-algebras:
+	\begin{align*}
+		\text{Comp. Spaces} \to \text{unital abelian $C^*$}, X \mapsto C(X)\\
+		Hom(X, Y) \to Hom(C(Y), C(X)),  f \mapsto f_*
+	\end{align*}
+	This is a contravariant function because for $f: X \to Y, g: Y \to Z$ we have $(g \circ f)_* = f_* \circ g_*$.
+	It is also natural.
+	If $\phi: C(Y) \to C(X)$ is a unital $^*$-homomorphism, we get a continuous map $f: X \to Y$ by ''duality''.
+\end{remark}
+
+
 \end{document}
 
 

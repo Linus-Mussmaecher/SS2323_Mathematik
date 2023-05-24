@@ -1192,8 +1192,12 @@ For this proof we require a set of lemmas.
 \end{lemma}
 
 \begin{proof}
-	As exercise (iii, iv)
 	\begin{enumerate}
+		\item[(iii)] If $\lambda \in \mathds{C}, \lambda \neq 0$ and $\lambda - a \notin \inv(\algebra{A})$.
+		Because $\lambda - a$ is not invertible, $\lambda^{-1}(\lambda - a) = 1 - \lambda^{-1} a$ and $a^{-1}(1 - \lambda^{-1} a) = a^{-1} - \lambda^{-1}$ is also not invertible.
+		So we have $\lambda^{-1} - a^{-1} \notin \inv(\algebra{A})$ and therefore $\sigma(a^{-1}) \subseteq \sigma(a)^{-1}$.
+		The result follows by symmetry.
+		\item[(iv)] Similarly, you can prove (iv).
 		\item[(ii)] If $u \in \mathcal{U}(\algebra{A})$, then $\sigma(a) \subseteq \mathds{D} = \{z \in \mathds{C} \mid |z| \leq 1 \}$ because 
 		\begin{equation*}
 			\|u\| = \|u^* u\|^{\frac{1}{2}} = \|1\|^\frac{1}{2} = 1\text{.}
@@ -1268,12 +1272,12 @@ For this proof we require a set of lemmas.
 			If $\chi_1 \neq \chi_2$ there exists $a \in \algebra{A}$ with $\chi_1(a) \neq \chi_2(a)$.
 			Taking $b = \hat{a}$ yields the result.
 		\end{itemize}
-		The result $B = C_0(\Omega(\algebra{A}))$ follows from the Stone-Weierstraß-theorem:
+		The result $\algebra{B} = C_0(\Omega(\algebra{A}))$ follows from the Stone-Weierstraß-theorem:
 		\begin{quote}
 			If $X$ is a locally compact Hausdorff space and $B \subseteq C_0(X)$ is a $^*$-subalgebra satisfying
 			\begin{itemize}
-				\item $B$ does not vanish on any point of $X$.
-				\item $B$ separates points of $\algebra{A}$.
+				\item $B$ does not vanish on any point of $X$
+				\item $B$ separates points of $\algebra{A}$
 			\end{itemize}
 			then $B$ is dense in $C_0(X)$.
 		\end{quote}
@@ -1281,23 +1285,76 @@ For this proof we require a set of lemmas.
 	\end{itemize}
 \end{proof}
 
-\begin{remark}
+\begin{proposition}
 	Conclusion: Every commutative $C^*$-algebra is (up to $^*$-isomorphism) of the form $C_0(X)$ for a locally compact Hausdorff space $X$.
-	If we now start with $A = C_0(X)$, then $\Omega(C_0(X)) \simeq X$.
-	So there is a bijection between locally compact Hausdorff spaces and commutative $C^*$-algebras.
-	We prove this with a very canonical mapping:
+	Let $\algebra{A} = C_0(X)$ for a locally compact Hausdorff space $X$. Then $\Omega(\algebra{A}) \simeq X$ with isomorphism
 	\begin{equation*}
-		\Phi: X \to \Omega(C_0(X)), x \mapsto (\mathrm{ev}_x: C_0(X) \to \mathds{C}, f \mapsto f(x))\text{.}
+		\phi: X \to \Omega(C_0(X)), x \mapsto (\mathrm{ev}_x: C_0(X) \to \mathds{C}, f \mapsto f(x))\text{.}
 	\end{equation*}
-	The \textbf{continuity} is easy to see:
-	Take $x_i \to x$ in $X$, then $\mathrm{ev}_{x_i} \to \mathrm{ev}_x$ in the weak $^*$-topology.
-	Then, for all $f \in C_0(X)$ we have $\mathrm{ev}_{x_i}(f) \to \mathrm{ev}_x(f)$ because $f$ is continuous and therefore $f(x_i) \to f(x)$.
+\end{proposition}
 
-	The \textbf{injectivity} of $f$ is also easy to see.
-	$x \mapsto \mathrm{ev}_x$ is injective because if $x_1 \neq x_2$ there exists a function $f \in C_0(X)$ that separates them, but then $\mathrm{ev}_{x_1}(f) \neq \mathrm{ev}_{x_2}(f)$, so $\mathrm{ev}_{x_1} \neq \mathrm{ev}_{x_2}$.
+\begin{proof}~
+	\begin{itemize}
+		\item $\phi$ is \textbf{well-defined}, because characters are never zero.
+		\item $\phi$ is \textbf{continuous}.
+		Take $x_i \to x$ in $X$.
+		Then, for all $f \in C_0(X)$ we have $\mathrm{ev}_{x_i}(f) \to \mathrm{ev}_x(f)$ because $f$ is continuous and therefore $f(x_i) \to f(x)$.
+		This shows $\mathrm{ev}_{x_i} \to \mathrm{ev}_x$ in the weak $^*$-topology.
+		\item $\phi$ is \textbf{injective}. I
+		f $x_1 \neq x_2$ there exists a function $f \in C_0(X)$ that separates them, but then $\mathrm{ev}_{x_1}(f) \neq \mathrm{ev}_{x_2}(f)$, so $\mathrm{ev}_{x_1} \neq \mathrm{ev}_{x_2}$.
+		\item $\phi$ is \textbf{surjective}.  Prove that every $\chi \in \Omega(\algebra{A})$ is $\chi = \mathrm{ev}_x$ for some $x \in X$.
+		
+		We know that the characters of $\algebra{A}$ are equivalent to the ideals in $C_0(X)$, so this is equivalent to:
+		Every maximal ideal $I \triangleleft C_0(X)$ is of the form $I = C_0(X \setminus \{x_0\}) = \{ f \in C_0(X) \mid f(x_0) = 0 \}$.
 
-	This map is \textbf{surjective} and \textbf{open}, but this is more difficult to prove.
-\end{remark}
+		In Exercise 01-08 we have proven that every closed (2-sided) ideal $I \triangleleft C_0(X)$ has the form $I = C_0(U) \coloneq \{ f \in C_0(X) \mid f|_{X \setminus U} \equiv 0 \}$ for some open $U \subseteq X$.
+
+		\begin{quote}
+			See 01-08 for more details.
+
+			Take any $f \in I \triangleleft C_0(X)$.
+			First, prove $I^* = I$.
+			Consider $f \in I$ and 
+			\begin{equation*}
+				f_n \coloneq \sqrt[n]{f^* f} = (\overline{f} f )^{\frac{1}{n}} = |f|^{\frac{2}{n}}\text{.}
+			\end{equation*}
+			We have $f_n \in I$ for all $n$, because $g \coloneq f^* f \in I$ and $t \mapsto \sqrt[n]{t}$ is a continuous function that can be uniformly approximated by polynomials on the compact sets.
+			It follows that $f_n = \lim g_n$ where $g_n$ is a polynomial in $g \in I$, so $f_n \in I$.
+			So $f^* f_n \in I$ for all $n$.
+			Then
+			\begin{align*}
+				\|f^* = f_n f^*\|_\infty^2 &= \|(f^* - f_n f^*)(f^* - f_n f^*)\|_\infty = \|(f = f_n f)(f^* - f_n f^*)\|_\infty\\ &= \| f^* f - 2 f^* f f_n + f_n^2 f^* f\|_\infty \\ &\leq \|g - g \sqrt[n]{g}\| + \|g - g \sqrt[n]{g} \| \|f_n\| \to 0\text{,}
+			\end{align*}
+			because $|g(x) - g(x) \sqrt[n]{g(x)}| \to 0$ pointwise (as the $n$-th square root converges to the $1$ on the support and $0$ elsewhere) and $|g(x)| \leq \epsilon$ everywhere except a compact set $K$, and on that $K$ we have $\sup_{x \in K} |g(x)| |1 - \sqrt[n]{g(x)}| = |g(x_0)| |1 - \sqrt[n]{g(x_0)}| < \epsilon$ for some $n \in \mathds{N}$.
+			We therefore have $f^* = \lim_{n \to \infty} f^* f_n \in I$ and thus $f^* = \lim_{n \to \infty} f_n f^*$. 
+			Now let $I \triangleleft C_0(X)$ closed, so $I^* = I$ and $I$ is a $C^*$-subalgebra of $X$.
+
+			Define $U^\complement \coloneq \{x \in X \mid f(x) = 0 \forall_{f \in I} \}$.
+			This is closed (because for $x_i \to x$ in $X$, $x_i \in U^\complement$, we have $0 = f(x_i) \to f(x)$), so $U$ is open. 
+			We claim $I = C_0(U)$. 
+			
+			If $f \in I$, $f|_{U^\complement} \equiv 0$ per Definition, so $f \in C_0(U)$. Therefore, $I$ is a closed subideal of $C_0(U)$. 
+
+			$I$ does not vanish on $U$, because if there was an $x \in U$ with $f(x) = 0$ for all $f \in I$, we would have $x \in U^\complement$.
+
+			$I$ separates the points of $U$. Take $x_1 \neq x_2$. We can choose $h \in C_0(X)$ with $h(x_1) = 1$ and $h(x_2) = 0$ (Uryson) as well as $g \in I$ with $g(x_1) \neq 0$, then $f = g \cdot h \in I$ separates $x_1$ from $x_2$.
+
+			Stone-Weierstraß now proves $I = C_0(U)$.
+		\end{quote}
+		Notice $U \subseteq V \subseteq X$ (open) iff $C_0(U) \subseteq C_0(V) \trianglelefteq C_0(X)$ (see exercise 08-01).
+		So we have a bijection between the opens of $X$ and the ideals of $C_0(X)$.
+		Especially, the maximal ideals of $C_0(X)$ correspond to the maximal open sets, that is the sets of form $X \setminus \{x_0\}$ for some $x_0$, of $X$.
+
+		Therefore, if $\chi \in \Omega(C_0(X))$ we have $\ker \chi = C_0(X\setminus\{x_0\})$, so $\chi$ maps a function to $0$ if and only if $f$ is zero on $x$.
+		This proves and $\chi = \ev_x$.
+		\item $\phi$ is \textbf{open}. If $X$ is compact, this is clear because $C_0(X) = C(X)$ and unital, so $\Omega(C_0(X))$ is compact and we have a bijection between two compact sets.
+		In general, consider $\tilde{X}$ (the compactification) and use $\widetilde{C_0(X)} \simeq C(\tilde{X})$. So we have a homeomorphism 
+		\begin{equation*}
+			\tilde{X} \to \Omega(C(\tilde{x})) = \Omega(\widetilde{C_0(X)}) \simeq \Omega(C_0(X)) \sqcup \{\chi_\infty\}
+		\end{equation*}
+		where $\infty \mapsto \chi_\infty$, so we can restrict the homeomorphism to $X$ and are done.
+	\end{itemize}
+\end{proof}
 
 
 
