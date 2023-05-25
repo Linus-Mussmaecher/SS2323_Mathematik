@@ -63,9 +63,33 @@
 
 \subsection{}
 
-%2.17 / 2.18
-
-\subsection{}
+\begin{enumerate}
+    \item Wir berechnen zuerst das folgende Integral:
+    \begin{align*}
+        &\int_{- \infty}^{\infty} \exp\left( - \frac{2}{3} (x^2 + xy + y^2) \right) dx\\
+        = &\int_{- \infty}^{\infty} \exp\left( - \frac{2}{3} (x^2 + xy +  y^2/4) - \frac{1}{2} y^2 \right) dx\\
+        = &\exp\left( - \frac{1}{2} y \right) \int_{- \infty}^{\infty} \exp\left( - \frac{2}{3} (x - y/2)^2 \right) dx\\
+        = &\exp\left( - \frac{1}{2} y \right) \cdot \frac{\sqrt{3}}{2} \sqrt{2 \pi} \int_{- \infty}^{\infty} \frac{1}{\sqrt{3}/2 \sqrt{2 \pi}} \exp\left( - \frac{1}{2} \left( \frac{x - y/2}{\sqrt{3}/2} \right)^2 \right) dx\\
+        = &\exp\left( - \frac{1}{2} y \right) \cdot \frac{\sqrt{3}}{2} \sqrt{2 \pi} \cdot 1\text{,}
+    \end{align*}
+    da der Integrand der Dichte einer Normalverteilung $\mathcal{N}(y/2, \sqrt{3}/2)$ entspricht. 
+    Analog können wir außerdem
+    \begin{equation*}
+        \int_{- \infty}^{\infty} \exp\left( - \frac{2}{3} (x^2 - xy + y^2) \right) dx = \exp\left( - \frac{1}{2} y \right) \cdot \frac{\sqrt{3}}{2} \sqrt{2 \pi}
+    \end{equation*}
+    zeigen.
+    Somit folgt:
+    \begin{equation*}
+        f_Y(y) = \int_{- \infty}^{\infty} f_{(X,Y)}(x,y) dx = \exp\left( - \frac{1}{2} y \right) \cdot \frac{\sqrt{3}}{2} \sqrt{2 \pi} \cdot 2 = \frac{1}{\sqrt{2 \pi}} \exp\left( - \frac{1}{2} y^2\right)
+    \end{equation*}
+    und folglich ist $Y \sim \mathcal{N}(0, 1)$. Aus Symmetriegründen gilt analoges für $X$.
+    \item Wegen $f_{(X,Y)}(x,y) \neq f_X(x) \cdot f_Y(y) = \frac{1}{\sqrt{2 \pi}} \exp \left( - \frac{1}{2} (y^2 + x^2) \right)$ (man betrachte beispielsweise $x = y = 0$ und $\frac{1}{\sqrt{2 \pi}} \neq \frac{1}{\sqrt{3}\pi} \exp\left( - \frac{2}{3} \right)$) sind $X,Y$ nicht unabhängig.
+    \item 
+    Allerdings gilt wegen $X,Y \sim \mathcal{N}(0, 1)$ für die Erwartungswerte $\mathds{E}[X] = 0, \mathds{E}[Y] = 0$.
+    Aufgrund der Symmetrie von $f_{(X,Y)}$, insbesondere $f_{(X,Y)}(x,y) =  f_{(X,Y)}(x,-y) = f_{(X,Y)}(-x,y) = f_{(X,Y)}(-x,-y)$ gilt auch $\mathds{E}[X \cdot Y] = 0$ und damit auch $\mathrm{Cov}(X,Y) = 0$.
+    Die beiden Variablen sind also unkorreliert.
+    Dies ist kein Widerspruch zur Aussage, dass die Marginalverteilungen multivariater Normalverteilungen unkorreliert sind, genau dann, wenn sie unabhängig sind, da es sich nicht um eine multivariate Normalverteilung handelt, sondern lediglich um einen Zufallsvektor mit normalverteilten Marginalverteilungen.
+\end{enumerate}
 
 \subsection{}
 
