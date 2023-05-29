@@ -89,6 +89,52 @@ Wir verwenden für alle Kurvenintegrale den Residuensatz.
 	\end{equation*}
 \end{enumerate}
 
+\subsection{Sinus Hyperbolicus}
+
+\begin{enumerate}
+	\item 
+	Die Funktion hat eine Nennernullstelle bei $z_1 = 0 \in S$, also $x,y = 0$.
+	Weiterhin liegt eine Nennernullstelle vor, falls $\sinh(z) = \frac{1}{2} (\exp(z) - \exp(-z)) = 0$, also $\exp(z) = \exp(-z)$.
+	Wir stellen um:
+	\begin{equation*}
+		\exp(z) = \exp(-z) \iff \exp(2z) = 1 \iff \exp(z) \in \{1, -1\}\text{.}
+	\end{equation*}
+	Insbesondere folgt damit $x = 0$ und $y \in k \cdot \pi i$, also liegt genau bei $z_2 = \pi i$ eine weitere Singularität vor.
+	
+	Wir bestimmen nun den Typ dieser Singularitäten.
+	Man für $z_1 = 0$ betrachte die Reihenentwicklung des $\sinh$:
+	\begin{align*}
+		f(z) = \frac{1}{z \cdot \sinh(z)} = \frac{1}{z \cdot \sum_{k = 0}^{\infty} \frac{z^{2k+1}}{(2k+1)!}} = \frac{1}{z^2} \cdot \frac{1}{\sum_{k = 0}^{\infty} \frac{z^{2k}}{(2k+1)!}} = \frac{1}{z^2} \cdot \underbrace{\frac{1}{1 + \sum_{k = 1}^{\infty} \frac{z^{2k}}{(2k+1)!}}}_{\coloneq g(z)} 
+	\end{align*}
+	mit $g$ holomorph (da nennernullstellenfrei) in einer Umgebung von $0$ sowie $g(0) = \frac{1}{1 + 0} \neq 0$. Somit handelt es sich um einen Pol 2. Ordnung.
+	Um den Typ von $z_2 = i \pi$ betrachte man unter Verwendung von $\exp(-i \pi) = \exp(i \pi) = -1$
+	\begin{align*}
+		\sinh(z) &= \frac{1}{2} (\exp(z) - \exp(-z)) = \frac{1}{2} (-\exp(z)\exp(-i \pi) + \exp(-z) \exp(i \pi))\\ &= - \frac{1}{2} (\exp(z - i \pi) - \exp(-(z - i \pi))) = - \sinh(z - i \pi)\text{.} 
+	\end{align*}
+	Dies liefert mit der Reihenentwicklung
+	\begin{equation*}
+		f(z) = \frac{1}{-z \sinh(z - i \pi)} = \frac{1}{z} \frac{1}{\sum_{k=0}^{\infty} \frac{(z-i \pi)^{2k+1}}{(2k + 1)!}} = -\frac{1}{z-i\pi} \underbrace{\frac{1}{z} \frac{1}{1 + \sum_{k =1}^{\infty} \frac{z^2k}{(2k + 1)!}}}_{\coloneq h(z)}
+	\end{equation*}
+	mit $h(z)$ holomorph (da nennernullstellenfrei) in einer Umgebung von $i \pi$ sowie $h(i \pi) = -\frac{1}{i \pi} \frac{1}{1 + 0} = \frac{i}{\pi}$.
+	Somit handelt es sich um einen Pol 1. Ordnung.
+	\item 
+	Für $z_1 = 0$ berechnen wir 
+	\begin{equation*}
+		[z^2 \cdot f(z)]' = \left[\frac{z}{\sinh(z)}\right]' = \frac{\sinh(z) \cdot 1 + z \cdot \cosh(z)}{\sinh(z)^2}
+	\end{equation*}
+	und damit
+	\begin{equation*}
+		\res(0, f) = \frac{1}{(2 - 1)!} [z^2 \cdot f(z)]' |_{z = 0} = 1 \cdot 
+	\end{equation*}
+	Für $z_2 = i \pi$ gilt
+	\begin{equation*}
+		\res(i \pi, f) = \lim_{z \to z_2} (z - z_2) f(z) = \lim_{z \to z_2} g(z) = g(z_2) = \frac{i}{\pi} \text{.}
+	\end{equation*}
+	
+\end{enumerate}
+
+
+
 
 \end{document}
 
