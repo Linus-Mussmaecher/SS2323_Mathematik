@@ -118,19 +118,25 @@ Wir verwenden für alle Kurvenintegrale den Residuensatz.
 	mit $h(z)$ holomorph (da nennernullstellenfrei) in einer Umgebung von $i \pi$ sowie $h(i \pi) = -\frac{1}{i \pi} \frac{1}{1 + 0} = \frac{i}{\pi}$.
 	Somit handelt es sich um einen Pol 1. Ordnung.
 	\item 
-	Für $z_1 = 0$ berechnen wir 
+	Für $z_1 = 0$ betrachten wir
 	\begin{equation*}
-		[z^2 \cdot f(z)]' = \left[\frac{z}{\sinh(z)}\right]' = \frac{\sinh(z) \cdot 1 + z \cdot \cosh(z)}{\sinh(z)^2}
+		f(z) = \frac{1}{z \sinh(z)} = \frac{1}{\sum_{k = 0}^{\infty} \frac{z^{2k+2}}{(2k+1)!}}\text{.}
 	\end{equation*}
-	und damit
-	\begin{equation*}
-		\res(0, f) = \frac{1}{(2 - 1)!} [z^2 \cdot f(z)]' |_{z = 0} = 1 \cdot 
-	\end{equation*}
+	Die Potenzreihe $\sum_{k = 0}^{\infty} \frac{z^{2k+2}}{(2k+1)!}$ enthält nur gerade Potenzen, also liefert unendliche Polynomdivision eine Laurentreihe mit ebenfalls nur geraden Potenzen. Damit ist $a_{-1} = 0$, also $\res(0, f) = 0$.
 	Für $z_2 = i \pi$ gilt
 	\begin{equation*}
 		\res(i \pi, f) = \lim_{z \to z_2} (z - z_2) f(z) = \lim_{z \to z_2} g(z) = g(z_2) = \frac{i}{\pi} \text{.}
 	\end{equation*}
-	
+	\item Aufgrund von $\res(i \pi, f) \neq 0$ und dem Residuensatz gilt  $\int_{\partial K_1(i \pi)} f(z) dz = 2 \pi i \res(i \pi, f) \neq 0$, also kann $f$ keine holomorphe Stammfunktion besitzen.
+	\item Aufgrund von $\res(0, f) = 0$ gilt bereits $\int_\gamma f(z) dz = 0$ für alle $\gamma$ mit $i \pi \notin \mathrm{Int}(\gamma)$ und $\int_\gamma f(z) dz = n(\gamma, i \pi) \res(i \pi, f)$ sonst.
+	Da das Integral und somit auch das Residuum linear ist, müssen wir also lediglich $c$ so wählen, dass das Residuum von $\frac{c}{z - i \pi}$ am Punkt $i \pi$ den Wert $- \res(i \pi, f)$ und in jedem anderen Punkt den Wert $0$ annimmt.
+	Der Bruch $\frac{c}{z - i \pi}$ hat genau eine Polstelle in $i \pi$, somit ist die zweite Bedingung bereits sichergestellt. Da er außerdem seine eigene Laurententwicklung um $i \pi$ mit $a_{-1} = c$ und $a_k = 0$ (für $k \neq -1$) darstellt, ist sein Residuum in diesem Punkt $c$.
+	Wir wählen also $c = - \res(i \pi, f) = - \frac{i}{pi} = \frac{1}{i \pi}$. Dann gilt
+	\begin{align*}
+		&\int_\gamma f(z) + \frac{c}{z - i \pi} dz \\ = & n(\gamma, 0) \left(\res(0, f) + \res\left(0, \frac{c}{\cdot - i \pi}\right)\right) + n(\gamma, i \pi) \left(\res(i \pi, f) + \res\left(i \pi, \frac{c}{\cdot - i \pi}\right)\right)\\ = & n(\gamma, 0) \cdot (0 + 0) + n(\gamma, i \pi) (\frac{\pi}{i} - \frac{\pi}{i}) = 0
+	\end{align*}
+	für jeden geschlossenen Weg $\gamma$ in $S$	und somit besitzt $f(z) + \frac{1}{z - i \pi}$ auf $S$ eine holomorphe Stammfunktion.
+
 \end{enumerate}
 
 
