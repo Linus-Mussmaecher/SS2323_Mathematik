@@ -122,7 +122,7 @@ Wir verwenden für alle Kurvenintegrale den Residuensatz.
 	\begin{equation*}
 		f(z) = \frac{1}{z \sinh(z)} = \frac{1}{\sum_{k = 0}^{\infty} \frac{z^{2k+2}}{(2k+1)!}}\text{.}
 	\end{equation*}
-	Die Potenzreihe $\sum_{k = 0}^{\infty} \frac{z^{2k+2}}{(2k+1)!}$ enthält nur gerade Potenzen, also liefert unendliche Polynomdivision eine Laurentreihe mit ebenfalls nur geraden Potenzen. Damit ist $a_{-1} = 0$, also $\res(0, f) = 0$.
+	Die Potenzreihe $\sum_{k = 0}^{\infty} \frac{z^{2k+2}}{(2k+1)!}$ enthält nur gerade Potenzen, also liefert unendliche Polynomdivision eine Laurentreihe mit ebenfalls nur gerade Potenzen. Damit ist $a_{-1} = 0$, also $\res(0, f) = 0$.
 	Für $z_2 = i \pi$ gilt
 	\begin{equation*}
 		\res(i \pi, f) = \lim_{z \to z_2} (z - z_2) f(z) = \lim_{z \to z_2} g(z) = g(z_2) = \frac{i}{\pi} \text{.}
@@ -138,6 +138,58 @@ Wir verwenden für alle Kurvenintegrale den Residuensatz.
 	für jeden geschlossenen Weg $\gamma$ in $S$	und somit besitzt $f(z) + \frac{1}{z - i \pi}$ auf $S$ eine holomorphe Stammfunktion.
 
 \end{enumerate}
+
+\subsection{n-te Ableitungen geben Hinweise}
+
+
+
+\begin{enumerate}
+	\item Wegen $f^{(n)}(0) = n$ können wir die Reihenentwicklung von $f$ um den Nullpunkt bestimmen:
+	\begin{equation*}
+		f(z) = \sum_{n = 0}^{\infty} \frac{f^{(n)(0)}}{n!} z^n = \sum_{n = 0}^{\infty} \frac{n}{n!} z^n = \sum_{n = 1}^{\infty} \frac{1}{(n-1)!} z^n = \sum_{n = 0}^{\infty} \frac{1}{n!} z^{n+1} = z \cdot \exp(z) \text{.}
+	\end{equation*}
+	Diese Potenzreihe hat aufgrund der Holomorphie von $f$ auf ganz $\mathds{C}$ unendlichen Konvergenzradius, also gilt $f = z \cdot \exp(z)$ global.
+
+	Die Funktion $\frac{f(z)}{z - 1}$ besitzt genau eine isolierte Singularität, nämlich eine einfache Polstelle im Punkt $1$.
+	Da es sich um eine Polstelle der Ordnung $1$ handelt, erhalten wir dieses Residuum genau als $\lim_{z \to 1} (z-1) \frac{f(z)}{z-1} = f(1) = 1 \cdot \exp(1) = e$.
+	Der Residuensatz liefert
+	\begin{equation*}
+		\frac{1}{2 \pi i} \int_{K_1(1)} \frac{f(z)}{z-1} dz = \res\left( 1, \frac{f(z)}{z-1} \right) = e
+	\end{equation*}
+	\item Wir berechnen die $n$-te Ableitung von $f(z) = z \cdot \exp(z)$. Es folgt induktiv unter wiederholter Anwendung der Produktregel:
+	\begin{align*}
+		f'(z) &= z \cdot \exp(z) + \exp(z)\\
+		f^{(2)}(z) &= z \cdot \exp(z) + \exp(z) + \exp(z) = z \cdot \exp(z) + 2 \cdot \exp(z)\\
+		f^{(n)}(z) &= z \cdot \exp(z) + n \cdot \exp(z)
+	\end{align*}
+	und damit $f^{(n)}(1) = 1 \cdot \exp(1) + n \cdot \exp(1) = (n+1) \cdot e$.
+\end{enumerate}
+
+\subsection{Rouche}
+
+Zuerst den Hinweis: Es ist
+\begin{align*}
+	|\sin(z)| &= \frac{1}{2} | \exp(iz) - \exp(-iz) | \leq \frac{1}{2} (|\exp(iz)| + |\exp(-iz)|)\\
+	&= \frac{1}{2} (\exp(\Im(z)) + \exp(- \Im(z))) \leq \frac{1}{2} \exp(|\Im(z)|)\\ &\leq \frac{e}{2} < 2
+\end{align*}
+wobei wir in der vorletzten Zeile den kleineren Summanden $\exp(- |\Im(z)|)$ weglassen.
+
+Weiterhin ist damit $|\frac{1}{2} \sin(z)| < 1$ und daher $|f(z) - 1| < 1$, jeder mögliche Fixpunkt von $f$ muss also in der (offenen) Kreisscheibe $K_1(1)$ liegen.
+Wegen $K_1(1) \subseteq S^\interior$ entsprechen die Fixpunkte von $f$ auf $S$ den Fixpunkten von $f$ auf $S^\interior$.
+
+Das $f(z) = 1 + \frac{1}{2} \sin(z)$ genau einen Fixpunkt in $S^\interior$ hat, ist nun äquivalent dazu, dass $g(z) = 1 + \frac{1}{2} \sin(z) - z$ in $S^\interior$ genau eine Nullstelle hat.
+
+Nun betrachten wir für ein beliebiges $R > 2$ das Rechteck 
+\begin{equation*}
+	\square_R = \{z \in \mathds{C} \mid |\Im(z)| < 1, |\Re(z)| \leq R\}\text{.}
+\end{equation*}
+Dieses ist kompakt im Streifen $S^\interior$ und hat dort den Rand $\partial \square_R = (R - i, R + i) \cup (-R - i, -R + i)$. Auf diesem gilt nun:
+\begin{equation*}
+	|g(z) + z| = |f(z)| = |1 + \frac{1}{2} \sin(z)| \leq 1 + \frac{1}{2} | \sin(z)| < 2 < R \leq |z| \leq |z| + |g(z)|\text{.}
+\end{equation*}
+Nach dem Satz von Rouchet hat somit $g$ auf $\square_R$ genauso viele Nullstellen wie $z$, nämlich genau $0 \in \square_R$.
+Da dies für alle $R > 2$ gilt und wegen $S^\interior = \bigcup_{R > 2} \square_R$ hat $g$ auf $S^\interior$ genau eine Nullstelle, also $f$ in $S^\interior$ und damit auch in $S$ genau einen Fixpunkt.
+
 
 
 

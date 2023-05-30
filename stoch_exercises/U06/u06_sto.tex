@@ -1,0 +1,55 @@
+\documentclass[a4paper]{article}
+
+% --- DATA ---
+
+\def\lecture{Stochastik 2}
+\def\authors{Linus Mußmächer}
+\def\sheetNumber{06}
+%\def\sumPoints{30} 
+
+% --- PREAMBLE ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+\input{../../preambles/exercise_preamble.tex}
+
+% --- DOCUMENT ---
+
+\begin{document}
+
+\makeexheaderger
+
+\subsection{Zentralübung}
+
+\begin{enumerate}
+    \item Es ist $p_{X|X}(x|x) = 1$, also $\mathds{E}[X|X=x] = x$ und damit $g: X(\Omega) \to \mathds{R}, x \mapsto x \cdot 1_{X(\Omega)}$. Es folgt $\mathds{E}[X|X](\omega) = g(X(\omega)) = X(\omega)$ und damit $\mathds{E}[X|X] = X$.
+    \item Es ist $p_{X|Y}(x|y) = \mathds{P}(X = x)$ aufgrund der Unabhängigkeit. Somit ist $\mathds{E}[X|Y=y] = \mathds{E}[X]$ sowie $g: Y(\Omega) \to \mathds{R}, y \mapsto \mathds{E}[X]$ konstant. Es folgt $\mathds{E}[X|Y](\omega) = g(Y(\omega)) = \mathds{E}[X]$ und damit $\mathds{E}[X|Y] = \mathds{E}[X] \cdot 1_{Y(\Omega)}$.
+    \item Es ist $p_{X|X+Y}(x|x+y) = \mathds{P}(Y = y)$. Dies zeigt:
+    \begin{equation*}
+        \mathds{E}[X|X+Y=s] = \sum_{x \in X(\Omega)} x \cdot \mathds{P}(Y = s - x)
+    \end{equation*} 
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
