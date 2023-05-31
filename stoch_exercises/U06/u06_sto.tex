@@ -72,11 +72,54 @@
     Analog zur (ii) lässt sich $\mathds{E}[G|Z=1] = \frac{2}{3}$ nachrechnen. Damit gilt für alle möglichen Realisierungen von $Z$ tatsächlich $\mathds{E}[G|Z = z] = \frac{2}{3} z$, also $\mathds{E}[G|Z] = \frac{2}{3}Z$.
     \item Die Tower-Rule besagt nun 
     \begin{equation*}
-        \mathds{E}[G] = \mathds{E}[\mathds{E|Z}] = \mathds{E}[\frac{2}{3}Z] = \frac{2}{3} \mathds{E}[Z] = \frac{2}{3} \cdot \frac{3}{2} = 1\text{.}
+        \mathds{E}[G] = \mathds{E}[\mathds{E}[G|Z]] = \mathds{E}[\frac{2}{3}Z] = \frac{2}{3} \mathds{E}[Z] = \frac{2}{3} \cdot \frac{3}{2} = 1\text{.}
     \end{equation*}
 \end{enumerate}
 
 \subsection{}
+
+\newcommand{\var}{\mathds{V}\mathrm{ar}}
+
+\begin{enumerate}
+    \item Wir setzen im Folgenden $S \coloneq X_1 + \cdots X_N = \sum_{i = 1}^n X_i \cdot \mathds{1}_{\{1, \dots, N\}}(i)$. Dann gilt:
+    \begin{align*}
+        \mathds{E}[S \mid N = k]
+        &= \mathds{E} \left[ \sum_{i = 1}^n X_i \cdot \mathds{1}_{\{1, \dots, N\}}(i) \mid N = k  \right]& \text{Erwartungswert linear}\\
+        &= \sum_{i = 1}^n \mathds{E}[X_i \cdot \mathds{1}_{\{1, \dots, N\}}(i) \mid N = k] &\text{$X_i$ von $N$ unabhängig} \\
+        &= \sum_{i = 1}^{n} \mathds{E}[X_i \cdot 1_{\{1, \dots, k\}(i)}] = \sum_{i = 1}^k \mathds{E}[X_i] = k \cdot \mathds{E}[X_1]\text{.}
+    \end{align*}
+    Somit folgt $\mathds{E}[S \mid N = k] = k \cdot \mathds{E}[X_1]$, also $\mathds{E}[S \mid N] = N \cdot \mathds{E}[X_1]$.
+    Dies zeigt mit der Tower-Rule
+    \begin{equation*}
+        \mathds{E}[S] = \mathds{E}[\mathds{E}[S|N]] = \mathds{E}[N \cdot \mathds{E}[X_1]] = \mathds{E}[N] \cdot \mathds{E}[X_1]\text{.}
+    \end{equation*}
+    Analog betrachten wir
+    \begin{align*}
+        \var(S|N = k) 
+        &= \var\left(\sum_{i = 1}^n X_i \cdot \mathds{1}_{\{1, \dots, N\}}(i) \mid N = k\right) &\text{$X_i$ unabhängig}\\
+        &= \sum_{i = 1}^n \var(X_i \cdot \mathds{1}_{\{1, \dots, N\}}(i) | N = k) &\text{$X_i$ von $N$ unabhängig} \\
+        &= \sum_{i = 1}^n \var(X_i \cdot \mathds{1}_{\{1, \dots, k\}}(i))\\
+        &= \sum_{i = 1}^{k} \var(X_i) & \text{$X_i$ gleichverteilt}\\
+        &= k \cdot \var(X_1)
+    \end{align*}
+    und dies zeigt $\var(S|N) = N \cdot \var(X_1)$. Damit folgt:
+    \begin{align*}
+        \var(S) &= \mathds{E}[\var(S|N)] + \var(\mathds{E}[S|N]) \\
+        &= \mathds{E}[N \cdot \var(X_1)] + \var(N \cdot \mathds{E}[X_1]) \\
+        &= \mathds{E}[N] \cdot \var(X_1) + \var(N) \cdot \mathds{E}[X_1]^2\text{.}
+    \end{align*}
+    \item Da $N$ zum Parameter $\lambda$ Poisson-verteilt ist, gilt $\mathds{E}[N] = \var(N) = \lambda$.
+    Für $X_1$ folgt weiterhin (durch Rechnung):
+    \begin{equation*}
+        \mathds{E}[X_1] = 0.1 \cdot 20 + 0.05 \cdot 30 + 0.1 \cdot 40 + 0.15 \cdot 50 + 0.6 \cdot 60 = 2 + 1.5 + 4 + 7.5 + 36 = 51
+    \end{equation*}
+    sowie
+    \begin{equation*}
+        \var(X_1) = 0.1 \cdot 31^2 + 0.05 + 21^2 + 0.1 \cdot 11^2 + 0.15 \cdot 1^2 + 0.6 \cdot 9^2 = 179\text{.}
+    \end{equation*}
+    Mit (i) folgt $\mathds{E}[Z] = 51\lambda$ sowie $\var(Z) = \lambda \cdot 179 + \lambda \cdot 51^2 = 2780\lambda$.
+\end{enumerate}
+
 
 \end{document}
 
