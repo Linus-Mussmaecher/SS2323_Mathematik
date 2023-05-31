@@ -1490,6 +1490,165 @@ Notice: If $f$ is a polynomial in $z, \overline{z}$ then $f(a) = \phi(a)$ as usu
 
 \end{proof}
 
+\subsubsection*{Multiplier Algebras}
+
+This is another kind of unitization.
+We will consider $\algebra{A} \to M(\algebra{A}) \ni \mu$ such that $\mu \cdot a \in \algebra{A} \ni a \cdot \mu$ so $\algebra{A} \trianglelefteq M(\algebra{A})$.
+Remember that this was the case for the usual unitization, with Quotient $\mathds{C}$.
+Here, the multiplier is usually much bigger, so the quotient is as well.
+In fact, $\algebra{A} \times \mathds{C}$ is the 'smallest' unitization while $M(\algebra{A})$ is the 'largest' one.
+
+\begin{definition}[Multiplier, see Murphy]
+	Let $\algebra{A}$ be an algebra.
+	A \textbf{multiplier} of $\algebra{A}$ is a pair $\mu = (L, R)$ where $L,R: \algebra{A} \to \algebra{A}$ are linear maps such that 
+	\begin{enumerate}
+		\item $L(ab) = L(a) \cdot b$ or $\mu (ab) = (\mu a) b$
+		\item $R(ab) = a \cdot R(b)$ or $ (ab) \mu = a (b \mu)$
+		\item $a \cdot L(b) = R(a) \cdot b$ or $a (\mu b) = (a \mu) b$.
+	\end{enumerate}
+	To simplify this, use the notation $\mu \cdot a \coloneq L(a)$ and $a \cdot \mu \coloneq R(a)$.
+\end{definition}
+
+For the space of all multipliers we write $M(A) = \{ \mu = (L,R) \mid \mu \text{ multiplier} \}$. This is a $\mathds{C}$-vector space with
+\begin{equation*}
+	(L_1, R_1) + (L_2, R_2) = (L_1 + L_2, R_1 + R_2) \qquad \lambda (L_1, R_1) = (\lambda L_1, \lambda R_2)
+\end{equation*}
+and an algebra with 
+\begin{equation*}
+	(L_1, R_1) \cdot (L_2, R_2) = (L_1 \cdot L_2, R_2 \cdot R_1)\text{.}
+\end{equation*}
+If $\algebra{A}$ is a $^*$-algebra, we further define
+\begin{equation*}
+	(L,R)^* = (R^*, L^*) \text{ where } L^*(a) \coloneq L(a^*)^* \text{ and } R^*(a) \coloneq R(a^*)^*
+\end{equation*}
+Moreover, we have a canonical ($^*$)-homomorphism $\iota: \algebra{A} \to M(\algebra{A}), a \mapsto (L_a, R_a)$ where $L_a(b) = ab $ and $R_a(b) = ba$.
+Note: $\iota$ is always a ($^*$)-homomorphism but injective if and only if 
+\begin{align*}
+	\forall_{a \in \algebra{A}} \ & a \cdot b = 0 \ \forall_b \then a = 0 \\ 
+	&b \cdot a = 0 \ \forall_b \then a = 0
+\end{align*}
+i.e. $\algebra{A}$ is an essential ideal of itself. This is not always true for a general algebra, consider the algebra with the $0$-product $a \cdot b = 0$, but it always holds for $C^*$-algebras or if $\algebra{A}$ is unital already.
+
+More generally this holds if $\algebra{A}$ is a Banach algebra with an \textbf{approximate unit}, a net $e_i \subseteq \algebra{A}$ such that $e_i a \to a$ and $a \cdot e_i \to a$ for any $a \in \algebra{A}$ as well as $\|e_i\|$.
+This is always the case for unital and $C^*$-algebras.
+
+Assume $\iota$ is injective. Then $\algebra{A}$ is identified with an essential ($^*$)-ideal of $M(\algebra{A})$.
+
+\begin{remark}[Norms on the multiplier]
+	If $\algebra{A}$ is a Banach algebra with an approximate unit, we define for $\mu = (L,R) \in M(A)$ the norm 
+	\begin{equation*}
+		\|\mu\| \coloneq \|L\| = \|R\| < \infty\text{.}
+	\end{equation*}
+\end{remark}
+
+\begin{proof}
+	To show $\|L\|, \|R\| < \infty$ we use the Closed Graph Theorem. 
+	Say we have $(a_n) \subseteq \algebra{A}$ with $a_n \to a$ and $L(a_n) \to b$.
+	Take $c \in \algebra{A}$ and consider
+	\begin{equation*}
+		c\cdot L(a) = R(c) \cdot a  = \lim_{n \to \infty} R(c) \cdot a_n = \lim_{n \to \infty} c \cdot L(a_n) = c \cdot b\text{.}
+	\end{equation*}
+	Because of the approximate unit (or $\iota$ injective) we have $L(a) = b$.
+	This shows that $L$ (and, analogously, $R$) are bounded.
+	Now to prove $\|L\| = \|R\|$. Take any $a \in \algebra{A}$ and consider
+	\begin{equation*}
+		\|L(a)\| \overset{\text{approx. unit}}{=} \sup_{\|b\| \leq 1} \|b L(a) \| = \sup_{\|b\| \leq 1} \|R(b) a\| \leq \sup_{\|b\| \leq 1} \|R(b)\|  \|a\| \leq \|R\|  \cdot \|a\|
+	\end{equation*}
+	which implies $\|L\| \leq \|R\|$.
+	By symmetry of the situation, we have $\|L\| = \|R\|$.
+\end{proof}
+
+With the norm above, $M(\algebra{A})$ becomes a Banach algebra.
+
+\begin{proposition}
+	If $\algebra{A}$ is a $C^*$-algebra then $M(\algebra{A})$ is too.
+\end{proposition}
+
+
+\begin{proof}
+	Write $\mu = (L,R)$.
+	We compute $\mu^* \mu = (R^*, L^*) \cdot (L, R) = (R^* L, R L^*)$.
+	So $\|\mu \mu^*\| = \| R^* L \|$.
+	Take $a \in \algebra{A}$ with $\|a\| \leq 1$.
+	Then
+	\begin{equation*}
+		\|L(a)\|^2 = \|L(a) L(a)^* \| = \|L(a) L^*(a^*) \| = \| R^*(L(a)) a^* \| \leq \| R^*(L(a)) \| \leq \|R^* L\|
+	\end{equation*}
+	This shows $\|L\|^2 \leq \|R^* L\|$ and therefore $\|\mu\|^2 = \|L\|^2 \leq \|R^* L\| = \| \mu^* \mu\|$.
+	Because $\|\mu\|^2 \geq \|\mu \mu^*\|$ is clear by submultiplicativity, the $C^*$-property follows.
+\end{proof}
+
+Compare now $\tilde{\algebra{A}}$ and $M(\algebra{A})$.
+We have $\algebra{A} \trianglelefteq \tilde{A}$ and $\algebra{A} \trianglelefteq M(\algebra{A})$.
+When are these ideals essential?
+
+\begin{lemma}
+	Let $\algebra{A}$ be a $C^*$-algebra or Banach algebra with approximate unit. 
+	$\algebra{A} \trianglelefteq \tilde{\algebra{A}}$ if and only if $\algebra{A}$ is not unital.
+\end{lemma}
+
+\begin{proof}
+	Suppose that $\algebra{A}$ is unital with $1_\algebra{A}$ as the unit.
+	In this case, take $p = 1 - 1_\algebra{A} \in \tilde{\algebra{A}}$ (where $1 = (0,1)$ is the unit in $\tilde{\algebra{A}}$).
+	Notice that $p \cdot \algebra{A} = 0$, but $p \neq 0$.
+	So $\algebra{A}$ is not essential in $\tilde{\algebra{A}}$.
+
+	Suppose that $\algebra{A}$ is not unital.
+	To prove: For $a + \lambda \cdot 1 \in \tilde{\algebra{A}}$ and $(a + \lambda \cdot 1) \algebra{A} = 0$ we have $a = 0$, $\lambda = 0$.
+	So take any $(a + \lambda \cdot 1) \cdot b = 0$ for all $b \in \algebra{A}$, that is $ab + \lambda b = 0$.
+	This means  $L_a(b) = - \lambda b$, that is $L_a = - \lambda \id_\algebra{A}$.
+	Notice $L: \algebra{A} \to \mathcal{L}(\algebra{A})$, a unital algbra with unit $\id_\algebra{A}$, is an injective (because $\iota$ is injective) algebra homomorphism.
+	If $\lambda \neq 0$, then division by $\lambda$ implies $\id_\algebra{A} \in \image(L) \simeq \algebra{A}$.
+	But then $\algebra{A}$ has a unit, a contradiction.
+	So $\lambda = 0$.
+	Then $a \cdot b = 0$ for every $b$, so $a = 0$ as well.
+	This shows that $\algebra{A}$ is an essential ideal of $\tilde{\algebra{A}}$.
+\end{proof}
+
+\begin{remark}
+	Let $\algebra{A}$ be a $C^*$-algebra or Banach algebra with approximate unit.
+	Then $\algebra{A}$ is unital if and only if $M(\algebra{A}) = \algebra{A}$.
+\end{remark}
+
+\begin{proof}
+	One direction is simple: $M(\algebra{A})$ is always unital, so $\algebra{A} \simeq M(\algebra{A})$ implies that $\algebra{A}$ is unital.
+
+	Let now $\algebra{A}$ be unital and prove that every multiplier is of the form $(L_a, R_a)$. 
+	Let $\mu = (L,R) \in M(\algebra{A})$ and define $a \coloneq L(1_\algebra{A})$.
+	Then $L_a(b) = ab = L(1_\algebra{A}) b = L(b)$, so $L = L_a$.
+	Analogously we can prove $R = R_a$.
+	This shows that $\iota$ is surjective, and since it is already injective (because $\algebra{A}$ is either $C^*$ or has an approximate unit) it is an isomorphism.
+\end{proof}
+
+
+
+Say $\algebra{A}$ is a $C^*$-algebra (or a Banach algebra with an approximate unit) and not unital.
+Then $\iota: \algebra{A} \to M(\algebra{A}), a \mapsto \mu_a = (L_a, R_a)$ extends to a ($^*$)-embedding 
+\begin{equation*}
+	\tilde{\iota}: \tilde{\algebra{A}} \to M(\algebra{A}), a + \lambda \cdot 1 \mapsto \iota(a) + \lambda \cdot \underbrace{(\id, \id)}_{= \id_{M(\algebra{A})}}\text{.}
+\end{equation*}
+More generally: If $\algebra{B}$ is any  $C^*$-algebra that contains $\algebra{A}$ as an essential ideal (closed), then $\algebra{B}$ embeds in the multiplier algebra via the following map:
+\begin{equation*}
+	\lambda: \algebra{B} \to M(\algebra{A}), b \mapsto (L_b, R_b)
+\end{equation*}
+where $L_b, R_b$ are the usual left and right multiplication.
+We have $L_b(a), R_b(a) \in \algebra{A}$ for any $a \in \algebra{A}$ because $\algebra{A}$ is an ideal.
+The above is a universal property of the multiplier algebra.
+$M(\algebra{A})$ is the largest unital $C^*$-algebra that contains $\algebra{A}$ as an essential ideal.
+
+\begin{example}
+	Take $\algebra{A} = C_0(X)$ (for a locally compact Hausdorff-space, so a commutative $C^*$-algebra).
+	Then $\tilde{\algebra{A}} = C(\tilde{X})$ where $\tilde{X} = X \sqcup \{\infty\}$.
+	One can now show $M(\algebra{A}) \simeq C(\beta X)$ where $\beta X$ is the Stone-Cech-compactification of $X$.
+	This can be proven using the universal property and the universal property of $\beta X$:
+	$\beta X$ is a compact Hausdorff space such that $X \hookrightarrow \beta X$ as a dense open topological subspace and for every other compact Hausdorff space $K$ such that $X \to K$ via a continuous function $f$ there exists a unique continuous extension $beta f: \beta X \to K$.
+
+	First: Prove that $M(\algebra{A})$ is even commutative.
+	Then it is the continuous functions on some space, use the spectrum and compare the universal properties.
+	For commutativity, one can show $M(C_0(X)) \simeq C_b(X)$ via the universal property.
+\end{example}
+
+
 
 
 
