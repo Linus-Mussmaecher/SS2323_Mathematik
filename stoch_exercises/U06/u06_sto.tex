@@ -22,12 +22,61 @@
 
 \begin{enumerate}
     \item Es ist $p_{X|X}(x|x) = 1$, also $\mathds{E}[X|X=x] = x$ und damit $g: X(\Omega) \to \mathds{R}, x \mapsto x \cdot 1_{X(\Omega)}$. Es folgt $\mathds{E}[X|X](\omega) = g(X(\omega)) = X(\omega)$ und damit $\mathds{E}[X|X] = X$.
-    \item Es ist $p_{X|Y}(x|y) = \mathds{P}(X = x)$ aufgrund der Unabhängigkeit. Somit ist $\mathds{E}[X|Y=y] = \mathds{E}[X]$ sowie $g: Y(\Omega) \to \mathds{R}, y \mapsto \mathds{E}[X]$ konstant. Es folgt $\mathds{E}[X|Y](\omega) = g(Y(\omega)) = \mathds{E}[X]$ und damit $\mathds{E}[X|Y] = \mathds{E}[X] \cdot 1_{Y(\Omega)}$.
-    \item Es ist $p_{X|X+Y}(x|x+y) = \mathds{P}(Y = y)$. Dies zeigt:
-    \begin{equation*}
-        \mathds{E}[X|X+Y=s] = \sum_{x \in X(\Omega)} x \cdot \mathds{P}(Y = s - x)
-    \end{equation*} 
+    \item Es ist $p_{X|Y}(x|y) = \mathds{P}(X = x)$ aufgrund der Unabhängigkeit. Somit ist $\mathds{E}[X|Y=y] = \mathds{E}[X]$ sowie $g: Y(\Omega) \to \mathds{R}, y \mapsto \mathds{E}[X]$ konstant. Es folgt $\mathds{E}[X|Y](\omega) = g(Y(\omega)) = \mathds{E}[X]$ und damit $\mathds{E}[X|Y] = \mathds{E}[X]$.
+    \item Aus (i) folgt $\mathds{E}[X + Y | X + Y] = X + Y$. Weiterhin ist, da $X$ und $Y$ gleichverteilt sind, $\mathds{E}[X | X + Y] = \mathds{E}[Y | X + Y]$. Zusammen mit der Linearität des (bedingten) Erwartungswertes liefert dies
+    \begin{align*}
+        &\mathds{E}[X + Y | X + Y] = \mathds{E}[X| X + Y] + \mathds{E}[ Y | X + Y] = 2 \cdot \mathds{E}[X| X + Y] \\ \iff \ &\mathds{E}[X| X + Y] = \frac{1}{2} \mathds{E}[X + Y | X + Y] = \frac{1}{2} (X + Y)
+    \end{align*}
 \end{enumerate}
+
+\subsection{}
+
+\subsection{}
+
+\begin{enumerate}
+    \item Wir setzen $\Omega = \{0,1\}^3 $ sowie 
+    \begin{align}
+        Z: \Omega \to \mathds{R} & (x,y,z) \mapsto x + y + z\\
+        G: \Omega \to \mathds{R} & (x,y,z) \mapsto x + \frac{y+z}{2}
+    \end{align}
+    d.h. die erste Komponente von $\omega \in \Omega$ beschreibt, ob die 1-Euro-Münze auf Zahl gefallen ist und die zweite und dritte Komponente betrachtet analog die 50-Cent-Münzen. Da alle acht Elementarereignisse in $\Omega$ gleich wahrscheinlich sind, gilt für die Verteilungen:
+    \begin{align*}
+        P(Z = 0) = \frac{1}{8} & \qquad A_0 = \{(0,0,0)\} \\ 
+        P(Z = 1) = \frac{3}{8} & \qquad A_1 = \{(1,0,0), (0,1,0), (0,0,1) \}\\
+        P(Z = 2) = \frac{3}{8} & \qquad A_2 = \{(0,1,1), (1,0,1), (1,1,0) \}\\
+        P(Z = 3) = \frac{1}{8} & \qquad A_3 = \{(1,1,1)\}
+    \end{align*}
+    sowie
+    \begin{align*}
+        P(G = 0) = \frac{1}{8} & \qquad B_0 = \{(0,0,0)\} \\ 
+        P(G = 0.5) = \frac{2}{8} & \qquad B_{0.5} = \{(0,1,0), (0,0,1) \}\\
+        P(G = 1) = \frac{2}{8} & \qquad B_{1} = \{(1,0,0), (0,1,1)\}\\
+        P(G = 1.5) = \frac{2}{8} & \qquad B_{1.5} = \{(1,1,0), (1,0,1)\}\\
+        P(G = 2) = \frac{1}{8} & \qquad B_2 = \{(1,1,1)\}
+    \end{align*}
+    und für den Erwartungswert folgt
+    \begin{equation*}
+        \mathds{E}[Z] = \frac{1}{8} \cdot 0 + \frac{3}{8} \cdot 1 + \frac{3}{8} \cdot 2 + \frac{1}{8} \cdot 3 = \frac{12}{8} = \frac{3}{2} \text{.}
+    \end{equation*}
+    \item $Z = 2$ wird genau für die Elementarereignisse in der Menge $A_2$ realisiert. Wir betrachten also jeweils die Schnittmenge der $B$-Mengen mit $A_2$:
+    \begin{align*}
+        P(G = 0 | Z = 2) = \frac{0}{3} & \qquad B_0 \cap A_2= \{\} \\ 
+        P(G = 0.5 | Z = 2) = \frac{0}{3} & \qquad B_{0.5} \cap A_2= \{\}\\
+        P(G = 1 | Z = 2) = \frac{1}{3} & \qquad B_{1} \cap A_2= \{(0,1,1)\}\\
+        P(G = 1.5 | Z = 2) = \frac{2}{3} & \qquad B_{1.5} \cap A_2= \{(1,1,0), (1,0,1)\}\\
+        P(G = 2 | Z = 2) = \frac{0}{3} & \qquad B_2 \cap A_2= \{\}
+    \end{align*}
+    Der zugehörige Erwartungswert ist damit $\mathds{E}[G | Z = 2] = 1 \cdot \frac{1}{3} + \frac{3}{2} \cdot \frac{2}{3} = \frac{4}{3}$.
+    \item Es ist $A_0 = \{(0,0,0)\}$. Dieses Ereignis ist nur in $B_{0}$ enthalten, womit $\mathds{E}[G|Z=0] = 0$ folgt.
+    Ebenfalls gilt $A_3 = \{(1,1,1)\}$. Auch hier liegt nur ein einziges Ereignis vor, dass nur in $B_{2}$ enthalten ist. Somit folgt $\mathds{E}[G | Z = 3] = 2$.
+    Analog zur (ii) lässt sich $\mathds{E}[G|Z=1] = \frac{2}{3}$ nachrechnen. Damit gilt für alle möglichen Realisierungen von $Z$ tatsächlich $\mathds{E}[G|Z = z] = \frac{2}{3} z$, also $\mathds{E}[G|Z] = \frac{2}{3}Z$.
+    \item Die Tower-Rule besagt nun 
+    \begin{equation*}
+        \mathds{E}[G] = \mathds{E}[\mathds{E|Z}] = \mathds{E}[\frac{2}{3}Z] = \frac{2}{3} \mathds{E}[Z] = \frac{2}{3} \cdot \frac{3}{2} = 1\text{.}
+    \end{equation*}
+\end{enumerate}
+
+\subsection{}
 
 \end{document}
 
