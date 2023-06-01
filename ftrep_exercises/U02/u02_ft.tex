@@ -170,25 +170,31 @@ Wir verwenden für alle Kurvenintegrale den Residuensatz.
 Zuerst den Hinweis: Es ist
 \begin{align*}
 	|\sin(z)| &= \frac{1}{2} | \exp(iz) - \exp(-iz) | \leq \frac{1}{2} (|\exp(iz)| + |\exp(-iz)|)\\
-	&= \frac{1}{2} (\exp(\Im(z)) + \exp(- \Im(z))) \leq \frac{1}{2} \exp(|\Im(z)|)\\ &\leq \frac{e}{2} < 2
+	&= \frac{1}{2} (\exp(\Im(z)) + \exp(- \Im(z)))\text{.}
 \end{align*}
-wobei wir in der vorletzten Zeile den kleineren Summanden $\exp(- |\Im(z)|)$ weglassen.
+Setzen wir also $y \coloneq \Im(z)$, so folgt $|\sin(z)| \leq \frac{1}{2} (e^y + e^{-y})$.
+Nach Voraussetzung gilt außerdem $y \in [-1, 1]$.
+Die reelle Funktion $\frac{1}{2} (e^y + e^{-y})$ nimmt (wie sich durch Kurvendiskussion verifizieren lässt) auf dem Intervall $[-1, 1]$ ihr Maximum genau an den Randpunkten an, also folgt
+\begin{equation*}
+	|\sin(z)| \leq \frac{1}{2}(e + e^{-1}) \approx 1.54 < 2
+\end{equation*}
 
 Weiterhin ist damit $|\frac{1}{2} \sin(z)| < 1$ und daher $|f(z) - 1| < 1$, jeder mögliche Fixpunkt von $f$ muss also in der (offenen) Kreisscheibe $K_1(1)$ liegen.
-Wegen $K_1(1) \subseteq S^\interior$ entsprechen die Fixpunkte von $f$ auf $S$ den Fixpunkten von $f$ auf $S^\interior$.
-
-Das $f(z) = 1 + \frac{1}{2} \sin(z)$ genau einen Fixpunkt in $S^\interior$ hat, ist nun äquivalent dazu, dass $g(z) = 1 + \frac{1}{2} \sin(z) - z$ in $S^\interior$ genau eine Nullstelle hat.
-
-Nun betrachten wir für ein beliebiges $R > 2$ das Rechteck 
+Wir betrachten nun das Rechteck
 \begin{equation*}
-	\square_R = \{z \in \mathds{C} \mid |\Im(z)| < 1, |\Re(z)| \leq R\}\text{.}
+	\square = \{ z \in \mathds{C} \mid |\Im(z)|< 1, |\Re(z)| \leq 2\}\text{.}
 \end{equation*}
-Dieses ist kompakt im Streifen $S^\interior$ und hat dort den Rand $\partial \square_R = (R - i, R + i) \cup (-R - i, -R + i)$. Auf diesem gilt nun:
+Wegen $K_1(1) \subseteq \square$ entsprechen die Fixpunkte von $f$ auf $S$ den Fixpunkten von $f$ auf $\square$.
+
+Das $f(z) = 1 + \frac{1}{2} \sin(z)$ genau einen Fixpunkt in $S$ hat, ist nun äquivalent dazu, dass $g(z) = 1 + \frac{1}{2} \sin(z) - z$ in $\square$ genau eine Nullstelle hat.
+
+
+$\square$ ist kompakt im Streifen $S^\interior$ (auf dem $g$ holomorph ist) und hat dort den Rand $\partial \square = (2 - i, 2 + i) \cup (-2 - i, -2 + i)$. Auf diesem gilt nun:
 \begin{equation*}
-	|g(z) + z| = |f(z)| = |1 + \frac{1}{2} \sin(z)| \leq 1 + \frac{1}{2} | \sin(z)| < 2 < R \leq |z| \leq |z| + |g(z)|\text{.}
+	|g(z) + z| = |f(z)| = |1 + \frac{1}{2} \sin(z)| \leq 1 + \frac{1}{2} | \sin(z)| < 2  \leq |z| \leq |z| + |g(z)|\text{.}
 \end{equation*}
-Nach dem Satz von Rouchet hat somit $g$ auf $\square_R$ genauso viele Nullstellen wie $z$, nämlich genau $0 \in \square_R$.
-Da dies für alle $R > 2$ gilt und wegen $S^\interior = \bigcup_{R > 2} \square_R$ hat $g$ auf $S^\interior$ genau eine Nullstelle, also $f$ in $S^\interior$ und damit auch in $S$ genau einen Fixpunkt.
+Nach dem Satz von Rouche hat somit $g$ auf $\square$ genauso viele Nullstellen wie $z$, nämlich genau $0 \in \square$.
+Wie bereits erwähnt entsprechen die Nullstellen von $g$ in $\square$ genau den Fixpunkten von $f$ in $\square$ und damit in $S$, also hat $f$ in $S$ genau einen Fixpunkt.
 
 
 
