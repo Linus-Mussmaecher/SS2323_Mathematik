@@ -1731,10 +1731,98 @@ $M(\algebra{A})$ is the largest unital $C^*$-algebra that contains $\algebra{A}$
 	\end{enumerate}
 \end{proof}
 
+\begin{corollary}
+	If $\algebra{A}$ is a $C^*$-algebra, then $\algebra{A}_+$ is a closed subset (but not subspace!) of $\algebra{A}$.
+\end{corollary}
+
+\begin{proof}
+	Taking unitization, we may assume that $\algebra{A}$ is unital.
+	Let $(a_n) \subseteq \algebra{A_+}$ and $a_n \to a \in \algebra{A}$.
+	Then $a_n^* = a_n$ for all $n \in \mathds{N}$ and therefore $a$ is also self-adjoint.
+	There also exists $t \geq 0$ with $\|a_n\| \leq t$ for all $n \in \mathds{N}$ and by the Lemma $\|a_n - t \| \leq t$ and therefore $\|a - t\| \leq t$. 
+	Again by the Lemma $a \geq 0$.
+\end{proof}
+
+\begin{corollary}
+	If $\algebra{A}$ is a $C^*$-algebra and $a,b \in \algebra{A}_+$ then $a + b \in \algebra{A}_+$.
+\end{corollary}
+
+\begin{proof}
+	Taking unitization, we may assume that $\algebra{A}$ is unital.
+	Since $a,b \geq 0$ by $t = \|a\|, \|b\|$ we have $\|a - \|a\| \| \leq \|a\|$ and $\|b  - \|b\|\| \leq \|b\|$. Then
+	\begin{equation*}
+		\|(a + b) - (\|a\| + \|b\|) \| = \|(a - \|a\|)	+ (b - \|b\|)\|  \leq \|(a - \|a\|)\|	+ \|(b - \|b\|)\| \leq \|a\| + \|b\|
+	\end{equation*}	
+	and $a + b$ is positive by the lemma.
+\end{proof}
+
+\begin{theorem}
+	If $\algebra{A}$ is a $C^*$-algebra and $a \in \algebra{A}$ then $a^* a \geq 0$.
+\end{theorem}
+
+\begin{proof}
+	First, we prove that if $ - a^* a \geq 0$ then $a = 0$.
+	For this we use the following observation $\sigma(bc) \setminus \{0\} = \sigma(cb) \setminus \{0\}$ (the two sets are equal except for the zero, which may be contained in one but not the other) because for $b,c$ in a unital algebra and $1 - bc \in \inv{\algebra{A}}$ iff $1 - cb \in \inv(\algebra{A})$ and if $d \coloneq (1 - bc)^{-1}$ then $(1 - cb)^{-1} = 1 + cdb$.
+
+	Therefore, if $-a^* a \in \algebra{A}_+$ then also $- a^* a \in \algebra{A}_+$ (notice that $a, a^*$ are self-adjoint).
+	Then write $a = b + c$ with $b,c \in \algebra{A}$ self-adjoint. Then
+	\begin{equation*}
+		a^* a + a a^*  = (b - ic) (b + ic) + (b + ic) (b-ic) = b^2 + c^2 + ibc - icb + b^2 + c^2 + icb - icb = 2b^2 + 2c^2 \text{.}
+	\end{equation*}
+	and we can write $a^* a = 2b^2 + 2c^2 - a a ^*$.
+	The squares are certainly positive and we have assumed $-a a^* \geq 0$, but then $a^* a \geq 0$.
+	We see that $a a^* \geq 0$ as well, so the spectrum has to be zero. 
+
+	Now suppose that $a \in \algebra{A}$ arbitrarily. We show that $a^* a \geq 0$. Let $b \coloneq a^* a$.
+	Then $b \in \algebra{A}$ is self adjoint with $b = b^+ - b^-$ where $b^+ , b^- \geq 0$.
+	Let $c \coloneq a b^-$. Then
+	\begin{equation*}
+		- c^* c = - b^- a^* a b^- = - b^- (b^+ - b^-) b^- = (b^-)^3 \geq 0
+	\end{equation*}
+	and $c$ must be $0$ by our first result.
+	This implies $(b^-)^3 = 0$ so $b^- = 0$.
+	It follows that $b = b^+ \geq 0$.
+\end{proof}
+
+\begin{definition}
+	Let $\algebra{A}$ be a self-adjoint algebra and $a,b \in \algebra{A}$. We write $a \leq b$ if $b- a \geq 0$.
+	This turns $\algebra{A}$ into a poset.
+	Because $A_+$ is a cone, that is $A_+ + A_+ \subseteq A_+$ and $\mathds{R}_+ \cdot \algebra{A}_+ \subseteq \algebra{A}$ as well as $A_{\text{self-adjoint}} = A_+ - A_+$ and $A_+ \cap -A_+ = \{\}$.
+\end{definition}
+
+\begin{theorem}
+	Let $\algebra{A}$ be a $C^*$-algebra.
+	\begin{enumerate}
+		\item $A_+ = \{a^* a \mid a \in \algebra{A}\}$
+		\item $a,b$ self-adjoint and $c \in \algebra{A}$. Then $a \leq b$ imples $c^* a c \leq c^* b c$.
+		\item $0 \leq a \leq b$ implies $\|a\| \leq \l|b\|$
+		\item If $\algebra{A}$ is unital and $a,b \geq 0$ with $a \leq b$ and $a,b \in \inv(\algebra{A})$ then $b^{-1} \leq a^{-1}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}~
+	\begin{enumerate}
+		\item It follows from the previous theorem. The fact that $a \in \algebra{A}_+$ has a square root $a = b^2 = b^* b$  with $b \geq 0$.
+		\item $c^* b c - c^* a c = c^* (b - a) c$ and if we set $b - a = d^* d$ for a $d \in \algebra{A}$ we receive $c^*(b-a)c = c^* d^* d c = (dc)^* dc \geq 0$.
+		\item We may assume $1 \in \algebra{A}$.
+		Notice that $b \leq \|b\| \cdot 1$ (consider the commutative case).
+		So wie have $a \leq b \leq \|b\| \cdot 1$ and therefore $a \leq \|b\| \cdot 1$ so $\|a\| \leq \|b\|$.
+		\item Let $a,b \in \inv \algebra{A}$, $a,b \geq 0$ and $a \leq b$.
+		We know that $\sigma(b^{-1}) = \sigma(b)^{-1} \subseteq \mathds{R}_+$ and thus $b^{-1} \geq 0$ and Similarly $a^{-1} \geq 0$.
+		Notice that if $c \geq 1$ (in $\algebra{A}$) then $c \in \inv \algebra{A}$ (as $\sigma(c-1) \subseteq [0, \infty)$ and thus $\sigma(c) \subseteq [1, \infty))$ and $c^{-1} \leq 1$ (think once again commutative).
+
+		Now we have $a \leq b$.
+		Then $1 = a^{-\frac{1}{2}} a a^{-\frac{1}{2}} \leq a^{-\frac{1}{2}} b a^{-\frac{}{2}}$.
+		Then $(a^{-\frac{1}{2}} b a^{-\frac{1}{2}}) = (a^\frac{1}{2} b^{-1} a^\frac{1}{2}) \leq 1$ by the above, so conjugation yields $b^{-1} \leq a^{-1}$.
+	\end{enumerate}
+\end{proof}
+
 
 
 
 \end{document}
+
+
 
 
 
