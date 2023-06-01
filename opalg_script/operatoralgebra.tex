@@ -1406,7 +1406,7 @@ For this proof we require a set of lemmas.
 	~
 
 	Let $\algebra{A}$ be a unital $C^*$-algebra and $a \in \algebra{A}$ normal.
-	Then there exists a unique unital $^*$-homomorphism $\phi: C(\sigma(a)) \to \algebra{A}$ such that $(z \mapsto z) \mapsto a$.
+	Then there exists a unique unital $^*$-homomorphism $\phi: C(\sigma(a)) \to \algebra{A}$ such that $\id_{\sigma(a)} \mapsto a$.
 
 	In general, if $\algebra{A}$ is possibly not unital, there exists a unique $^*$-homomorphism $\phi: C_0(\sigma(a)) \to \algebra{A}$ where $C_0(\sigma(a)) \coloneq \{ f \in C(\sigma(a)) \mid f(0) = 0\}$.
 
@@ -1650,8 +1650,86 @@ $M(\algebra{A})$ is the largest unital $C^*$-algebra that contains $\algebra{A}$
 
 
 
+\subsection{Positive Elements of $C^*$-algebras}
 
+\begin{definition}
+	Let $\algebra{A}$ be a $C^*$-algebra. We say that $a \in \algebra{A}$ is positive (and write $a \geq 0$) if $a = a^*$ and $\sigma(a) \subseteq [0, \infty)$. 
 
+	The set of all positive elements of a given algebra we notate as $\algebra{A}_+$.
+\end{definition}
+
+\begin{example}
+	Let $A = C_0(X)$ (commutative) and $f \in \algebra{A}$. Then $f = f^*$ iff $f$ is real (that is $f: X \to \mathds{R}$). Since $\sigma(f) = \closure{\image(f)}$ we see that $f \geq 0$ iff $f(x) \geq 0$ for all $x \in X$.
+\end{example}
+
+\begin{theorem}
+	If $a \in \algebra{A}$ for $\algebra{A}$ a $C^*$-algebra and $a \geq 0$ then there exists a unique $b \in \algebra{A}_+$ such that $b^2 = a$.
+	We sometimes notate this as $b = \sqrt{a} = a^{\frac{1}{2}}$.
+\end{theorem}
+
+\begin{proof}
+	Since $a$ is positive, it is self-adjoint and therefore normal.
+	Continuous functional calculus:
+	\begin{equation*}
+		\phi: C_0(\sigma(a)) \to \algebra{A}, f \mapsto f(a)
+	\end{equation*}
+	Apply this to $f(x) = \sqrt{x}$.
+	Notice that $f \in C_0(\sigma(a))$ because $\sigma(a) \subseteq [0, \infty)$.
+	Now simply choose $b = f(a) = \sqrt{a}$.
+	Since $\phi$ is a $^*$-homomorphism, we have $b^2 = \phi(f)^2 = \phi(f^2) = \phi(id) = a$.
+
+	Reminder: Writing '$f(a)$' does not mean to imply that $a \in \algebra{A}$ can simply be plugged into the function $f: \sigma(\algebra{A}) \to \mathds{C}$ but is simply a different way of writing $\phi(f) \in \algebra{A}$.
+
+	\textbf{Uniqueness}: Suppose $c \in \algebra{A}_+$ such that $c^2 = a$.
+	Then $c$ commutes with $c^2 = a$ and therefore $c$ commutes with $b = \sqrt{a}$ since $b = \lim_{n \to \infty} p_n(a)$ (polynomial approximation).
+	Then $B \coloneq C^*(b,c) \subseteq \algebra{A}$ is a commutative $C^*$-algebra so $B \simeq C_0(X)$ for some locally compact Hausdorff space $X$.
+	Since $a,b,c \in B = C_0(X)$ we have $a \simeq f, b \simeq g, c \simeq h \in C_0(X)$ with $f = g^2 = h^2$ where all these functions are positive. 
+	But then $f(x) = g(x)^2 = h(x)^2$ for all $x$.
+	Because $g(x), h(x) \geq 0$ for all $x$, this shows $g(x) = h(x)$ for all $x$ and therefore $g = h$ and $b = c$.
+\end{proof}
+
+\begin{remark}
+	Given any self-adjoint element $a \in \algebra{A}$ ($a^* = a$) we can write it as $a^+ - a^-$ where $a^+, a^- \geq 0$ and $a^+ \cdot a^- = 0$.
+	Just define $f(x) = \frac{|x| + x}{2}$ and $g(x) = \frac{|x| - x}{2}$.
+	Both are positive functions with $f \cdot g = 0$. Define $a^+ = f(a)$ and $a^- = g(a)$ (once again per continuous functional calculus), transferring the neccessary properties:
+	\begin{align*}
+		f(a) - g(a) &= \phi(f) - \phi(g) = \phi(f - g) = \phi(\id) = a \\
+		f(a) \cdot g(a) &= \phi(f) \cdot \phi(g) = \phi(f \cdot g) = \phi(0) = 0\\
+		\sigma(f(a)) &= \sigma(\phi(f)) \subseteq \sigma(f) = \closure{\image(f)} = [0, \infty)
+	\end{align*}
+\end{remark}
+
+\begin{remark}
+	If $\algebra{A}$ is unital $C^*$-algebra and $a \in \algebra{A}$ is self-adjoint with $\|a\| \leq 1$, so $\sigma(a) \subseteq [-1, 1]$.
+	Define 
+	\begin{equation*}
+		f(x) = x + i \sqrt{1 - x^2} \qquad g(x) = x - i \sqrt{1 - x^2}
+	\end{equation*}
+	This means that $f,g \in \mathcal{U}C(\sigma(a))$
+	(Recall that unitaries of $\mathcal{U}(\algebra{A}) = \{u \in \algebra{A} \mid u^* u = 1 = uu^* \}$)
+	and $\frac{f + g}{2} = \id_{\sigma(a)}$.
+	So if we now define $u \coloneq f(a), v \coloneq g(a) \in C^*(a,1) \subseteq  \algebra{A}$ we have $\frac{u + v}{2} = a$.
+	In particular $\algebra{A} = \mathrm{span}(\mathcal{U}(\algebra{A}))$.
+\end{remark}
+
+\begin{lemma}
+	Let $\algebra{A}$ be a unital $C^*$-algebra, $a \in \algebra{A}$ self-adjoint and $t \in \mathds{R}_+$.
+	\begin{enumerate}
+		\item If $a \geq 0$ and $\|a\| \leq t$ then $\|a - t\| \leq t$.
+		\item Conversely, if $\|a = t\| \leq t$ then $a \geq 0$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	Replace $\algebra{A}$ by $C^*(a, 1)$ we may assume that $\algebra{A} = C(X)$ is commutative and $X$ compact.
+	Let $a = f \in C_(X)$ be a self-adjoint, real function and $t \geq 0$ a real number.
+	\begin{enumerate}
+		\item $f \geq 0$ and $\|f\|_\infty \leq t$ and thus $f(x) - t \in [-t, 0]$ for all $x \in X$, so $\|f - t\| \leq t$.
+		\item Let $f \in C(X)$ be a self-adjoint real function with $\|f - t\| \leq t$, so $|f(x) - t| \leq t$ for every $x$.
+		But if $f(x) < 0$ for any $x \in X$ we have $f(x) - t < t$ and thus $|f(x) - t| > t$, a contradiction.
+		So $f$ must be positive.
+	\end{enumerate}
+\end{proof}
 
 
 
