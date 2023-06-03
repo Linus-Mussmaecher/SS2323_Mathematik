@@ -1406,7 +1406,7 @@ For this proof we require a set of lemmas.
 	~
 
 	Let $\algebra{A}$ be a unital $C^*$-algebra and $a \in \algebra{A}$ normal.
-	Then there exists a unique unital $^*$-homomorphism $\phi: C(\sigma(a)) \to \algebra{A}$ such that $(z \mapsto z) \mapsto a$.
+	Then there exists a unique unital $^*$-homomorphism $\phi: C(\sigma(a)) \to \algebra{A}$ such that $\id_{\sigma(a)} \mapsto a$.
 
 	In general, if $\algebra{A}$ is possibly not unital, there exists a unique $^*$-homomorphism $\phi: C_0(\sigma(a)) \to \algebra{A}$ where $C_0(\sigma(a)) \coloneq \{ f \in C(\sigma(a)) \mid f(0) = 0\}$.
 
@@ -1650,13 +1650,179 @@ $M(\algebra{A})$ is the largest unital $C^*$-algebra that contains $\algebra{A}$
 
 
 
+\subsection{Positive Elements of $C^*$-algebras}
 
+\begin{definition}
+	Let $\algebra{A}$ be a $C^*$-algebra. We say that $a \in \algebra{A}$ is positive (and write $a \geq 0$) if $a = a^*$ and $\sigma(a) \subseteq [0, \infty)$. 
 
+	The set of all positive elements of a given algebra we notate as $\algebra{A}_+$.
+\end{definition}
+
+\begin{example}
+	Let $A = C_0(X)$ (commutative) and $f \in \algebra{A}$. Then $f = f^*$ iff $f$ is real (that is $f: X \to \mathds{R}$). Since $\sigma(f) = \closure{\image(f)}$ we see that $f \geq 0$ iff $f(x) \geq 0$ for all $x \in X$.
+\end{example}
+
+\begin{theorem}
+	If $a \in \algebra{A}$ for $\algebra{A}$ a $C^*$-algebra and $a \geq 0$ then there exists a unique $b \in \algebra{A}_+$ such that $b^2 = a$.
+	We sometimes notate this as $b = \sqrt{a} = a^{\frac{1}{2}}$.
+\end{theorem}
+
+\begin{proof}
+	Since $a$ is positive, it is self-adjoint and therefore normal.
+	Continuous functional calculus:
+	\begin{equation*}
+		\phi: C_0(\sigma(a)) \to \algebra{A}, f \mapsto f(a)
+	\end{equation*}
+	Apply this to $f(x) = \sqrt{x}$.
+	Notice that $f \in C_0(\sigma(a))$ because $\sigma(a) \subseteq [0, \infty)$.
+	Now simply choose $b = f(a) = \sqrt{a}$.
+	Since $\phi$ is a $^*$-homomorphism, we have $b^2 = \phi(f)^2 = \phi(f^2) = \phi(id) = a$.
+
+	Reminder: Writing '$f(a)$' does not mean to imply that $a \in \algebra{A}$ can simply be plugged into the function $f: \sigma(\algebra{A}) \to \mathds{C}$ but is simply a different way of writing $\phi(f) \in \algebra{A}$.
+
+	\textbf{Uniqueness}: Suppose $c \in \algebra{A}_+$ such that $c^2 = a$.
+	Then $c$ commutes with $c^2 = a$ and therefore $c$ commutes with $b = \sqrt{a}$ since $b = \lim_{n \to \infty} p_n(a)$ (polynomial approximation).
+	Then $B \coloneq C^*(b,c) \subseteq \algebra{A}$ is a commutative $C^*$-algebra so $B \simeq C_0(X)$ for some locally compact Hausdorff space $X$.
+	Since $a,b,c \in B = C_0(X)$ we have $a \simeq f, b \simeq g, c \simeq h \in C_0(X)$ with $f = g^2 = h^2$ where all these functions are positive. 
+	But then $f(x) = g(x)^2 = h(x)^2$ for all $x$.
+	Because $g(x), h(x) \geq 0$ for all $x$, this shows $g(x) = h(x)$ for all $x$ and therefore $g = h$ and $b = c$.
+\end{proof}
+
+\begin{remark}
+	Given any self-adjoint element $a \in \algebra{A}$ ($a^* = a$) we can write it as $a^+ - a^-$ where $a^+, a^- \geq 0$ and $a^+ \cdot a^- = 0$.
+	Just define $f(x) = \frac{|x| + x}{2}$ and $g(x) = \frac{|x| - x}{2}$.
+	Both are positive functions with $f \cdot g = 0$. Define $a^+ = f(a)$ and $a^- = g(a)$ (once again per continuous functional calculus), transferring the neccessary properties:
+	\begin{align*}
+		f(a) - g(a) &= \phi(f) - \phi(g) = \phi(f - g) = \phi(\id) = a \\
+		f(a) \cdot g(a) &= \phi(f) \cdot \phi(g) = \phi(f \cdot g) = \phi(0) = 0\\
+		\sigma(f(a)) &= \sigma(\phi(f)) \subseteq \sigma(f) = \closure{\image(f)} = [0, \infty)
+	\end{align*}
+\end{remark}
+
+\begin{remark}
+	If $\algebra{A}$ is unital $C^*$-algebra and $a \in \algebra{A}$ is self-adjoint with $\|a\| \leq 1$, so $\sigma(a) \subseteq [-1, 1]$.
+	Define 
+	\begin{equation*}
+		f(x) = x + i \sqrt{1 - x^2} \qquad g(x) = x - i \sqrt{1 - x^2}
+	\end{equation*}
+	This means that $f,g \in \mathcal{U}C(\sigma(a))$
+	(Recall that unitaries of $\mathcal{U}(\algebra{A}) = \{u \in \algebra{A} \mid u^* u = 1 = uu^* \}$)
+	and $\frac{f + g}{2} = \id_{\sigma(a)}$.
+	So if we now define $u \coloneq f(a), v \coloneq g(a) \in C^*(a,1) \subseteq  \algebra{A}$ we have $\frac{u + v}{2} = a$.
+	In particular $\algebra{A} = \mathrm{span}(\mathcal{U}(\algebra{A}))$.
+\end{remark}
+
+\begin{lemma}
+	Let $\algebra{A}$ be a unital $C^*$-algebra, $a \in \algebra{A}$ self-adjoint and $t \in \mathds{R}_+$.
+	\begin{enumerate}
+		\item If $a \geq 0$ and $\|a\| \leq t$ then $\|a - t\| \leq t$.
+		\item Conversely, if $\|a = t\| \leq t$ then $a \geq 0$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	Replace $\algebra{A}$ by $C^*(a, 1)$ we may assume that $\algebra{A} = C(X)$ is commutative and $X$ compact.
+	Let $a = f \in C_(X)$ be a self-adjoint, real function and $t \geq 0$ a real number.
+	\begin{enumerate}
+		\item $f \geq 0$ and $\|f\|_\infty \leq t$ and thus $f(x) - t \in [-t, 0]$ for all $x \in X$, so $\|f - t\| \leq t$.
+		\item Let $f \in C(X)$ be a self-adjoint real function with $\|f - t\| \leq t$, so $|f(x) - t| \leq t$ for every $x$.
+		But if $f(x) < 0$ for any $x \in X$ we have $f(x) - t < t$ and thus $|f(x) - t| > t$, a contradiction.
+		So $f$ must be positive.
+	\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+	If $\algebra{A}$ is a $C^*$-algebra, then $\algebra{A}_+$ is a closed subset (but not subspace!) of $\algebra{A}$.
+\end{corollary}
+
+\begin{proof}
+	Taking unitization, we may assume that $\algebra{A}$ is unital.
+	Let $(a_n) \subseteq \algebra{A_+}$ and $a_n \to a \in \algebra{A}$.
+	Then $a_n^* = a_n$ for all $n \in \mathds{N}$ and therefore $a$ is also self-adjoint.
+	There also exists $t \geq 0$ with $\|a_n\| \leq t$ for all $n \in \mathds{N}$ and by the Lemma $\|a_n - t \| \leq t$ and therefore $\|a - t\| \leq t$. 
+	Again by the Lemma $a \geq 0$.
+\end{proof}
+
+\begin{corollary}
+	If $\algebra{A}$ is a $C^*$-algebra and $a,b \in \algebra{A}_+$ then $a + b \in \algebra{A}_+$.
+\end{corollary}
+
+\begin{proof}
+	Taking unitization, we may assume that $\algebra{A}$ is unital.
+	Since $a,b \geq 0$ by $t = \|a\|, \|b\|$ we have $\|a - \|a\| \| \leq \|a\|$ and $\|b  - \|b\|\| \leq \|b\|$. Then
+	\begin{equation*}
+		\|(a + b) - (\|a\| + \|b\|) \| = \|(a - \|a\|)	+ (b - \|b\|)\|  \leq \|(a - \|a\|)\|	+ \|(b - \|b\|)\| \leq \|a\| + \|b\|
+	\end{equation*}	
+	and $a + b$ is positive by the lemma.
+\end{proof}
+
+\begin{theorem}
+	If $\algebra{A}$ is a $C^*$-algebra and $a \in \algebra{A}$ then $a^* a \geq 0$.
+\end{theorem}
+
+\begin{proof}
+	First, we prove that if $ - a^* a \geq 0$ then $a = 0$.
+	For this we use the following observation $\sigma(bc) \setminus \{0\} = \sigma(cb) \setminus \{0\}$ (the two sets are equal except for the zero, which may be contained in one but not the other) because for $b,c$ in a unital algebra and $1 - bc \in \inv{\algebra{A}}$ iff $1 - cb \in \inv(\algebra{A})$ and if $d \coloneq (1 - bc)^{-1}$ then $(1 - cb)^{-1} = 1 + cdb$.
+
+	Therefore, if $-a^* a \in \algebra{A}_+$ then also $- a^* a \in \algebra{A}_+$ (notice that $a, a^*$ are self-adjoint).
+	Then write $a = b + c$ with $b,c \in \algebra{A}$ self-adjoint. Then
+	\begin{equation*}
+		a^* a + a a^*  = (b - ic) (b + ic) + (b + ic) (b-ic) = b^2 + c^2 + ibc - icb + b^2 + c^2 + icb - icb = 2b^2 + 2c^2 \text{.}
+	\end{equation*}
+	and we can write $a^* a = 2b^2 + 2c^2 - a a ^*$.
+	The squares are certainly positive and we have assumed $-a a^* \geq 0$, but then $a^* a \geq 0$.
+	We see that $a a^* \geq 0$ as well, so the spectrum has to be zero. 
+
+	Now suppose that $a \in \algebra{A}$ arbitrarily. We show that $a^* a \geq 0$. Let $b \coloneq a^* a$.
+	Then $b \in \algebra{A}$ is self adjoint with $b = b^+ - b^-$ where $b^+ , b^- \geq 0$.
+	Let $c \coloneq a b^-$. Then
+	\begin{equation*}
+		- c^* c = - b^- a^* a b^- = - b^- (b^+ - b^-) b^- = (b^-)^3 \geq 0
+	\end{equation*}
+	and $c$ must be $0$ by our first result.
+	This implies $(b^-)^3 = 0$ so $b^- = 0$.
+	It follows that $b = b^+ \geq 0$.
+\end{proof}
+
+\begin{definition}
+	Let $\algebra{A}$ be a self-adjoint algebra and $a,b \in \algebra{A}$. We write $a \leq b$ if $b- a \geq 0$.
+	This turns $\algebra{A}$ into a poset.
+	Because $A_+$ is a cone, that is $A_+ + A_+ \subseteq A_+$ and $\mathds{R}_+ \cdot \algebra{A}_+ \subseteq \algebra{A}$ as well as $A_{\text{self-adjoint}} = A_+ - A_+$ and $A_+ \cap -A_+ = \{\}$.
+\end{definition}
+
+\begin{theorem}
+	Let $\algebra{A}$ be a $C^*$-algebra.
+	\begin{enumerate}
+		\item $A_+ = \{a^* a \mid a \in \algebra{A}\}$
+		\item $a,b$ self-adjoint and $c \in \algebra{A}$. Then $a \leq b$ imples $c^* a c \leq c^* b c$.
+		\item $0 \leq a \leq b$ implies $\|a\| \leq \l|b\|$
+		\item If $\algebra{A}$ is unital and $a,b \geq 0$ with $a \leq b$ and $a,b \in \inv(\algebra{A})$ then $b^{-1} \leq a^{-1}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}~
+	\begin{enumerate}
+		\item It follows from the previous theorem. The fact that $a \in \algebra{A}_+$ has a square root $a = b^2 = b^* b$  with $b \geq 0$.
+		\item $c^* b c - c^* a c = c^* (b - a) c$ and if we set $b - a = d^* d$ for a $d \in \algebra{A}$ we receive $c^*(b-a)c = c^* d^* d c = (dc)^* dc \geq 0$.
+		\item We may assume $1 \in \algebra{A}$.
+		Notice that $b \leq \|b\| \cdot 1$ (consider the commutative case).
+		So wie have $a \leq b \leq \|b\| \cdot 1$ and therefore $a \leq \|b\| \cdot 1$ so $\|a\| \leq \|b\|$.
+		\item Let $a,b \in \inv \algebra{A}$, $a,b \geq 0$ and $a \leq b$.
+		We know that $\sigma(b^{-1}) = \sigma(b)^{-1} \subseteq \mathds{R}_+$ and thus $b^{-1} \geq 0$ and Similarly $a^{-1} \geq 0$.
+		Notice that if $c \geq 1$ (in $\algebra{A}$) then $c \in \inv \algebra{A}$ (as $\sigma(c-1) \subseteq [0, \infty)$ and thus $\sigma(c) \subseteq [1, \infty))$ and $c^{-1} \leq 1$ (think once again commutative).
+
+		Now we have $a \leq b$.
+		Then $1 = a^{-\frac{1}{2}} a a^{-\frac{1}{2}} \leq a^{-\frac{1}{2}} b a^{-\frac{}{2}}$.
+		Then $(a^{-\frac{1}{2}} b a^{-\frac{1}{2}}) = (a^\frac{1}{2} b^{-1} a^\frac{1}{2}) \leq 1$ by the above, so conjugation yields $b^{-1} \leq a^{-1}$.
+	\end{enumerate}
+\end{proof}
 
 
 
 
 \end{document}
+
+
 
 
 
