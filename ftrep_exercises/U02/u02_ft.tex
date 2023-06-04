@@ -198,7 +198,21 @@ Wie bereits erwähnt entsprechen die Nullstellen von $g$ in $\square$ genau den 
 
 \subsection{Verkettungen}
 
+Offensichtlich ist die Bedingung für alle konstanten Funktionen erfüllt. Sei daher im folgenden $f$ nicht konstant.
+Für die Ableitung von $f$ gilt:
+\begin{equation*}
+	f' = (f \circ f)' = (f' \circ f) \cdot f'
+\end{equation*}
+also $f' \circ f = 1$ auf $\tilde{G} \coloneq G \setminus \{ z \in G \mid f'(z) = 0\}$ und folglich $f' \equiv 1$ auf $f(\tilde{G})$.
+Da $f'$ holomorph ist, liegen seine Nullstellen isoliert also ist $\tilde{G}$ dicht in $G$  und aufgrund der Stetigkeit von $f$ ist auch $\tilde{H} \coloneq f(\tilde{G})$ dicht in $H  \coloneq f(G)$, wobei $H = f(G)$ aufgrund der Gebietstreue ein Gebiet ist.
+Wähle nun einen Punkt $z_0 \in H \setminus \tilde{H}$ (falls $f'$ keine Nullstellen hat und somit $\tilde{H} = H$ gilt, so wähle ab hier $\tilde{H} = H \setminus \{z_0\}$ für ein beliebiges $z_0 \in f(G)$, dies liegt sicherlich dicht, da $H$ offen war).
+Da $\tilde{H}$ dicht in $H$ liegt, existiert somit eine Folge $(z_n)_{n \in \mathds{N}}\subseteq \tilde{H} \subseteq H = f(G) \subseteq G$ mit $z_n \to z_0 \in H$, insbesondere ist dann $f'(z_n) = 1$ für alle $n \in \mathds{N}$ sowie $z_0 \notin (z_n)$.
+Nach dem Identitätsprinzip zeigt dies $f' \equiv 1$ auf ganz $G$.
 
+Somit ist $f(z) = z + c$ für ein $c \in \mathds{C}$.
+Weiterhin gilt $z + 2c = (f \circ f )(z) = f(z) = z + c \forall_{z \in G} \iff 2c = c \iff c = 0$ und somit $f(z) = z$, also $f = \id$.
+
+Die einzigen Funktionen, die auf $G$ $f \circ f = f$ erfüllen, sind also die Identität und die konstanten Funktionen.
 
 \subsection{Sehr viel Identitätsprinzip}
 
