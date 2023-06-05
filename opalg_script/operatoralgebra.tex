@@ -644,27 +644,27 @@ Observation: If $\algebra{A}$ is already unital, then for $\tilde{A} \simeq \alg
 \begin{definition}
 	Let $\algebra{A}$ be an algebra. Given $a \in \algebra{A}$, we define:
 	\begin{equation*}
-		\pi(a) \coloneq \sup \{ |\lambda| \mid \lambda \in \sigma_\algebra{A}(a) \}
+		r(a) \coloneq \sup \{ |\lambda| \mid \lambda \in \sigma_\algebra{A}(a) \}
 	\end{equation*}
 	as the \textbf{spectral radius} of $a$ if $\emptyset \neq \sigma_\algebra{A}(a)$ is bounded (e.g. if $\algebra{A}$ is Banach).
 \end{definition}
 
-Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
+Observation: In a Banach algebra, we have $0 \leq r(a) \leq \|a\|$.
 
 \begin{example}~
 	\begin{enumerate}
 		\item Let $f \in \algebra{A} = C_0(X)$ using $\sigma_A(f) = \closure{f(X)}$. Thus,
 		      \begin{equation*}
-			      \pi(f) = \sup \{ |\lambda| \mid \lambda \in \closure{f(X)} = \sup_{x \in X} |f(x)| = \|f\|_{C_0(X)}
+			      r(f) = \sup \{ |\lambda| \mid \lambda \in \closure{f(X)} = \sup_{x \in X} |f(x)| = \|f\|_{C_0(X)}
 		      \end{equation*}
-		\item Let $\algebra{A} = M_2(\mathds{C})$ and $a = \qmatrix{0 & 1 \\ 0 & 0}$. Then $\sigma_\algebra{A} = \{0\}$ and $\pi(a) = 0$, but $\|a\| = 1 \neq 0$.
+		\item Let $\algebra{A} = M_2(\mathds{C})$ and $a = \qmatrix{0 & 1 \\ 0 & 0}$. Then $\sigma_\algebra{A} = \{0\}$ and $r(a) = 0$, but $\|a\| = 1 \neq 0$.
 	\end{enumerate}
 \end{example}
 
 \begin{theorem}[Beurling-Gelfand]
 	Let $\algebra{A}$ be a Banach algebra, then
 	\begin{equation*}
-		\pi(a) = \inf_{n \in \mathds{N}} \|a^n\|^{\frac{1}{n}} = \lim_{n \to \infty} \|a^n\|^{\frac{1}{n}}
+		r(a) = \inf_{n \in \mathds{N}} \|a^n\|^{\frac{1}{n}} = \lim_{n \to \infty} \|a^n\|^{\frac{1}{n}}
 	\end{equation*}
 \end{theorem}
 
@@ -675,9 +675,9 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 	\end{equation*}
 	and therefore
 	\begin{equation*}
-		\pi(a) \leq \inf_{n \in \mathds{N}} \|a^n\|^{\frac{1}{n}} \leq \liminf_{n \to \infty} \|a^n\|^{\frac{1}{n}}\text{.}
+		r(a) \leq \inf_{n \in \mathds{N}} \|a^n\|^{\frac{1}{n}} \leq \liminf_{n \to \infty} \|a^n\|^{\frac{1}{n}}\text{.}
 	\end{equation*}
-	We prove now that $\limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq \pi(a)$. Set $\Delta \coloneq B\left(0, \frac{1}{\pi(a)}\right)$. Where per convention we set $\frac{1}{\pi(a)} = \infty$ if $\pi(a) = 0$. If $\lambda \in \Delta$, then $1 - \lambda a \in \inv(\algebra{A})$ (because $|\lambda| < \frac{1}{\pi(a)}$ implies $|\lambda^{-1}| > \pi(a)$ and therefore $\lambda^{-1} \notin \sigma(a) \then \lambda^{-1} - a \in \inv{A} \then 1 - \lambda a \in \inv(A)$).
+	We prove now that $\limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq r(a)$. Set $\Delta \coloneq B\left(0, \frac{1}{r(a)}\right)$. Where per convention we set $\frac{1}{r(a)} = \infty$ if $r(a) = 0$. If $\lambda \in \Delta$, then $1 - \lambda a \in \inv(\algebra{A})$ (because $|\lambda| < \frac{1}{r(a)}$ implies $|\lambda^{-1}| > r(a)$ and therefore $\lambda^{-1} \notin \sigma(a) \then \lambda^{-1} - a \in \inv{A} \then 1 - \lambda a \in \inv(A)$).
 
 	Now fix $\phi \in \algebra{A}^*$. Then $f: \Delta \to \mathds{C}, \lambda \mapsto \phi((1 - \lambda a)^{-1})$ is analytic, so it can be written as
 	\begin{equation*}
@@ -685,7 +685,7 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 	\end{equation*}
 	On the other hand, if
 	\begin{equation*}
-		|\lambda| < \frac{1}{\|a\|} \leq \frac{1}{\pi(a)}
+		|\lambda| < \frac{1}{\|a\|} \leq \frac{1}{r(a)}
 	\end{equation*}
 	then $\|\lambda a \| < 1$, so
 	\begin{equation*}
@@ -703,9 +703,9 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 	\begin{align*}
 		      & \|\lambda^n a^n\| \leq M \forall_{n \in \mathds{N}}                                                                                           \\
 		\then & \| \lambda^n \|^{\frac{1}{n}} \leq \frac{M^{\frac{1}{n}}}{|\lambda|} \forall_{n \in \mathds{N}}, \forall_{\lambda \in \Delta, \lambda \neq 0} \\
-		\then & \limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq \frac{1}{\lambda} \forall_{\lambda \in \Delta \text{ i.e. } |\lambda| < \frac{1}{\pi(a)}}
+		\then & \limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq \frac{1}{\lambda} \forall_{\lambda \in \Delta \text{ i.e. } |\lambda| < \frac{1}{r(a)}}
 	\end{align*}
-	Letting $\lambda < \frac{1}{\pi(a)}$ yields $\limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq \pi(a)$.
+	Letting $\lambda < \frac{1}{r(a)}$ yields $\limsup_{n \to \infty} \|a^n\|^{\frac{1}{n}} \leq r(a)$.
 \end{proof}
 
 \begin{example}
@@ -714,7 +714,7 @@ Observation: In a Banach algebra, we have $0 \leq \pi(a) \leq \|a\|$.
 	Then $\algebra{A}$ is unital, commutative and a Banach algebra. Consider $x \in \algebra{A}$, $x(t) = t$. We have $x^n(t) = t^n$ and
 	\begin{align*}
 		\|x^n\| & = \sup_{t \in [0,1]} |t^n| + \sup_{t \in [0,1]} |n t^{n-1}| = 1 + n \\
-		\pi(x)  & = \lim_{n \to \infty} (1+n)^\frac{1}{n} = 1                         \\
+		r(x)  & = \lim_{n \to \infty} (1+n)^\frac{1}{n} = 1                         \\
 		\| x \| & = 2
 	\end{align*}
 	Observation: $\sigma(x) = \image(x) = [0,1]$.
@@ -818,7 +818,7 @@ Then $\algebra{A} / \ring{I} \simeq \mathds{C}$ and $\chi \in \Omega(\algebra{A}
 \begin{proof}
 	If $a \in \algebra{A}$ and $\chi$ a character, then $\chi(a) \in \sigma(\algebra{A})$, because $\chi(a - \chi(a) \cdot 1) = \chi(a) - \chi(a) \cdot \chi(1) = 0$, so $a - \chi(a) \cdot 1 \in \ker(\chi) \triangleleft \algebra{A}$ and thus $a - \chi(a) \cdot 1 \notin \inv(\algebra{A})$.
 
-	Therefore: $|\chi(a)| \leq \pi(a) \leq \|a\|$. So $\|\chi\| \leq 1$. Since $\chi(1) = 1$ and $\|1\| = 1$ we have $\|\chi\| = 1$.
+	Therefore: $|\chi(a)| \leq r(a) \leq \|a\|$. So $\|\chi\| \leq 1$. Since $\chi(1) = 1$ and $\|1\| = 1$ we have $\|\chi\| = 1$.
 
 	Now, apply linear algebra. Then $\ker (\chi)$ is a maximal proper subspace, in particular a maximal ideal.
 	And $\ker(\chi)$ is closed, because $\chi$ is continuous.
@@ -936,8 +936,8 @@ where $\chi_\infty(a + \lambda \cdot 1) = \lambda$. Thus, $\Omega(\algebra{A}) \
 Observe that $\hat a \in C(\Omega(\algebra{A}))$, because if $\chi_i \to \chi$ then we have $\hat a(\chi_i) = \chi_i(a) \to \chi(a) = \hat a(\chi)$. So we have a map $\Gamma: \algebra{A} \to C(\Omega(\algebra{A}))$. This map is called the \textbf{Gelfand transform} of $\algebra{A}$.
 
 \begin{theorem}[Gelfand Representation]
-	$\image(\Gamma) \subseteq C_0(\Omega(\algebra{A}))$ and $\Gamma: \algebra{A} \to C_0(\Omega(\algebra{A}))$ is a contractive homomorphism, i.e. $\|\Gamma(a) \| \leq \pi(a) \leq \|a\|$ for every Banach algebra $\algebra{A}$.
-	If moreover $\algebra{A}$ is commutative, then $\|\Gamma(a)\| = \pi(a)$.
+	$\image(\Gamma) \subseteq C_0(\Omega(\algebra{A}))$ and $\Gamma: \algebra{A} \to C_0(\Omega(\algebra{A}))$ is a contractive homomorphism, i.e. $\|\Gamma(a) \| \leq r(a) \leq \|a\|$ for every Banach algebra $\algebra{A}$.
+	If moreover $\algebra{A}$ is commutative, then $\|\Gamma(a)\| = r(a)$.
 	Also, for all $a \in \algebra{A}$, we have
 	\begin{equation*}
 		\sigma(a) = \left\{ \begin{matrix}
@@ -959,7 +959,7 @@ Observe that $\hat a \in C(\Omega(\algebra{A}))$, because if $\chi_i \to \chi$ t
 		(\Gamma(a) \Gamma(b))(\chi) = (\hat a \cdot \hat b)(\chi) = \hat a(\chi) \hat b (\chi) = \chi(a) \chi(b) = \chi(ab) = \hat{ab} (\chi) = \Gamma(ab)(\chi)\text{.}
 	\end{equation*}
 
-	\underline{$\Gamma$ is contractive}: Given $a \in \algebra{A}$, $\chi \in \Omega(\algebra{A})$, we have $\hat a (\chi) = \chi(a) \in \sigma(a)$, so $\|\hat a (\chi) \| \leq \pi(a)$ yielding $\|\Gamma(a)\|_\infty = \|\hat a\|_\infty \leq \pi(a) \leq \|a\|$. If $\algebra{A}$ is commutative, we have
+	\underline{$\Gamma$ is contractive}: Given $a \in \algebra{A}$, $\chi \in \Omega(\algebra{A})$, we have $\hat a (\chi) = \chi(a) \in \sigma(a)$, so $\|\hat a (\chi) \| \leq r(a)$ yielding $\|\Gamma(a)\|_\infty = \|\hat a\|_\infty \leq r(a) \leq \|a\|$. If $\algebra{A}$ is commutative, we have
 	\begin{equation*}
 		\sigma(a) = \left\{ \begin{matrix}
 			\{\chi(a) \mid \chi \in \Omega(\algebra{A}) \}             & 1 \in \algebra{A} \\
@@ -971,7 +971,7 @@ Observe that $\hat a \in C(\Omega(\algebra{A}))$, because if $\chi_i \to \chi$ t
 	\end{equation*}
 	and thus
 	\begin{equation*}
-		\|\Gamma(a)\| = \|\hat a \|_\infty = \sup_{\chi \in \Omega(\algebra{A})} | \chi(a) | = \sup_{\lambda \in \sigma(a)} |\lambda| = \pi(a)
+		\|\Gamma(a)\| = \|\hat a \|_\infty = \sup_{\chi \in \Omega(\algebra{A})} | \chi(a) | = \sup_{\lambda \in \sigma(a)} |\lambda| = r(a)
 	\end{equation*}
 \end{proof}
 
@@ -1002,13 +1002,13 @@ As a convention, if $\Gamma(\algebra{A}) = \empty$, then $C_0(\Omega(\algebra{A}
 \end{example}
 
 \begin{definition}
-	Let $\algebra{A}$ be a Banach algebra. We say that $a \in \algebra{A}$ is quasi-nilpotent if $\pi(a) = \lim_{n \to \infty} \|a^n\|^{\frac{1}{n}} = 0$.
+	Let $\algebra{A}$ be a Banach algebra. We say that $a \in \algebra{A}$ is quasi-nilpotent if $r(a) = \lim_{n \to \infty} \|a^n\|^{\frac{1}{n}} = 0$.
 	Sometimes, you will read
 	\begin{equation*}
 		\mathrm{Rad}(\algebra{A})  = \{a \in \algebra{A} \mid a \text{ quasi-nilpotent}\}
 	\end{equation*}
 	If $\mathrm{Rad}(\algebra{A}) = 0$, we say that $\algebra{A}$ is \textbf{semi-simple}.
-	Notice that if $a \in \algebra{A}$ is quasi-nilpotent, then $\Gamma(a) = \hat a = 0$ because $\Gamma(a) \leq \pi(a) = 0$.
+	Notice that if $a \in \algebra{A}$ is quasi-nilpotent, then $\Gamma(a) = \hat a = 0$ because $\Gamma(a) \leq r(a) = 0$.
 	If $\algebra{A}$ is commutative, then $\ker(\Gamma) = \mathrm{Rad}(\algebra{A})$.
 \end{definition}
 
@@ -1118,7 +1118,7 @@ Recall: For $\algebra{A}$ a Banach algebra, we have a Gelfand representation
 	\Gamma: \algebra{A} \to C_0(\Omega(\algebra{A})), a \mapsto (\hat{a}: \Omega(\algebra{A}) \to \mathds{C}, \chi \mapsto \chi(a))
 \end{equation*}
 where $\Omega(\algebra{A}) = \{\chi: \algebra{A} \to \mathds{C} \mid \text{ non-zero hom} \} \subseteq D_{\algebra{A}^*}(0,1)$ with the weak $^*$-topology.
-$\Gamma$ is a contractive homomorphism, and if $\algebra{A}$ is commutative $\|\Gamma(a)\| = \pi(a) \leq \|a\|$ for all $a \in \algebra{A}$.
+$\Gamma$ is a contractive homomorphism, and if $\algebra{A}$ is commutative $\|\Gamma(a)\| = r(a) \leq \|a\|$ for all $a \in \algebra{A}$.
 
 We now want to consider commutative $C^*$-algebras.
 
@@ -1129,19 +1129,19 @@ We now want to consider commutative $C^*$-algebras.
 For this proof we require a set of lemmas.
 
 \begin{lemma}
-	If $a \in \algebra{A}$, $\algebra{A}$ a $C^*$-algebra, with $a = a^*$ then $\pi(a) = \|a\|$.
+	If $a \in \algebra{A}$, $\algebra{A}$ a $C^*$-algebra, with $a = a^*$ then $r(a) = \|a\|$.
 \end{lemma}
 
 \begin{proof}
-	Use $\pi(a) = \lim_{n \to \infty} \|a^n\|^{\frac{1}{n}}$.
+	Use $r(a) = \lim_{n \to \infty} \|a^n\|^{\frac{1}{n}}$.
 	Notice $\|a^2\| = \|a^* a \| = \|a\|^2$ and $\|a^4\| = \|(a^2)^* a^2\| = \|a^2\|^2 = \|a\|^4$ and likewise for all powers that are powers of $2$ we have $\|a^{2^n}\| = \|a\|^{2^n}$.
-	So $\pi(a) = \lim_{n \to \infty} \|a^{2^n}\|^{\frac{1}{2^n}} = \|a\|$ is the limit of the subsequence and therefore the limit of the sequence.
+	So $r(a) = \lim_{n \to \infty} \|a^{2^n}\|^{\frac{1}{2^n}} = \|a\|$ is the limit of the subsequence and therefore the limit of the sequence.
 \end{proof}
 
 \begin{remark}
-	In general, $\|a\| \neq \pi(a)$ if $a \neq a^*$ in a $C^*$-algebra, e.g.
+	In general, $\|a\| \neq r(a)$ if $a \neq a^*$ in a $C^*$-algebra, e.g.
 	$a = \qmatrix{0 & 1 \\ 0 & 0} \in M_2(\mathds{C})$.
-	But if $a^* a = a a^*$ ($a$ is normal), then $\|a\| = \pi(a)$.
+	But if $a^* a = a a^*$ ($a$ is normal), then $\|a\| = r(a)$.
 \end{remark}
 
 \begin{proof}
@@ -1155,7 +1155,7 @@ For this proof we require a set of lemmas.
 \begin{proof}
 	If $\algebra{A}$ is a $C^*$-algebra with norm $\| \cdot \|$, then for all $a \in \algebra{A}$ we have $\|a\| = \|a a^*\|^{\frac{1}{2}}$. Note that $a^*a$ is self-adjoint, so by the previous lemma we have
 	\begin{equation*}
-		\|a\| = \|a a^*\|^{\frac{1}{2}} = \pi(a^* a)^\frac{1}{2} = \sup_{\lambda \in \sigma(a^* a)} |\lambda|^{\frac{1}{2}}
+		\|a\| = \|a a^*\|^{\frac{1}{2}} = r(a^* a)^\frac{1}{2} = \sup_{\lambda \in \sigma(a^* a)} |\lambda|^{\frac{1}{2}}
 	\end{equation*}
 	and this only depends on the algebra structure, not its norm.
 \end{proof}
@@ -1172,11 +1172,11 @@ For this proof we require a set of lemmas.
 		\lambda \in \rho_\algebra{A}(a) \iff a - \lambda \in \inv(\algebra{A}) \iff \phi(a) - \lambda \in \inv(\algebra{B}) \iff \lambda \in \rho_\algebra{B}(\phi(a))
 	\end{equation*}
 	so $\rho_\algebra{A}(a) \subseteq \rho_\algebra{B}(\phi(a))$ and $\sigma_\algebra{A}(a) \supseteq \sigma_\algebra{B}(\phi(a))$.
-	It follows for the spectral radius: $\pi(\phi(a)) \leq \pi(a)$.
+	It follows for the spectral radius: $r(\phi(a)) \leq r(a)$.
 	As $\algebra{B}$ is a $C^*$-algebra, this implies
-	%$\|\phi(a)\|_\algebra{B} = \pi(\phi(a)) \leq \pi(a) \leq \|a\|_\algebra{A}$. %% WRONG => needs self-adjoint
+	%$\|\phi(a)\|_\algebra{B} = r(\phi(a)) \leq r(a) \leq \|a\|_\algebra{A}$. %% WRONG => needs self-adjoint
 	\begin{align*}
-		\|\phi(a)\|_\algebra{B}^2 &= \|\phi(a)^* \phi(a)\|_\algebra{B} = \|\phi(a^*a)\|_\algebra{B} = \pi(\phi(a^* a)) \\ &\leq \pi(a^* a) \leq \|a^* a\|_\algebra{A} \leq \|a^*\|_\algebra{A} \cdot \|a\|_\algebra{A} = \|a\|_\algebra{A}^2
+		\|\phi(a)\|_\algebra{B}^2 &= \|\phi(a)^* \phi(a)\|_\algebra{B} = \|\phi(a^*a)\|_\algebra{B} = r(\phi(a^* a)) \\ &\leq r(a^* a) \leq \|a^* a\|_\algebra{A} \leq \|a^*\|_\algebra{A} \cdot \|a\|_\algebra{A} = \|a\|_\algebra{A}^2
 	\end{align*}
 	and therefore $\|\phi(a)\|_\algebra{B} \leq \|a\|_\algebra{A}$.
 \end{proof}
@@ -1207,11 +1207,11 @@ For this proof we require a set of lemmas.
 		\item Assume that $\algebra{A}$ is unital, otherwise work in $\tilde{\algebra{A}}$. If $a$ is self-adjoint then $u = \exp(i a) = \sum_{n=0}^{\infty} \frac{i^n a^n}{n!} \in \mathcal{U}(\algebra{A})$ because $
 		\exp(i a)^* = \exp(- i a)$ and therefore $u^* u = \exp(-i a) \exp(i a) = \exp(0) = 1 = u u^*$.
 		Because of (i) we know $\sigma(u) \subseteq \unitcircle$.
-		Now, let $\lambda \in \sigma(u)$ and define $b = \sum_{n=1}^{\infty} \frac{i^n (a-\lambda)^n}{n!} = \exp(i(a = \lambda)) - 1$ as well as $c = \sum_{n = 1}^{\infty} \frac{i^n (a = \lambda)^{n-1}}{n!} \in \algebra{A}$ .
+		Now, let $\lambda \in \sigma(u)$ and define $b = \sum_{n=1}^{\infty} \frac{i^n (a-\lambda)^n}{n!} = \exp(i(a - \lambda)) - 1$ as well as $c = \sum_{n = 1}^{\infty} \frac{i^n (a - \lambda)^{n-1}}{n!} \in \algebra{A}$ .
 		Consider
 		\begin{align*}
 			\exp(i a) - \exp(i \lambda 1) &= (\exp(i (a - \lambda)) - 1)  \exp(i \lambda) = b \exp(i \lambda)\\
-			&= \left( \sum_{n = 1}^{\infty} \frac{i^n (a = \lambda)^n}{n!} \right) \exp(i \lambda) \\ 
+			&= \left( \sum_{n = 1}^{\infty} \frac{i^n (a - \lambda)^n}{n!} \right) \exp(i \lambda) \\ 
 			&= (a - \lambda) \left( \sum_{n = 1}^{\infty} \frac{i^n (a - \lambda)^{n-1}}{n!} \right) \exp(i \lambda)\\
 			&= (a - \lambda) c \exp(i \lambda)\text{.}
 		\end{align*}
@@ -1239,7 +1239,7 @@ For this proof we require a set of lemmas.
 \end{corollary}
 
 \begin{proof}
-	If $\algebra{A} \neq 0$ there is some self-adjoint non-zero element $a \in \algebra{A}$ so that $\pi(a) = \|a\| \neq 0$. But $\sigma(a) \subseteq \{ \chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}$.
+	If $\algebra{A} \neq 0$ there is some self-adjoint non-zero element $a \in \algebra{A}$ so that $r(a) = \|a\| \neq 0$. But $\sigma(a) \subseteq \{ \chi(a) \mid \chi \in \Omega(\algebra{A}) \} \cup \{0\}$.
 	%(with equality if $\algebra{A}$ is not unital, in the unital case $\sigma(a)$ is the first set).
 	But for this to be true there must exist a character $\chi \in \Omega(\algebra{A})$, so $\Omega(\algebra{A}) \neq \emptyset$.
 \end{proof}
@@ -1255,7 +1255,7 @@ For this proof we require a set of lemmas.
 		\item \textbf{$\Gamma$ is isometric}:
 		We have
 		\begin{equation*}
-			\|\Gamma(a)\|^2 = \|\Gamma(a)^* \Gamma(a)\| = \|\Gamma(a^* a)\| = \pi(a^* a) = \|a^* a\| = \|a\|^2
+			\|\Gamma(a)\|^2 = \|\Gamma(a)^* \Gamma(a)\| = \|\Gamma(a^* a)\| = r(a^* a) = \|a^* a\| = \|a\|^2
 		\end{equation*}
 		using our lemmas and the $C^*$-property.
 		\item \textbf{$\Gamma$ is surjective}:
