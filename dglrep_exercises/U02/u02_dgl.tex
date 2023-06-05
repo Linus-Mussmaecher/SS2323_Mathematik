@@ -1,0 +1,63 @@
+\documentclass[a4paper]{article}
+
+% --- LANGUAGE ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+
+% --- DATA ---
+
+\def\lecture{Repetitorium zu Differenzialgleichungen}
+\def\authors{Linus Mußmächer}
+\def\sheetNumber{02}
+\def\sumPoints{30} 
+
+% --- PREAMBLE ---
+\input{../../preambles/exercise_preamble.tex}
+
+\begin{document}
+
+\makeexheaderger
+
+\subsection{Erstes Integral}
+
+\begin{enumerate}[label=(\alph*)]
+    \item Das äquivalente System hat die Form
+    \begin{equation*}
+        \qmatrix{x' \\ y'} = \qmatrix{y \\ -\cos(x)}
+    \end{equation*}
+    \item Ja, den $f(x,y)$ ist stetig differenzierbar und somit stetig und lokal lipschitzstetig. Der globale Existenz- und Eindeutigkeitssatz von Picard-Lindelöf liefert somit die Existenz einer maximalen, eindeutigen Lösung zu jedem Anfangswert.
+    \item Ja, denn $f(x,y) = (y, -\cos(x))^T$ ist linear beschränkt mit $a(t) = 1$ und $b(t) = 1$:
+    \begin{align*}
+        \|f(x,y)\| &= \|(y, -\cos(x))^T\| \leq \| (y,0) \| + \|(0, \cos(x))\| = |y| + |\cos(x)|\\ &\leq 1 \cdot \sqrt{x^2 + y^2} + 1 = a(t) \cdot \|(x,y)^T\| + b(t)\text{.}
+    \end{align*}
+    Der Satz von der linear beschränkten rechten Seite zeigt nun, dass jede maximale Lösung global, also auf ganz $\mathds{R}$, existiert.
+    \item Wir berechnen zuerst den Gradienten von $S$:
+    \begin{equation*}
+        \nabla S = \qmatrix{2 \cos (x) \\ 2 y} = 2 \cdot \qmatrix{\cos(x) \\ y}\text{.}
+    \end{equation*}
+    Dann folgt
+    \begin{equation*}
+        \langle \nabla S(x,y), f(x,y) \rangle = 2 \cdot (\cos(x) \cdot y + y \cdot (-\cos(x))) = 0
+    \end{equation*}
+    und da für jeden möglichen Anfangswert eine Lösung existiert handelt es sich somit um ein erstes Integral.
+\end{enumerate}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
