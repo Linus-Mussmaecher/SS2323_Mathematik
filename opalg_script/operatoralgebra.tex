@@ -1817,6 +1817,134 @@ $M(\algebra{A})$ is the largest unital $C^*$-algebra that contains $\algebra{A}$
 	\end{enumerate}
 \end{proof}
 
+\subsection{Approximate units}
+
+\begin{definition}
+	Let $\algebra{A}$ be a Banach algebra. An \textbf{approximate unit} for $\algebra{A}$ is a net $(e_i)_{i \in I} \subseteq \algebra{A}$ such that $\|e_i\| \leq 1$ and $e_i a \to a, a e_i \to a$ for all $a \in \algebra{A}$. If $\algebra{A}$ is a $C^*$-algebra, then we (usually) also assume that $e_i \geq 0$ and $(e_i)$ is increasing.
+\end{definition}
+
+\begin{example}
+	Let $\algebra{A} = C_0(X)$ be a commutative $C^*$-algebra ($X$ locally compact and Hausdorff).
+	Then a net $(f_i)_{i \in I}$ is an approximate unit if and only if $1 \geq f_i(x) \geq f_j(x) \geq 0$ for all $x \in X$ and $j \leq i$ and $f_i g \to g$ for al $g \in C_0(X)$, that is $f_i(x) g(x) \to g(x)$ uniformly on $X$.
+	This is equivalent to $f_i(x) \to 1$ uniformly on compacts.
+\end{example}
+
+\begin{example}
+	Let $\algebra{A} = \mathcal{K}(H)$, the span of the compact operators on a Hilbert space $H$, and use physics notation: $|\xi \rangle \langle \eta|(\zeta) = \xi \langle \eta, \zeta\rangle$. 
+	Let $(\xi_i)_{i \in I} \subseteq H$ be an orthonormal basis.
+	For each $F \subseteq I$ finite we define
+	\begin{equation*}
+		e_F \coloneq \sum_{i \in F} | \xi_i \rangle \langle \xi_i | \in \mathcal{K}(H)
+	\end{equation*}
+	In particular, $0 \leq e_F \leq 1$ (because $\|e_F\| \leq 1$) and $e_F \leq e_G$ if $F \subseteq G$.
+	Then $(e_F)_{F \subseteq I \text{ finite}}$, if ordered by size, is an approximate unit of for $\mathcal{K}$.
+
+	If $H$ is separable, we could also take $e_n = \sum_{i = 1}^n | \xi_i \rangle \langle \xi_i |$.
+	Just check that $e_F(\zeta) = \sum_{i \in F} \xi_i \langle  \xi_i, \zeta \rangle \to \zeta$, so $e_F \to 1$ strongly in $B(H)$ (the bounded operators).
+	Then it follows $e_F a \to a$ for al $a \in \mathcal{K}(H)$ and $a e_F \to a$ likewise.
+\end{example}
+
+\begin{remark}
+	If $\algebra{A}$ already has a unit $1 \in \algebra{A}$, then $(e_i) \subseteq \algebra{A}$ is an approximate unit iff $e_i \to 1$ (by the norm) and $0 \leq e_i \leq e_j \leq 1$ for $i \leq j$.
+
+	In particular, the constant net $(1)$ is an approximate unit in any unital Banach algebra.
+\end{remark}
+
+\begin{theorem}
+	Every $C^*$-algebra has an approximate unit. Moreover if $\algebra{A}$ is a $C^*$-algebra and
+	\begin{equation*}
+		\Lambda \coloneq \{a \in \algebra{A}_+ \mid \|a\| < 1\}
+	\end{equation*}
+	then $\Lambda$ is directed with the canonical order of $\algebra{A}_+ \subseteq \algebra{A}_{\text{self-adjoint}}$ and the canonical net 
+	\begin{equation*}
+		(e_\lambda)_{\lambda \in \Lambda} e_\lambda = \lambda
+	\end{equation*}
+	is an approximate unit.
+\end{theorem}
+
+\begin{proof}
+	$\Lambda$ is directed. To prove: For every $a,b \in \Lambda$ there is a $c \in \Lambda$ such that $a,b \leq c$.
+	Indeed, if $a \in \algebra{A}_+$, then $1 + a \geq 1$ in $\tilde{\algebra{A}} = \algebra{A} + \mathds{C} \cdot 1$.
+	Here, we work in the unitization for a moment, but do not assume we have a unit in $\algebra{A}$!
+	In particular, $1 + a \in \inv (\tilde{\algebra{A}})$ and $a \cdot (1 + a)^{-1} \in \algebra{A}$ as $A \trianglelefteq \tilde{A}$.
+
+	Notice: $ a (1 + a)^{-1} = (a + 1 - 1)(1 + a)^{-1} = 1 - (1+a)^{-1}$ in the unitization.
+
+	Claim: For $a, b \in \algebra{A}_+$ and $a \leq b$ we have $a (1 + a)^{-1} \leq b (1+b)^{-1}$.
+	This should be true because $a (1 + a)^{-1} = f(a)$ where $f: [0, \infty) \to [0,1), x \mapsto \frac{x}{x+1} = x (1+x)^{-1}$ is increasing.
+	$f$ is a homeomorphism with $g = f^{-1}: [0,1) \to [0, \infty)$ given by $g(x) = \frac{x}{x-1}$.
+
+	Indeed, take $0 \leq a \leq b$ then $1 + a \leq 1 + b$ so $(1 + b)^{-1} \leq (1 + a)^{-1}$ and therefore $a(1+a)^{-1} = 1 - (1 + a)^{-1} \leq 1 - (1 + b)^{-1} = b(1+b)^{-1}$.
+	Now observe that if $a \in \algebra{A}_+$ then $f(a) = a(1+a)^{-1} \in \Lambda$ because $\|f\|_{\sigma(a) \subseteq [0, \infty)}$ and thus $0 \leq f < 1$.
+	So we get an increasing map $\algebra{A}_+ \to \Lambda, a \mapsto a(1+a)^{-1}$.
+	Now suppose $a,b \in \Lambda$, consider $g = f^{-1}: [0,1) \to [0, \infty), x \mapsto \frac{x}{x-1}$.
+	Define $a' \coloneqq g(a), b' \coloneqq g(b)$ and let $c \coloneqq (a' + b')(1 + a' + b')^{-1} = f(a' + b')$.
+	Then $c \in \Lambda$ and since $a' \leq a' + b'$ we have $a = f(a') \leq f(a' + b') = c$ and likewise $b \leq c$.
+	This shows that $\Lambda$ is a directed set.
+
+	Now we have to check that $(e_\lambda)_{\lambda \in \Lambda}$ with $e_\lambda = \lambda$ is an approximate unit for $\algebra{A}$.
+	Notice that $(e_\lambda)$ is increasing and $e_\lambda = \lambda \geq 0$ and $\|e_\lambda\| < 1$ for all $\lambda$.
+	So we need only prove $e_\lambda \cdot a \to a \leftarrow a \cdot e_\lambda$ for every $a \in \algebra{A}$.
+	But using the involution, these two are equivalent:
+	\begin{equation*}
+		(e_\lambda a) \to a \iff (e_\lambda a)^* \to a^* \iff a^* e_\lambda \to a \iff a^* e_\lambda \to a^*
+	\end{equation*}
+	It is even enough to prove $a e_\lambda \to a$ for only $a \in \Lambda$ because $\Span \Lambda = \Span(\algebra{A}_+) = \algebra{A}$.
+	Let $a \in \Lambda$, in particular $a \in \algebra{A}_+$.
+	Consider 'its' Gelfand representation $ \phi: C^*(a) \to C_0(X)$ and let $f = \phi(a) \in C_0(X)$.
+	This function fulfils $0 \leq f(x) < 1$ for all $x \in X$ because it comes from $a \in \algebra{A}_+$.
+
+	Let furthermore $\epsilon > 0$ and $K \coloneq \{x \in X \mid |f(x)| \geq \epsilon \} \subseteq X$ compact.
+	By Uryson's Lemma, we have a $g \in C_0(X), g: X \to [0,1]$ such that $g(x) = 1$ for all $x \in K$.
+	Next, choose $\delta > 0$ with $\delta < 1$ and $1 - \delta < \epsilon$.
+	Then $g_\delta = \delta \cdot g \leq \delta$ and therefore
+	\begin{align*}
+		\|f - g_\delta \cdot f\| &= \|f - \delta g f \| = \sup_{x \in X} \|f(x)\| \cdot \| 1 - \delta g(x) \| \\ &\leq \max \{ \sup_{x \in K} \|f(x)\| \cdot \|1 - \delta g(x) \|, \sup_{x \notin K} \|f(x)\| \cdot \|1 - \delta g(x) \| \} \\ &\leq \max\{ \epsilon, 1 - \delta \}  \leq \epsilon
+	\end{align*}
+	Now let $b \coloneq \phi^{-1}(g_\delta) \in \algebra{A}_+$ with $\|b \| < 1$ and $\| a - ba \| < \epsilon$.
+
+	This shows that for any $a \in \Lambda$ we can find $\lambda_0 = b \in \Lambda$ such that $\|a - e_{\lambda_0} a \| < \epsilon$.
+	If now $\lambda \in \Lambda, \lambda \geq \lambda_0$ we have $e_{\lambda_0} \leq e_\lambda$, so $1 - e_\lambda \leq 1 - e_{\lambda_0}$ (in $\tilde{\algebra{A}}$) and therefore $a (1 - e_\lambda ) a \leq a (1 - e_{\lambda_0}) a$ (*) (by conjugation property and because $a$ is self-adjoint).
+	But then
+	\begin{align*}
+		\|a - e_\lambda a\|^2 \|(1 - e_\lambda a)\|^2 &= \|\overbrace{\underbrace{(1 - e_\lambda)^{\frac{1}{2}} \cdot (1-e_\lambda)^{\frac{1}{2}}}_{\in \tilde{\algebra{A}}} a}^{\in \algebra{A} \trianglelefteq \tilde{\algebra{A}}} \|
+		\leq \|(1 - e_\lambda)^{\frac{1}{2}} a \|^2 \\
+		&\overset{(*)}{\leq} \| a (1 - e_\lambda) a \| \leq \| a (1 - e_{\lambda_0}) a \| \overset{\|a\| \leq 1}{\leq} \|(1 - e_{\lambda_0}) a \|\\
+		&= \|a - e_{\lambda_0}\| < \epsilon
+	\end{align*}
+	so $e_\lambda a \to a$.
+\end{proof}
+
+\begin{definition}
+	In general, $C^*$-algebras do not admit a sequential approximate unit.
+
+	We say that a $C^*$-algebra $\algebra{A}$ is $\sigma$-unital if there exists such a sequential approximate unit $(e_n)_{n \in \mathds{N}}$.
+\end{definition}
+
+\begin{example}
+	$\algebra{A} = C_0(X)$ is $\sigma$-unital if and only if $X$ is $\sigma$-compact: $X = \bigcup_{n = 1}^\infty K_n$ where $K_n \subseteq X$ are compact spaces.
+\end{example}
+
+\section{Ideals in $C^*$-algebras}
+
+\begin{theorem}
+	Let $\algebra{A}$ be a $C^*$-algebra and $L \subseteq \algebra{A}$ a left closed ideal. 
+	Then there exists a net $(u_\lambda)_{\lambda \in \Lambda} \subseteq A_{+, 1} \cap L$ (that is, elements with $0 \leq u_\lambda$ and $\|u_\lambda\| \leq 1$) such that $a = \lim_\lambda a u_\lambda$ for all $a \in L$.
+\end{theorem}
+
+\begin{proof}
+	Set $B = L \cap L^*$.
+	This is clearly a $C^*$-subalgebra.
+	There is now an approximate unit $(u_\lambda) \subseteq B_{+,1} \subseteq A_{+,1}$ for $B$.
+	Let $a \in L$.
+	Then $a^* a \in L \cap L^* \in B$ and we have $\lim_\lambda a^* a u_\lambda = a^* a = \lim_\lambda u_\lambda a$.
+	It follows that
+	\begin{align*}
+		\lim_\lambda \|a - a u_\lambda\|^2 &= \lim_\lambda \|(a - a u_\lambda)^* (a - a u_\lambda)\| = \lim_\lambda \|a^* a - a^* a u_\lambda - u_\lambda a^* a - u_\lambda a^* a u_\lambda\|\\
+		&\leq \lim_\lambda \| a^* a - a^* a u_\lambda \| + \lim_\lambda \|u_\lambda\| \cdot \| a^* a - a^* a u_\lambda\| = 0
+	\end{align*}
+\end{proof}
+
 
 
 
