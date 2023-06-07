@@ -398,6 +398,87 @@ In the following, $\mathds{D}$ is the \textbf{closed} unit circle.
 	If $\phi: C(Y) \to C(X)$ is a unital $^*$-homomorphism, we get a continuous map $f: X \to Y$ by duality.
 \end{remark}
 
+\section{More multiplier algebra}
+
+We continue to look at the multiplier algebra. 
+\begin{equation*}
+	M(\algebra{A}) = \{ \mu = (L,R) \in L(\algebra{A}) \times L(\algebra{A}) \mid a L(b) = R(a) b, L(ab) = L(a)b, R(ab) = a R(b)\}
+\end{equation*}
+If $\algebra{A}$ is a $C^*$-algebra, $\algebra{A}$ embeds into $M(\algebra{A})$ as an essential ideal.
+If $A$ embeds into a $C^*$-algebra $B$ as an essential ideal, then $B \to M(\algebra{A}), b \to \mu_b$ with $(a \mapsto ba, a \mapsto ab)$ is an isomorphism.
+
+We also define the \textbf{strict topology} on $M(\algebra{A})$ as the smallest topology that makes the map $a \mapsto \mu \cdot a, a \mapsto \mu \cdot a$ norm-continuous on $\algebra{A} \to \algebra{A}$.
+So if $(\mu_i) \subseteq M(\algebra{A})$ is a net, then $\mu_i \to \mu \in M(\algebra{A})$ if and only if $\mu_i a \to \mu a$ and $a \mu_i \to a \mu$ for all $a \in \algebra{A}$.
+
+\begin{remark}
+	Writing $0 \leq a \leq 1$ in a $C^*$-algbra means $a \geq 0$, so $\sigma(a) \subseteq [0, \infty)$ and $a \leq 1$ means $(1 - a)$ is positive in $\tilde{\algebra{A}}$ or $M(\algebra{A})$ which is equivalent to $\|a\| \leq 1$.
+
+	All of this is equivalent to $\sigma(a) \subseteq [0,1]$.
+\end{remark}
+
+\underline{Relation with approximate units}: If $(e_i) \subseteq A_{+, 1}$ is an increasing net $(0 \leq e_i \leq 1)$ then $(e_i)$ is an approximate unit iff $e_i \to 1$ (strictly) in $M(\algebra{A})$.
+
+By definition this means $e_i a \xrightarrow{\|\cdot\|} a$, $a \cdot e_i \xrightarrow{\|\cdot\|} a$.
+
+\subsection{Non-degeneratre $^*$-homomorphisms}
+
+\begin{definition}
+	Let $\pi: \algebra{A} \to M(\algebra{B})$ a $^*$-homomorphism. We say that $\pi$ is \textbf{non-degenerate} if $\closure{\Span \pi(\algebra{A}) \cdot B} = B$.
+\end{definition}
+
+\begin{lemma}
+	Let $\pi: \algebra{A} \to M(\algebra{B})$ be a $^*$-homomorphism. The following are equivalent:
+	\begin{enumerate}
+		\item $\pi$ is non-degenerate.
+		\item $\pi(e_i) \to 1$ (strictly) in $M(B)$ if $(e_i)$ is some approximate unit in $\algebra{A}$.
+		\item $\pi$ extends to a strictly continuous unital $^*$-homomorphism $\tilde{\pi}: M(\algebra{A}) \to M(\algebra{B})$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}~
+	\begin{enumerate}
+		\item $\then$ (ii): Let $(e_i)$ be an approximate unit. 
+		Prove $\pi(e_i) \to 1$ (strictly) in $M(\algebra{B})$, that is $\pi(e_i) b \to b$ for all $b \in \algebra{B}$.
+		Since $(e_i)$ is bounded, it is enough to show that $\pi(e_i) b \to b$ for all $b \in \pi(A) B$ as this is dense in $B$.B
+		ut if $b = \pi(a) c$ for $a \in \algebra{A}, c \in \algebra{B}$, then $\pi(e_i) b = \pi(e_i) \pi(a) c = \pi(e_i a) c \to \pi(a) c = b$ because $\pi$ is norm-continuous and $e_i a \to a$.  
+		\item $\then$ (iii): We want to extend $\pi$ to $\tilde{\pi}: M(A) \to M(B)$.
+		We need $\tilde{\pi}$ such that 
+		\begin{equation*}
+			\tilde{\pi}(\mu) \pi(a) = \tilde{\pi}(\mu) \tilde{\pi}(a)  \tilde{\pi}(\mu \cdot a) = \pi(\mu \cdot a)\text{.}
+		\end{equation*}
+		Therefore, define the multiplier $\tilde{\pi}(\mu)$ just on $\pi(\algebra{A}) \algebra{B}$ by the mappings
+		\begin{align*}
+			L(\pi(a) b) = \tilde{\pi}(\mu) \cdot (\pi(a) b) &= \pi(\mu a) \cdot b \in \algebra{B}\\
+			R(\pi(a) b) = (\pi(a) b) \cdot \tilde{\pi}(\mu) &= b \pi(a \mu) \in \algebra{B} \text{.}
+		\end{align*}
+		These morphisms are certainly linear.
+		By (ii), notice that $\closure{\pi(\algebra{A}) \algebra{B}} = \algebra{B}$.
+		So the above defines morphism on all of $\algebra{B}$ by continuous extension.
+
+		We need to prove: $L,R$ are well-defined and extend to $\algebra{B}$ and $\mu = (L,R)$ is a multiplier of $\algebra{B}$.
+
+		Claim:
+		\begin{equation*}
+			\| \sum_{i=0}^n \pi(\mu \cdot a_i) \cdot b_i \| \leq \|\mu \| \cdot \| \sum_{i=0}^n \pi(a_i) b_i \|
+		\end{equation*}
+		for all sequences $(a_i) \subseteq \algebra{A}$ and $(b_i) \subseteq \algebra{B}$.
+		% Consider
+		% \begin{align*}
+		% 	\left\| \sum_{i=0}^{n} \pi(\mu a_i) b_i  \right\|^2  &= \left\| \sum_{i,j = 0}^n b_i^* \pi(\mu a_i)^* \pi(\mu a_j) b_j \right\| \\
+		% 	&= \left\| \sum_{i,j = 0}^{n} b_i^* \pi(a_i^* \mu^* \mu a_j) b_j \right\|
+		% \end{align*}
+		% Idea: $a^* \mu^* \mu a \leq \|\mu\|^* a^* a$ in the multiplier of $\algebra{A}$ because $\mu^* \mu \leq \|\mu\|^2 \cdot 1$ (think of them as functions).
+		% But $a_i^* \mu^* \mu a_j \leq \|\mu\|^2 a_i^* a_j$ does not even make sense because $a_i^* a_j$ might not be self-adjoint.
+		% Better way:
+		To prove that $L$ is well-defined compute $\tilde{\pi} \pi(a) b = \pi(\mu a) b$.
+		\begin{equation*}
+			\pi(\mu a) b = \lim_i \pi(\mu e_i a) b = \lim_i \pi(\mu e_i) \pi(a) b
+		\end{equation*}
+		This proves well-definedness, because if the right sides are equal (multiple ways to write $\pi(a)b$), then the left side, $\tilde{\pi}(\mu) \pi(a) b$ must also be equal (for these multiple representations).
+
+		So $L$ is well-defined. 
+	\end{enumerate}
+\end{proof}
 
 \end{document}
 
