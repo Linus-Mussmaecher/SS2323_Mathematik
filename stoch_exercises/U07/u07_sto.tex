@@ -20,28 +20,58 @@
 
 \subsection{Zentralübung}
 
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
     \item Es ist 
     \begin{equation*}
         |Y_n| = \left|Y_n - \frac{1}{n} + \frac{1}{n}\right| \leq \left| Y_n - \frac{1}{n} \right| + \left| \frac{1}{n} \right| = |Y_n - \mathds{E}[Y_n]| + \frac{1}{n}\text{.}
     \end{equation*}
-    \item Es sei $\epsilon > 0$ beliebig aber fest gewählt. Wegen $|Y_n - \mathds{E}[Y_n]| + \frac{1}{n} \geq |Y_n| = |X_n - X|$ gilt $|X_n - X| \geq \epsilon \then |Y_n - \mathds{E}[Y_n]| + \frac{1}{n} \geq \epsilon$, also 
+    \item Es sei $\epsilon > 0$ beliebig aber fest gewählt.
+    Aufgrund von $\frac{1}{n} \to 0$ existiert ein $N \in \mathds{N}$ mit $\frac{1}{n} < \frac{\epsilon}{2}$ für alle $n \geq N$.
+    Wegen $|Y_n - \mathds{E}[Y_n]| + \frac{1}{n} \geq |Y_n| = |X_n - X|$ gilt $|X_n - X| \geq \epsilon \then |Y_n - \mathds{E}[Y_n]| + \frac{1}{n} \geq \epsilon$, also 
     \begin{align*}
-        P(|X_n - X| \geq \epsilon) \leq P(|Y_n - \mathds{E}[Y_n]| \geq \epsilon - \frac{1}{n}) 
+        P(|X_n - X| \geq \epsilon) &\leq P(|Y_n - \mathds{E}[Y_n]| + \frac{1}{n} \geq \epsilon - \frac{1}{n}) = P(|Y_n - \mathds{E}[Y_n]| \geq \frac{\epsilon}{2}) \\
+        &\leq Var(Y_n) \cdot \left(\frac{2}{\epsilon}\right)^2 = \frac{(\epsilon \sigma)^2}{4n} \to 0
     \end{align*}
+    da $\epsilon, \sigma$ fest und $\frac{1}{n} \to 0$.
+    Somit ist $X_n$ stochastisch konvergent gegen $X$.
 \end{enumerate}
 
 \subsection{}
 
-Viel, Diagramm machen
-
 \subsection{}
 
 
 \subsection{}
 
-Ganz cool. Stochastische Konvergenz nachsehen.
-
+\begin{enumerate}[label=(\alph*)]
+    \item Wir zeigen die drei Metrik-Eigenschaften:
+    \begin{enumerate}[label=(\roman*)]
+        \item $\since$: Angenommen, es ist $X = Y$ $\mathds{P}$ fast-sicher, d.h. $X$ und $Y$ unterscheiden sich nur auf einer Nullmenge $N \subseteq \mathds{R}$. Dann ist
+        \begin{align*}
+            d(X,Y) &= \mathds{E}\left[\frac{|X-Y|}{1 + |X-Y|}\right] = \int_\mathds{R} \frac{|X-Y|}{1 + |X-Y|} d\mathds{P}\\
+            &= \int_{\mathds{R} \setminus N} \frac{|X-Y|}{1 + |X-Y|} d\mathds{P} = \int_{\mathds{R} \setminus N} \frac{0}{1 + 0} d\mathds{P} = 0
+        \end{align*}
+        $\then$: Angenommen, es ist $X \neq Y$ $\mathds{P}$ fast-sicher.
+        Dann existiert ein $\epsilon > 0$ mit $\mathds{P}(|X - Y| \geq \epsilon) = \lambda > 0$, d.h. es existiert eine Menge $K \subseteq \mathds{R}$ mit Maß $\lambda > 0$ und $|X-Y| \geq \epsilon$ auf $K$.
+        Folglich gilt auf $K$ auch $\frac{|X-Y|}{1+ |X-Y|} \geq \frac{\epsilon}{1 + 0} = \epsilon$ und demnach
+        \begin{align*}
+            d(X,Y) &= \mathds{E}\left[ \frac{|X-Y|}{1+|X-Y|} \right] = \int_\mathds{R} \frac{|X-Y|}{1+|X-Y|} d\mathds{P} \\
+            &\geq \int_K \frac{|X-Y|}{1+|X-Y|} d\mathds{P} \geq \epsilon \cdot \lambda > 0
+        \end{align*}
+        und somit $d(X,Y) \neq 0$.
+        \item Die Symmetrie folgt direkt aus der Symmetrie von $|X-Y|$.
+        \item Wir zeigen zuerst $\frac{|x-y|}{1 + |x-y|} + \frac{|y-z|}{1 + |y-z|} \geq \frac{|x-z|}{1+|x-z|}$ für reelle Zahlen $x,y,z \in \mathds{R}$ (man betrachte entsprechende Aufgaben aus der Analysis):
+        \begin{align*}
+            \frac{|x-y|}{1 + |x-y|} + \frac{|y-z|}{1 + |y-z|}  &\geq \frac{|x-y|}{1 + |x-y| + |y-z|} + \frac{|y-z|}{1 + |y-z| + |x-y|}\\
+            &= \frac{|x-y| + |y-z|}{1 + |x-y| + |y-z|}\\
+            &= 1 - \frac{1}{1 +|x-y| + |y-z| } \geq 1 - \frac{1}{1+|x-z|}\\
+            &= \frac{|x-z|}{1 + |x-z|}\text{.}
+        \end{align*}
+        Somit gilt eine entsprechende Beziehung auch für reelle Zufallsvariablen und (aufgrund der Monotonie des Erwartungswertes) auch für die Erwartungswerte und damit für $d$.
+    \end{enumerate}
+    Somit ist $d$ eine Metrik auf dem Raum der reellen Zufallsvariablen.
+    \item 
+\end{enumerate}
 
 
 

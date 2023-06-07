@@ -42,7 +42,22 @@
     und da für jeden möglichen Anfangswert eine Lösung existiert handelt es sich somit um ein erstes Integral.
 \end{enumerate}
 
+\subsection{Mehr erste Integrale}
 
+\begin{enumerate}[label=(\alph*)]
+    \item Es ist $E(x)$ nur von der Norm $\|x\|$ abhängig, d.h. es gilt $E(x) = \tilde{E}(\|x\|)$ für ein (differenzierbares) $\tilde{E}: \mathds{R^+_0} \to \mathds{R}$. Dann folgt für die $k$-te partielle Ableitung von $E$ am Punkt $x \neq 0$:
+    \begin{align*}
+        \frac{\partial}{\partial x_k} E (x) &= \frac{\partial}{\partial x_k} \tilde{E}(\|x\|) = \tilde{E}'(\|x\|) \frac{\partial}{\partial x_k} \|x\| = \tilde{E}'(\|x\|) \frac{\partial}{\partial x_k} \sqrt{\sum_{i = 0}^n x_i} \\
+        &= \tilde{E}'(\|x\|) \frac{1}{2 \sqrt{\sum_{i = 0}^n x_i}}  \cdot 2 x_k =  \frac{\tilde{E}'(\|x\|)}{\|x\|} \cdot x_k
+    \end{align*}
+    und somit $\nabla E(x) = \frac{\tilde{E}'(\|x\|)}{\|x\|} x$. Dies zeigt 
+    \begin{equation*}
+        \langle \nabla E(x), \nu(x) \rangle = \frac{\tilde{E}'(\|x\|)}{\|x\|} \langle x, \nu(x) \rangle = 0
+    \end{equation*}
+    für alle $x \in \mathds{R}^n \setminus \{0\}$ nach Voraussetzung. Dies zeigt nach Satz 5.4, dass $E$ ein erstes Integral der DGL ist.
+    \item Die Phasenkurven des Systems verlaufen innerhalb der Niveaumengen \textit{aller} Funktionen $E$, die die Bedingung aus (a) erfüllen, insbesondere den kreislinienförmigen Niveaumengen von $E(x) = \|x\|$. Man beachte, dass die Phasenkurven selbst nicht notwendigerweise Kreislinien sein müssen, nur Teilmengen solcher.
+    Da die Niveaumengen jeder anderen Funktion $E$ mit Bedingungen aus (a) stets nur Kreisringe (also echte Obermengen der Kreislinien, die ja minimal dicke Kreisringe sind) sein können, ist keine genauere Bestimmung der Phasenkurven durch die Aussage (a) möglich.
+\end{enumerate}
 
 
 \end{document}
