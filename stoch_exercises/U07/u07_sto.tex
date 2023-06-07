@@ -1,0 +1,71 @@
+\documentclass[a4paper]{article}
+
+% --- DATA ---
+
+\def\lecture{Stochastik 2}
+\def\authors{Linus Mußmächer}
+\def\sheetNumber{06}
+%\def\sumPoints{30} 
+
+% --- PREAMBLE ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+\input{../../preambles/exercise_preamble.tex}
+
+% --- DOCUMENT ---
+
+\begin{document}
+
+\makeexheaderger
+
+\subsection{Zentralübung}
+
+\begin{enumerate}
+    \item Es ist 
+    \begin{equation*}
+        |Y_n| = \left|Y_n - \frac{1}{n} + \frac{1}{n}\right| \leq \left| Y_n - \frac{1}{n} \right| + \left| \frac{1}{n} \right| = |Y_n - \mathds{E}[Y_n]| + \frac{1}{n}\text{.}
+    \end{equation*}
+    \item Es sei $\epsilon > 0$ beliebig aber fest gewählt. Wegen $|Y_n - \mathds{E}[Y_n]| + \frac{1}{n} \geq |Y_n| = |X_n - X|$ gilt $|X_n - X| \geq \epsilon \then |Y_n - \mathds{E}[Y_n]| + \frac{1}{n} \geq \epsilon$, also 
+    \begin{align*}
+        P(|X_n - X| \geq \epsilon) \leq P(|Y_n - \mathds{E}[Y_n]| \geq \epsilon - \frac{1}{n}) 
+    \end{align*}
+\end{enumerate}
+
+\subsection{}
+
+Viel, Diagramm machen
+
+\subsection{}
+
+
+\subsection{}
+
+Ganz cool. Stochastische Konvergenz nachsehen.
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
