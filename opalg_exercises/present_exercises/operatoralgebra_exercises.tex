@@ -449,7 +449,7 @@ By definition this means $e_i a \xrightarrow{\|\cdot\|} a$, $a \cdot e_i \xright
 		Therefore, define the multiplier $\tilde{\pi}(\mu)$ just on $\pi(\algebra{A}) \algebra{B}$ by the mappings
 		\begin{align*}
 			L(\pi(a) b) = \tilde{\pi}(\mu) \cdot (\pi(a) b) &= \pi(\mu a) \cdot b \in \algebra{B}\\
-			R(\pi(a) b) = (\pi(a) b) \cdot \tilde{\pi}(\mu) &= b \pi(a \mu) \in \algebra{B} \text{.}
+			R(b \pi(a)) = (b \pi(a)) \cdot \tilde{\pi}(\mu) &= b \pi(a \mu) \in \algebra{B} \text{.}
 		\end{align*}
 		These morphisms are certainly linear.
 		By (ii), notice that $\closure{\pi(\algebra{A}) \algebra{B}} = \algebra{B}$.
@@ -474,9 +474,50 @@ By definition this means $e_i a \xrightarrow{\|\cdot\|} a$, $a \cdot e_i \xright
 		\begin{equation*}
 			\pi(\mu a) b = \lim_i \pi(\mu e_i a) b = \lim_i \pi(\mu e_i) \pi(a) b
 		\end{equation*}
-		This proves well-definedness, because if the right sides are equal (multiple ways to write $\pi(a)b$), then the left side, $\tilde{\pi}(\mu) \pi(a) b$ must also be equal (for these multiple representations).
+		So $L$ is well-defined, because we can write $L(\pi(a) b) = \lim_i \pi(\mu e_i) (\pi(a) b)$ as directly dependent on $\pi(a) b$ (so different representations of $\pi(a) b$ will yield the same result).
+		Analogously, we have $R(b\pi(a)) = b \pi(a) \lim_i \pi(e_i \mu)$.
+		Now we can compute
+		\begin{align*}
+			\|\tilde{\pi}(\mu) \pi(a) b\|^2 &= \| b^* \pi(\mu a)^* \pi(\mu a) b\|  = \| b^* \pi(a^* \mu^* \mu a) b \| \leq \| b^* \pi(\| \mu \|^2 a^* a) b \| \\ &= \|\mu\|^2 \|b^* \pi(a)^* \pi(a) b\| = \|\mu\|^2 \|\pi(a) b\|^*
+		\end{align*}
+		Now we show that $\tilde{\pi}$ is actually a multiplier,
+		% \begin{align*}
+		% 	x L(y) &= \pi(a_1) b_1 L(\pi(a_2) b_2) = \pi(a_1) b_1 \lim_i \pi(\mu e_i) \pi(a_2) b_2 = \pi(a_1) b_1 \mu \pi(a_2) b_2 \\
+		% 	&= \pi(a_1) b_1 \lim_i \pi(e_i \mu) \pi(a_2) b_2 = R(\pi(a_1) b_1) \pi(a_2) b_2 = R(x) y \text{.}
+		% \end{align*}
+		let $x = b_1 \pi(a_1)$ and $y = \pi(a_2) b_2$ and consider
+		\begin{align*}
+			x L(y) &= b_1 \pi(a_1) \pi(\mu a_2) b_2 = b_1 \pi(a_1 \mu a_2) b_2 = b_1 \pi(a_1 \mu) \pi(a_2) b_2 = R(x) y
+		\end{align*}
+		This proves the last multiplier property, the others follow.
 
-		So $L$ is well-defined. 
+		You can repeat this for $R$. So we have a well-defined map $\tilde{\pi}: M(\algebra{A}) \to M(\algebra{B})$.
+		We need to prove that this is a strictly continuous $^*$-homomorphism extending $\pi$.
+		Calculate:
+		\begin{equation*}
+			\tilde{\pi}(1) \pi(a) b = \pi(1 \cdot a) b = \pi(a) b
+		\end{equation*}
+		so $\tilde{\pi}(1) = 1$ and 
+		\begin{equation*}
+			\tilde{\pi}(\mu) \cdot \tilde{\pi}(\nu) \pi(a) b = \tilde(\pi)(\mu) \pi(\nu a) b = \pi(\mu \cdot \nu \cdot a) b = \tilde{\pi}(\mu \cdot \nu) \pi(a) b
+		\end{equation*}
+		so $\tilde{\pi}(\mu) \cdot \tilde{\pi}(\nu) = \tilde{\pi}(\mu \cdot \nu)$.
+		To prove that $\tilde{\pi}$ is strictly continuous, take $\mu_i \to \mu$ (strictly) and show
+		\begin{equation*}
+			\tilde{\pi}(\mu_i) \pi(a) b = \pi(\mu_i a) b \xrightarrow{\| \cdot \|} \pi(\mu a) b = \tilde{\pi}(\mu) \pi(a) b
+		\end{equation*}
+		Now use the Cohen-Hilbert Factorization theorem:
+		\begin{quote}
+			If $E$ is a Banach right (or left) module over some Banach algebra $\algebra{A}$ and $\algebra{A}$ has an approximate unit $(e_i) \subseteq A_1$, $\|e_i\| \leq 1$, then $\closure{\Span E \cdot \algebra{A}} = E \cdot \algebra{A} = \{x \cdot a \mid x \in E, a \in \algebra{A}$.
+		\end{quote}
+		Apply this for $E = \algebra{B}$ (view it as a left $\algebra{A}$-module via $\pi$): $a \cdot b \coloneq \pi(a) b$.
+		This shows $\closure{\Span} \pi(\algebra{A}) \algebra{B} = \pi(\algebra{A}) \algebra{B}$. 
+		\item $\then$ (i): Suppose $\algebra{A} \to M(\algebra{B})$ extends to $\tilde{\pi}: M(\algebra{A}) \to M(\algebra{B})$ (strictly continuous $^*$ homomorphism).
+		\item But then $\tilde{\pi}(1) = 1$, so
+		\begin{equation*}
+			1 = \tilde{\pi}(1) = \tilde{\pi}(\mathrm{strict }\lim_i e_i) = \mathrm{strict }\lim_i \pi(e_i) 
+		\end{equation*}
+		so $\pi(e_i)$ strictly converges to $1$.
 	\end{enumerate}
 \end{proof}
 
