@@ -54,6 +54,46 @@ and therefore $r(a) = \lim_{n \to \infty} \|a^n\|^\frac{1}{n} = \|a\|$.
 
 \subsection{}
 
+First, to prove that $M(\algebra{A})$ fulfills the given property. We already know that $\algebra{A}$ is a closed, two-sided and essential ideal in $M(\algebra{A})$.
+Consider the following morphism:
+\begin{equation*}
+    \phi: \algebra{B} \to M(\algebra{A}), b \mapsto (L_b, R_b) 
+\end{equation*}
+where
+\begin{align*}
+    L_b: \algebra{A} \to \algebra{A} &a \mapsto b \cdot a\\
+    R_b: \algebra{A} \to \algebra{A} &a \mapsto a \cdot b
+\end{align*}
+defined via the multiplication in $\algebra{B}$.
+Because $\algebra{A} \trianglelefteq \algebra{B}$, we actually have $a \cdot b, b \cdot a \in \algebra{A}$ for all $a,b$ and $L_b, R_b$ are well-defined and, as they are clearly linear, $\phi$ is also well-defined.
+Because of $L_{ab} = L_{a} \circ L_{b}$ and $R_{ab} = R_b \circ R_a$, we have $\phi(ab) = \phi(a) \cdot \phi(b)$ with the multiplication as defined in the lecture.
+Furthermore, $\phi(1) = (L_1, R_1) = (\id, \id)$ and $\phi$ is therefore a homomorphism.
+Lastly we have $\phi(b^*) = (L_{b^*}, R_{b^*})$ and
+\begin{align*}
+    & L_{b^*}(a) = b^* a = (a^* b)^* = R_b(a^*)^* = (R_b)^*(a)\\
+    & R_{b^*}(a) = a b^* = (b a^*)^* = L_b(a^*)^* = (L_b)^*(a) \\
+    \then \ & \phi(b^*) = (R_b^*, L_b^*) = (L_b, R_b)^*
+\end{align*}
+so $\phi$ is indeed a $^*$-homomorphism.
+Since $\phi|_\algebra{A}$ reduces to the normal left- and right-multiplication on $\algebra{A}$, it coincides with canonical inclusion map as defined in the lecture.
+$\phi$ therefore fulfills all conditions as given.
+
+To conclude that the universal property is indeed correct, we need to consider the case that $\algebra{A} \trianglelefteq \algebra{B}$ is an essential ideal. 
+In this case, $b \algebra{A} = 0$ implies $b = 0$ for any $b \in \algebra{B}$.
+Assume $\phi(b) = \phi(c)$ for any two $b, c \in \algebra{B}$. 
+Then we have $(L_b, R_b) = (L_c, R_c)$ and thus $b a = c a$ and $a b = a c$ for all $a \in \algebra{A}$.
+This is equivalent to $b \algebra{A} = c \algebra{A}$ and $\algebra{A} b = \algebra{A} c$ or, stated differently, $(b-c) \algebra{A} = 0$ and $\algebra{A} (b-c) = 0$.
+As stated above, this implies $(b-c) = 0 \iff b = c$ and thus proves that $\phi$ is injective.
+
+Next, we want to prove that any algebra $D \trianglerighteq \algebra{A}$ that fulfills the above property (and where $\algebra{A}$ is a closed, two-sided essential ideal in $D$) is already equal to $M(\algebra{A})$.
+
+We already know that $\algebra{A}$ is an essential ideal in $M(\algebra{A})$, so if $D$ also fulfills the property above the therefore existent morphism $\phi_D: M(\algebra{A}) \to D$ must be injective.
+We may thus treat $M(\algebra{A})$ as a subalgebra of $D$.
+In parallel, since $\algebra{A}$ is also an essential ideal of $D$, the morphism $\phi_M: D \to M(\algebra{A})$ is also injective and we may consider $M(\algebra{A})$ as a subalgebra of $D$.
+But then these two algebras are isomorphic to subalgebras of each other, so they must already be equal.
+
+\subsection{}
+
 
 
 \end{document}
