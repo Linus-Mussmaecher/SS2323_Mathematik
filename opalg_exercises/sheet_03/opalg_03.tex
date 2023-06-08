@@ -16,11 +16,44 @@
 
 \begin{document}
 
-\makeexheadereng
+\makeexheader
 
 \begin{center}
     \includegraphics*[width=0.4\textwidth]{pi.png}
 \end{center}
+
+\setcounter{subsection}{1}
+
+\subsection{}
+
+The $C^*$-property shows $\|a^2\| = \|a^* a \| = \|a\|^2$, and by using this as well as the $C^*$ property again, we have for $n = 4$ that $\|a^4\| = \|a^* a^* a a\| = \|(a^2)^* (a^2)\| = \|a^2\|^2 = \|a^4\|$.
+Inductively, we can likewise prove $\|a^{2^k}\| = \|a\|^{2^k}$ for all $k \in \mathds{N}$.
+
+Now, for any $n \in \mathds{N}$ there exists $m \in \mathds{N}$ such that $n + m = 2^k$ for some $k \in \mathds{N}$. Then we have
+\begin{equation*}
+    \|a\|^{2^k} = \|a^{2^n}\| = \|a^n a^m\| \leq \|a^n\| \cdot \|a^m\| \leq \|a\|^n \cdot \|a^m\| \leq \|a\|^{n+m} = \|a\|^{2^k}
+\end{equation*}
+and because the first and last element are equal, we must have equality in every intermediate step.
+This especially proves $\|a^n\| = \|a\|^n$.
+
+Let now $a \in \algebra{A}$ be an arbitrary element.
+Then $\|a^* a \dots a^* a\| = \|(a^* a)^\frac{n}{2}\| = \|a^* a\|^\frac{n}{2} = \|a\|^n$ as proven above, because $(a^* a)$ is self-adjunct.
+For non-even $n$ (and thus even $n+1$) we can once again calculate
+\begin{equation*}
+    \|a\|^{n+1} = \|a^* a a^* \dots a^* a \| \leq \|a\| \cdot \|a a^* \dots a^*\| \leq \|a\| \cdot \|a\|^{n} = \|a\|^{n+1}
+\end{equation*}
+and therefore $\|a a^* \dots a^*\| = \|a\|^n$ by the same argument as above.
+
+Now, for a normal $a \in \algebra{A}$ (that is, $a^* a = a a^*$) we have
+\begin{align*}
+    \|a^n\|^\frac{1}{n} = \left(\|a^n\|^2\right)^\frac{1}{2n} = \|(a^n)* a^n \|^\frac{1}{2n} = \|a a^* a \dots a^*\|^\frac{1}{2n} = \left(\|a\|^{2n}\right)^\frac{1}{2n} = \|a\|
+\end{align*}
+and therefore $r(a) = \lim_{n \to \infty} \|a^n\|^\frac{1}{n} = \|a\|$.
+
+\setcounter{subsection}{5}
+
+\subsection{}
+
 
 
 \end{document}

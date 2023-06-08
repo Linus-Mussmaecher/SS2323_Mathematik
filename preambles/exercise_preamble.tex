@@ -11,7 +11,7 @@
 
 % then use one of these commands (german or english) to print the header:
 
-% \makeexheaderger
+% \makeexheader
 
 % and finally use subsections for your subtasks - they will be numbered as <sheetNumber><task number> by themselves
 
@@ -26,6 +26,7 @@
 \usepackage{enumitem}		% better custom enumerations
 \setlist[enumerate, 1]{label=(\roman*)}
 \usepackage{etoolbox}		% toolbox for command modification
+\usepackage{iflang}         % for language-checking ifs
 
 % --- FONTS & TYPESETTING ---
 
@@ -95,32 +96,17 @@
 }{}
 
 \usepackage{titling}
-\newcommand{\makeexheaderger}{
+\newcommand{\makeexheader}{
     \begin{doublespace}
         \begin{center}
-            \textbf{\Large{Übungsblatt \sheetNumber}}\\
+            \textbf{\Large{\iflanguage{german}{Übungsblatt}{Exercise Sheet} \sheetNumber}}\\
             \textbf{\Large\lecture}\\
-            Abgabe von: \textbf{\authors}\\
+            \iflanguage{german}{Abgabe von}{Contributors}: \textbf{\authors}\\
             \today
         \end{center}
         \ifdef {\sumPoints}
         {
-            \hfill  \large Punkte: $\boxed{\qquad  /\; \sumPoints}$\\
-        }{}
-    \end{doublespace}
-}
-
-\newcommand{\makeexheadereng}{
-    \begin{doublespace}
-        \begin{center}
-            \textbf{\Large{Exercise Sheet \sheetNumber}}\\
-            \textbf{\Large\lecture}\\
-            Contributors: \textbf{\authors}\\
-            \today
-        \end{center}
-        \ifdef {\sumPoints}
-        {
-            \hfill  \large Points: $\boxed{\qquad  /\; \sumPoints}$\\
+            \hfill  \large \iflanguage{german}{Punkte}{Points}: $\boxed{\qquad  /\; \sumPoints}$\\
         }{}
     \end{doublespace}
 }
