@@ -40,6 +40,29 @@
 
 \subsection{}
 
+Setze $\epsilon = 1$. Dann existiert ein $n \in \mathds{N}$ mit
+\begin{equation*}
+    \sup_{Z \in \mathcal{F}} \int_{\{|Z| \geq n\}} |Z| d\mathds{P} < 1  \then 
+    \int_{\{|Z| \geq n\}} |Z| d\mathds{P} < 1 \forall_{Z \in \mathcal{F}}\text{.}
+\end{equation*}
+Dies zeigt für beliebiges $Z \in \mathcal{F}$:
+\begin{equation*}
+    \mathds{E}[|Z|] = \int_\Omega |Z| d\mathds{P} = \int_{\{|Z| \geq n\}} |Z| d\mathds{P} + \int_{\{|Z| < n\}} |Z| d\mathds{P} < 1 + n \cdot \mathds{P}(\{|Z| < n\}) \leq 1 + n \cdot  \text{.}
+\end{equation*}
+Die Aussage folgt nun durch die Festlegung $K \coloneq n+2$.
+
+Die umgekehrte Aussage ist im Allgemeinen nicht richtig. Es sei $\mathds{P}$ das übliche Maß auf $[0,1]$ und $X_n$ definiert wie folgt:
+\begin{equation*}
+    X_n(t) = \left\{ \begin{matrix}
+        n & t \in [0, 1/n]\\ 0 & (1/n, 1]
+    \end{matrix} \right.\text{.}
+\end{equation*}
+Diese Zufallsvariablen haben alle den festen Erwartungswert $n \cdot \frac{1}{n} + 0 \cdot (1 - \frac{1}{n}) = 1$ (und diese Erwartungswerte sind damit natürlich beschränkt), aber es gilt 
+\begin{equation*}
+    \int_{\{|Z|\geq n\}} |Z_n| d\mathds{P} = \int_0^\frac{1}{n} n d \mathds{P} = n \cdot \frac{1}{n} = 1
+\end{equation*}
+und damit auch $\sup_{Z \in \mathcal{F}} \int_{\{|Z|\geq n\}} |Z_n| d\mathds{P} = 1$, womit natürlich auch der Limes $1 \neq 0$ wird.
+
 
 \subsection{}
 
@@ -70,7 +93,17 @@
         Somit gilt eine entsprechende Beziehung auch für reelle Zufallsvariablen und (aufgrund der Monotonie des Erwartungswertes) auch für die Erwartungswerte und damit für $d$.
     \end{enumerate}
     Somit ist $d$ eine Metrik auf dem Raum der reellen Zufallsvariablen.
-    \item 
+    \item $\then$: Sei $\epsilon > 0$ beliebig.
+    Wegen $d(X_n, X) \to 0$ existiert dann ein $N \in \mathds{N}$ mit $d(X_n, X) < \epsilon^2 > 0$ für alle $n \geq N$, also $\mathds{E}\left[ |X_n-X| \right] < \frac{\epsilon^2}{1 + \epsilon}$.
+    Wegen $\mathds{E}[Z] \geq \epsilon \cdot P(Z \geq \epsilon)$ muss dann auch $\mathds{P}\left(\frac{|X_n-X|}{1 + |X_n - X|}\right) < \epsilon$ sein.
+    Außerdem gilt
+    \begin{equation*}
+        |X_n - X| = \frac{|X_n - X|}{1} \leq \frac{|X_n-X|}{1+|X_n-X|}
+    \end{equation*}
+    und somit $\mathds{P}(|X_n - X| \geq \epsilon) \leq \mathds{P}\left(\frac{|X_n-X|}{1 + |X_n - X|}\geq \epsilon \right) < \epsilon$.
+    
+    $\since$: Aus Zeitgründen dem Korrektor zum Nachrechnen überlassen.
+
 \end{enumerate}
 
 
