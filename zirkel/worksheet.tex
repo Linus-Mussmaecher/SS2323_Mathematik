@@ -1,0 +1,76 @@
+\documentclass[a4paper]{article}
+
+% --- DATA ---
+
+\def\lecture{Mathe-Zirkel Knotentheorie}
+\def\authors{Linus Mußmächer}
+\def\sheetNumber{00}
+%\def\sumPoints{30} 
+
+% --- PREAMBLE ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+\input{../preambles/exercise_preamble.tex}
+\usepackage[fontsize=12pt]{fontsize}
+\usepackage{parskip}
+\usepackage{calc}
+
+\newboolean{wordblank}
+\setboolean{wordblank}{true}
+\newcommand{\blankword}[1]{\ifthenelse{\boolean{wordblank}}{\underline{\phantom{#1#1}}}{#1}}
+
+
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.0cm, right=2.0cm}
+
+\begin{document}
+    \pagestyle{empty}
+
+    \begin{tabular*}{\textwidth}{L{0.5\textwidth} R{0.5\textwidth}}
+        \multirow{4}{*}{\includegraphics[width=2.4cm]{img/unimarke_Vektor_CMYK.eps} \qquad \includegraphics[width=2.4cm]{img/pi.png}} & \textsc{Universität Würzburg}  \\
+        & \textsc{Institut für Mathematik}  \\
+        & \textsc{Mathe-Zirkel}  \\
+        & \textsc{Linus Mußmächer}
+    \end{tabular*}
+
+    \begin{doublespace}
+        \begin{center}
+            \textsc{\large{Mathe-Zirkel}}\\
+            \today \\
+            \textbf{\Large{Knotentheorie}}
+        \end{center}
+    \end{doublespace}
+
+
+    Ein \textbf{Knoten} ist eine \blankword{Kurve} im Raum, die sich \blankword{niemals} selbst schneidet.
+
+    Ein mathematischer Knoten unterscheidet sich von einem echten Knoten dadurch, dass \\
+    \rule{\textwidth - 0.2 cm}{0.5pt}.
+
+    \textit{Einige Knoten}:
+    \begin{center}
+    \begin{tabular}{c c c c}
+        \includegraphics{img/knots0.png} & \includegraphics{img/knots1.png} & \includegraphics{img/knots2.png} & \fbox{\phantom{\includegraphics{img/knots0.png}}} \\
+        \blankword{Knoten} & \blankword{Knoten} & \blankword{Knoten} & \blankword{Knoten}
+    \end{tabular}
+    \end{center}
+
+    Malen wir einen Knoten wie oben auf ein Blatt Papier, so nennt man diese Zeichnung eine \blankword{Projektion} des Knotens. Es gibt immer mehrere Möglichkeiten, einen Knoten zu zeichnen.
+
+    \textit{Einige Zeichnungen des Achterknotens}:
+    \begin{center}
+        \begin{tabular}{c c c}
+            \includegraphics{img/eight0.png} & \includegraphics{img/eight1.png} & \fbox{\phantom{\includegraphics{img/eight0.png}}}
+    \end{tabular}
+    \end{center}
+
+    Zwei Knoten sind gleich (Fachwort: \textbf{äquivalent}), wenn man sie durch \blankword{stetige} Bewegungen gleich machen kann. Dabei darf man den Knoten\\
+    \rule{\textwidth - 0.2 cm}{0.5pt}\\
+    aber niemals\\
+    \rule{\textwidth - 0.2 cm}{0.5pt}.
+
+    % \begin{tabular*}{\textwidth}{L{0.99\textwidth - 3cm} R{3cm}}
+    % Mehrere Knoten, die miteinander verbunden sind, nennt man eine \rule{3 cm}{0.5pt}. Links sieht man die \textit{Borromäischen Ringe}. & \includegraphics[width=2.5cm]{img/ring.png}
+    % \end{tabular*}
+
+\end{document}
