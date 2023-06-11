@@ -50,6 +50,17 @@ Now, for a normal $a \in \algebra{A}$ (that is, $a^* a = a a^*$) we have
 \end{align*}
 and therefore $r(a) = \lim_{n \to \infty} \|a^n\|^\frac{1}{n} = \|a\|$.
 
+Finally, we can use the fundamental theorem of continuous functional calculus. 
+Consider for the moment $\algebra{A}$ to be unital (if it is not, consider $\tilde{\algebra{A}}$).
+Then $a \in \algebra{A}$ is normal and $f: \mathds{C} \to \mathds{C}, x \mapsto |x|^2 = x \cdot \overline{x}$.
+$f$ is continuous on $\mathds{C}$ and therefore especially on $\sigma(a)$.
+Thus we have
+\begin{equation*}
+    \sigma(a a^*) = \sigma(f(a)) = f(\sigma(a)) = \{f(\lambda) \mid \lambda \in \sigma(a) \} = \{ |\lambda|^2 \mid \lambda \in \sigma(a) \}\text{.}
+\end{equation*}
+As $a$ is normal, we also have $a^* a = a a^*$ and therefore $\sigma(a a^*) = \sigma(a^* a)$.
+
+
 \setcounter{subsection}{5}
 
 \subsection{}
@@ -93,6 +104,7 @@ In parallel, since $\algebra{A}$ is also an essential ideal of $D$, the morphism
 But then these two algebras are isomorphic to subalgebras of each other, so they must already be equal.
 
 \subsection{}
+
 
 
 
