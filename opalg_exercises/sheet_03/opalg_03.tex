@@ -105,6 +105,66 @@ But then these two algebras are isomorphic to subalgebras of each other, so they
 
 \subsection{}
 
+First, we prove $C_0(X)$ is an essential ideal.
+
+\begin{enumerate}
+    \item \textbf{Ideal}: Take any functions $f \in C_0(X)$ and $g \in C_b(X)$ with $\|g\|_{\infty} = \sup_{x \in X} |g(x)| = M \geq 0 $.
+    W.l.o.g we assume $g \neq 0$, so $M > 0$.
+    Let $\epsilon > 0$ be arbitrary. Then $Y = \{ x \in X \mid |f(x)| \geq \frac{\epsilon}{M} \}$ is compact (as $f \in C_0(X)$). For all $x \notin Y$ we have $|(fg)(x)| = |f(x) g(x)| \leq M \cdot |f(x)| < \epsilon$, so $\{ x \in X \mid |(fg)(x)| \leq \epsilon \} \subseteq Y$.
+    As this set is closed and $Y$ is compact it is compact (for any $\epsilon$), we have $fg \in C_0(X)$ and $C_0(X)$ is right ideal.
+    \item \textbf{Closed and two-sided}: As $C_b(X)$ is commutative, any one-sided ideal is also two-sided. The closedness has been proven in previous exercises.
+    \item \textbf{Essential}: Let $g \in C_b(X)$ be any function with $g C_0(X) = 0$, that is $(gf)(x) = 0$ for any $f \in C_0(X)$ and $x \in X$.
+    Let $x_0 \in X$ be freely chosen. By Uryson's Lemma, we can find a function $f_{x_0} \in C_0(X)$ fulfilling $f_{x_0}(x_0) = 1$ and $f(x) = 0$ on the (closed complement) of an open, pre-compact set (thus actually putting $f$ in $C_0(X)$).
+    Then we have $g(x_0) f(x_0) = 0$, but because of $f(x_0) =1 $ we must have $g(x_0) = 0$.
+    As $x_0$ was arbitrary in $X$, $g$ must be $0$ on the entirety of $X$.
+ \end{enumerate}
+
+ Next, for any $x \in X$ and $b \in B$ pick $f$ (as given in the exercise, but also requiring $\|f\|_\infty = 1$. The existence of such an $f$ can be concluded by Uryson) and define $F_b$ as given in the exercise (but with our slightly more restrictive choice of $f$). Then
+ \begin{equation*}
+    |(bf)(x)| \leq \| bf \|_\infty = \| bf \|_B \leq \|b\| \|f\|_B = \|b\| \cdot 1 = \|b\| |f(x)|
+ \end{equation*}
+ Therefore, $F_b$ is bounded (by $\|b\|$) and well-defined.
+
+ Furthermore, $F_b$ is continuous, as for any sequence $x_n \to x_0$ in $X$, $x_n$ will be in $B_1(x_0)$ for large enough $n$.
+ Because $B \coloneq \overline{B_1(x_0)}$ is compact, by Uryson's Lemma we can find a $g \in C_0(X)$ with $\|g\|_\infty = 1$ and $g \equiv 1$ on $B$.
+ Then $F_b(x) = (bg)(x)$ for any $x \in B$ (as the choice of $f$ in the definition does not matter, and $g$ fulfills all conditions).
+ But now $F_b$ on $B$ coincides with $bg \in C_b(X)$, so $F_b(x_n) = (bf)(x_n) \to (bf)(x_0) = F_b(x_0)$ and $F_b$ is continuous as our sequence was arbitrary.
+
+ Now, consider $F: B \to C_b(X), b \mapsto F_b$:
+ \begin{enumerate}
+    \item \textbf{unital}: If $1_B \in B$ is the unit in $B$, we have $1_B b = b = b 1_B$ for any $b \in B$, therefore especially $1_B f = f = f 1_B$ for any $f \in C_0(X)$.
+    Then $F_b(x) = (bf)(x) = f(x) = 1$ for any $x \in X$, so $F(b) = F_b \equiv 1$ on $X$.
+    As the constant $1$-function is the unit in $C_b(X)$, $F$ is unital.
+    \item \textbf{Homomorphism}: Take $a,b \in B$ and calculate (for any $x \in X$ and a fitting $f \in C_0(X)$):
+    \begin{align*}
+        F(a \cdot b)(x) = F_{a \cdot b}(x) &= ((a b) f)(x) & \text{$f^2$ also fulfills our conditions}\\
+        &= ((a b) f^2)(x) &\text{Associativity} \\
+        &= (a (bf) f)(x) &\text{Elements $bf$ and $f$ in $C_0(X)$ commute}\\
+        &= (a f (bf))(x)\\ &= ((af)(bf))(x) &\text{Multiplication of elements in $C_0(X)$} \\
+        &= (af)(x) \cdot (bf)(x) \\ &= F_a(x) \cdot F_b(x) \\ &= F(a)(x) \cdot F(b)(x)
+    \end{align*}
+    as $f^2$ also fulfills $f^2(x) = f(x) \cdot f(x) = 1$ and $\|f^2\|_\infty \leq \|f\|_\infty^2 = 1$. This shows $F_{ab} = F_a \cdot F_b$.
+    \item \textbf{$^*$-property}: Consider $b \in B$, and take $x \in X$ and a fitting $f \in C_0(X)$. Then
+    \begin{equation*}
+        F(b^*)(x) = F_{b^*}(x) = (b^* f)(x) = (f^* b)^*(x) = \overline{(f^* b)(x)} = \overline{(b f^*)(x)} = \overline{F_b(x)}
+    \end{equation*}
+    as $f^*$ also fulfills $f^*(x) = \overline{f(x)} = 1$ and $\|f^*\| = \|f\| = 1$.
+ \end{enumerate}
+
+ In conclusion, $C_b(X)$ fulfills the universal property of $\mathcal{M}(C_0(X))$, so we have $C_b(X) = \mathcal{M}(C_0(X))$.
+
+ Concerning the last paragraph: The commutative, closed, two-sided $C^*$-algebra-ideal i $^*$-isomorphic to $C_0(X)$ for some $X$, so there exists an (injective) $^*$-isomorphism $B \to C_b(X)$.
+ So $B$ embeds in $C_b(X)$. But $C_b(X)$ is commutative, so $B$ must be as well.
+
+ A sketch of the proof would work by directly proving that the multiplier algebra $\mathcal{M}(\algebra{A})$ of any commutative algebra $\algebra{A}$ is itself commutative: Let $(L_1, R_1), (L_2, R_2) \in \mathcal{M}(\algebra{A})$, so $L_1, L_2, R_1, R_2$ are linear mappings $\algebra{A} \to \algebra{A}$.
+ Then $(L_1 \cdot L_2)(a) = L_1(a) \cdot L_2(a)$ and as elements in $\algebra{A}$ commute, $L_1$ and $L_2$ do as well.
+ This and the equivalent result for $R_1, R_2$ shows
+ \begin{equation*}
+    (L_1, R_1) \cdot (L_2, R_2) = (L_1 \cdot L_2, R_2 \cdot R_1) = (L_2 \cdot L_1, R_1 \cdot R_2) = (L_2, R_2) \cdot (L_1, R_1)
+ \end{equation*}
+ so $\mathcal{M}(\algebra{A})$ is commutative.
+ The result then follows as above: As $B$ contains $\algebra{A}$ as an essential, two-sided ideal the $^*$-isomorphism $B \to \mathcal{M}(\algebra{A})$ is injective, therefore $B$ is embedded in $\mathcal{M}(\algebra{A})$ and finally also commutative.
+
 
 
 
