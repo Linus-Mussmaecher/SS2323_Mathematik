@@ -1945,8 +1945,163 @@ $M(\algebra{A})$ is the largest unital $C^*$-algebra that contains $\algebra{A}$
 	\end{align*}
 \end{proof}
 
+Let $L \subseteq \algebra{A}$ be a closed left ideal and $(u_\lambda) \subseteq B = L \cap L^* \subseteq \algebra{A}$. Then $\lim_\lambda a u_\lambda = a$ for all $a \in L$.
+As a consequence:
+
+\begin{theorem}
+	Every closed two-sided ideal $I \trianglelefteq \algebra{A}$ of a $C^*$-algebra satiesfies $I^* = I$, so it is a $^*$-ideal and in particular a $C^*$-algebra.
+\end{theorem}
+
+\begin{proof}
+	By the lemma above, we find a net $(u_\lambda) \subseteq I$, $u_\lambda \geq 0$, such that $a = \lim_\lambda a u_\lambda$
+	Then $a^* = \lim_\lambda u_\lambda a^* \in I$ (because $u_\lambda \in I$).
+\end{proof}
+
+\begin{corollary}
+	Let $I \trianglelefteq \algebra{A}$ be a closed two-sided ideal of a $C^*$-algebra $\algebra{A}$.
+	Then for all $a \in \algebra{A}$, $\|a + I \| = \lim_\lambda \|a - u_\lambda a\| = \lim_\lambda \|a - a u_\lambda\|$ where $(u_\lambda)$ is an approximate unit for $I$.
+\end{corollary}
+
+\begin{proof}
+	Let $\epsilon > 0$ and take $b \in I$ such that $\|a + b\| \leq \|a + I \| + \frac{\epsilon}{2}$.
+	Recall that $\|a + I\| = \mathrm{dist}(a, I) = \inf_{b \in I} \|a + b\|$.
+
+	Since $\lim_\lambda u_\lambda b = b$.
+	Then there exists $\lambda_0$ such that $\|b - u_\lambda b\| < \frac{\epsilon}{2}$ for all $\lambda \geq \lambda_0$. 
+	Then 
+	\begin{align*}
+		\|a - u_\lambda a\|
+		&\leq \| (1 - u_\lambda) (a + b) \| + \|b - u_\lambda b\| \\
+		&\leq \|a + b\| + \|b - u_\lambda b\| \\
+		&< \|a + I\| + \frac{\epsilon}{2} + \frac{\epsilon}{2} = \|a + I\| + \epsilon
+	\end{align*}
+	On the other hand, $\|a - u_\lambda a\| \geq \|a + I\|$ for all $\lambda$ and $\|a + I\| = \lim_\lambda \|a + u_\lambda a\| = \inf_\lambda \|a - u_\lambda a\|$.
+	This shows the existence of the limit and therefore that the norm equals the distance.
+\end{proof}
+
+\begin{theorem}
+	If $I \trianglelefteq \algebra{A}$ is a closed $^*$-ideal in a $C^*$-algebra $\algebra{A}$, then $\algebra{A}/I$ is itself a $C^*$-algebra.
+\end{theorem}
+
+\begin{proof}
+	We already know that $\algebra{A}/I$ is a Banach $^*$-algebra. We only need to show that $\|a + I\| = \| (a + I)^* (a + I)\|$.
+
+	Let $(u_\lambda) \subseteq I$ be an approximate unit and take $b \in I$. Then
+	\begin{align*}
+		\|a + I\|^2 &= \lim_{\lambda} \|a - a u_\lambda\|_A^2  \overset{*}{=} \lim_\lambda \|(1 - u_\lambda) a^* a (1 - u_\lambda)\|\\
+		&\leq \sup_\lambda  \|(1 - u_\lambda) (a^* a + b) (1 - u_\lambda) \| + \lim_\lambda \|(1 - u_\lambda) b (1 - u_\lambda)\| \\
+		&\leq \|a^* a + b\|
+	\end{align*}
+	\begin{quote}
+		Where $*$ is because we can use the $C^*$-property of $\algebra{A}$ and $(1 - u_\lambda)$ is self-adjoint.
+		The last inequality follows because the latter limit tends to $0$.
+	\end{quote}
+	Since $b$ was arbitrary, we get
+	\begin{equation*}
+		\|a + I \|^2 \leq \inf_{b \in I} \|a^* a + b\|_\algebra{A} = \|a^* a + I \| = \|(a + I)^* (a + I) \|
+	\end{equation*}
+\end{proof}
+
+\begin{theorem}
+	If $\phi: \algebra{A} \to \algebra{B}$ (where $\algebra{A}, \algebra{B}$ are $C^*$ algebras) is an injective $^*$-homomorphism, then $\phi$ is isometric, i.e. $\|\phi(a)\| = \|a\|$ for all $a \in \algebra{A}$.
+\end{theorem}
+
+\begin{proof}
+	It suffices to show that $\|\phi(a)\|^2 = \|a\|^2$ or $\|\phi(a^* a)\| = \|a^* a\|$.
+
+	Replacing $\algebra{A}$ by the $C^*$-algebra $C^*(a^* a)$ and $B$ by $C^*(\phi(a^* a)) \subseteq B$ (with $a^*a, \phi(a^* a) = \phi(a)^* \phi(a) \geq 0$) we may assume that $\algebra{A}, \algebra{B}$ are commutative.
+	Also by adding units and extending $\phi$ to the unitization $\tilde{\phi}: \tilde{\algebra{A}} \to \tilde{\algebra{B}}$ we may assume that $\algebra{A}, \algebra{B}, \phi$ are unital.
+	Now given $\chi \in \Omega(\algebra{B})$ notice that $\chi \circ \phi \in \Omega(\algebra{A})$.
+	So we get a map $\phi_*: \Omega(\algebra{B}) \to \Omega(\algebra{A}), \chi \mapsto \chi \circ \phi$. 
+	This is clearly continuous. 
+	Since $\Omega(\algebra{B})$ is compact, $K \coloneq \phi_*(\Omega(\algebra{B}))$ is compact (in particular closed).
+	By Uryson's Lemma, we find some continuous function $f \in C(\Omega(\algebra{A}))$ such that $f|_K \equiv 0$ and $f \neq 0$ (if we assume $K \neq \Omega(\algebra{A})$).
+	By Gelfand-Representation we find ($\algebra{A} \simeq C(\Omega(\algebra{A}))$) and $a \in \algebra{A}$ such that $\hat{a} = f$.
+	Then for each $\chi \in \Omega(\algebra{B})$,
+	\begin{equation*}
+		\chi(\phi(a)) = \hat{a}(\chi \circ \phi) = \underbrace{\hat{a}}_{f} (\underbrace{\phi_*(\chi)}_{\in K}) = 0 \then \phi(a) = 0
+	\end{equation*} 
+	and if $f \neq 0$, then $a \neq 0$.
+	But we have $\phi(a) = 0$ for all $a$, a contradiction. 
+	Therefore, $\phi_*$ is surjective.
+	Now
+	\begin{align*}
+		\|a\|_\algebra{A} = \|\hat{a}\|_\infty = \sup_{\chi \in \Omega(\algebra{A})} | \chi(a) | = \sup_{\chi \in \Omega(\algebra{B})} |(\chi \circ \phi) (a) | = \| \widehat{\phi(a)} \|_\infty = \| \phi(a) \|_\algebra{B}
+	\end{align*}
+\end{proof}
+
+\begin{corollary}
+	If $\phi: \algebra{A} \to \algebra{B}$ is any $^*$-homomorphism ($\algebra{A}, \algebra{B}$ $C^*$-algebras) then $\phi(\algebra{A})$ is closed, hence a $C^*$-subalgebra of $\algebra{B}$.
+\end{corollary}
+
+\begin{proof}
+	Consider $\psi: \algebra{A} /_{\ker \phi} \to  \algebra{B}, a + \ker \phi \mapsto \phi(a)$.
+	Then $\psi$ is a well-defined $^*$-homomorphism and $\psi$ is injective and therefore isometric.
+	This shows that $\psi(\algebra{A}/_{\ker \phi}) = \phi(\algebra{A})$ is closed.
+\end{proof}
+
+\begin{remark}
+	For some other related consequences, see Murphy's book.
+	\begin{enumerate}
+		\item If $\algebra{A} \subseteq \algebra{B}$ are $C^*$-algebras and $I \trianglelefteq \algebra{B}$ is a closed 2-sided ideal then $\algebra{A} + I$ is a $C^*$-subalgebra of $\algebra{B}$. 
+		In particular, the sum of ideals in $C^*$-algebras are ideals: For any $I,J \trianglelefteq \algebra{A}$ have that $I + J \trianglelefteq \algebra{A}$ as well.
+		\item If $I, J \trianglelefteq \algebra{A}$ then $I \cdot J = I \cap J$.
+		The product here is defined as the linear span of products ($I \cdot J = \closure{\Span}\{i \cdot j \mid i \in I, j \in J\}$) but is actually just the products.
+	\end{enumerate}
+\end{remark}
 
 
+\begin{proof}[Ideas]~
+	\begin{enumerate}
+		\item To prove that $\algebra{A} + I$ is closed, check that $(A + I)/I$ is Banach by identifying it with
+		\begin{equation*}
+			(A + I) / I \simeq \algebra{A}/(\algebra{A} \cap I), a + I \leftarrow a + A \cap I
+		\end{equation*}
+		Can also build arbitrary familys of ideals and the sum will be an ideal, also the intersection and product of ideals exist.
+		\item $I \cdot J \subseteq I \cap J$ is clear.
+		To prove the converse, use the approximate unit.
+		$I \cap J$ is clearly a $C^*$-algebra, take an approximate unit $(u_\lambda) \subseteq I \cap J$ and $x \in I \cap J$.
+		Then $x = \lim_{\lambda} x u_\lambda$ where $x u_\lambda$ is in $I \cdot J$ at all times.
+	\end{enumerate}
+\end{proof}
+
+\section{Gelfand-Neymark representation}
+
+We know for commutative $\algebra{A}$ that $\algebra{A} = C_0(\Omega(\algebra{A}))$.
+But if $\algebra{A}$ is not commutative, $\Omega(\algebra{A}) - \emptyset$ and this is useless.
+So we want to look at non-homomorphism functionals (the elements of the spectrum are homomorphism functionals) and hope that this is not empty. Hence we want to study positive linear functionals.
+
+\begin{definition}
+	Let $\algebra{A}, \algebra{B}$ $C^*$-algebras. A linear map $\phi: \algebra{A} \to \algebra{B}$ is called \textbf{positive} if $\phi(\algebra{A}_+) = \algebra{B}_+$.
+	We write $\phi \geq 0$ for this.
+\end{definition}
+
+
+\begin{remark}
+	Let $\algebra{A}, \algebra{B}$ $C^*$-algebras and $\phi \geq 0$.
+	\begin{enumerate}
+		\item $\phi \geq 0$ implies that $\phi(\algebra{A}_{sa}) = \algebra{B}_{sa}$ (self-adjoint to self-adjoint).
+		This follows because for any $a \in \algebra{A}_{sa}$, we have $a = a^+ = a^-$ and $\phi(a) = \phi(a^+) - \phi(a^-) \in B_{sa}$.
+		\item $a_1 \leq a_2$ in $\algebra{A}$ yields $\phi(a_1) \leq \phi(a_2)$. 
+		This is because every $^*$-homomorphism is primitive because $\phi: \algebra{A} \to \algebra{B}$ a $^*$-homomorphism and $a \geq 0$ in $\algebra{A}$ imply $a = x^* x$ for some $x \in \algebra{A}$ andthus $\phi(a) = \phi(x)^* \phi(x) \geq 0$.
+	\end{enumerate}
+\end{remark}
+
+
+\begin{example}
+	Let $\phi: M_m(\mathds{C}) \to M_m(\mathds{C}), a \mapsto a^T$ is positive but not a homomorphism.
+
+	For this, consider $(a^*)^T = (a^T)^*$ and therefore $(a^* a)^T = (a^T) (a^T)^* \geq 0$, but not $(a^* a)^T \neq (a^T)^* (a^T)$.
+\end{example}
+	
+\begin{example}
+	$\algebra{A} = C_0(X)$. If $B(X)$ are the Borell-subsetes of $X$ $\mu: B(X) \to [0, \infty]$ is a positive bounded measure, then
+	\begin{equation*}
+		\phi_\mu: C_0(X) \to \mathds{C}, f \mapsto \int_X f(x) d \mu(x)
+	\end{equation*}
+	is clearly positive, linear but (usually) not a homomorphism.
+	If $\mu$ is a Dirac-measure this is a homomorphism and a character.
+\end{example}
 
 
 
