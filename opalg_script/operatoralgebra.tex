@@ -2172,6 +2172,105 @@ The main point is the following observation:
 	and taking the limit yields the statement.
 \end{proof}
 
+\begin{theorem}
+	Let $\phi \in \algebra{A}^* = \{ \phi: \algebra{A} \to \mathds{C} \mid \text{ bounded linear } \}$.
+	Then the following are equivalent
+	\begin{enumerate}
+		\item $\phi \geq 0$
+		\item For each approximate unit $(e_\lambda) \subseteq \algebra{A}_{+, 1}$ we have $\|\phi\| = \lim_\lambda \phi(e_\lambda) = \sup_\lambda \phi(e_\lambda)$.
+		\item For some approximate unit $(e_\lambda) \subseteq \algebra{A}_{+, 1}$ we have $\|\phi\| = \lim_\lambda \phi(e_\lambda) = \sup_\lambda \phi(e_\lambda)$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}~
+	\begin{enumerate}
+		\item $\then$ (ii): B\ the previous proposition, $|\phi(a)|^2 \leq \|\phi\| \phi(a^* a)$.
+		Applying this for $a = e_\lambda$, we get $|\phi(e_\lambda)|^2 \leq \|\phi\| \phi(e_\lambda)^2$
+		Notice $e_\lambda^2 = e_\lambda^\frac{1}{2} e_\lambda e_\lambda^\frac{1}{2} \leq e_\lambda$.
+		Since $\phi$ preserves inequality, we have $|\phi(e_\lambda)|^2 \leq \|\phi\| \phi(e_\lambda)$, so $\phi(e_\lambda) \leq \|\phi\|$ and therefore $\limsup_{\lambda} \phi(e_\lambda) \leq \sup_\lambda \phi(e_\lambda) \leq \|\phi\|$.
+		We apply CS again: $|\phi(e_\lambda a)|^2 \leq \phi(e_\lambda)^2 \phi(a^* a) \leq \phi(e_\lambda) \phi(a^* a)$ and hence $|\phi(a)|^2 = \liminf_\lambda |\phi(e_\lambda a)|^ \leq \liminf_\lambda \phi(e_\lambda)  \|a\|^2 \|\phi\|$, as$\phi(a^* a) \leq \|a\|^2 \|\phi\|$.
+
+		Now taking $\sup$ over $\|a\| \leq 1$ yields
+		\begin{equation*}
+			\|\phi\|^2 \leq \liminf_{\lambda} \phi(e_\lambda) \|\phi\| \then \|\phi\| \leq \liminf_\lambda \phi(e_\lambda)
+		\end{equation*}
+		\item $\then$ (iii): This is clear, as some linear morhpisms always exist.
+		\item $\then$ (i): Let $a \in \algebra{A}_{sa}$ and $\|a\| \leq 1$. 
+		Write $\phi(a) = \alpha + i \beta$ with $\alpha, \beta \in \mathds{R}$. 
+		We prove that $\beta = 0$, that is $\phi(a) \in \mathds{R}$. 
+		We may assume $\beta \leq 0$ (or just take $-a$ instead).
+		Let $n \in \mathds{N}$. Then 
+		\begin{equation*}
+			\| a - i n e_\lambda \|^2 = \| (a + i n e_\lambda) (a - i n e_\lambda)\|= \|a^2 n^2 e_\lambda^2 - 2n(a e_\lambda - e_\lambda a) \leq 1 + n^2 + n \| a e_\lambda - e_\lambda a \| 
+		\end{equation*}THen we h
+		and we have
+		\begin{equation*}
+			\|\phi(a - i n e_\lambda)\|^2 \leq \|a - i n e_\lambda^2 \leq 1 + n^2 + n \underbrace{\|a e_\lambda - e_\lambda a\|}_{\to 0}
+		\end{equation*}
+		Taking $\lambda \to \infty$, we get $\phi(e_\lambda) \leq 1 + n^2$.
+		Using $\phi(a) = \alpha + i \beta$ and we get 
+		\begin{equation*}
+			\|\alpha + i \beta - in\|^2 \leq 1 + n^2 \then \alpha^2 + \beta^2 - 2 n \beta + i n^2 \leq 1 + n^2 \then - 2 n\beta \leq 1- \alpha^2 - \beta^2
+		\end{equation*}.
+		Because $\beta \leq 0$, we have to take $\beta = 0$.
+
+		Now to prove $\phi \geq 0$: Take $a \in \algebra{A}_+$ with $\|a\| \leq 1$. Then $e_\lambda - a \in \algebra{A}_{sa}$ and 
+		\begin{equation*}
+			-1 \leq -a \leq e_\lambda \leq e_\lambda \leq 
+		\end{equation*}
+		So $\|e_\lambda\| \leq 1$.
+		\begin{equation*}
+			\underbrace{\phi(e_\lambda - a)}_{\in \mathds{R}} \leq |\phi(e_\lambda)| \leq 1
+		\end{equation*}
+		Letting $\lambda \to \infty$, then $1 - \phi(a)
+		 \leq 1$ so $\phi(a) \geq 0$.
+	\end{enumerate}
+\end{proof}
+
+
+\begin{corollary}
+	If $\algebra{A}$ is unital and $\phi \in \algebra{A}^+$ then $\phi \geq 0 \iff \phi(1) = \| \phi \|$.
+\end{corollary}
+
+\begin{corollary}
+
+	If $\algebra{A}$ is a unital $C^*$-algebra and $\phi \in \algebra{A}^*$, then $\phi \geq 0 \iff \phi(1) = \|\phi\|$.
+\end{corollary}
+
+\begin{definition}
+	A \textbf{state} on a $C^*$-algebra $\algebra{A}$ is a positive linear functional $\phi \in \algebra{A}_+^*$ with $\|\phi\| = 1$.
+
+	We denote the set of all states by $S(\algebra{A})$.
+\end{definition}
+
+\begin{example}
+	If $\algebra{A} = B(H)$ or $\algebra{A} = K(H)$ (bounded/compact operators on a hilbert space $\algebra{A}$) or $\algebra{A}$ a subalgebra of any of these sets with non-degenerate $e_\lambda \to 1$.
+	Let $\zeta, \eta \in H$ and define $\phi_{\zeta, \eta}(a) \coloneq \langle \zeta, a \eta \rangle$.
+	Then $\phi_{\zeta, \eta} \in \algebra{A}^*$ with $\|\phi_{\zeta, \eta}\| \leq \|\zeta\| \cdot \|\eta\|$.
+	If $(e_\lambda) \subseteq \algebra{A}_{+, 1}$ is an approximate unit, then, using $e_\lambda \to 1$ (strictly) shows $\phi_{\zeta,\eta} (e_\lambda) \to \langle \zeta, \eta \rangle$.
+	If $\zeta = \eta$, then $\phi_\zeta \coloneq \phi_{\zeta, \zeta}$ is positive and so $\phi_\zeta(a^* a) = \langle a \zeta, a \zeta \rangle = \|a \zeta \|^2 \geq 0$.
+	By the previous theorem, $\|\phi_\zeta\|  = \lim_\lambda \phi_\zeta(e_\lambda) = \|\zeta\|^2$.
+	So $\phi_\zeta$ is a state if and only if $\|\zeta\| = 1$.
+
+	Note that there are states that are not of this form at all!
+	The ones presented here are the so-called \textbf{pure states}.
+\end{example}
+
+\begin{theorem}
+	If $\algebra{A}$ is a $C^*$-algebra nad $a \in \algebra{A}$ is normal with $\algebra{A} \neq 0$ there exists a state $\phi \in S(\algebra{A})$ with $|\phi(a)| = \|a\|$ 
+\end{theorem}
+
+\begin{proof}
+	We may assume $a \neq 0$ (we would only need to prove that any state exists, but this follows from the construction).
+	Let $\algebra{B} = C^*(a, 1) \subseteq \tilde{\algebra{A}}$.
+	$\algebra{B}$ is abelian, $\hat{a} \in C(X)$ and $X = \Omega(\algebra{B})$ (compact).
+	Then there exists an $\chi \in \Omega(\algebra{B}) = X$ (compact) such that $| \hat{a}(\chi)| = |\chi(a)| = \|\hat{a}\|_\infty = \|a\|$.
+	By Hahn-Banach, extend $\chi: \algebra{B} \to \mathds{C}$ to $\psi \in (\tilde{\algebra{A}})^*$ with $\|\psi\| = \|\phi\| = 1$.
+	So $|\psi(a)| = |\chi(a)| = \|a\|$ and also $|\psi(1)| = |\chi(1)| = 1$.
+	By the corollary, $\psi \geq 0$ and $\psi \in S(\algebra{A})$.
+	Taking $\phi \coloneq \psi|_\algebra{A} \in \algebra{A}_+^*$ shows $\|\phi\| \leq \|\psi\| = 1$ and $|\phi(a)| = |\psi(a)| = \|a\|$, so $\|\phi\| \geq 1$, so $\|\phi\| = 1$ and $\phi$ is also a state.
+\end{proof}
+
 
 
 
