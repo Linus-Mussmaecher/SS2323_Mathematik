@@ -2103,6 +2103,77 @@ So we want to look at non-homomorphism functionals (the elements of the spectrum
 	If $\mu$ is a Dirac-measure this is a homomorphism and a character.
 \end{example}
 
+\section{Positive linear maps and functionals}
+
+
+
+\begin{definition}
+	Let $\algebra{A}, \algebra{B}$ be $C^*$-algebras, a linear map $\phi: \algebra{A} \to \algebra{B}$ is called positive if $\phi(\algebra{A}_+) \subseteq \algebra{B}_+$, that is $a \geq 0 \then \phi(a) \geq 0$.
+	We write this as $\phi \geq 0$.
+\end{definition}
+
+
+\begin{remark}
+	Observe that $\phi \geq 0$ implies $\phi(a^*) = \phi(a)^*$ for all $a \in \algebra{A}$ and $\phi(\algebra{A}_{sa}) \subseteq \algebra{B}_{sa}$.	
+
+	Also, $\phi$ respects inequality.
+\end{remark}
+
+\begin{proof}
+	Just write $a \in \algebra{A}_{sa}$ as $a = a_+ - a_-$ with $a_+, a_- \in \algebra{A}_+$.
+\end{proof}
+
+\begin{example}
+	\begin{enumerate}
+		\item Let $\algebra{A} = M_n(\mathds{C})$ the usual trace $\mathrm{tr}: M_n(\mathds{C}) \to \mathds{C}, A \mapsto \sum_{i=1}^n a_{ii}$ is a positive linear functional
+		In general a \textbf{trace} in a $C^*$-algebra is any positive linear map $\phi: \algebra{A} \to \mathds{C}$ with $\phi(ab) = \phi(ba)$.
+	\end{enumerate}
+\end{example}
+
+\begin{proposition}
+	If $\phi: \algebra{A} \to \algebra{B}$ is a positive linear map, then $\phi$ is bounded (i.e. continuous).
+\end{proposition}
+
+\begin{proof}
+	Let $M = \sup_{a \in \algebra{A}_+} \|\phi(a)\|$. 
+	If we had $M = \infty$ there exists $(a_n) \in \algebra{A}_{+,1}$ where $\|\phi(a_n)\| \geq 2^n$ for all $n$. 
+	Define $a \coloneq \sum_{n=1}^{\infty} \frac{a_n}{2^n} \in \algebra{A}_{+,1}$.
+	Since $\phi \geq 0$ and $\sum_{n = 1}^{N} \frac{a_n}{2^n} \leq a$, we have $\sum_{n=1}^{N} \frac{\phi(a_n)}{2^n} \leq \phi(a)$.
+	Notice that $\phi(a_n) \geq 2^n$ in $\tilde{\algebra{B}}$ because whenever $b \in \algebra{B}_+$ and $\|b\| \geq c \geq 0$ so $b \geq c \cdot 1$.
+	So in conclusion $\phi(a) \geq \sum_{n = 1}^{N} \frac{\phi(a_n)}{2^n} \geq N \cdot 1$ (in $\tilde{\algebra{B}}$), implying $\|\phi(a)\| \geq N$ for all $N \in \mathds{N}$, a contradiction.
+
+	Now given any $a \in \algebra{A}$ write it as $a = b + ic$ where $b,c \in \algebra{A}_{sa}$ where $b = \frac{a + a^*}{2}$ and $c = \frac{a - a^*}{2i}$.
+	If $\|a\| \leq 1$ then $\|b\|, \|c\| \leq 1$ and $b = b_+ - b_-$, $c = c_+ - c_-$ so $b_+ = \frac{b + |b|}{2}$, $b_- = \frac{b = |b|}{2}$, $c_+ = \frac{c + |c|}{2i}$ and $c_- = \frac{c - |c|}{2i}$ where $|b| = \sqrt{b b^*}$ so $\|b_+\|^2, \|b_-\| \leq 1$. Then
+	\begin{equation*}
+		\|\phi(a) \| = \|\phi(b) + i \phi(c)\| = \|\phi(b_+) + \phi(b_-) + i \phi(c_+) + i \phi(c_-)\| \leq 4 M
+	\end{equation*} 
+\end{proof}
+
+We concentrate from now on positive linear functionals $\phi: \algebra{A} \to \mathds{C}$. 
+The main point is the following observation:
+
+\begin{remark}
+	If $\phi: \algebra{A} \to \mathds{C}$ is a positive linear functional, then $\langle a, b \rangle_{\phi} \coloneq \phi(a^* b)$ is a semi-inner product on the vector space (fulfilling all requirements of an inner product except for $\langle a, a \rangle_\phi = 0 \then a = 0$).
+	So Cauchy-Schwarz-inequality holds: $|\langle a, b \rangle_\phi| \leq \|a\|_\phi \cdot \|b\|_\phi$ where $\|a\|_\phi \coloneq \langle a, a \rangle_\phi = \phi(a^* a)$ is the semi-norm implied by $\langle \cdot, \cdot \rangle_\phi$.
+	Therefore, $|\phi(a^* b)|^2 \leq \phi(a^* a) \cdot \phi(b^* b)$ for all $a, b \in \algebra{A}$.
+\end{remark}
+
+\begin{proposition}
+	Let $\algebra{A}$ be a $C^*$-algebra and $\phi \in \algebra{A}_+^* = \{ \phi: \algebra{A} \to \mathds{C} \mid  \text{ positive linear } \}$.
+	Then $|\phi(a)|^2 \leq \|\phi\| \phi(a^* a)$ for all $a \in \algebra{A}$.
+\end{proposition}
+
+\begin{proof}
+	Let $(e_\lambda) \subseteq \algebra{A}_{+, 1}$ be an approximate unit.
+	Using CS, we get
+	\begin{equation*}
+		|\phi(e _\lambda a) |^2 \leq \phi(e_\lambda^2) \cdot \phi(a^* a) \leq \|\phi\| \phi(a^* a)
+	\end{equation*}
+	and taking the limit yields the statement.
+\end{proof}
+
+
+
 
 
 \end{document}
