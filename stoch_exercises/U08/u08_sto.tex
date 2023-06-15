@@ -4,7 +4,7 @@
 
 \def\lecture{Stochastik 2}
 \def\authors{Linus Mußmächer}
-\def\sheetNumber{06}
+\def\sheetNumber{08}
 %\def\sumPoints{30} 
 
 % --- PREAMBLE ---
@@ -20,15 +20,39 @@
 
 \subsection{Zentralübung}
 
-\begin{enumerate}
-    \item $(X_n)$ konvergiert stochastisch gegen $X$ mit $\mathds{P}(X = 0) = 1$ (und $\mathds{P}(X = r) = 0$ für alle anderen $r \in \mathds{R}$).
-\end{enumerate}
+$(X_n)$ konvergiert $\mathds{P}$ stochastisch gegen $X = 0$.
+Sei dazu $\epsilon > 0$ (und o.B.d.A. $< 1$) beliebig.
+Dann existiert ein $N \in \mathds{N}$ mit $\frac{1}{N} < \epsilon$ und es gilt $|X_n - X| \geq \epsilon \iff X_n = n$ für alle $n \geq N$.
+Somit folgt $\lim_{n \to \infty} \mathds{P}(|X_n - X| \geq \epsilon) = \lim_{n \to \infty} \mathds{P}(X_n = n) = \lim_{n \to \infty} \frac{1}{n} = 0$.
 
-Lp, stochastisch, schwach
+$(X_n)$ konvergiert nicht in $L_p$, denn wäre sie $L_p$-konvergent gegen eine Grenzvariable $\tilde{X}$, dann wäre $(X_n)$ auch stochastisch konvergent gegen $\tilde{X}$ und aufgrund der Eindeutigkeit des Grenzwertes folgt $X = \tilde{X}$.
+Wir zeigen daher, dass $(X_n)$ nicht in $L_p$ gegen $X$ konvergieren kann. Es ist $X = 0$, also $|X_n - X|^p = X_n^p$. Dann gilt
+\begin{equation*}
+    \mathds{E}[|X_n - X|^p] = \mathds{E}[X_n^p] = (1 - \frac{1}{n}) \cdot 0^p + \frac{1}{n} \cdot n^p = n^{p-1}
+\end{equation*}
+wobei $n^{p-1} = 1 \to 1$ für $p =1$ und $n^{p-1} \to \infty$ für $p > 1$ gilt.
+Die $L_p$-Konvergenz ist also für kein $p$ gegeben.
+
+Die fast sichere Konvergenz kann nicht entschieden werden.
+Wie oben muss $(X_n)$, falls $\mathds{P}$-fast sicher konvergent, gegen $X$ konvergieren.
+ Sind die $X_n$ unabhängig verteilt, so gilt für beliebiges $\epsilon > 0$ (und o.B.d.A. $< 1$)
+\begin{equation*}
+    \mathds{P}(\bigcup_{k = n}^\infty \{|X_k - X| \geq \epsilon\}) =  \mathds{P}(\bigcup_{k = n}^\infty \{ X_k = k\} ) = \sum{k = n}^\infty \mathds{P}(\{ X_k = k\} ) = \sum_{k = n}^{\infty} \frac{1}{k}
+\end{equation*}
+und diese Summe kann für $k \to \infty$ nicht gegen $0$ konvergieren, da dann die harmonische Reihe beschränkt wäre.
+Also gilt für unabhängige $X_n$, dass $X_n$ nicht fast sicher konvergiert.
+
+Für abhängige $X_n$ lassen sich allerdings fast sicher konvergente Beispiele formulieren. 
+Wir wollen dazu $X_n = 0 \then X_{n+1} =0$ festlegen und im Fall $X_n = n$ verlangen, dass $X_{n+1} = n+1$ mit bedingter Wahrscheinlichkeit $\frac{n}{n+1}$ und $X_{n+1} = 0$ mit bedingter Wahrscheinlichkeit $\frac{1}{n+1}$.
+Dann erfüllt die Folge $(X_n)$ alle Forderungen und es gilt $X_{n+1} \neq 0 \then X_n \neq 0$ für alle $n$, also $\bigcup_{k = n}^\infty \{ X_k = k\} = \bigcup_{k = n}^\infty \{ X_k \neq 0\} \subseteq \{X_n \neq 0\} = \{X_n = n\}$ und somit
+\begin{equation*}
+    \mathds{P}(\bigcup_{k = n}^\infty \{|X_k - X| \geq \epsilon\}) =  \mathds{P}(\bigcup_{k = n}^\infty \{ X_k = k\} ) \leq \mathds{P}(\{X_n = n\}) = \frac{1}{n} \to 0
+\end{equation*}
+und die $X_n$ sind fast sicher konvergent.
 
 \subsection{}
 
-$X_n \xrightarrow{\mathds{P}} X$: Für alle $\epsilon, \delta > 0$ existiert ein $n_0 \in \mathds{N}$ sodass für alle $n \geq n_0$ gilt $\mathds{P}(|X_n - X| \geq \epsilon ) < \delta$. Insbesondere für $\epsilon = \delta$!
+$X_n \xrightarrow{\mathds{P}} X$: Für alle $\epsilon, \delta > 0$ existiert ein $n_0 \in \mathds{N}$, sodass für alle $n \geq n_0$ gilt $\mathds{P}(|X_n - X| \geq \epsilon ) < \delta$. Insbesondere für $\epsilon = \delta$!
 
 \subsection{}
 
