@@ -52,13 +52,21 @@ und die $X_n$ sind fast sicher konvergent.
 
 \subsection{}
 
-$X_n \xrightarrow{\mathds{P}} X$: Für alle $\epsilon, \delta > 0$ existiert ein $n_0 \in \mathds{N}$, sodass für alle $n \geq n_0$ gilt $\mathds{P}(|X_n - X| \geq \epsilon ) < \delta$. Insbesondere für $\epsilon = \delta$!
 
 \subsection{}
 
-\subsection{}
-
-(b) Keine Lebesguedichte, da nur Punktmasse
+\begin{enumerate}
+    \item Sei $\epsilon > 0$ beliebig. Dann gilt $\mathds{P}(X_1 \geq 1 - \epsilon) = \epsilon$ und es ist 
+    \begin{align*}
+        \mathds{P}(|X_{(n)} - 1| \geq \epsilon) &= \mathds{P}(X_{(n)} < 1 - \epsilon ) = \mathds{P}(X_k < 1 - \epsilon \ \forall_{1 \leq k \leq n}) = (1 - \epsilon)^n \to 0\text{,}
+    \end{align*}
+    da $1-\epsilon < 1$. Dies zeigt die stochastische Konvergenz.
+    \item Wir berechnen zuerst die Dichte von $Y_n = n(1 - X_{(n)})$. Für ein $t \geq 0$ gilt:
+    \begin{align*}
+        \mathds{P}(Y_n \geq t) = \mathds{P}(X_{(n)} \leq 1 - \frac{t}{n}) = \mathds{P}(X_k \leq 1 - \frac{t}{n} \ \forall_{1 \leq k \leq n}) = (1 - \frac{t}{n})^n\text{.}
+    \end{align*}
+    Diese Dichte konvergiert punktweise gegen die Grenzdichte $\lim_{n \to \infty} (1 - \frac{t}{n})^n \cdot 1_{[0,\infty)}(t) = \exp(-t) \cdot 1_{[0, \infty)}(t)$, also konvergiert auch ihre Verteilung punktweise gegen die Grenzverteilung $\int_{0}^{t} \exp(-\tau) \cdot 1_{[0, \infty)}(\tau) d\tau = (1 - \exp(-t)) \cdot 1_{[0, \infty)}(t)$. Dies ist eine Exponentialverteilung zum Parameter $1$.
+\end{enumerate}
 
 
 
