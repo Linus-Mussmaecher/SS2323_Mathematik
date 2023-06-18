@@ -1,0 +1,33 @@
+\documentclass[a4paper]{article}
+
+% --- DATA ---
+
+\def\lecture{Operator Algebras}
+\def\authors{Valentin Hock, Linus Mußmächer, Minona Schäfer}
+\def\sheetNumber{03}
+%\def\sumPoints{30} 
+
+% --- PREAMBLE ---
+
+\usepackage[english]{babel}	% language specific quotation marks etc.
+\input{../../preambles/exercise_preamble.tex}
+
+% --- DOCUMENT ---
+
+\begin{document}
+
+\makeexheader
+
+\begin{center}
+    \includegraphics*[width=0.4\textwidth]{pi.png}
+\end{center}
+
+\subsection{}
+
+The first statement follows immediately from the fact that the canonical inclusion $\algebra{B} \hookrightarrow \algebra{A}$ is an injective $^*$-homomorphism, so it is isometric as proven in the lecture.
+
+If now $\algebra{B}$ is a dense proper $^*$-subalgebra of $\algebra{A}$, assuming it could be turned into a $C^*$-algebra, the norm on that $C^*$-algebra would already have to be the norm on $\algebra{A}$.
+But then the canonical inclusion is isometric and injective, so it has closed range and $\algebra{B} \subseteq \algebra{A}$ is closed and dense in $\algebra{A}$.
+Now, however, we have $\algebra{B} = \algebra{A}$, a contradiction.
+
+\end{document}
