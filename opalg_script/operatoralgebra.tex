@@ -2154,7 +2154,7 @@ The main point is the following observation:
 
 \begin{remark}
 	If $\phi: \algebra{A} \to \mathds{C}$ is a positive linear functional, then $\langle a, b \rangle_{\phi} \coloneq \phi(a^* b)$ is a semi-inner product on the vector space (fulfilling all requirements of an inner product except for $\langle a, a \rangle_\phi = 0 \then a = 0$).
-	So Cauchy-Schwarz-inequality holds: $|\langle a, b \rangle_\phi| \leq \|a\|_\phi \cdot \|b\|_\phi$ where $\|a\|_\phi \coloneq \langle a, a \rangle_\phi = \phi(a^* a)$ is the semi-norm implied by $\langle \cdot, \cdot \rangle_\phi$.
+	So Cauchy-Schwarz-inequality holds: $|\langle a, b \rangle_\phi| \leq \|a\|_\phi \cdot \|b\|_\phi$ where $\|a\|_\phi \coloneq \langle a, a \rangle_\phi^\frac{1}{2} = \phi(a^* a)^\frac{1}{2}$ is the semi-norm implied by $\langle \cdot, \cdot \rangle_\phi$.
 	Therefore, $|\phi(a^* b)|^2 \leq \phi(a^* a) \cdot \phi(b^* b)$ for all $a, b \in \algebra{A}$.
 \end{remark}
 
@@ -2223,7 +2223,7 @@ The main point is the following observation:
 			\underbrace{\phi(e_\lambda - a)}_{\in \mathds{R}} \leq |\phi(e_\lambda)| \leq 1
 		\end{equation*}
 		Letting $\lambda \to \infty$, then $1 - \phi(a)
-		 \leq 1$ so $\phi(a) \geq 0$.
+		 \leq 1$ so $\phi(a) \geq 0$.k
 	\end{enumerate}
 \end{proof}
 
@@ -2257,19 +2257,171 @@ The main point is the following observation:
 \end{example}
 
 \begin{theorem}
-	If $\algebra{A}$ is a $C^*$-algebra nad $a \in \algebra{A}$ is normal with $\algebra{A} \neq 0$ there exists a state $\phi \in S(\algebra{A})$ with $|\phi(a)| = \|a\|$ 
+	If $\algebra{A}$ is a $C^*$-algebra and $a \in \algebra{A}$ is normal with $\algebra{A} \neq 0$ there exists a state $\phi \in S(\algebra{A})$ with $|\phi(a)| = \|a\|$ 
 \end{theorem}
 
 \begin{proof}
 	We may assume $a \neq 0$ (we would only need to prove that any state exists, but this follows from the construction).
 	Let $\algebra{B} = C^*(a, 1) \subseteq \tilde{\algebra{A}}$.
 	$\algebra{B}$ is abelian, $\hat{a} \in C(X)$ and $X = \Omega(\algebra{B})$ (compact).
-	Then there exists an $\chi \in \Omega(\algebra{B}) = X$ (compact) such that $| \hat{a}(\chi)| = |\chi(a)| = \|\hat{a}\|_\infty = \|a\|$.
+	Then there exists a $\chi \in \Omega(\algebra{B}) = X$ (compact) such that $| \hat{a}(\chi)| = |\chi(a)| = \|\hat{a}\|_\infty = \|a\|$.
 	By Hahn-Banach, extend $\chi: \algebra{B} \to \mathds{C}$ to $\psi \in (\tilde{\algebra{A}})^*$ with $\|\psi\| = \|\phi\| = 1$.
 	So $|\psi(a)| = |\chi(a)| = \|a\|$ and also $|\psi(1)| = |\chi(1)| = 1$.
 	By the corollary, $\psi \geq 0$ and $\psi \in S(\algebra{A})$.
 	Taking $\phi \coloneq \psi|_\algebra{A} \in \algebra{A}_+^*$ shows $\|\phi\| \leq \|\psi\| = 1$ and $|\phi(a)| = |\psi(a)| = \|a\|$, so $\|\phi\| \geq 1$, so $\|\phi\| = 1$ and $\phi$ is also a state.
 \end{proof}
+
+\begin{theorem}[Extension of positive linear functionals]
+	Let $\algebra{A} \subseteq \algebra{B}$ be an inclusion of $C^*$-algebras and $\phi \in \algebra{A}_+^*$. Then, there exists $\tilde{\phi} \in \algebra{B}_+^*$ with $\tilde{\phi}|_\algebra{A} = \phi$ and $\|\tilde{\phi}\| = \|\phi\|$.
+\end{theorem} 
+
+\begin{proof}
+	First consider the case $\algebra{B} = \tilde{\algebra{A}}$.
+	In this case, define $\tilde{\phi}: \tilde{\algebra{A}} \to \mathds{C}, a + \lambda \cdot 1 \mapsto \phi(a) + \lambda \|\phi\|$.
+	Of course, $\tilde{\phi}$ is linear and $\tilde{\phi}|_\algebra{A} = \phi$. 
+	To prove that $\tilde{\phi}$ is bounded, let $(e_i) \subseteq \algebra{A}$ be an approximate unit. Then
+	\begin{align*}
+		|\tilde{\phi}(a + \lambda \cdot 1) &= |\phi(a) + \lambda \|\phi\| | = |\lim_i \phi(a e_i) + \lambda \lim_i \phi(e_i)| = \lim_i |\phi(a e_i + \lambda e_i)|\\ 
+		&= \lim_i |\phi((a + \lambda 1) e_i)| \leq \|\phi\| \| a + \lambda 1 \| \|e_i\| \leq \|\phi\| \|a + \lambda 1\|
+	\end{align*}
+	because $\phi$ is bounded.
+	So $\tilde{\phi}$ is also bounded and $\|\tilde{\phi}\| \leq \|\phi\|$.
+	But $\tilde{\phi}(1) = \|\phi\|$, so $\|\tilde{\phi}\| = \|\phi\|$ and $\tilde{\phi}$ is therefore also positive.
+
+	Now the general case: Passing to the unitizations, we have an embedding $\tilde{\algebra{A}} \subseteq \tilde{\algebra{B}}$ and may assume that both $\algebra{A}, \algebra{B}$ are unital with the same unit.
+	By the unital case above, $\phi$ extends to $\tilde{\algebra{A}}$ and then also to $\algebra{A}$ by Hahn-Banach. 
+	So there exists $\tilde{\phi} \in \algebra{B}^*$ with $\tilde{\phi}|$.
+	Since $\phi \geq 0$, we know that $\tilde{\phi(1)} = \phi(1) = \|\phi\| = \|\tilde{\phi}|$, so $\tilde{\phi} \geq 0$.
+\end{proof}
+
+\begin{remark}~
+	\begin{enumerate}
+		\item In certain cases the extension $\phi$ to $\tilde{\phi}$ is unique.
+		This is true if $ \algebra{A} \trianglelefteq \algebra{B}$ ore more generally if $\algebra{A} \subseteq \algebra{B}$ is a hereditary $C^*$-subalgebra (see Murphy: $\algebra{ABA} = \algebra{B}$ or $\algebra{A} = L \cap L^*$ for some left-handed ideal $L$).
+		In this case, $\tilde{\phi}(b) = \lim \phi(u_\lambda a u_\lambda)$ where $(u_\lambda) \subseteq \algebra{A}$ where $(u_\lambda)$ is an approximate unit.
+		\item Say $\phi \in \algebra{A}^*$ is self-adjoint. If $\phi^* = \phi$ where $\phi^*(a) = \overline{\phi(a^*)}$ (involution on $\algebra{A}^*$).
+		We can write $\phi \in \algebra{A}^*$ as $\phi = \Re(\phi) + i \Im(\phi)$ where $\Re(\phi) = \frac{\phi + \phi^*}{2}$ and $\Im(\phi) = \frac{\phi - \phi^*}{2i}$ are self-adjoint, contained in $\algebra{A}^*_{sa}$.
+		Observe that $\algebra{A}_{sa}^* = (\algebra{A}_{sa})'$, the topological dual of $\algebra{A}_{sa}$ as an $\mathds{R}$-vecotr Banach space.
+		\item Any $\phi \in \algebra{A}_{sa}^*$ can be uniquely written as $\phi = \phi_+ - \phi_-$ where $\phi_+, \phi_- \in \algebra{A}_+^*$ and $\|\phi\| = \|\phi_+\| + \|\phi_-\|$.
+	\end{enumerate}
+\end{remark}
+
+\section{The Gelfand-Naimark-Theorem}
+
+\begin{definition}
+	Let $\algebra{A}$ be a $C^*$-algebra.
+	A \textbf{representation} of $\algebra{A}$ is a $^*$-homomorphism $\pi: \algebra{A} \to \mathcal{L}(H)$ for some Hilbert space $H$.
+
+	
+	We say that $\pi$ is
+	\begin{enumerate}
+		\item \textbf{faithful} if $\pi$ is injective (and therefore isometric).
+		\item \textbf{non-degenerate} if $\Span \pi(\algebra{A}) H = H$.
+		\item \textbf{irreducible} if for all closed subspaces $K \subseteq H$ with $\pi(\algebra{A})K \subseteq K $ ($K$ is $\pi$-invariant) we have $K = 0$ or $K = H$.
+	\end{enumerate}
+\end{definition}
+
+\begin{remark}
+	The exercises show that $\pi$ non-degenerate is equivalent to $\pi(e_\lambda) \to 1$ (strongly) for an approximate unit $(e_\lambda) \subseteq \algebra{A}$
+\end{remark}
+
+We want to show that there is always a faithful homomorphism.
+
+\begin{definition}
+	Let $\pi: \algebra{A} l\to \mathcal{L}(H)$, $\rho: \algebra{A} \to \mathcal{L}(K)$ two representations. We say that $\pi, \rho$ are (unitarily) equivalent if there exists a surjective isometry $u: H \to K$ such that $u^* \rho(a) u = \pi(a)$, i.e. $\rho = \mathrm{Ad}_{u^*} \pi$.
+\end{definition}
+
+\begin{definition}[Spectrum]
+	We define
+	\begin{equation*}
+		\hat{\algebra{A}} = \{[\pi] \mid \pi: \algebra{A} \to \mathcal{L}(H), \pi \neq 0\$ 
+	\end{equation*}
+	Also define $\mathrm{Prim}(\algebra{A}) \{ \ker(\phi) \mid [\pi]\in \hat{\algebra{A}}$ and $\hat{\algebra{A}} \to \mathrm{Prim}(\algebra{A}), [\pi]l \mapsto \ker \pi$ (primitive ideals).
+
+	Let $\chi \in \Omega(\algebra{A})$ be a character $\chi: \algebra{A} \to \mathds{C} = \mathcal{L}(\mathds{C})$. Then $[\chi] \in \hat{\algebra{A}}$ and $\ker \chi \in \mathrm{Prim}(\algebra{A})$.
+
+	Observe that if $\algebra{A} = C_0(X)$, then ???
+\end{definition}
+
+How do we get representations of $\algebra{A}$?
+
+\subsection*{Gelfand-Naimark-Siegal-Construction (GNS)}
+
+\begin{theorem}
+Let $\phi \in \algebra{A}_+^*$ be any positive linear functional. 
+We know that $\langle a, b \rangle_\phi \coloneq \phi(a^* b)$ defines a semi-inner-product and $\|a\|_\phi = \phi(a^* a)^\frac{1}{2}$ is a semi-norm.
+
+Let $N_\phi \coloneq \{a \in \algebra{A} \mid \|a\|_\phi = 0 \}$. 
+\end{theorem}
+
+\begin{remark}
+Notice: $N_\phi \subseteq \algebra{A}$ is a closed left ideal.
+\end{remark}
+
+\begin{proof}
+	From Cauchy-Schwarz: 
+	\begin{align*}
+		|\phi(a^* b)|^* \leq \phi(a^* a) \phi(b^* b)
+	\end{align*}
+	and therefore
+	\begin{equation*}
+		N_\phi = \{ b \in \algebra{A} \mid \phi(ab) = 0 \}
+	\end{equation*}
+	Let $H_\phi^\circ \coloneq \algebra{A} / N_\phi$ the quotient vector space.
+	Then $\langle, \dot, \dot \rangle_\phi$ factors through an inner product of $H_\phi^\circ$ and 
+	\begin{align*}
+		\langle a + N_\phi, b + N_\phi \rangle = \langle a, b \rangle  =\phi(a^* b)
+	\end{align*}
+	By completion we get a Hilbert space $H_\phi= \closure{H^\circ_\phi}^{\langle \cdot, \cdot, \rangle}$.
+
+	Now we define (with $L$ the linear operators)
+	\begin{equation*}
+		\pi_\phi^\circ: \algebra{A} \to L(H_\phi^\circ)
+	\end{equation*}
+	and thus
+	\begin{equation*}
+		\pi_\phi^\circ(a) (b + N_\phi)\coloneq ab + N_\phi
+	\end{equation*}
+	meaning that $\pi_\phi^\circ (a) \cdot \pi_\phi^\circ(b) = \pi_\phi^\circ (ab)$ and $\pi_\phi^\circ(a^*) = (\pi_\phi^\circ(a))^*$. Then
+	\begin{align}
+		\phi(b^* a c) = \langle \phi_\phi^\circ (a^*) (b + N_\phi), c + N_\phi \rangle = \langle b + N_\phi, \pi_\phi(a)(c + N_\phi) \rangle\text{.}
+	\end{align}
+	We claim now that $\pi_\phi^\circ$ is bounded for $\|\cdot\|_\phi$ and therefore show that $\pi_\phi(a)$ extends to  $\pi_\phi(a) \in \mathcal{L}(H_\phi)$. 
+
+	Take 
+	\begin{align*}
+		\|\pi_\phi^\circ(a)(b + N_\phi)\|_\phi^2 = \|ab + N_\phi\|_\phi^2 = \phi((ab^* ab)) = \phi(b^* a^* a b) \leq \|a\|^2 \phi(b^* b) \leq \|a\|^2 \|b + N_\phi|
+	\end{align*}
+	Therefore we get a representation: The GNS-Representation associated to $\phi$.
+	\begin{equation*}
+		\pi_\phi: \algebra{A} \to \mathcal{L}(H_\phi), a \mapsto \pi_\phi(a) = [b + N_\phi \mapsto ab + N_\phi] 
+	\end{equation*}
+ \end{proof}
+
+ If $(\pi_i)_{i \in I}$ is a family of representations $\pi_i: \algebra{A} \to H$.
+ We define the direct sum $\bigoplus_{i \in I} \pi_i: A \to \mathcal{L}(\bigoplus_{i \in I} H_i), a \mapsto (\pi_i(a))_{i \in I}$ where $(\pi_i(a))_{i \in I}: \zeta \mapsto (\pi_i(a)\zeta)$.
+
+
+\begin{theorem}[Gelfand-Naimar-Representation]
+	Let $\algebra{A}$ be a $C^*$-algebra and define $\pi_U \coloneq \bigoplus_{\phi \in S(\algebra{A})} \pi_\phi: \algebra{A} \to \mathcal{L}(H_U)$ with $H_U = \oplus_{\phi \in S(\algebra{A})} H_\phi$.
+	Then $(\pi_U, H_U)$ is \textbf{faithful}.
+\end{theorem}
+
+\begin{proof}
+	Suppose $0 \neq a \in \algebra{A}$, $pi_U(a) = 0$ and $pi_U(a) = 0$.
+	Then there exists $\phi \in S(\algebra{A})$ such that $\phi(a^* a) = \|a^* 
+	a\| = \|a\|^2$.
+	We know $\langle a, a \rangle_\phi = \|a\|_\phi$.
+	Then $\pi_U(a) = 0$, so $\pi_\phi(a) = 0$, so $\pi_\phi(a^*a) = 0$ and therefore $\pi_\phi(a)(b + N_\phi) = ab + N_\phi = 0$.
+	This shows 
+	\begin{equation*}
+		0 = \langle \pi_\phi(a) (b + N_\phi), \pi_\phi(a)(b + N_\phi) \rangle = \phi(b^* a^* a b)
+	\end{equation*}
+	for all $b \in \algebra{A}$, so $b = e_\lambda$ (for $\lambda \to \infty$).
+	But then $\phi(a^* a) = 0$ and thus $a = 0$.
+
+\end{proof}
+
 
 
 
