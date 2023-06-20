@@ -22,6 +22,29 @@
 
 \subsection{Zentralübung}
 
+
+\begin{enumerate}
+    \item Es ist $(X_i)$ gleichgradig integrierbar, d.h. es ist 
+    \begin{equation*}
+        \lim_{n \to \infty} \sup_{i \in I} \int_{\{|X_i| \geq n\}} |X_i| d \mathds{P} = 0\text{.}
+    \end{equation*}
+    Insbesondere existiert ein $N \in \mathds{N}$ mit $\int_{\{|X_i| \geq n\}} |X_i| d \mathds{P} < 1$ für alle $i \in I$ und damit ist
+    \begin{equation*}
+        \mathds{E}[|X_i|] = \int |X_i| d \mathds{P} = \int_{\{|X_i| \geq n\}} |X_i| d \mathds{P} + \int_{\{|X_i| < n\}} |X_i| d\mathds{P} < 1 + n 
+    \end{equation*}
+    für alle $i \in I$. Sei nun $\epsilon > 0$ beliebig.
+    Dann existiert folglich ein $r > 0$ mit $\frac{1}{r} \mathds{E}[|X_i|] < \epsilon$ für alle $i \in I$ und damit
+    \begin{equation*}
+        \mathds{P}(X_i \notin \closure{K_r(0)}) = \mathds{P}(|X_i| > r) \leq \frac{1}{r} \mathds{E}[|X_i|] \leq \frac{1}{r} \mathds{E}[|X_i|] < \epsilon
+    \end{equation*}
+    und damit $\mathds{P}(X_i \in \closure{K_r(0)}) \geq 1 - \epsilon$. Da $\closure{K_r(0)}$ kompakt ist, zeigt dies die Straffheit.
+    \item Betrachte die Familie $(X_n)_{n \in \mathds{N}}$ mit $X_n = n \cdot \mathds{1}_{[0, 1/n]}$ (wobei $\mathds{P}$ der uniformen Verteilung auf $[0,1]$ entspreche). 
+    Dann ist $X_n$ straff, denn für die kompakte Menge $[0,1]$ gilt $\mathds{P}(X_n \in [0,1]) = 1 \geq 1 - \epsilon$ für alle $\epsilon > 0$. 
+    Allerdings ist $(X_n)$ nicht uniform integrierbar, denn für beliebiges $N \in \mathds{N}$ ist $\int_{|X_{N}| \geq N} |X_N| d \mathds{P} = N \cdot \frac{1}{N} = 1$, also $\sup_{n \in \mathds{N}}  \int_{|X_{n}| \geq N} |X_n| d \mathds{P} \geq 1$.
+    Somit kann der Limes $n \to \infty$ auch nur größer oder gleich $1$ sein und es $(X_n)$ ist nicht uniform integrierbar.
+\end{enumerate}
+
+
 \subsection{}
 
 (b) wichtig
