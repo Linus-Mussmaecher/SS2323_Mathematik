@@ -16,8 +16,6 @@
 
 \begin{document}
 
-8-2 wichtig
-
 \makeexheader
 
 \subsection{Zentralübung}
@@ -54,6 +52,25 @@
 (d) ist äquivalent, aber muss nicht gezeigt werden
 
 \subsection{}
+
+
+\begin{enumerate}
+    \item Die Verteilungsfunktionen zu $X$ bzw. $X_n$ sind
+    \begin{equation*}
+        F(k) = \exp(- \lambda) \frac{\lambda^k}{k!} \qquad F_n(k) = \binom{n}{k} \left(\frac{\lambda}{n}\right)^{k} \left(1 - \frac{\lambda}{n}\right)^{n-k} 
+    \end{equation*}
+    Wir wollen zeigen, dass an allen Stetigkeitsstellen (in unserem Fall: in allen natürlichen Zahlen $k$) $F_n(k) \to F(k)$ gilt. Sei daher $k \in \mathds{N}$ fest aber beliebig gewählt. Dann gilt
+    \begin{align*}
+        F_n(k) &= \frac{n!}{k!(n-k)!}  \left(\frac{\lambda}{n}\right)^{k} \left(1 - \frac{\lambda}{n}\right)^{n-k} \\
+        &= \frac{n!}{(n-k)! \cdot n^k}  \frac{\lambda^k}{k!} \left(1 - \frac{\lambda}{n}\right)^n \cdot \left(1 - \frac{\lambda}{n}\right)^{-k}\\
+        &= \left(\prod_{m=n-k+1}^{n} \underbrace{\frac{m}{n}}_{\to 1}\right) \cdot \frac{\lambda^k}{k!} \underbrace{\left(1 + \frac{-\lambda}{n}\right)^n}_{\to \exp(-\lambda)} \cdot \underbrace{\left(1 - \frac{\lambda}{n}\right)^{-k}}_{\to 1}\\
+        &\to \frac{\lambda^k}{k!} \exp(-\lambda) = F(k)
+    \end{align*}
+    und dies zeigt $X_n \xrightarrow{d} X$. (Man beachte insbesondere, dass das Produkt stets eine feste Anzahl an Faktoren hat, die einzeln gegen $1$ konvergieren, wenn $n$ und damit auch $m$ gegen $\infty$ strebt.)
+
+    Alternativ folgt dies bereits aus 3.21, aber dann bliebe wenig zu tun.
+    \item 
+\end{enumerate}
 
 (b) Was haben wir für Aussagen erstmal über schwache Konvergenz. Wie jetzt stochastische Konvergenz? Deterministisches e hoch lambda ausschlaggebend! 3.20
 
