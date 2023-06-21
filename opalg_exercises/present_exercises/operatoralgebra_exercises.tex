@@ -646,8 +646,87 @@ $\pi$ is irreducible if for any closed, $\pi(\algebra{A})$-invariant subspace (t
 \end{proof}
 
 \begin{exercise}[04-07]
-	$\algebra{A}$ is primitive if there exists a faithful and irreducible representation $\pi: \algebra{A} \to \mathds{B}(H)$.
+	$\algebra{A}$ is primitive if there exists a faithful and irreducible representation $\pi: \algebra{A} \to \mathcal{B}(H)$.
+
+	Recall that $p \trianglelefteq \algebra{A}$ is primitive if $p = \ker \rho$ for some $[\rho] \in \hat{\algebra{A}}$.
+
+	So $\algebra{A}$ is primitive if $\{0\}$ is a primitive ideal.
 \end{exercise}
+
+\begin{example}
+	Take $\algebra{A} = K(H)$ (compact operators on some Hilbert space $H$).
+	This is primitive as the embedding/inclusion in $\mathcal{B}(H)$ is already the representation and $K(H) = \mathds{C} \cdot 1$, as commuting with the compact operator is the same as commuting with the finite rank operators, or (for some $T \in K(H)'$)
+	\begin{align*}
+		& T \cdot |\zeta\rangle \langle \eta| = |\zeta \rangle \langle \eta | \cdot T \\
+		& |T(\zeta) \rangle \langle \eta| = |\zeta\rangle \langle T^*(\eta)| \\
+		& T(\zeta)\langle \eta | J \rangle = \zeta \langle T^*(\eta) | J \rangle
+	\end{align*}
+	for all $\zeta, \eta, J \in H$. But then $T \in \mathds{C} \cdot 1$.
+\end{example}
+
+\begin{proof}[for 04-07]
+	If $\algebra{A}$ is a primitive $C^*$-algebra, then $ZM(\algebra{A}) = \mathds{C} \cdot 1$ (the center of the multiplier $\algebra{A}$).
+	\begin{quote}
+		In general, we have the Dawns-Hoffman-Theorem: $ZM(A) \simeq C_b(\mathrm{Prim}(\algebra{A}))$ where $\mathrm{Prim}(\algebra{A}) = \{ p \trianglelefteq \algebra{A} \mid p \text{ primitive} \}$.
+
+		We want to use that if $\algebra{A}$ is primitive, then $\mathrm{Prim}(\algebra{A}) = \{\{0\}\}$. This is however not universally true.
+
+		Example: Look at $\algebra{A} = \widetilde{K(H)} \subseteq \mathcal{B}(H)$, $\dim H = \infty$ and thus $\mathrm{Prim}(\algebra{A}) = \{\{0\} \leq K(H)\}$.
+	\end{quote}
+	Take $\pi: \algebra{A} \to \mathcal{B}(H)$ a faithful irreducible representation (assume $\algebra{A} \neq 0$), in particular $\pi$ is non-degenerate ($\Span \pi(\algebra{A}) H = H$).
+	So $\pi$ extends (strictly continuous) to a unital representation $\tilde{\pi}: M(\algebra{A}) \to \mathcal{B}(H)$.
+	For this representation we have $\tilde{\pi}(\mu) \pi(a) \zeta = \pi(\mu a) \zeta$ so $\tilde{\pi}$ is faithful.
+	Now, since $\pi$ is irreducible by Schur we have $\pi(\algebra{A})' = \mathscr{C} \cdot 1$.
+	Next we have $\tilde{\pi}(M(\algebra{A}))' = \pi(\algebra{A})'$.
+	The inclusion $\subseteq$ is trivial.
+	For $\supseteq$ consider that $T \in {\pi}(\algebra{A})'$ implies $T {\pi}(a) = {\pi}(a) T$ for all $a \in \algebra{A}$.
+	Take now $\mu \in M(\algebra{A})$.
+	Then for all $a \in \algebra{A}$:
+	\begin{align*}
+		\tilde{\pi}(\mu)T\pi(a) = \tilde{\pi}(\mu) \pi(a) T = \pi(\mu \cdot a) T = T \pi(\mu a) = T \tilde{\pi}(\mu) \pi(a)
+	\end{align*}
+	so $\tilde{\pi}(\mu)T = T \tilde{\pi}(\mu)$. 
+	Therefore, $\tilde{\pi}(M(A))' = \pi(\algebra{A})' = \mathds{C} \cdot 1$ is also trivial.
+	Now notice $\tilde{\pi}(ZM(\algebra{A})) \subseteq Z(\tilde{\pi}(M(\algebra{A}))) \subseteq \tilde{\pi}(M(A))' = \mathds{C} \cdot 1$.
+	Since $\tilde{\pi}$ is faithful and unital, we have $ZM(\algebra{A}) = \mathds{C} \cdot 1$ (as the image has only $1$ dimension, the preimage must also only have $1$ dimension).
+\end{proof}
+
+Somewhere along the way we also solved exercise 04-06.
+
+\begin{example}
+	Take $\algebra{A} \supseteq \widetilde{\mathcal{K}(H)} = \mathcal{K}(H) + \mathds{C}\cdot 1 \subseteq \mathcal{B}(H)$. Then $\dim H = \infty$.
+	This is primitive but not isomorphic to any $\mathcal{K}(G)$ for another Hilbert space $G$.
+\end{example}
+
+\begin{remark}
+	How to turn everything into a $C^*$-algebra.
+
+	Take a Banach-$^*$-algebra $\algebra{A}$.
+	There is a (universal) $C^*$-algebra $C_u^*(\algebra{A})$ such that 
+	$\iota: \algebra{A} \to C_u(\algebra{A})$ has dense image and for any $\phi: \algebra{A} \to \algebra{B}$ there exists $\tilde{\phi}: C_u^*(\algebra{A}) \to \algebra{B}$ with $\phi = \tilde{\phi} \circ \iota$.
+
+	Definition of $C_u^*(\algebra{A})$: If $\phi: \algebra{A} \to \algebra{B}$ is a $^*$-homomorphism, $\phi$ is contractive.
+	Then $\|a\|_\phi \coloneqq \|\phi(a)\|_\algebra{B} \leq \|a\|_\algebra{A}$ is a $C^*$-seminorm.
+	Defining 
+	\begin{equation*}
+		\|a\|_{C_u^*} \coloneq \sup \{ \|a\|_\phi \mid \phi: \algebra{A} \to \algebra{B}\} \leq \|a\|_\algebra{A}
+	\end{equation*} 
+	yields the biggest possible $C^*$-seminorm on $\algebra{A}$.
+	Then $\closure{\algebra{A} / N_{\|\cdot\|_{C_u^*}}} =: C_u^*(\algebra{A})$ is a $C^*$-algebra as $\| \cdot \|_{C_u^*}$ becomes a norm.
+\end{remark}
+
+\begin{example}
+	For $\algebra{A} = A(\mathds{D})$, $C_u^*$ is commutative and unital (as $A(\mathds{D})$ is commutative and unital), so we have $C_u^*(\algebra{A}) \simeq C(X)$ for the spectrum $X = \Omega(C_u^*(A(\mathds{D})))$.
+	Recall that $\Omega(A(\mathds{D})) \simeq \mathds{D}$ via the evaluation functions.
+	Observe also that $A(\mathds{D}) \subseteq C(\mathds{D})$.
+	Then 
+	\begin{align*}
+		\Omega(C_u^*(A(\mathds{D}))) &\simeq \Omega_{sym}(A(\mathds{D})) \coloneq \{ \chi \in \Omega(A(\mathds{D})) \mid \chi(A(\mathds{D})_{sa}) \subseteq \mathds{R}\}\\
+		&= \{ \chi \in \Omega(A(\mathds{D})) \mid \chi \ ^*\text{-homomorphism} \}
+	\end{align*}
+	What characters (evaluations) on $A(\mathds{D})$ fulfil this? We see that $\mathrm{ev}_\lambda(f^*) = \overline{f(\lambda)}$, so $\overline{f(\lambda)} = f^*(\lambda) = \overline{f(\overline{\lambda})}$ for all $f$ (especially $f = \id$) only for $\lambda \in [-1,1]$.
+	Therefore, we have $C_u^*(A(\mathds{D})) \simeq C([-1,1])$.
+\end{example}
 
 \end{document}
 
