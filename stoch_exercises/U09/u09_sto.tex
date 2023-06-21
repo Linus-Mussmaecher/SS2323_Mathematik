@@ -4,7 +4,7 @@
 
 \def\lecture{Stochastik 2}
 \def\authors{Linus Mußmächer}
-\def\sheetNumber{08}
+\def\sheetNumber{09}
 %\def\sumPoints{30} 
 
 % --- PREAMBLE ---
@@ -45,33 +45,51 @@
 
 \subsection{}
 
-(b) wichtig
+%(b) wichtig
 
 \subsection{}
 
-(d) ist äquivalent, aber muss nicht gezeigt werden
+%(d) ist äquivalent, aber muss nicht gezeigt werden
 
 \subsection{}
 
 
 \begin{enumerate}
-    \item Die Verteilungsfunktionen zu $X$ bzw. $X_n$ sind
+    \item Die Wahrscheinlichkeitsfunktionen zu $X$ bzw. $X_n$ sind
     \begin{equation*}
-        F(k) = \exp(- \lambda) \frac{\lambda^k}{k!} \qquad F_n(k) = \binom{n}{k} \left(\frac{\lambda}{n}\right)^{k} \left(1 - \frac{\lambda}{n}\right)^{n-k} 
+        F(k) = \exp(- \lambda) \frac{\lambda^k}{k!} \qquad F_n(k) = \binom{n}{k} \left(\frac{\lambda}{n}\right)^{k} \left(1 - \frac{\lambda}{n}\right)^{n-k} \text{.}
     \end{equation*}
-    Wir wollen zeigen, dass an allen Stetigkeitsstellen (in unserem Fall: in allen natürlichen Zahlen $k$) $F_n(k) \to F(k)$ gilt. Sei daher $k \in \mathds{N}$ fest aber beliebig gewählt. Dann gilt
+    Dann gilt
     \begin{align*}
         F_n(k) &= \frac{n!}{k!(n-k)!}  \left(\frac{\lambda}{n}\right)^{k} \left(1 - \frac{\lambda}{n}\right)^{n-k} \\
         &= \frac{n!}{(n-k)! \cdot n^k}  \frac{\lambda^k}{k!} \left(1 - \frac{\lambda}{n}\right)^n \cdot \left(1 - \frac{\lambda}{n}\right)^{-k}\\
         &= \left(\prod_{m=n-k+1}^{n} \underbrace{\frac{m}{n}}_{\to 1}\right) \cdot \frac{\lambda^k}{k!} \underbrace{\left(1 + \frac{-\lambda}{n}\right)^n}_{\to \exp(-\lambda)} \cdot \underbrace{\left(1 - \frac{\lambda}{n}\right)^{-k}}_{\to 1}\\
-        &\to \frac{\lambda^k}{k!} \exp(-\lambda) = F(k)
+        &\to \frac{\lambda^k}{k!} \exp(-\lambda) = F(k)\text{.}
     \end{align*}
-    und dies zeigt $X_n \xrightarrow{d} X$. (Man beachte insbesondere, dass das Produkt stets eine feste Anzahl an Faktoren hat, die einzeln gegen $1$ konvergieren, wenn $n$ und damit auch $m$ gegen $\infty$ strebt.)
+    Man beachte insbesondere, dass das Produkt stets eine feste Anzahl an Faktoren hat, die einzeln gegen $1$ konvergieren, wenn $n$ und damit auch $m$ gegen $\infty$ strebt. Da die Verteilungsfunktionen von $X$ bzw. $X_n$ jeweils nur aus Summen der obigen Terme bestehen und diese Summen daher summandenweise konvergieren, konvergieren auch die Verteilungsfunktionen punktweise. Dies zeigt $X_n \to X$.
+    \item Wir wissen, dass die Summe unabhängiger Poisson-verteilter Zufallsvariablen wiederum Poisson-verteilt ist.
+    Daher gilt $\tilde{X}_n \coloneq \sum_{i = 1}^{n} X_i \sim \mathrm{Poiss}(\lambda \cdot n)$.
+    Wir bezeichnen im Folgenden die Verteilungsfunktion dieser Summe mit $\tilde{F}_n$.
+    Dann ist für $x \geq 0$:
+    \begin{align*}
+        \tilde{F}_n(\log_{1 + 1/n}(x)) &= \mathds{P}(\tilde{X}_n < \log_{1 + 1/n}(x)) = \sum_{k = 0}^{\log_{1 + 1/n}(x)} \mathds{P}(\tilde{X}_n = k) \\
+        &= \sum_{k = 0}^{\log_{1 + 1/n}(x)} \frac{n^k \lambda^k}{k!} \exp(- \lambda n) = \exp(- \lambda n) x^n = \left( e^{-\lambda} x \right)^n \\
+        &\to \left\{ \begin{matrix}
+            1 & x \geq e^\lambda \\ 0 & x < e^\lambda 
+        \end{matrix}\right. = \mathds{1}_{[e^\lambda, \infty)}
+    \end{align*}
 
-    Alternativ folgt dies bereits aus 3.21, aber dann bliebe wenig zu tun.
-    \item 
+    Sei nun $F_n$ die Verteilungsfunktion von $Y_n$, die Verteilungsfunktion von $e^\lambda$ ist $F = \mathds{1}_{[e^\lambda, \infty)}$ und ist stetig für alle $x \in \mathds{R}$ außer $e^\lambda$.
+
+    Sei $x \in \mathds{R}$ beliebig.
+    Falls $x < 0$, so ist $F_n(x) = 0 = F(x)$ für alle $n$.
+    Sei daher $x \in [0, \infty)$ und sei $\epsilon > 0$ beliebig.
+    Dann gilt:
+    \begin{align*}
+        F_n(x) = \mathds{P}(Y_n < x) = \mathds{P}\left(\sum_{i = 1}^{n} X_i < \log_{1+1/n} x\right) = \tilde{P_n}(\log_{1 + 1/n}(x)) \to \mathds{1}_{[e^\lambda, \infty)}
+    \end{align*}
+    d.h. $Y_n$ konvergiert schwach gegen $e^\lambda$.
+    Satz 3.20 zeigt nun, dass $Y_n$ auch stochastisch gegen $e^\lambda$ konvergiert.
 \end{enumerate}
-
-(b) Was haben wir für Aussagen erstmal über schwache Konvergenz. Wie jetzt stochastische Konvergenz? Deterministisches e hoch lambda ausschlaggebend! 3.20
 
 \end{document}
