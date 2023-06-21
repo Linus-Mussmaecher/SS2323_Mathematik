@@ -2328,19 +2328,19 @@ The main point is the following observation:
 We want to show that there is always a faithful homomorphism.
 
 \begin{definition}
-	Let $\pi: \algebra{A} l\to \mathcal{L}(H)$, $\rho: \algebra{A} \to \mathcal{L}(K)$ two representations. We say that $\pi, \rho$ are (unitarily) equivalent if there exists a surjective isometry $u: H \to K$ such that $u^* \rho(a) u = \pi(a)$, i.e. $\rho = \mathrm{Ad}_{u^*} \pi$.
+	Let $\pi: \algebra{A} \to \mathcal{L}(H)$, $\rho: \algebra{A} \to \mathcal{L}(K)$ two representations. We say that $\pi, \rho$ are (unitarily) equivalent if there exists a surjective isometry $u: H \to K$ such that $u^* \rho(a) u = \pi(a)$, i.e. $\rho = \mathrm{Ad}_{u^*} \pi$.
 \end{definition}
 
 \begin{definition}[Spectrum]
 	We define
 	\begin{equation*}
-		\hat{\algebra{A}} = \{[\pi] \mid \pi: \algebra{A} \to \mathcal{L}(H), \pi \neq 0\$ 
+		\hat{\algebra{A}} = \{[\pi] \mid \pi: \algebra{A} \to \mathcal{L}(H), \pi \neq 0\}
 	\end{equation*}
-	Also define $\mathrm{Prim}(\algebra{A}) \{ \ker(\phi) \mid [\pi]\in \hat{\algebra{A}}$ and $\hat{\algebra{A}} \to \mathrm{Prim}(\algebra{A}), [\pi]l \mapsto \ker \pi$ (primitive ideals).
+	Also define $\mathrm{Prim}(\algebra{A}) = \{ \ker(\pi) \mid [\pi]\in \hat{\algebra{A}}\}$ and $\hat{\algebra{A}} \to \mathrm{Prim}(\algebra{A}), [\pi] \mapsto \ker \pi$ (primitive ideals). 
+	Let $\chi \in \Omega(\algebra{A})$ be a character $\chi: \algebra{A} \to \mathds{C} = \mathcal{L}(\mathds{C})$.
+	Then $[\chi] \in \hat{\algebra{A}}$ and $\ker \chi \in \mathrm{Prim}(\algebra{A})$.
 
-	Let $\chi \in \Omega(\algebra{A})$ be a character $\chi: \algebra{A} \to \mathds{C} = \mathcal{L}(\mathds{C})$. Then $[\chi] \in \hat{\algebra{A}}$ and $\ker \chi \in \mathrm{Prim}(\algebra{A})$.
-
-	Observe that if $\algebra{A} = C_0(X)$, then ???
+	%Observe that if $\algebra{A} = C_0(X)$, then ???
 \end{definition}
 
 How do we get representations of $\algebra{A}$?
