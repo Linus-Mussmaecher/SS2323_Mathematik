@@ -2403,7 +2403,7 @@ Notice: $N_\phi \subseteq \algebra{A}$ is a closed left ideal.
 
 
 \begin{theorem}[Gelfand-Naimar-Representation]
-	Let $\algebra{A}$ be a $C^*$-algebra and define $\pi_U \coloneq \bigoplus_{\phi \in S(\algebra{A})} \pi_\phi: \algebra{A} \to \mathcal{L}(H_U)$ with $H_U = \oplus_{\phi \in S(\algebra{A})} H_\phi$.
+	Let $\algebra{A}$ be a $C^*$-algebra and define $\pi_U \coloneq \bigoplus_{\phi \in S(\algebra{A})} \pi_\phi: \algebra{A} \to \mathcal{L}(H_U)$ with $H_U = \oplus_{\phi \in S(\algebra{A})} H_\phi$ for $H_\phi = \closure{\algebra{A}}/N_\phi$ with the semi-inner product $\langle \cdot, \cdot \rangle_\phi$ and $\pi_\phi(a)(b + N_\phi) = ab + N_\phi$.
 	Then $(\pi_U, H_U)$ is \textbf{faithful}.
 \end{theorem}
 
@@ -2419,8 +2419,123 @@ Notice: $N_\phi \subseteq \algebra{A}$ is a closed left ideal.
 	\end{equation*}
 	for all $b \in \algebra{A}$, so $b = e_\lambda$ (for $\lambda \to \infty$).
 	But then $\phi(a^* a) = 0$ and thus $a = 0$.
-
 \end{proof}
+
+Observe that $(\pi_U, H_U)$ is called the universal representation of $\algebra{A}$.
+This is always non-degenerate.
+Indeed, each $(\pi_\phi, H_\phi)$  is non-degenerate.
+Moreover, these are \textbf{cyclic representations}:
+
+\begin{definition}
+	A representation $\rho: \algebra{A} \to L(H)$ is \textbf{cyclic} if there is a $\zeta \in H$, $\|\zeta\| = 1$ such that $\closure{\rho(\algebra{A}) \zeta} = H$.
+	$\zeta$ is called a cyclic vector for $(\rho, H)$.
+\end{definition}
+
+Observe: Every non-degenerate representation is a sum of cyclic representations (proof via Zorn's Lemma omitted).
+
+\begin{proposition}
+	Every GNS-representation $(\pi_U, H_U)$ is cyclic.
+\end{proposition}
+
+\begin{proof}
+	If $\algebra{A}$ is unital, then $\zeta \phi \coloneq 1 + N_\phi \in H_\phi$ is a cyclic vector for $\pi_\phi$. 
+	Then $\pi_\phi(a)(\zeta \phi) = a + N_\phi$ and thus $\pi_\phi(\algebra{A}) \zeta_\phi = \algebra{A}/N_\phi \subseteq H_\phi$ (dense).
+	Therefore $\zeta_\phi$ is cyclic and
+	\begin{equation*}
+		\|\zeta \phi\|^2 = \langle 1 + N_\phi, 1 + N_\phi\rangle = \phi(1) = =\|\phi\| = 1
+	\end{equation*}
+	so $\phi \in S(\algebra{A})$. 
+	Moreover: $\langle \zeta_\phi, \pi_\phi(a) \zeta_\phi\rangle = \langle 1 + N_\phi, 1 + N_\phi\rangle = \phi(a)$.
+
+	Let us now look at the general case.
+	Consider the linear map $\phi_0: \algebra{A}/N_\phi \to \mathds{C}, a + N_\phi \to \phi(a)$.
+	This is well-defined and bounded:
+	\begin{equation*}
+		\|\phi(a)\|^2 \leq \|\phi\| \phi(a^* a) = \phi(a^*a)
+	\end{equation*}
+	as $\phi$ is a state (and thus $\|\phi\| = 1$).
+	So $\|\phi\| \leq 1$.
+	So $\phi_0$ extends to a bounded linear factorial map on $\tilde{\phi}_0 H_\phi: \to \mathds{C}$.
+	By Riesz-Representation thoerem, we have a $\zeta_\phi \in_\phi$ such that $\tilde{\phi}_0 (\eta) = \langle \zeta_\phi, \eta \rangle$ and $\|\zeta_\phi\| = \|\phi_0\| = 1$.
+	In particular $\phi(a) = \phi_0(a + N_\phi) = \langle \zeta_\phi, a + N_\phi \rangle$.
+	Now for $a,b \in \algebra{A}$ we have
+	\begin{equation*}
+		\langle \pi_\phi , b + N_\phi \rangle =  \langle \zeta_\phi, \pi_\phi(a^*) (b + N \phi) \rangle = \langle \zeta_\phi, a^* b \rangle = \phi(a^*b) = \langle a + N_\phi, b + N_\phi\rangle
+	\end{equation*}
+	Therefor $\pi_\phi(a) \zeta_\phi = a + N_\phi$ (*) as well as $\closure{\pi_\pi(\algebra{A}) \zeta_\phi} = H_\phi$ and
+	$\phi(a) = \langle \zeta_U, \pi_\phi(a) \zeta_\phi \rangle$.
+
+	If $(e_\lambda) \subseteq \algebra{A}$ is an approximate unit so $\pi_\phi(a^\lambda) \to 1$ strong as $a \to \infty$.
+	Then $\|\phi\| \leftarrow \phi(e_\lambda) = \langle \zeta_\phi, \pi_\phi(e_\lambda) \zeta_\phi \rangle \to \|\zeta_\phi\|^2$, so l$\|\zeta_\phi\| = 1$ and it is a cyclic representation. 
+
+	Also, from (*) we know $\zeta_\phi = \lim_\lambda \pi_\phi(e_\lambda) \zeta_\phi = \lim_\lambda e_\lambda + N_\phi$.
+
+	So the GNS-construction gives a triple $(\pi_\phi, H_\phi, \zeta_\phi)$ satisfying our conditions.
+\end{proof}
+
+Conversely, if $(\pi, H, \zeta)$ is a cyclic representation of $\algebra{A}$, then $\phi(a) \coloneq \langle \zeta, \pi(a) \zeta \rangle$ defines a style $\phi \in S(\algebra{A})$.
+
+\begin{remark}[irreducible representations and pure states]
+	Notice: $\Omega(\algebra{A}) \subseteq S(\algebra{A}) \subseteq \algebra{A}_1^*$.
+	In particular, we can endow this with the weak $^*$-topology.
+
+	This is closed and therefore compact: Take $\phi_i \in S(\algebra{A})$ with $\pi_i \to \phi \in \algebra{A}^*_1$ ($\|\phi\| leq 1$). Then 
+	\begin{equation*}
+		1 \xleftarrow{\lambda}\phi_i(e_\lambda) \xrightarrow{i} \phi(e_\lambda)
+	\end{equation*}
+	with $\|\phi\| = 1 = \lim_\lambda \phi(e_\lambda)$.
+
+	Moreover, $S(\algebra{A})$ is convex, so for $\phi_1, \dots, \phi_n \in S(\algebra{A})$ and $t_1, \dots, t_n \in \mathds{R}_+$ with $\sum_{i = 1}^{n} t_i = 1$ we have $\sum_{i = 1}^{n} t_i \phi_i \in S(\algebra{A})$.
+
+	Recall the Kreim-Milman-Theorem: If $K$ is a compact convex subset of $\algebra{A}_1^*$, then $K = \closure{\mathrm{conv}(\mathrm{Ext}(K))}$ where $\mathrm{conv}$ is the convex hull and $\mathrm{Ext}$ are the extremal points, that is all points in $K$ that cannot be reached as linear combinations of other points (e.g. the corners of a closed triangle). 
+	In particular, any compact convex set must have extremal points (unless it is empty).
+
+	We will apply this to the states $K = S(\algebra{A})$.
+\end{remark}
+
+\begin{definition}
+	Call $PS(\algebra{A}) \coloneq \mathrm{Ext}(S(\algebra{A}))$ the \textbf{pure states} of $\algebra{A}$.
+\end{definition}
+
+\begin{theorem}
+	A state $\phi \in S(\algebra{A})$ is pure if and only if $\pi_\phi \algebra{A} \to \mathcal{B}(H_\phi)$ is irreducible if and only iff $\pi_\phi(\algebra{A})' \coloneq \{ T \in \mathcal{B}(H_\phi) \mid T \pi_\phi(a) = \pi_\phi(a) T \} = \mathds{C} \cdot 1$ by Schur's lemma.
+\end{theorem}
+
+\begin{proof}
+	See Murphy.
+\end{proof}
+
+
+\begin{example}
+	Let $\algebra{A} = C_0(X)$. Take $\phi \in C_0(X)^* \simeq $ Complex bounded Radon measure of $X$.
+		If $\mu: \mathrm{Borells} (X) \to \mathds{C}, E \to \mu(E)$ has $\mu = \Re{\mu} + i \Im{\mu}$.
+		$\Re{\mu} = \Re(\mu)_+ - \Re(\mu)_-$ is a complex (Radon) measure, then the associated $\phi = \phi_\mu \in C_0(X)^*$ is $\phi_\mu(f) = \int_X f(x) d\mu(x)$.
+		
+		Moreover, $\phi_\mu \geq 0 \iff \mu \geq 0$, so $C_0(X)^*_+$ consists of the positive Radon measures on $X$.
+
+		Note: Characters correspond to Dirac measures: $\mu_{x_0}(E) = 1$ if $x_0 \in E$ and $0$ otherwise.	The real measures correspond to the self-adjoint elements and the states correspond to those measures with $\mu(X) = 1$, that is the probability (positive Radon) measures on $X$.
+\end{example}
+
+\begin{remark}
+	Look at the GNS construction for $\phi = \phi_\mu$. Define
+	\begin{equation*}
+		\langle f, g\rangle_\phi = \phi(f^* \cdot g) = \phi(\overline{f} \cdot g) = \int_X \overline{f(x)} g(x) d\mu(x)
+	\end{equation*}
+	Then 
+	\begin{equation*}
+		N_\phi = \left\{ f \in C_0(X) \mid \phi(\overline{f} f) = \int_X |f(x)|^2 d\mu(x) = 0 \right\} \trianglelefteq C_0(X)
+	\end{equation*}
+	Indeed, $N_\phi$ corresponds to the support of $\mu$: $\mathrm{supp}(\mu) = \{x \in X \mid \forall_{U \subseteq X \text{ open}} x \in U \then \mu(U) > 0 \}$ (this is always closed). Now we want to show for $U = \mathrm{supp}(\mu)^\complement$:
+	\begin{equation*}
+		N_\phi = C_0(U) = \{ f \in C_0(X) \mid f|_{U^\complement} \equiv 0 \}
+	\end{equation*}
+	''$\supseteq$'': If $f \in C_0(U)$, $f|_{\mathrm{supp}(\mu)} \equiv 0$ then $\int_X |f(x)|^2 d \mu(x) = 0$. TODO
+
+	
+	Then $H_\phi = L^2(X, \mu) = \closure{C_0(X)}$ (with closure in respect to $\langle \cdot, \cdot \rangle_{2, \mu}$) and $\pi_\phi(f)(\zeta + N_\phi) = f \cdot \zeta + N_\phi$ (where the added class $N_\phi$ represents that the functions are equal $\mu$-almost everywhere).
+	These correspond to $M_f(\zeta) = f \cdot \zeta$.
+\end{remark}
+
 
 
 
@@ -2428,6 +2543,7 @@ Notice: $N_\phi \subseteq \algebra{A}$ is a closed left ideal.
 
 
 \end{document}
+
 
 
 
