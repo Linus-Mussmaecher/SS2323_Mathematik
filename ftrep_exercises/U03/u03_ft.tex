@@ -1,0 +1,62 @@
+\documentclass[a4paper]{article}
+
+% --- LANGUAGE ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+
+% --- DATA ---
+
+\def\lecture{Repetitorium zur Funktionentheorie}
+\def\authors{Linus Mußmächer}
+\def\sheetNumber{03}
+\def\sumPoints{30} 
+
+% --- PREAMBLE ---
+\input{../../preambles/exercise_preamble.tex}
+
+\begin{document}
+
+\makeexheader
+
+
+\subsection{Logarithmus}
+
+\begin{enumerate}
+    \item $\overline{\mathds{D}}$ ist eine kompakte und nicht-leere Menge.
+    Wir setzen $g(z) = 4z$ und berechnen für $z \in \partial \mathds{D}$:
+    \begin{align*}
+        |f(z) - g(z)| = |z^2 + e^z| \leq |z^2| + |e^z| \leq |z|^2 + e^{|z|} = 1 + e < 4 = |4z| = |g(z)| \leq |g(z)| + |f(z)|
+    \end{align*}
+    Nach dem Satz von Rouche hat somit $f(z)$ auf $\overline{\mathds{D}}$ dieselbe Anzahl an Nullstellen (gezählt nach ihrer Vielfachheit) wie $g(z) = 4z$, also genau eine (mit Vielfachheit $1$).
+    Weiterhin liegt diese Nullstelle im Inneren $\mathds{D}$.
+    \item Sei $z_0 \in \mathds{D}$ die eine Nullstelle von $f$.
+    Dann können wir $f$ auf $\mathds{D}$ schreiben als $f(z) = (z - z_0) g(z)$ mit $g(z) \in H(\mathds{D})$ und $g(z_0) \neq 0$.
+    Angenommen, $f$ besäße eine holomorphe Logarithmusfunktion $L$ auf $\mathds{D}$.
+    Dann wäre $L|_{\mathds{D}\setminus\{z_0\}}$ eine holomorphe Logarithmusfunktion der (auf $\mathds{D} \setminus \{z_0\}$ nullstellenfreien und holomorphen) Funktion $f|_{\mathds{D} \setminus \{z_0\}}$.
+    Somit wäre $\int_\gamma \frac{f'(z)}{f(z)} dz = 0$ für alle Wege $\gamma$ in $\mathds{D} \setminus \{z_0\}$.
+    Wir berechnen dieses Integral:
+    \begin{equation*}
+        \int_\gamma \frac{f'(z)}{f(z)} dz = \int_\gamma \frac{(z-z_0) g'(z) + g(z)}{(z-z_0) g(z)} dz = \int_\gamma \frac{g'(z)}{g(z)} dz + \int_\gamma \frac{1}{z - z_0} dz\text{.}
+    \end{equation*}
+    Das erste Integral hat hier stets den Wert $0$, da $g$ und $g'$ in $\mathds{D}$ holomorph und $g$ nullstellenfrei und somit $\frac{g'}{g}$ holomorph ist.
+    Das zweite Integral hat nach dem Residuensatz den Wert $n(z_0, \gamma) \cdot \res\left(z_0, \frac{1}{z-z_0}\right)$.
+    Die Funktion $\frac{1}{z-z_0}$ hat in $z_0$ eine einfache Polstelle und es folgt $\res\left(z_0, \frac{1}{z-z_0}\right) = \lim_{z \to z_0} (z-z_0) \frac{1}{z -z_0} = 1 \neq 0$.
+    Dies zeigt 
+    \begin{equation*}
+        0 = \int_\gamma \frac{f'(z)}{f(z)} dz = n(z_0, \gamma) \cdot 1 \text{.}
+    \end{equation*}
+    Es müsste also $n(z_0, \gamma) = 0$ für alle Wege $\gamma \in \mathds{D} \setminus \{z_0\}$ gelten, was natürlich Unsinn ist.
+    Somit folgt per Widerspruch, dass $f$ in $\mathds{D} \setminus \{z_0\}$ und damit auch in $\mathds{D}$ keine holomorphe Logarithmusfunktion besitzt.
+    \item Angenommen, eine solche Funktion $h \in H(\mathds{D})$ existiere.
+    Dann ist $0 = f(z_0) = (w(z_0))^3$, also $w(z_0) = 0$.
+    $w$ hat also in $z_0$ eine (mindestens) einfache Nullstelle.
+    Daher können wir $w$ schreiben als $w(z) = (z-z_0)^k h(z)$ mit $h \in H(\mathds{D})$, $h(z_0) \neq 0$ und $k \geq 1$.
+    Dann aber ist 
+    \begin{equation*}
+        f(z) = (w(z))^3 = (z-z_0)^{3k} (h(z))^3\text{,}
+    \end{equation*}
+    also hat $f$ in $z_0$ eine (mindestens) dreifache Nullstelle, ein Widerspruch.
+\end{enumerate}
+
+
+\end{document}
