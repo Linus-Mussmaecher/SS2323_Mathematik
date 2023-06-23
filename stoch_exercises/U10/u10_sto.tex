@@ -64,6 +64,28 @@ wobei $\overline{x}$ den Durschnitt von $x_1, \dots, x_n$ bezeichne. Der (in die
 
 \subsection{}
 
+Wir bestimmen zuerst die Likelihood-Funktion der gemeinsamen Verteilung, indem wir die einzelnen Dichten als Funktionen in $y_k, \mu$ betrachten und multiplizieren:
+\begin{equation*}
+    L((y_1, \dots, y_n), \mu) = \frac{1}{(\sqrt{2 \pi \sigma^2})^n} \exp\left( - \sum_{k=1}^n \frac{(\log(y_k) - \mu)^2}{2 \sigma^2} \right) \prod_{k = 1}^n \frac{1}{y_k}
+\end{equation*}
+Um unsere Rechnungen zu vereinfachen, betrachten wir die Log-Likelihood-Funktion
+\begin{equation*}
+    \mathcal{L}((y_1, \dots, y_n), \mu) = -\frac{n}{2} \cdot \log\left(2 \pi \sigma^2 \right) - \sum_{k=1}^n \frac{(\log(y_k) - \mu)^2}{2 \sigma^2} - \sum_{k = 1}^{n} \log(y_k)
+\end{equation*}
+und leiten für festes, aber beliebiges $y$ nach $\mu$ ab
+\begin{equation*}
+    \frac{\partial}{\partial \mu} \mathcal{L}((y_1, \dots, y_n), \mu) = \frac{1}{\sigma^2} \sum_{k=1}^n (\mu - \log y_k)\text{.}
+\end{equation*}
+Damit folgt
+\begin{equation*}
+    \frac{\partial}{\partial \mu} \mathcal{L}((y_1, \dots, y_n), \mu) = 0 \iff n \mu = \sum_{k = 1}^{n} \log y_k \iff \mu = \frac{1}{n} \sum_{k = 1}^{n} \log y_k
+\end{equation*}
+und dies ist somit das $\mu$, das für festes $y$ die Log-Likelihood-Funktion und damit auch die Likelihood-Funktion maximiert.
+Der ML-Schätzer ist somit
+\begin{equation*}
+    \hat{\theta}^{ML}: \mathds{R}_+^n \to \mathds{R}, (y_1, \dots, y_n) \mapsto \frac{1}{n} \sum_{k=1}^{n} \log y_k
+\end{equation*}
+
 \subsection{}
 
 \begin{enumerate}
