@@ -20,5 +20,50 @@
 
 \subsection{Zentralübung}
 
+Die Parameter der geometrischen Verteilung sind $\theta \in \Theta = (0,1)$, der Stichprobenraum ist $\mathcal{X} = \mathds{N}^n$.
+Aus der Definition der geometrischen Verteilung bestimmen wir die Likelihood-Funktion und direkt daraus folgend die Log-Likelihood-Funktion:
+\begin{align*}
+    L: \Theta \times \mathcal{X} \to [0,1], & \ (\theta, x) \mapsto \prod_{k = 1}^{n} (1-\theta)^{x_k-1} \theta \\ 
+    \mathcal{L}: \Theta \times \mathcal{X} \to [0,1], & \ (\theta, x) \mapsto \log\left(\prod_{k = 1}^{n} (1-\theta)^{x_k-1} \theta\right) = n \cdot \log \theta + \log (1-\theta) \cdot \sum_{k = 1}^{n}(x_k-1) 
+\end{align*}
+Wir bestimmen ihr Maximum durch die Nullstellen der Ableitung:
+\begin{align*}
+    &\frac{\partial}{\partial \theta} \mathcal{L}(\theta, x) = \frac{n}{\theta} - \frac{1}{1 - \theta} \sum_{k = 1}^{n}(x_k-1) = \frac{n}{\theta} - \frac{1}{1 - \theta} \left(-n + \sum_{k = 1}^{n} x_k  \right) = 0\\
+    \iff \ & n \cdot (1 - \theta) = \theta \sum_{k = 1}^{n}x_k - n \theta \iff n = \theta \sum_{k = 1}^{n}x_k \iff \theta = \frac{n}{\sum_{k = 1}^{n}x_k} = \frac{1}{\overline{x}}
+\end{align*}
+wobei $\overline{x}$ den Durschnitt von $x_1, \dots, x_n$ bezeichne. Der (in diesem Fall aufgrund des an einer eindeutigen Stelle angenommen Maximums eindeutige) ML-Schätzer ist daher
+\begin{equation*}
+    \hat{\theta}^{ML}: \mathcal{X} \to \overline{\Theta}, x \mapsto \frac{1}{\overline{x}}\text{.}
+\end{equation*}
+
+\subsection{}
+
+\begin{enumerate}
+    \item Es ist 
+    \begin{equation*}
+        \mathds{E}_\theta[X] = \frac{2}{3} \theta \cdot 0 + \frac{1}{3} \theta \cdot 1 + \frac{2}{3} ( 1- \theta) \cdot 2 + \frac{1}{3} (1-\theta) \cdot 3 = 0 + \frac{1}{3} \theta + \frac{4}{3} - \frac{4}{3} \theta + 1 - \theta = \frac{7}{3} - 2 \theta\text{.}
+    \end{equation*}
+    \item Uns ist der Erwartungswert (in Abhängigkeit von $\theta$) bereits bekannt.
+    Wir können nun für eine Menge an Zufallsvariablen $X_1, \dots, X_n$ die unabhängig identisch wie $X$ verteilt sind, den Momentenschätzer dieser Variablen unter Rückgriff auf den Durchschnitt $\overline{X} = \frac{1}{n}\sum_{k = 1}^{n} X_n$ berechnen als
+    \begin{align*}
+        \overline{X} = \mathds{E}_\theta[X] = \frac{7}{3} - 2 \theta \iff \theta = \frac{7 - 3 \overline{X}}{6}\text{.}
+    \end{align*}
+    Insbesondere fällt auf, dass dieser für extreme Durchschnitte (z.B. $\overline{X} = 3$) auch Werte außerhalb von $\Theta = [0,1]$ annehmen kann.
+    \item Der Durchschnitt der Beobachtungen ist $\overline{X} = \frac{1}{10} \cdot 15 = \frac{3}{2}$. Damit ist der Wert des Momentenschätzers gleich $\frac{7 - \frac{9}{2}}{6} = \frac{5}{12}$.
+    
+    Um den Wert des ML-Schätzers für diese Beobachtungen zu bestimmen, müssen wir nicht die gesamte Funktion $\hat{\theta}^{ML}$ bestimmen, sondern lediglich die Wahrscheinlichkeit genau dieses Ereignisses bestimmen:
+    \begin{equation*}
+        \mathds{P}(3,0,2,1,3,2,1,0,2,1) = \left(\frac{2}{3}\theta\right)^2 \cdot \left(\frac{1}{3} \theta\right)^3 \cdot \left(\frac{2}{3}(1-\theta)\right)^3 \cdot \left(\frac{1}{3}(1-\theta)\right)^2 = \frac{32 \theta^5 (1-\theta^5)}{59049}\text{.}
+    \end{equation*}
+    Diese Funktion wird am Maximum von $\theta^5 (1-\theta)^5$ maximiert, also bei $\theta = \frac{1}{2}$.
+    Damit ist dies der Wert des Maximum-Likelihood-Schätzers.
+
+    Dies ist auch insofern plausibel, dass jedes Teilereignis $0,1$ genauso oft auftritt wie das 'symmetrische' Ereignis $2,3$ und insofern die Wahrscheinlichkeiten (vermutlich) gleich hoch sein sollten.
+    Der Momentenschätzer, der nur den Durchschnitt 'sieht', kann dies allerdings nicht erkennen und tendiert daher zu niedrigerem $\theta$.
+\end{enumerate} 
+
+\subsection{}
+
+
 
 \end{document}
