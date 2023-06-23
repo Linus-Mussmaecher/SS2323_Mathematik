@@ -64,6 +64,53 @@ wobei $\overline{x}$ den Durschnitt von $x_1, \dots, x_n$ bezeichne. Der (in die
 
 \subsection{}
 
+\subsection{}
+
+\begin{enumerate}
+    \item Wir wollen das Maximum von 
+    \begin{equation*}
+        f(x, \nu) = \nu x_0^\nu x^{-(\nu + 1)} \mathds{1}_{x \geq x_0} = \nu (x_0 x^{-1})^\nu x^{-1} \mathds{1}_{x \geq x_0} 
+    \end{equation*}
+    für festes $x$, aber variables $\nu$ bestimmen. Sei dazu $x \geq x_0$ beliebig, aber fest.
+    Wir leiten nach $\nu$ ab:
+    \begin{equation*}
+        \frac{\partial}{\partial \nu} f(x, \nu) = 1 \cdot (x_0 x^{-1})^\nu x^{-1} + \nu \ln(x x_0^{-1}) (x_0 x^{-1})^\nu x^{-1}
+    \end{equation*}
+    und damit 
+    \begin{align*}
+        &\frac{\partial}{\partial \nu} f(x, \nu) = 0 \\
+        \iff \ & (x_0 x^{-1})^\nu x^{-1} = - \nu ln(x_0 x^{-1}) (x_0 x^{-1})^\nu x^{-1} \\
+        \iff \ & 1 = - \nu \ln (x_0 x^{-1}) \\
+        \iff \ & \nu = \frac{1}{\ln(x / x_0)}
+    \end{align*}
+    und damit, da $\nu \in (1, \infty)$:
+    \begin{equation*}
+        \hat{\theta}^{ML} (x): \mathcal{X} \to [1, \infty), x \mapsto \max \left(1, \frac{1}{\ln(x) - \ln(x_0)}\right)
+    \end{equation*}
+    \item Für $x = (x_1, \dots, x_n) \in \mathds{R}^n$ und $\nu \in \mathds{R}$ ist die Likelihood-Funktion
+    \begin{equation*}
+        f(x, \nu) = \left\{ \begin{matrix}
+            1 & \forall_{1 \leq k \leq n} \ x_k \in [\nu, \nu+1] \\
+            0 & \exists_{1 \leq k \leq n} \ x_k \notin [\nu, \nu+1]
+        \end{matrix} \right.
+    \end{equation*}
+    Setze $x_{(0)} = \min\{x_k \mid 1 \leq k \leq n\}$ und $x_{(n)} = \max\{x_k \mid 1 \leq k \leq n\}$.
+
+    Falls  $x_{(n)} - x_{(0)} > 1$, so existiert kein $\nu$ für das $f(x, \nu) = 1$ ist.
+    Da wir aber annehmen, dass unsere Datenpunkte wie angegeben verteilt sind, kann dies nicht auftreten. 
+
+    Betrachten wir nun die Funktion
+    \begin{equation*}
+        \hat{\theta}^{ML}: \{ (x_1, \dots, x_k) \in \mathds{R}^n \mid x_{(n)} - x_{(0)} \leq 1 \} \to \mathds{R}, (x_1, \dots, x_k) \mapsto x_{(0)} \text{.}
+    \end{equation*}
+    Sicher gilt $x_{(0)} \in [x_{(0)}, x_{(0)} + 1]$ und ebenso $x_{(n)} \in [x_{(0)}, x_{(0)} + 1]$, da $\max \{x_k\} - x_{(0)} \leq 1$.
+    Damit gilt $x_k \in [x_{(0)}, x_{(0)} + 1]$ für alle $k$, also ist $f(x, \hat{\theta}^ML(x)) = 1$, was dem Supremum von $f$ entspricht (da $f$ ja nur zwei Werte annimmt).
+
+    Betrachten wir aber analog $\hat{\Theta}^{ML_2}(x) = x_{(n)} - 1$, so gilt $x_{(0)} \in [x_{(n)} - 1, x_{(n)}]$ aufgrund der Abstandbedingung und $x_{(n)} \in [x_{(n)} - 1, x_{(n)}]$.
+    Wieder folgt daher $f(x, \hat{\Theta}^{ML_2}(x)) = 1$ für alle $x \in \mathcal{X}$ und auch $\hat{\Theta}^{ML_2}(x)$ ist ein ML-Schätzer.
+
+    Da insbesondere $x$ mit $x_{(0)} - x_{(n)} < 1$ existieren, sind diese beiden Schätzer außerdem unterschiedlich und ''der'' ML-Schätzer somit nicht eindeutig festgelegt. Man sollte also stets von ''einem'', nicht ''dem'', ML-Schätzer sprechen.
+\end{enumerate}
 
 
 \end{document}
