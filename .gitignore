@@ -1,6 +1,10 @@
 ## vscode config files
 /.vscode
 
+## drawio files
+*.bkp
+*.dtmp
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
