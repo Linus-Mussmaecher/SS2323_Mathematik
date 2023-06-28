@@ -59,4 +59,33 @@
 \end{enumerate}
 
 
+\subsection{Lokale Injektivität}
+
+$f_n$ ist lokal injektiv, d.h. für jeden Punkt $z$ in $G$ existiert eine offene Umgebung $U_{f_n,z} \ni z$, in der $f_n$ lokal injektiv ist.
+Wähle $U_z = \bigcup_{n \in \mathds{N}} U_{f_n, z}$.
+Dies ist eine abzählbare Vereinigung offener Mengen und daher immer noch offen.
+Auf einer beliebigen kompakten Teilmenge $K_z \neq \{z\}$ von $U_z$ ist die Folge $(f_n)$ daher gleichmäßig konvergent und injektiv, nach dem Satz von Hurwitz ist daher auch $f$ injektiv oder konstant auf $K_z$.
+
+\begin{enumerate}
+    \item \textbf{Fall 1}: $f$ ist für alle $z$ auf $K_z$ injektiv.
+    Dann ist $f$ lokal injektiv, denn $K_z^{\interior}$ ist eine Umgebung von $z$, auf der $f$ injektiv ist.
+    \item \textbf{Fall 2}: Es existiert ein $z_0$ mit $f$ ist injektiv auf $K_{z_0}$ und ein $z_1$ mit $f$ ist konstant auf $K_{z_1}$.
+    Da $G$ wegzusammenhängend ist, existiert ein Weg $\gamma: [0,1] \to G$ mit $\gamma(0) = z_0$ und $\gamma(1) = z_1$. 
+    Die Menge $\{ K_w^\interior \mid w \in \gamma([0,1]) \}$ bildet eine offene Überdeckung der kompakten Menge $\gamma([0,1])$ (da $[0,1]$ kompakt und $\gamma$ stetig). 
+    Daher finden wir eine endliche Teilüberdeckung $\{ K_{w_k}^\interior \mid k = 0, \dots, n\}$ von $\gamma([0,1])$.
+    O.B.d.A. seien die $w_k$ dabei nach ihrem Urbild unter $\gamma$ geordnet, und sei $w_0 = z_0$ und $w_n = z_1$.
+    Weiterhin existiert eine Teilfolge dieser, beginnend bei $K_{w_0}$ und endend bei $K_{w_n}$, Mengen derart, dass aufeinanderfolgende Mengen sich schneiden.
+    O.E. sei dies bereits die Folge der $w_n$.
+    Wir wissen, dass $f$ auf $K_{w_0}$ konstant ist und auf $K_{w_1}$ injektiv oder ebenfalls konstant. Da $K_{w_0}^\interior \cap K_{w_1}^\interior$ offen und nicht-leer ist, ist $f$ auf $K_{w_0}^\interior \cap K_{w_1}^\interior \subseteq K_{w_0}$ konstant und kann daher auf $K_{w_1}$ nicht injektiv sein.
+    Also ist $f$ auf $K_{w_1}$ ebenfalls konstant (mit gleichem Wert wie auf $K_{w_0}$).
+
+    So fortfahrend folgt, dass $f$ auf allen $K_{w_k}$ konstant ist, insbesondere auf $K_{w_n} = K_{z_1}$.
+    Dies ist ein Widerspruch zur Injektivität von $f$ auf $K_{z_1}$ (da $K_{z_1} \neq \{z_1\}$), also tritt dieser Fall nicht ein.
+    \item \textbf{Fall 3}: $f$ ist auf allen $K_z$ konstant, aber nicht mit derselben Konstante. Hier folgt der Widerspruch wie oben.
+    \item \textbf{Fall 4}: $f$ ist auf allen $K_z$ konstant mit gleicher Konstante $k$. Dann ist $f$ auch insgesamt konstant, da insbesondere $f(z) = k$ für alle $z$ gilt.
+\end{enumerate}
+
+
+
+
 \end{document}
