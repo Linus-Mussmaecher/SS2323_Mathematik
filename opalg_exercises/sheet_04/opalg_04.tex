@@ -62,6 +62,23 @@ Here, we have $\phi(\id^*) = \phi(\id) = i \neq - i = \overline{\phi(\id)}$.
     \item $\then$ (i): If $\Gamma$ is a $^*$-homomorphism, then $\Gamma(a^*) = \Gamma(a)^*$ and by the definition of the involution as discussed above this already shows $\chi(a^*) = \overline{\chi(a)}$ for every character $\chi$.
 \end{enumerate}
 
+\subsection{}
+
+Since the spectrum $\sigma(a)$ of $a$ in the non-unital algebra $\algebra{A}$ is defined as its spectrum in the unitization $\tilde{\algebra{A}}$, the spectra in $C(\sigma(a))$ and $C_0(\sigma(a))$ have the same meaning and are not merely notationally equivalent.
+
+Let therefore $\Phi: C(\sigma(a)) \to \tilde{\algebra{A}}$ be the $^*$-homomorphism in the fundamental theorem of functional calculus.
+We will consider its restriction $\Psi = \Phi|_{C_0(\sigma(a))}$ and show that it already fulfills the necessary properties.
+As $C_0(\sigma(a))$ is a (closed and non-dense) subspace of $C(\sigma(a))$, $\Psi: C_0(\sigma(a)) \to \tilde{\algebra{A}}$ is still a $^*$-homomorphism, and $\id \in C_0(\sigma(a))$ is still mapped to $a$.
+It remains to show that $\Psi$ has the appropriate image and is still unique.
+
+To see the uniqueness, note that we can write $\tilde{\algebra{A}} \simeq \algebra{A} \oplus \mathds{C}$ and $C(\sigma(a)) \simeq C_0(\sigma(a)) \oplus \mathds{C}$ and can therefore decompose $\Phi$ into $\Phi = \Psi \oplus \Phi|_\mathds{C}$.
+If there existed a second $^*$-homomorphism $\Psi_2: C_0(\sigma(a)) \to \algebra{A}$, then
+\begin{equation*}
+    \Phi_2 = \Psi_2 \oplus \Phi_\mathds{C}: C_0(\sigma(a)) \oplus \mathds{C} \to \algebra{A} \oplus \mathds{C}
+\end{equation*}
+were are second $^*$-homomorphism $C(\sigma(a)) \to \tilde{\algebra{A}}$, a contradiction.
+
+Concerning the appropriate image, it is enough to show $\Psi(C_0(\algebra{A})) = C^*(a)$, as clearly $C^*(a) \subseteq \algebra{A}$.
 
 
 \end{document}
