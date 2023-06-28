@@ -2604,11 +2604,16 @@ One of the motivating examples:
 
 		Lets look at $\closure{(\mathds{N}, \min)}$ with multiplication $n \cdot m = \min (n,m)$ in compliance with the lattice.
 		This is commutative and therefore an Inverse Semigroup.
-		\item Let $X$ be any set. then
+		\item Take now $M_n(\mathds{C})$ with basis $(e_{ij})^n$, then $e_{ij} e_{kl} = \delta_{j,k} e_{i,l}$ and $e_{ij}^* = e_{ji}$.
+		Then $e_{ij}: \mathds{C} \to \mathds{C}, e_j \to e_i$ and partial isometries $e_{ij} e_{ij}^* e_{ij} = e_{ij}$.
+		So $S = \{ e_{ij} \mid i,j = 1, \dots, n \} \cup \{0\} \subseteq M_n(\mathds{C})$ is a $^*$-semigroup of partial isometries, so it is an inverse semigroup.
+		The $C^*$-algebra of this inverse semigroup is $M_n(\mathds{C})$.
+
+		\item Let $X$ be any set. Then
 		\begin{equation*}
-			I(X) = \{ f : X \to X \mid f \text{ is } a \text{partial bisjection}
+			I(X) = \{ f \mid f \text{ is partial bijection between subsets of } X \}
 		\end{equation*}
-		i.e. $f: U \to V$ where $U,V \subseteq X$ (note that these may be any set, even the empty set and need not be open, as $X$ does not even have a topology).
+		i.e. $f: U \to V$ is a bijection where $U,V \subseteq X$ (note that these may be any set, even the empty set and need not be open, as $X$ does not even have a topology).
 		We must still find a suitable product.
 
 		Take $f: U \to V$, $g: U' \to V'$. Take $\tilde{U} = f^{-1}(U' \cap V)$ and define $f \cdot g: \tilde{U} \to g(V \cap U'), x \mapsto f(g(x))$.
@@ -2617,6 +2622,20 @@ One of the motivating examples:
 
 		Additionally, we get $E(I(X)) = \{ \id_U \mid U \subseteq X \} = 2^X$.
  	\end{enumerate}
+\end{example}
+
+\begin{example}[About $I(X)$]
+	Take $X = \{1,2\}$. Then 
+	\begin{equation*}
+		I(X) = \{ 0 = \emptyset, \id_{\{1\}}, \id_{\{2\}}, \id_X = 1, \{1\} \to \{2\}, \{2\} \to \{1\}, (\{i1\} \to \{2\}, \{2\} \to \{1\}) = (12)  \}
+	\end{equation*}
+	whereas $\mathrm{Bij}(X) = S_2 = \{\id_X, (12)\}$.
+
+	One can also consider $I(\algebra{A}) $
+	\begin{itemize}
+		\item $\supseteq \mathrm{Aut}(\algebra{A}) = \{f: \algebra{A} \to \algebra{A} : f ~^*\text{-automorphism} \}$
+		\item $\supseteq \mathrm{pAut}(\algebra{A}) = \{ f: I \to J \mid I,J \trianglelefteq \algebra{A}, f ~^*\text{-automorphism} \}$
+	\end{itemize}
 \end{example}
 
 \begin{theorem}[Vagner-Preston-Theorem]
