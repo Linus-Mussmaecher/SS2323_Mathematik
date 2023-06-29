@@ -66,19 +66,17 @@ Here, we have $\phi(\id^*) = \phi(\id) = i \neq - i = \overline{\phi(\id)}$.
 
 Since the spectrum $\sigma(a)$ of $a$ in the non-unital algebra $\algebra{A}$ is defined as its spectrum in the unitization $\tilde{\algebra{A}}$, the spectra in $C(\sigma(a))$ and $C_0(\sigma(a))$ have the same meaning and are not merely notationally equivalent.
 
-Let therefore $\Phi: C(\sigma(a)) \to \tilde{\algebra{A}}$ be the $^*$-homomorphism in the fundamental theorem of functional calculus.
-We will consider its restriction $\Psi = \Phi|_{C_0(\sigma(a))}$ and show that it already fulfills the necessary properties.
-As $C_0(\sigma(a))$ is a (closed and non-dense) subspace of $C(\sigma(a))$, $\Psi: C_0(\sigma(a)) \to \tilde{\algebra{A}}$ is still a $^*$-homomorphism, and $\id \in C_0(\sigma(a))$ is still mapped to $a$.
-It remains to show that $\Psi$ has the appropriate image and is still unique.
+Let $\Phi: C^*(a,1) \to C(\sigma(a))$ be the isometric $^*$-isomorphism in the fundamental theorem of functional calculus applied to $\tilde{\algebra{A}}$ given by Gelfand.
+If $0 \notin \sigma(a)$, $a$ is invertible so $1 \in C^*(a)$, and we therefore have both $C^*(a,1) = C^*(a)$ and $C_0(\sigma(a)) = C(\sigma(a))$.
+Therefore, $\Phi^{-1}: C_0(\sigma(a)) \to C^*(a) \subseteq \algebra{A}$ is already the unique isometric $^*$-homomorphism we require, and its image is $C^*(a)$ as desired.
 
-To see the uniqueness, note that we can write $\tilde{\algebra{A}} \simeq \algebra{A} \oplus \mathds{C}$ and $C(\sigma(a)) \simeq C_0(\sigma(a)) \oplus \mathds{C}$ and can therefore decompose $\Phi$ into $\Phi = \Psi \oplus \Phi|_\mathds{C}$.
-If there existed a second $^*$-homomorphism $\Psi_2: C_0(\sigma(a)) \to \algebra{A}$, then
-\begin{equation*}
-    \Phi_2 = \Psi_2 \oplus \Phi_\mathds{C}: C_0(\sigma(a)) \oplus \mathds{C} \to \algebra{A} \oplus \mathds{C}
-\end{equation*}
-were are second $^*$-homomorphism $C(\sigma(a)) \to \tilde{\algebra{A}}$, a contradiction.
+Now consider $0 \in \sigma(a)$ and the restriction $\Psi = \Phi|_{C^*(a)}$.
+This restriction retains the properties of a $^*$-homomorphism, as well as the isometry and $a \mapsto \id \in C_0(\sigma(a))$.
+It remains to show that $\Psi$ is still unique and $f(0) = 0$ for every element in the image of $\Psi$.
+To see the last property, notice that $\Psi(a) = \id$ and $\id(0) = 0$ as well as $\Psi(C^*(a)) = C^*(\Psi(a)) = C^*(\id)$, so any element in the image of $\Psi$ is composed of sums and products of $\id$ and $\overline{\id}$ and therefore fulfills $f(0) = 0$.
+So $\Psi^{-1}: C_0(\sigma(a)) \to C^*(a) \subseteq \algebra{A}$ is our $^*$-homomorphism.
 
-Concerning the appropriate image, it is enough to show $\Psi(C_0(\algebra{A})) = C^*(a)$, as clearly $C^*(a) \subseteq \algebra{A}$.
-
+To see the uniqueness, note that as $0 \in \sigma(a)$ we can write $\tilde{\algebra{A}} \simeq \algebra{A} \oplus \mathds{C}$ and $C(\sigma(a)) \simeq C_0(\sigma(a)) \oplus \mathds{C}$ (with a multiplication analogous to that of the unitization) and can therefore decompose $\Phi^{-1}$ into $\Phi = \Psi^{-1} \oplus \Phi^{-1}|_\mathds{C}$.
+If there existed a second $^*$-homomorphism $\Psi_2: C_0(\sigma(a)) \to \algebra{A}$ (with $\id \mapsto a$), then $\Phi_2 = \Psi_2 \oplus \Phi^{-1}|_\mathds{C}$ were a second $^*$-homomorphism $C_0(\sigma(a)) \oplus \mathds{C} = C(\sigma(a)) \to \algebra{A} \oplus \mathds{C} = \tilde{\algebra{A}}$ with $\id \mapsto a$, a contradiction.
 
 \end{document}
