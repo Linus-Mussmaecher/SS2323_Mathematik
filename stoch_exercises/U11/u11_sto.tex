@@ -102,6 +102,29 @@ und damit einen Schätzer für $\sigma^2$; und aus $2 (I) - 4 (II)$ erhalten wir
 
 \subsection{}
 
+\begin{enumerate}
+    \item Wir setzen $\mathcal{X} = \{0,1\}$ (Antwort falsch, Antwort richtig) und betrachten $\mathcal{X}^4$ mit der Statistik $S: \mathcal{X}^4 \to \mathds{R}, (x_1, x_2, x_3, x_4) \mapsto \sum_{k = 1}^{4} x_k$.
+    Diese ist dann binomialverteilt zu einem Parameter $p \in [0,1] = \Theta$, d.h. $S \sim \mathrm{Bin}_{4, p}$.
+
+    Als Nullhypothese könnten wir nun $H_0: p \in \Theta_0 = [0, 1/4]$, d.h. der Kandidat ist unqualifiziert und rät nur.
+    Kurioserweise hat diese Versicherung die interessante Definition von ''qualifiziert'' als ''besser als reines Raten''.
+    Dies ist nicht anspruchsvoll, und ich möchte mich bitte anderswo versichern lassen.
+
+    In diesem Beispiel wäre dann die Gegenhypothese $K: p \in (1/4, 1]$ und ein Test wäre eine Abbildung $T_4: \mathcal{X}^4 \to \{0,1\}$.
+    Ein solcher Test ließe sich beispielsweise nach Wahl eines Signifikanzniveaus mitttels Satz 4.16 konstruieren. Möchte man ein Signifikanzniveaus $\alpha = 0$ sicherstellen, d.h. unter keinen Umständen einen unqualifizierten Bewerber einstellen, so bietet sich die Wahl von $T_4(x_1, x_2, x_3, x_4) = 1 \iff x_k = 1 \ \forall_{k = 1, \dots, 4}$ an.
+    \item Beim Fehler erster Art wird die Nullhypothese verworfen (d.h. der Kandidat als qualifiziert eingestuft und eingestellt), obwohl sie eigentlich erfüllt ist (der Kandidat rät nur). 
+    Im Fall, dass der Kandidat wirklich nur rät ist die Wahrscheinlichkeit hierfür laut Bernoulli
+    \begin{equation*}
+        \mathds{P}(S \geq 3) = p_{4, 1/4}(3) + p_{4, 1/4}(4) = \binom{4}{3} \frac{1}{4^3} \frac{3}{4} + \frac{1}{4^4} = \frac{13}{255} \approx 0.051\text{.}
+    \end{equation*}
+    Falls der Kandidat so wenig Ahnung hat, dass er des Öfteren falsche Antworten für richtig hält, dann ist die Wahrscheinlichkeit noch kleiner.
+    \item Wie wir in (b) gesehen haben, dass beim Verlangen dreier richtiger Antworten immer noch eine Chance $> 5\%$ besteht, dass ein nur-ratender Kandidat akzeptiert wird, muss ein Test zum Signifikanzniveau $0.05$ schärfer sein, d.h. wir müssen $T$ wie in (a) wählen als $T(x_1, x_2, x_3, x_4) = 1 \iff x_k = 1 \ \forall_{k = 1, \dots, 4}$.
+    \item Dies entspricht der Wahrscheinlichkeit dafür, dass der Statistiker keine, eine oder zwei Antworten korrekt beantwortet bei $p = 0.75$. Bernoulli:
+    \begin{equation*}
+        \mathds{P}(S < 3) = p_{4, 3/4}(0) + p_{4, 3/4}(1) + p_{4, 3/4}(2) = \frac{1}{4}^4 + 4 \cdot \frac{3}{4} \cdot \frac{1}{4}^3 + \binom{4}{2} \frac{3}{4}^2 \frac{1}{4}^2 = \frac{31}{256} \approx 0.121\text{.}
+    \end{equation*}
+    Etwas mehr Vorbereitung kann also nicht schaden.
+\end{enumerate}
 
 
 
