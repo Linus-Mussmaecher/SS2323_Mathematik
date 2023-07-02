@@ -1,0 +1,80 @@
+\documentclass[a4paper]{article}
+
+% --- DATA ---
+
+\def\lecture{Stochastik 2}
+\def\authors{Linus Mußmächer}
+\def\sheetNumber{11}
+%\def\sumPoints{30} 
+
+% --- PREAMBLE ---
+
+\usepackage[german]{babel}	% language specific quotation marks etc.
+\input{../../preambles/exercise_preamble.tex}
+
+% --- DOCUMENT ---
+
+\begin{document}
+
+\makeexheader
+
+\subsection{Zentralübung}
+
+\begin{enumerate}
+    \item Die gemeinsame Dichte der $n$ Zufallsvariablen $X_1, \dots, X_n$ ist
+    \begin{equation*}
+        f_\theta(x_1, \dots, x_n) =  \prod_{i = 1}^n \frac{1}{\theta} x_i^{\frac{1 - \theta}{\theta}} \mathds{1}_{(0,1)}(x_i)
+    \end{equation*}
+    Für $(x_1, \dots, x_n) \in (0,1)^n = \mathcal{X}$ ist dann die Likelihood-Funktion
+    \begin{equation*}
+        f(\theta, x_1, \dots, x_n) = \frac{1}{\theta^n} \left(\prod_{i = 1}^n x_i\right)^{\frac{1-\theta}{\theta}}
+    \end{equation*}
+    und ihre Ableitung
+    \begin{equation*}
+        \frac{\partial}{\partial \theta} f(\theta, x_1, \dots, x_n) = - \left(\prod_{i = 1}^n x_i\right)^{\frac{1-\theta}{\theta}} \frac{1}{\theta^{n+2}} \left( n \theta + \sum_{i = 1}^{n} \log(x_i) \right)
+    \end{equation*}
+    Diese hat die Nullstelle $n \theta = - \sum_{i = 1}^{n} \log(x_i)$, also ist der ML-Schätzer gleich
+    \begin{equation*}
+        \hat{\theta}^{ML}(x_1, \dots, x_n) = \frac{1}{n} \sum_{i = 1}^{n} \log(1/x_i)
+    \end{equation*}
+    \item Der Erwartungswert von $X_1$ beträgt
+    \begin{equation*}
+        \int_0^1 x \cdot \frac{1}{\theta} x^{\frac{1 - \theta}{\theta}} dx = \frac{1}{\theta} \int_{0}^{1}  x^{\frac{1}{\theta}} dx = \frac{1}{\theta} \left[ \frac{1+\theta}{\theta} x^{\frac{\theta}{1+\theta}} \right]_0^1 = \frac{1}{1 + \theta} 
+    \end{equation*}
+    und die Gleichsetzung $\frac{1}{1 + \theta} = \overline{x} = \frac{1}{n} \sum_{i =1}^{n} x_i$ liefert den Schätzer 
+    \begin{equation*}
+        \hat{\theta}(x_1, \dots, x_n) = \frac{n}{\sum_{i = 1}^{n} x_i} - 1
+    \end{equation*}
+    \item Der ML-Schätzer liefert hier
+    \begin{equation*}
+        \hat{\theta}^{ML}(0.1, 0.22, 0.54, 0.36) = \frac{1}{4} \log\left(\frac{1}{0.1 \cdot 0.22 \cdot 0.54 \cdot 0.36}\right) \approx 1.36
+    \end{equation*}
+    und aus dem Momentenschätzer erhält man
+    \begin{equation*}
+        \hat{\theta}(0.1, 0.22, 0.54, 0.36) = \frac{4}{0.1 + 0.22 + 0.54 + 0.36} -1 = \frac{4}{1.22} - 1 \approx 2.27
+    \end{equation*}
+\end{enumerate}
+
+\subsection{}
+
+Wir setzen das empirische erste und zweite Moment mit dem ersten und zweiten Moment der Log-Normalverteilung gleich (man beachte, dass $n$ in der Aufgabenstellung doppelt verwendet wurde, als Anzahl der $Y_i$ und zur Indizierung der Momente. Wir übernehmen nur die erste Verwendung):
+\begin{align*}
+    \hat{\mu}_1 = \frac{1}{n} \sum_{i = 1}^{n} x_i &= \exp\left(\mu + \frac{\sigma^2}{2}\right) \iff \mu + \frac{1}{2} \sigma^2 = \log\left( \frac{1}{n} \sum_{i = 1}^{n} x_i \right) \tag{I}\\
+    \hat{\mu}_2 = \frac{1}{n} \sum_{i = 1}^{n} x_i^2 &= \exp\left( 2 \mu + 2 \sigma^2 \right) \iff 2\mu + 2 \sigma^2 = \log\left( \frac{1}{n} \sum_{i=1}^{n} x_i^2 \right) \tag{II}
+\end{align*}
+$(II) - 2 (I)$ liefert 
+\begin{align*}
+    \sigma^2 &= \log\left( \frac{1}{n} \sum_{i=1}^{n} x_i^2 \right) - \log\left(\left( \frac{1}{n} \sum_{i = 1}^{n} x_i \right)^2 \right) = \log \left( \frac{n \sum_{i=1}^{n} x_i^2}{\left(\sum_{i=1}^{n}x_i\right)^2}\right)\\
+    &= \log(\hat{\mu}_2) - \log(\hat{\mu}_1^2) = \log\left(\frac{\hat{\mu}_2}{\hat{\mu}_1^2}\right)  
+\end{align*}
+und damit einen Schätzer für $\sigma^2$; und aus $2 (I) - 4 (II)$ erhalten wir 
+\begin{align*}
+    \mu &= \log\left( \left( \frac{1}{n} \sum_{i = 1}^{n} x_i \right)^2 \right) - \log\left(\left( \frac{1}{n} \sum_{i=1}^{n} x_i^2 \right)^4\right) = 2 \log \left( \frac{n \sum_{i = 1}^{n} x_i}{\left(\sum_{i=1}^{n} x_i^2 \right)^2} \right)\\
+    &= \log(\hat{\mu}_1^2) - \log(\hat{\mu}_2^4) = \log\left(\frac{\hat{\mu}_1^2}{\hat{\mu}_2^4}\right) = 2 \log\left(\frac{\hat{\mu}_1}{\hat{\mu}_2^2}\right)
+\end{align*}
+
+\subsection{}
+
+
+
+\end{document}

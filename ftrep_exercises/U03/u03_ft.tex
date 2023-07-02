@@ -59,4 +59,65 @@
 \end{enumerate}
 
 
+\subsection{Lokale Injektivität}
+
+Für ein beliebiges $n \in \mathds{N}$ ist $f_n$ lokal injektiv auf ganz $G$, also folgt $f_n'(z) \neq 0$ für alle $z \in G$.
+Für die Funktionenfolge $(f_n') \in H(G)$ gilt also $0 \notin f_n'(G)$ für alle $n$, und da $(f_n')$ nach Weierstraß ebenfalls kompakt gegen $f'$ konvergiert folgt $f' \equiv 0$ oder $0 \notin f'(G)$ nach dem Satz von Hurwitz.
+In ersterem Fall folgt, da $G$ ein Gebiet und insbesondere zusammenhängend ist, dass $f$ konstant ist; in zweiterem Fall per Definition die lokale Injektivität in jedem Punkt.
+
+\subsection{Biholomorphe Abbildungen}
+
+\begin{enumerate}
+    \item Würde eine solche biholomorphe Funktion $\phi: \mathds{C} \setminus \{2\} \to \mathds{D}$ existieren, so ließe sie sich nach dem Riemannschen Fortsetzungssatz zu einer ganzen Funktion $\tilde{\phi}: \mathds{C} \to \mathds{D}$ fortsetzen.
+    Diese Funktion wäre dann aber beschränkt und somit nach Liouville konstant, hätte also insbesondere nicht Bildbereich $\mathds{D}$.
+    Somit kann eine solche Funktion nicht existieren.
+    \item Ja, die gesuchte Funktion ist $f: z \mapsto z^2$.
+    Da $f$ ein Polynom ist, ist die Holomorphie klar.
+    Jedes $z \in \mathds{C} \setminus (\infty, 0]$ lässt sich als $z = r \exp(i \phi)$ mit $r \in [0, \infty)$ und $\phi \in (-\pi, \pi)$ schreiben und hat folglich Urbild $\sqrt{r} \exp(i \phi/2)$ unter $f$.
+    Wegen $\phi \in (-\pi/2, \pi/2)$ liegt dieses Urbild auch in $RH$.
+
+    Für ein $z \in RH$ gilt außerdem $z = r \exp(i \phi)$ mit $\phi \in (- \pi/2, \pi/2)$, also $f(z) = r^2 \exp(i 2\phi)$ $\in \mathds{C} \setminus (-\infty, 0]$.
+    Das Bild $f(RH)$ ist also genau die geschlitzte Ebene.
+
+    Seien weiterhin $z_1 = r_1 \exp(i \phi_1) \in RH$ und $z_2 = r_2 \exp(i \phi_2) \in RH$, mit $r_1, r_2 \in [0, \infty)$ und $\phi_1, \phi_2 \in (-\pi/2, \pi/2)$, derart, dass $f(z_1) = f(z_2) \then r_1^2 \exp(2i \phi_1) = r_1 \exp(2i \phi_2)$.
+    Dann folgt $|r_1^2 \exp(i 2 \phi_1)| = |r_2^2 \exp(2i \phi_2)| \then |r_1|^2 = |r_2|^2$, also $r_1 = r_2$ wegen $r_1, r_2 \geq 0$.
+    Falls $r_1 = r_2 = 0$ so folgt bereits $z_1 = z_2 = 0$, andernfalls zeigt dies $\exp(i \cdot 2 \phi_1) = \exp(i \cdot 2 \phi_2)$, also $2 \phi_1 = 2\phi_2 \mod 2\pi$ und damit $2 \phi_1 = 2 \phi_2$, da $2 \phi_1, 2 \phi_2 \in (- \pi, -\pi)$.
+    Dies zeigt $\phi_1 = \phi_2$ und damit $z_1 = z_2$, also die Injektivität von $f$.
+
+    Somit ist $f$ bijektiv und holomorph, also eine biholomorphe Abbildung.
+
+    \item Angenommen, eine solche Funktion existiert.
+    Dann ist ihre Umkehrabbildung eine Funktion $\phi: \mathds{C} \to S$.
+    Insbesondere ist $\phi$ ganz.
+    Wäre $\phi$ ein Polynom, so folgt $\phi(\mathds{C}) = \mathds{C}$ aus dem Fundamentalsatz der Algebra (denn das Polynom $\tilde{p} = \phi - w$ hat für alle $w \in \mathds{C}$ eine Nullstelle $x_w$, und dann gilt $\phi(x_w) = w$, d.h. $w \in \phi(\mathds{C})$).
+    Also muss $\phi$ ganz-transzendent sein.
+    Nach dem Satz von Casorati-Weierstraß liegt dann aber $\phi(\mathds{C})$ dicht in $\mathds{C}$, also kann $\phi(\mathds{C})$ nicht $S$ sein.
+    Eine solche Funktion kann also nicht existieren.
+\end{enumerate}
+
+\subsection{Beschränkte Ableitungen}
+
+\begin{itemize}
+    \item Sei zuerst $G = \mathds{C}$ und $z_0 \in \mathds{C}$ beliebig.
+    Dann ist $f_n: \mathds{C} \to \mathds{C}, z \mapsto n(z - z_0) + z_0$ holomorph, hat Ableitung $f'(z_0) = n$ und es gilt $f(z_0) = n \cdot 0  + z_0 = z_0$.
+    Dies zeigt, dass unsere Menge unbeschränkt ist.
+    \item Sei nun $G \neq \mathds{C}$.
+    Nach dem Riemannschen Abbildungssatz existiert eine Abbildung $g: G \to \mathds{D}$ mit $g(z_0) = 0$ und $g'(z_0) > 0$.
+    Dann ist für jede Abbildung $f: G \to G$ mit $f(z_0) = z_0$ die Komposition $\tilde{f} = g \circ f \circ g^{-1}$ eine Abbildung von $\mathds{D}$ nach $\mathds{D}$ und $f(0) = g(f(z_0)) = g(z_0) = 0$.
+    Für die Ableitung folgt
+    \begin{align*}
+        \tilde{f}'(0) &= (g \circ f \circ g^{-1})'(0)\\
+        &= (g' \circ f \circ g^{-1})(0) \cdot (f \circ g^{-1})'(0)\\
+        &= (g' \circ f \circ g^{-1})(0) \cdot (f' \circ g^{-1})(0) \cdot (g^{-1})'(0)\\
+        &= g'(z_0) \cdot f'(z_0) \cdot (g^{-1})'(0) = g'(z_0) \cdot f'(z_0) \cdot \frac{1}{g'(g^{-1}(z_0))}\\
+        &= g'(z_0) \cdot f'(z_0) \cdot \frac{1}{g'(z_0)} = f'(z_0)
+    \end{align*}
+    wobei im letzten Schritt $g'(z_0) \neq 0$ aus dem Riemannschen Abbildungssatz eingeht.
+    Der Satz von Schwarz zeigt nun $|\tilde{f}'(0)| \leq 1$, also $|f'(z_0)| \leq 1$ für eine beliebige Funktion $f: G \to G$ mit $f(z_0) = z_0$.
+    
+    Dies zeigt die Beschränktheit der gegebenen Menge mit Schranke $1$. Wegen $\id: G \to G$ mit $\id'(z_0) = 1$ ist diese Schranke sogar scharf.
+
+
+\end{itemize}
+
 \end{document}
