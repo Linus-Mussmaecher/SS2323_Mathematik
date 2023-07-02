@@ -75,6 +75,34 @@ und damit einen Schätzer für $\sigma^2$; und aus $2 (I) - 4 (II)$ erhalten wir
 
 \subsection{}
 
+\begin{enumerate}
+    \item Wir bestimmen die Ableitung durch die Produktregel:
+    \begin{align*}
+        \frac{\partial}{\partial \lambda} F_x(\lambda) &= e^{- \lambda} \sum_{k = 0}^{x} \frac{k \cdot \lambda^{k-1}}{k!} + (-1) \exp(- \lambda) \sum_{k = 0}^{x} \frac{\lambda^{k-1}}{k!} = e^{- \lambda} \sum_{k = 0}^{x-1} \frac{\lambda^{k}}{k!} - \exp(- \lambda) \sum_{k = 0}^{x} \frac{\lambda^{k-1}}{k!}\\
+        &= - \underbrace{e^{-\lambda}}_{> 0} \underbrace{\frac{\lambda^{x}}{x!}}_{\geq 0} < 0
+    \end{align*}
+    und somit ist $F_x(\lambda)$ für alle $x \in \mathds{N}_0$ streng monoton steigend auf $(0, \infty)$.
+    Weiterhin halten wir fest, dass $F_x(\lambda) = \mathds{P}_\lambda\{ X \leq x \}$ für eine zum Parameter $\lambda$ Poisson-verteilte Zufallsvariable $X$ gilt.
+    \item Wir wollen Satz 4.16 verwenden. Dann gilt:
+    \begin{align*}
+        n_r &= \min \left( n_0 \in \mathds{N_0} \mid \sup_{\lambda \leq \lambda_0} \mathds{P}_{\lambda}(\left\{n \in \mathds{N}_0 \mid n \geq n_0 \right\} ) \leq \alpha  \right) \\
+        &=\min \left( n_0 \in \mathds{N_0} \mid \sup_{\lambda \leq \lambda_0} 1 - \mathds{P}_{\lambda}(\left\{n \in \mathds{N}_0 \mid n \leq n_0+1 \right\} ) \leq \alpha  \right) \\
+        &=\min \left( n_0 \in \mathds{N_0} \mid \sup_{\lambda \leq \lambda_0} 1 - F_{n_0 + 1}(\lambda) \leq \alpha  \right) \quad \text{| mit } F_{n_0 + 1} \text{ s.m.f.}\\
+        &=\min \left( n_0 \in \mathds{N_0} \mid 1 - F_{n_0 + 1}(\lambda_0) \leq \alpha  \right) =\min \left( n_0 \in \mathds{N_0} \mid F_{n_0 + 1}(\lambda_0) \geq 0.95  \right)\text{.}
+    \end{align*}
+    Da $F_{n_0 + 1}(\lambda_0)$ in $n_0$ streng monoton steigend ist, müssen wir lediglich eine Zahl $r \in \mathds{R}$ mit $F_{r + 1}(\lambda_0) = 0.95$ bestimmen und aufrunden, um $n_r = \lceil r \rceil$ zu erhalten.
+    Dies ist allerdings nur numerisch möglich. 
+
+    Für dieses $n_r$ setzen wir dann $T = \mathds{1}_{[n_r, \infty]}$ als unseren Test.
+    Nach Satz 4.16 hat er Niveau $\alpha$.
+    \item Für $\lambda_0 = 10$ bestimmen wir numerisch $F_{r + 1}(10) = 0.95 \iff r \approx 13.95$, also wählen wir $n_r = 14$ und erhalten einen Verwerfungsbereich von $[0, 13]$.
+    
+    Für $\lambda_0 = 1$ erhalten wir analog $F_{r+1}(1) = 0.95 \iff x \approx 1.35$, also $n_r = 2$ und damit den Verwerfungsbereich $\{0,1\}$.
+\end{enumerate}
+
+\subsection{}
+
+
 
 
 \end{document}
