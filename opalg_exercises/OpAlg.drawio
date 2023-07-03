@@ -1,292 +1,425 @@
-<mxfile host="Electron" modified="2023-06-27T17:40:48.103Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.5.1 Chrome/112.0.5615.204 Electron/24.6.0 Safari/537.36" etag="rKu_ZmEXnYcQlWI-2_8o" version="21.5.1" type="device">
-  <diagram name="Page-1" id="dF9zNiTmWV5NtSTJ6i_N">
-    <mxGraphModel dx="2184" dy="988" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="5iDYhahTG-n2GmT-U_uV-4" target="5iDYhahTG-n2GmT-U_uV-80" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="5iDYhahTG-n2GmT-U_uV-19" target="5iDYhahTG-n2GmT-U_uV-37" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-6" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-3" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-4" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-5" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-15" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-35" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-49" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-100" y="520" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-47" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="29DH_wFcI-IRwRgDiUtB-1" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-2" value="&lt;b&gt;Algebra&lt;br&gt;&lt;/b&gt;Vektorraum mit Multiplikation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="80" y="120" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-3" value="&lt;b&gt;Normierte Algebra&lt;br&gt;&lt;/b&gt;Submultiplikative Norm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="520" y="320" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-4" target="5iDYhahTG-n2GmT-U_uV-19" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-4" target="5iDYhahTG-n2GmT-U_uV-21" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-4" value="&lt;b&gt;Unitale Algebra&lt;br&gt;&lt;/b&gt;1-Element der Multiplikation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="1080" y="320" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-5" target="5iDYhahTG-n2GmT-U_uV-54" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-5" value="&lt;b&gt;Abelsche Algebra&lt;br&gt;&lt;/b&gt;Kommutative Multiplikation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="800" y="320" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-6" value="&lt;b&gt;Vollständige Algebra&lt;br&gt;&lt;/b&gt;Cauchy-Folgen konvergieren" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="240" y="320" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-12" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-6" target="5iDYhahTG-n2GmT-U_uV-3" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="480" y="400" as="sourcePoint" />
-            <mxPoint x="530" y="350" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-13" value="Banachalgebra" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="5iDYhahTG-n2GmT-U_uV-12" vertex="1" connectable="0">
-          <mxGeometry x="0.35" y="-1" relative="1" as="geometry">
-            <mxPoint x="-14" y="-1" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-15" target="5iDYhahTG-n2GmT-U_uV-17" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-15" target="5iDYhahTG-n2GmT-U_uV-51" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-15" target="5iDYhahTG-n2GmT-U_uV-58" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-15" value="&lt;b&gt;Ideal&lt;br&gt;&lt;/b&gt;Multiplikativ stark abgeschlossener Unterraum" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="80" y="520" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-17" value="&lt;b&gt;Quotientenalgebra&lt;br&gt;&lt;/b&gt;Ist wieder Algebra mit gewöhnlicher Norm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="80" y="680" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-19" target="5iDYhahTG-n2GmT-U_uV-21" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-19" value="&lt;b&gt;Invertierbare Elemente&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="1280" y="520" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-21" target="5iDYhahTG-n2GmT-U_uV-24" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-19" target="5iDYhahTG-n2GmT-U_uV-26" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-19" target="5iDYhahTG-n2GmT-U_uV-28" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-21" target="5iDYhahTG-n2GmT-U_uV-30" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-21" target="5iDYhahTG-n2GmT-U_uV-42" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-21" target="5iDYhahTG-n2GmT-U_uV-65" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-21" value="&lt;b&gt;Spektrum&lt;br&gt;&lt;/b&gt;sigma(a) = { z in C | a -z1 nicht invetierbar}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="1280" y="680" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-24" value="&lt;b&gt;Spektrum und Polynome&lt;br&gt;&lt;/b&gt;sigma(p(a)) = p(sigma(a))&lt;br&gt;für p in C[X]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="1440" y="840" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-26" value="&lt;b&gt;Invertierbarkeit kleiner Elemente&lt;br&gt;&lt;/b&gt;||a||&amp;lt;1 =&amp;gt; (1-a) invertierbar mit&amp;nbsp;&lt;br&gt;Sum a^n" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="1600" y="520" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-28" target="5iDYhahTG-n2GmT-U_uV-30" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-28" value="&lt;b&gt;Offenheit der Invertierbaren Elemente&lt;br&gt;&lt;/b&gt;Inv(A) ist offen und &lt;br&gt;Inv(A) -&amp;gt; A, a-&amp;gt;a^{-1}&lt;br&gt;diffbar" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="1600" y="680" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-30" target="5iDYhahTG-n2GmT-U_uV-33" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-30" value="&lt;b&gt;Gelfand: Form des Spektrums&lt;br&gt;&lt;/b&gt;sigma(a) ist nicht-leer, abgeschlossen und beschränkt durch ||a|| (nicht scharf).&lt;br&gt;&lt;br&gt;C\sigma(a) -&amp;gt; A, z -&amp;gt; (a-z1)^{-1} diffbar" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="1440" y="1160" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-33" target="5iDYhahTG-n2GmT-U_uV-40" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-33" target="29DH_wFcI-IRwRgDiUtB-15" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-160" y="1400" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-33" value="&lt;b&gt;Spektralradius&lt;br&gt;&lt;/b&gt;sup || sigma(a) ||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="1440" y="1320" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-35" target="5iDYhahTG-n2GmT-U_uV-37" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-35" value="&lt;b&gt;Komplexe Zahlen&lt;br&gt;&lt;/b&gt;Vollständige, normierte, unitale, abelsche Algebra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="520" y="120" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-37" value="&lt;b&gt;Gelfand-Mazur&lt;br&gt;&lt;/b&gt;A unital, Banach und alle nicht-null Elemente sind invbar =&amp;gt; A = C" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="800" y="120" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-40" value="&lt;b&gt;Beurling-Gelfand&lt;br&gt;&lt;/b&gt;r(a) = lim ||a^n||^{1/n}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="1720" y="1320" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-42" value="&lt;b&gt;Spektrum und Subalgebren&lt;br&gt;&lt;/b&gt;Inv(B) abg. und offen in B cap Inv(A)&lt;br&gt;&lt;br&gt;sigma_A(b) sub sigma_B(b)&lt;br&gt;Gleichheit falls sigma_A(a) einfach zusammenhängend." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="1440" y="1000" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-44" value="&lt;b&gt;TODO&lt;br&gt;&lt;/b&gt;Uryson etc." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-          <mxGeometry x="-60" y="280" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-47" target="5iDYhahTG-n2GmT-U_uV-49" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-47" value="&lt;b&gt;C_b(X)&lt;br&gt;&lt;/b&gt;Stetige beschränkte Funktionen&lt;br&gt;f: X -&amp;gt; C" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="-480" y="520" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-49" target="5iDYhahTG-n2GmT-U_uV-85" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-49" value="&lt;b&gt;C_0(X)&lt;br&gt;&lt;/b&gt;Stetige beschränkte Funktionen&lt;br&gt;f: X -&amp;gt; C&lt;br&gt;mit { x \in X | |f(x)| &amp;lt;= eps } kompakt für alle epsilon" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="-200" y="520" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-51" value="&lt;b&gt;Ideale in Banachalgebren&lt;br&gt;&lt;/b&gt;I echt =&amp;gt; Cl(I) echt&lt;br&gt;I maximal =&amp;gt; I = Cl(I)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="360" y="680" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="5iDYhahTG-n2GmT-U_uV-59" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="5iDYhahTG-n2GmT-U_uV-58" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="5iDYhahTG-n2GmT-U_uV-65" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="5iDYhahTG-n2GmT-U_uV-83" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-54" value="&lt;b&gt;Character&lt;br&gt;&lt;/b&gt;nicht-null homomorphismus A -&amp;gt; C&lt;br&gt;Om(A) = Menge der Character von A&lt;br&gt;auch: Gelfand-Spektrum von A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="800" y="520" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-58" value="&lt;b&gt;Charaktere und Ideale&lt;br&gt;&lt;/b&gt;A unital, abelsch&lt;br&gt;Omega(A) nicht leer und&lt;br&gt;Omega(A) -&amp;gt; {I | max.&amp;nbsp; Ideal in A}, chi -&amp;gt; ker chi&lt;br&gt;ist eine Bijektion" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="640" y="680" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-59" value="&lt;b&gt;Normen von Charakteren&lt;br&gt;&lt;/b&gt;|| chi || = 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="960" y="680" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="5iDYhahTG-n2GmT-U_uV-65" target="5iDYhahTG-n2GmT-U_uV-92" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-65" value="&lt;b&gt;Spektrum und Gelfand-Spektrum&lt;br&gt;&lt;/b&gt;A abelsch&lt;br&gt;A unital: sigma(a) = { chi(a) | chi in Om(A) }&lt;br&gt;A nicht-unital: sigma(a) = {chi(a) | chi in Om(A)} cup {0}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="960" y="840" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-80" target="5iDYhahTG-n2GmT-U_uV-65" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-80" value="&lt;b&gt;Vereinheitlichung&lt;br&gt;&lt;/b&gt;A nicht-unital. Dann ist A = A x C mit spezieller Multiplikation eine normierte, unitale Algebra mit abgeschlossener Subalgebra A.&lt;br&gt;Banach, Abelsch überträgt sich.&lt;br&gt;* kann übertragen werden" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="1280" y="1480" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-83" target="5iDYhahTG-n2GmT-U_uV-85" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-83" value="&lt;b&gt;Form des Gelfand-Spektrums&lt;br&gt;&lt;/b&gt;Omega(A) ist lokal kompakter Hausdorff-Raum" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="640" y="840" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-85" target="5iDYhahTG-n2GmT-U_uV-92" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-85" target="5iDYhahTG-n2GmT-U_uV-95" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-85" value="&lt;b&gt;Geldfand-Repräsentation&lt;br&gt;&lt;/b&gt;A -&amp;gt; C_0(Omega(A)), a -&amp;gt; hat(a) mit&lt;br&gt;hat(a): Omega(A) -&amp;gt; C, chi -&amp;gt; chi(a)&lt;br&gt;ist kontrahierender Homomorphismus mit r(a) = ||hat(a)||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="360" y="840" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-92" value="&lt;b&gt;Spektrum in der GR&lt;br&gt;&lt;/b&gt;A unital: sigma(a) = hat(a)(Om(A))&lt;br&gt;A nicht-unital: sigma(a) = hat(a)(Om(A)) cup {0}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="520" y="1000" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="5iDYhahTG-n2GmT-U_uV-95" value="&lt;b&gt;Isomorphismus in der GR&lt;br&gt;&lt;/b&gt;Bedingungen (oder):&lt;br&gt;- A = (1,a) für ein a&lt;br&gt;- A ist kommutative C^*-algebra =&amp;gt; Isometrie" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="520" y="1160" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="29DH_wFcI-IRwRgDiUtB-3" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="5iDYhahTG-n2GmT-U_uV-80" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="29DH_wFcI-IRwRgDiUtB-6" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="29DH_wFcI-IRwRgDiUtB-8" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="29DH_wFcI-IRwRgDiUtB-11" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-1" value="&lt;b&gt;*-Algebra&lt;br&gt;&lt;/b&gt;Algebra mit Involution * so dass a** = a und (ab)* = b*a*." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="-800" y="520" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-3" value="&lt;b&gt;Eigenschaften&lt;br&gt;&lt;/b&gt;Quotientenalgebra wieder *-Algebra&lt;br&gt;Schnitt wieder *-Algebra =&amp;gt; generierte *-Algebra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="-640" y="680" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-6" target="29DH_wFcI-IRwRgDiUtB-8" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-6" value="&lt;b&gt;Selbstadjungierte Elemente&lt;br&gt;&lt;/b&gt;aa*, a*a selbstadjugiert&lt;br&gt;Jedes Element aufteilbar durch a = b +ic mit b = (a + a*)/2, c = (a - a*)/(2i) und b,c selbstadjungiert" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="-640.0000000000002" y="840" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-8" value="&lt;b&gt;Normale Elemente&lt;br&gt;&lt;/b&gt;a*a = aa*&lt;br&gt;&lt;b&gt;Projektionen&lt;/b&gt;&lt;br&gt;a^2 = a&lt;br&gt;&lt;b&gt;Unitäre Elemente&lt;br&gt;&lt;/b&gt;a*a = 1 = aa*" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="-640" y="1000" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="5iDYhahTG-n2GmT-U_uV-47" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="29DH_wFcI-IRwRgDiUtB-15" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="29DH_wFcI-IRwRgDiUtB-19" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-11" value="&lt;b&gt;C*-Algebra&lt;br&gt;&lt;/b&gt;||a*a|| = ||a||^2&lt;br&gt;=&amp;gt; Insbesondere ||1|| = 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="-640" y="1640" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-15" value="&lt;b&gt;Spektralradius&lt;br&gt;&lt;/b&gt;a selbstadjungiert =&amp;gt; r(a) = ||a||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="-480.0000000000002" y="1800" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-17" target="29DH_wFcI-IRwRgDiUtB-11" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-17" value="&lt;b&gt;Hinreichend:&lt;br&gt;&lt;/b&gt;||a||^2 &amp;lt;= ||a* a||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="-640.0000000000002" y="1400" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="29DH_wFcI-IRwRgDiUtB-19" value="&lt;b&gt;Multiplier-Algebra&lt;br&gt;&lt;/b&gt;Paare (L,R) aus beschränkten linearen Funktionen mit L(a)b = L(ab), aR(b) = R(ab) und R(a)b = aL(b)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="-640" y="2000" width="200" height="120" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram name="Page-1" id="dF9zNiTmWV5NtSTJ6i_N">
+        <mxGraphModel dx="2807" dy="1353" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="5iDYhahTG-n2GmT-U_uV-4" target="5iDYhahTG-n2GmT-U_uV-80" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="5iDYhahTG-n2GmT-U_uV-19" target="5iDYhahTG-n2GmT-U_uV-37" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-35" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-49" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-100" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="5iDYhahTG-n2GmT-U_uV-47" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-2" target="29DH_wFcI-IRwRgDiUtB-1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-2" value="&lt;b&gt;Algebra&lt;br&gt;&lt;/b&gt;Vektorraum mit Multiplikation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="120" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-3" value="&lt;b&gt;Normierte Algebra&lt;br&gt;&lt;/b&gt;Submultiplikative Norm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="320" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-4" target="5iDYhahTG-n2GmT-U_uV-19" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-4" target="5iDYhahTG-n2GmT-U_uV-21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-4" value="&lt;b&gt;Unitale Algebra&lt;br&gt;&lt;/b&gt;1-Element der Multiplikation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="1080" y="320" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-5" target="5iDYhahTG-n2GmT-U_uV-54" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-5" value="&lt;b&gt;Abelsche Algebra&lt;br&gt;&lt;/b&gt;Kommutative Multiplikation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="320" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-6" value="&lt;b&gt;Vollständige Algebra&lt;br&gt;&lt;/b&gt;Cauchy-Folgen konvergieren" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="320" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-12" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-6" target="5iDYhahTG-n2GmT-U_uV-3" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="480" y="400" as="sourcePoint"/>
+                        <mxPoint x="530" y="350" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-13" value="Banachalgebra" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="5iDYhahTG-n2GmT-U_uV-12" vertex="1" connectable="0">
+                    <mxGeometry x="0.35" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-14" y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-15" target="5iDYhahTG-n2GmT-U_uV-17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-15" target="5iDYhahTG-n2GmT-U_uV-51" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-15" target="5iDYhahTG-n2GmT-U_uV-58" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-15" value="&lt;b&gt;Ideal&lt;br&gt;&lt;/b&gt;Multiplikativ stark abgeschlossener Unterraum" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="520" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-17" value="&lt;b&gt;Quotientenalgebra&lt;br&gt;&lt;/b&gt;Ist wieder Algebra mit gewöhnlicher Norm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="680" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-19" target="5iDYhahTG-n2GmT-U_uV-21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-19" value="&lt;b&gt;Invertierbare Elemente&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="520" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-21" target="5iDYhahTG-n2GmT-U_uV-24" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-19" target="5iDYhahTG-n2GmT-U_uV-26" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-19" target="5iDYhahTG-n2GmT-U_uV-28" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-21" target="5iDYhahTG-n2GmT-U_uV-30" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-21" target="5iDYhahTG-n2GmT-U_uV-42" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-21" target="5iDYhahTG-n2GmT-U_uV-65" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-21" value="&lt;b&gt;Spektrum&lt;br&gt;&lt;/b&gt;sigma(a) = { z in C | a -z1 nicht invetierbar}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="680" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-24" value="&lt;b&gt;Spektrum und Polynome&lt;br&gt;&lt;/b&gt;sigma(p(a)) = p(sigma(a))&lt;br&gt;für p in C[X]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="1440" y="840" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-26" value="&lt;b&gt;Invertierbarkeit kleiner Elemente&lt;br&gt;&lt;/b&gt;||a||&amp;lt;1 =&amp;gt; (1-a) invertierbar mit&amp;nbsp;&lt;br&gt;Sum a^n" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="1600" y="520" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-28" target="5iDYhahTG-n2GmT-U_uV-30" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-28" value="&lt;b&gt;Offenheit der Invertierbaren Elemente&lt;br&gt;&lt;/b&gt;Inv(A) ist offen und &lt;br&gt;Inv(A) -&amp;gt; A, a-&amp;gt;a^{-1}&lt;br&gt;diffbar" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="1600" y="680" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-30" target="5iDYhahTG-n2GmT-U_uV-33" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-30" value="&lt;b&gt;Gelfand: Form des Spektrums&lt;br&gt;&lt;/b&gt;sigma(a) ist nicht-leer, abgeschlossen und beschränkt durch ||a|| (nicht scharf).&lt;br&gt;&lt;br&gt;C\sigma(a) -&amp;gt; A, z -&amp;gt; (a-z1)^{-1} diffbar" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="1440" y="1160" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-33" target="5iDYhahTG-n2GmT-U_uV-40" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-33" target="29DH_wFcI-IRwRgDiUtB-15" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-160" y="1400" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-33" value="&lt;b&gt;Spektralradius&lt;br&gt;&lt;/b&gt;sup || sigma(a) ||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="1440" y="1320" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-35" target="5iDYhahTG-n2GmT-U_uV-37" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-35" value="&lt;b&gt;Komplexe Zahlen&lt;br&gt;&lt;/b&gt;Vollständige, normierte, unitale, abelsche Algebra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="120" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-37" value="&lt;b&gt;Gelfand-Mazur&lt;br&gt;&lt;/b&gt;A unital, Banach und alle nicht-null Elemente sind invbar =&amp;gt; A = C" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="120" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-40" value="&lt;b&gt;Beurling-Gelfand&lt;br&gt;&lt;/b&gt;r(a) = lim ||a^n||^{1/n}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="1720" y="1320" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-42" value="&lt;b&gt;Spektrum und Subalgebren&lt;br&gt;&lt;/b&gt;Inv(B) abg. und offen in B cap Inv(A)&lt;br&gt;&lt;br&gt;sigma_A(b) sub sigma_B(b)&lt;br&gt;Gleichheit falls sigma_A(a) einfach zusammenhängend." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="1440" y="1000" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-44" value="&lt;b&gt;TODO&lt;br&gt;&lt;/b&gt;Uryson etc." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+                    <mxGeometry x="-60" y="280" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-47" target="5iDYhahTG-n2GmT-U_uV-49" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-47" value="&lt;b&gt;C_b(X)&lt;br&gt;&lt;/b&gt;Stetige beschränkte Funktionen&lt;br&gt;f: X -&amp;gt; C" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="-480" y="520" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="5iDYhahTG-n2GmT-U_uV-49" target="5iDYhahTG-n2GmT-U_uV-85" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-49" value="&lt;b&gt;C_0(X)&lt;br&gt;&lt;/b&gt;Stetige beschränkte Funktionen&lt;br&gt;f: X -&amp;gt; C&lt;br&gt;mit { x \in X | |f(x)| &amp;lt;= eps } kompakt für alle epsilon" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+                    <mxGeometry x="-200" y="520" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-51" value="&lt;b&gt;Ideale in Banachalgebren&lt;br&gt;&lt;/b&gt;I echt =&amp;gt; Cl(I) echt&lt;br&gt;I maximal =&amp;gt; I = Cl(I)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="680" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="5iDYhahTG-n2GmT-U_uV-59" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="5iDYhahTG-n2GmT-U_uV-58" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="5iDYhahTG-n2GmT-U_uV-65" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="5iDYhahTG-n2GmT-U_uV-83" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-54" value="&lt;b&gt;Character&lt;br&gt;&lt;/b&gt;nicht-null homomorphismus A -&amp;gt; C&lt;br&gt;Om(A) = Menge der Character von A&lt;br&gt;auch: Gelfand-Spektrum von A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="520" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-58" value="&lt;b&gt;Charaktere und Ideale&lt;br&gt;&lt;/b&gt;A unital, abelsch&lt;br&gt;Omega(A) nicht leer und&lt;br&gt;Omega(A) -&amp;gt; {I | max.&amp;nbsp; Ideal in A}, chi -&amp;gt; ker chi&lt;br&gt;ist eine Bijektion" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="680" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-59" value="&lt;b&gt;Normen von Charakteren&lt;br&gt;&lt;/b&gt;|| chi || = 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="680" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="5iDYhahTG-n2GmT-U_uV-65" target="5iDYhahTG-n2GmT-U_uV-92" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-65" value="&lt;b&gt;Spektrum und Gelfand-Spektrum&lt;br&gt;&lt;/b&gt;A abelsch&lt;br&gt;A unital: sigma(a) = { chi(a) | chi in Om(A) }&lt;br&gt;A nicht-unital: sigma(a) = {chi(a) | chi in Om(A)} cup {0}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="1000" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-80" target="5iDYhahTG-n2GmT-U_uV-65" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-80" value="&lt;b&gt;Vereinheitlichung&lt;br&gt;&lt;/b&gt;A nicht-unital. Dann ist A = A x C mit spezieller Multiplikation eine normierte, unitale Algebra mit abgeschlossener Subalgebra A.&lt;br&gt;Banach, Abelsch überträgt sich.&lt;br&gt;* kann übertragen werden" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="1480" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-83" target="5iDYhahTG-n2GmT-U_uV-85" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-83" value="&lt;b&gt;Form des Gelfand-Spektrums&lt;br&gt;&lt;/b&gt;Omega(A) ist lokal kompakter Hausdorff-Raum" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="840" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-85" target="5iDYhahTG-n2GmT-U_uV-92" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-85" target="5iDYhahTG-n2GmT-U_uV-95" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="5iDYhahTG-n2GmT-U_uV-85" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-85" value="&lt;b&gt;Geldfand-Repräsentation&lt;br&gt;&lt;/b&gt;A -&amp;gt; C_0(Omega(A)), a -&amp;gt; hat(a) mit&lt;br&gt;hat(a): Omega(A) -&amp;gt; C, chi -&amp;gt; chi(a)&lt;br&gt;ist kontrahierender Homomorphismus mit r(a) = ||hat(a)||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="840" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-92" value="&lt;b&gt;Spektrum in der GR&lt;br&gt;&lt;/b&gt;A unital: sigma(a) = hat(a)(Om(A))&lt;br&gt;A nicht-unital: sigma(a) = hat(a)(Om(A)) cup {0}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="1000" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5iDYhahTG-n2GmT-U_uV-95" value="&lt;b&gt;Isomorphismus in der GR&lt;br&gt;&lt;/b&gt;Bedingungen (oder):&lt;br&gt;- A = (1,a) für ein a&lt;br&gt;- A ist kommutative C^*-algebra =&amp;gt; Isometrie" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="1160" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="29DH_wFcI-IRwRgDiUtB-3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="5iDYhahTG-n2GmT-U_uV-80" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="29DH_wFcI-IRwRgDiUtB-6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="29DH_wFcI-IRwRgDiUtB-8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="29DH_wFcI-IRwRgDiUtB-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-1" value="&lt;b&gt;*-Algebra&lt;br&gt;&lt;/b&gt;Algebra mit Involution * so dass a** = a und (ab)* = b*a*." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="-800" y="520" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-3" value="&lt;b&gt;Eigenschaften&lt;br&gt;&lt;/b&gt;Quotientenalgebra wieder *-Algebra&lt;br&gt;Schnitt wieder *-Algebra =&amp;gt; generierte *-Algebra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="-640" y="680" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-6" target="29DH_wFcI-IRwRgDiUtB-8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-6" value="&lt;b&gt;Selbstadjungierte Elemente&lt;br&gt;&lt;/b&gt;aa*, a*a selbstadjugiert&lt;br&gt;Jedes Element aufteilbar durch a = b +ic mit b = (a + a*)/2, c = (a - a*)/(2i) und b,c selbstadjungiert" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="-640.0000000000002" y="840" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-8" value="&lt;b&gt;Normale Elemente&lt;br&gt;&lt;/b&gt;a*a = aa*&lt;br&gt;&lt;b&gt;Projektionen&lt;/b&gt;&lt;br&gt;a^2 = a&lt;br&gt;&lt;b&gt;Unitäre Elemente&lt;br&gt;&lt;/b&gt;a*a = 1 = aa*" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="-640" y="1000" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="5iDYhahTG-n2GmT-U_uV-47" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="29DH_wFcI-IRwRgDiUtB-15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="11">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="-380" y="1700"/>
+                            <mxPoint x="-380" y="1460"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="29DH_wFcI-IRwRgDiUtB-19">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="21">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="29">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="-540" y="2440"/>
+                            <mxPoint x="-100" y="2440"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="39">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-11" value="&lt;b&gt;C*-Algebra&lt;br&gt;&lt;/b&gt;||a*a|| = ||a||^2&lt;br&gt;=&amp;gt; Insbesondere ||1|| = 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="-640" y="1640" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-15" target="9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-15" value="&lt;b&gt;Spektralradius&lt;br&gt;&lt;/b&gt;a selbstadjungiert =&amp;gt; r(a) = ||a||&lt;br&gt;&lt;br&gt;=&amp;gt; Es gibt zu einer *-Algebra nur eine Norm, die sie zur C*-Algebra macht" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="-480.0000000000002" y="1800" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-17" target="29DH_wFcI-IRwRgDiUtB-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-17" value="&lt;b&gt;Hinreichend:&lt;br&gt;&lt;/b&gt;||a||^2 &amp;lt;= ||a* a||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="-640.0000000000002" y="1400" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-19" target="44">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29DH_wFcI-IRwRgDiUtB-19" value="&lt;b&gt;Multiplier-Algebra&lt;br&gt;&lt;/b&gt;Paare (L,R) aus beschränkten linearen Funktionen mit L(a)b = L(ab), aR(b) = R(ab) und R(a)b = aL(b)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+                    <mxGeometry x="-480" y="2280" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="6" target="5iDYhahTG-n2GmT-U_uV-80">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;b&gt;Vereinheitlichung von C*-Algebren&lt;br&gt;&lt;/b&gt;Ist wieder C* mit eindeutiger Fortsetzungsnorm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="1640" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;b&gt;Spektrum in C*&lt;br&gt;&lt;/b&gt;selbstadjungiert =&amp;gt; sig(a) reell&lt;br&gt;Oberalgebra erhält Spektrum" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="1960" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="&lt;b&gt;Charaktere in C*&lt;br&gt;&lt;/b&gt;Selbstadjungiert-erhaltend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="1400" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="13" target="16">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;b&gt;Gelfand-Repräsentation von C*&lt;br&gt;&lt;/b&gt;Phi ist isometrischer *-isomorphismus" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="1200" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&lt;b&gt;Gelfand-Repräsentation eines einzelnen Elements&lt;br&gt;&lt;/b&gt;a normal in unitaler C*-Algebra. Dann ex. ein eindeutiger unitaler isometrischer *-Homomorphismus phi: C(sig(a)) -&amp;gt; C*(1,a)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-80" y="1320" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="&lt;b&gt;Form des Charakterraumes&lt;br&gt;&lt;/b&gt;Auf kompakten Hausdorff-Räumen ist der Raum aller Charaktere von C(X) gleich X, d.h.&lt;br&gt;Omega(C(X)) = X homöomorph" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="960" y="840" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="21" target="23">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="21" target="25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="21" target="27">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="21" target="29">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;b&gt;Positive Elemente&lt;br&gt;&lt;/b&gt;Selbstadjungiert + Reelles Spektrum &amp;gt;= 0&lt;br&gt;Schreibe: a &amp;gt;= 0&lt;br&gt;Menge: A+&lt;br&gt;&lt;br&gt;Schreibe a &amp;lt;= b falls b - a &amp;gt;= 0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="-640" y="2480" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;b&gt;Positive Elemente und Subalgebren&lt;br&gt;&lt;/b&gt;B+ = A+ cap B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-480" y="2640" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="&lt;b&gt;Quadratwurzel&lt;br&gt;&lt;/b&gt;a in A+ =&amp;gt; ex. b mit b^2 = a" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-480" y="2800" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="&lt;b&gt;Charakterisierung der positiven Elemente&lt;br&gt;&lt;/b&gt;A unital, a selbstadjungiert&lt;br&gt;||a - t|| &amp;lt;= t für ein t in R =&amp;gt; a &amp;gt;= 0&lt;br&gt;||a|| &amp;lt;= t, a&amp;gt;=0 =&amp;gt; ||a - t|| &amp;lt;= t&lt;br&gt;&lt;br&gt;&lt;br&gt;A+ = { aa* | a in A}&lt;br&gt;unter Summe &amp;amp; Produkt abgeschlossen&lt;br&gt;0 &amp;lt;= a &amp;lt;= b =&amp;gt; ||a|| &amp;lt;= ||b||&lt;br&gt;&lt;br&gt;a,b s.a. =&amp;gt; c*ac &amp;lt;= c*bc&lt;br&gt;&lt;br&gt;A unital, a,b &amp;gt;= 0 invert., dann&lt;br&gt;a &amp;lt;= b =&amp;gt; 0 &amp;lt;= b^-1 &amp;lt;= a^-1&lt;br&gt;&lt;br&gt;a, b &amp;gt;= 0, a &amp;lt;= b dann&lt;br&gt;a^1/2 &amp;lt;= b^1/2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-800" y="2640" width="200" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29" target="32">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29" target="35">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="&lt;b&gt;Approximate units&lt;br&gt;&lt;/b&gt;monoton steigende Folge positiver Elemente u_lam derart, dass&amp;nbsp;&lt;br&gt;lim u_lam a = a = lim a u_lam&lt;br&gt;für alle a in A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="-200" y="2480" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="&lt;b&gt;Existenz&lt;br&gt;&lt;/b&gt;Jede C*-Algebra hat ein approx. unit&lt;br&gt;&lt;br&gt;Man wähle Lam als alle a in A+ mit ||a|| &amp;lt; 1 (upwards directed)&lt;br&gt;&lt;br&gt;Separabel: Folge!" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-40" y="2640" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="35" target="37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="35" target="42">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="35" target="44">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="&lt;b&gt;Ideale und approx units&lt;br&gt;&lt;/b&gt;I links. abg. Ideal hat auch approx. unit&lt;br&gt;&lt;br&gt;I abg. Ideal ist selbstadjungiert und daher eine C*-Subalgebra.&lt;br&gt;||a + I|| = lim ||a - a u_lam||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-40" y="2800" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="&lt;b&gt;Quotientenalgebra&lt;br&gt;&lt;/b&gt;Ist C*-Algebra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="2880" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;elbow=vertical;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="39" target="42">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="319.99999999999955" y="2590" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="520" y="2180"/>
+                            <mxPoint x="520" y="2780"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="&lt;b&gt;Homomorphismen zwischen C*-Algebren&lt;br&gt;&lt;/b&gt;phi: A -&amp;gt; B *-hom&lt;br&gt;Injektiv =&amp;gt; Isometrisch&lt;br&gt;phi(A) ist C*-subalgebra von B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-480" y="2120" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="&lt;b&gt;Direkte Summen&lt;br&gt;&lt;/b&gt;B C*-Subalgebra, I abg. Ideal&lt;br&gt;dann B + I C*-Subalgebra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="2720" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="&lt;b&gt;Multiplier-Algebra von Idealen&lt;br&gt;&lt;/b&gt;I abg. Ideal. Ex. eindeutiger *-Hom&amp;nbsp;&lt;br&gt;phi: A -&amp;gt; M(I)&lt;br&gt;der I -&amp;gt; M(I) fortsetzt.&lt;br&gt;Fall I essentiell, dann phi injektiv." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="2560" width="200" height="120" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>
