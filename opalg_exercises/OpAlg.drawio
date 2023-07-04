@@ -1,9 +1,15 @@
 <mxfile host="65bd71144e">
     <diagram name="Page-1" id="dF9zNiTmWV5NtSTJ6i_N">
-        <mxGraphModel dx="3049" dy="997" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="3547" dy="1353" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="267" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;fillColor=#f5f5f5;strokeColor=#666666;rounded=0;" edge="1" parent="1" source="5iDYhahTG-n2GmT-U_uV-15" target="44">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="266" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=0;" edge="1" parent="1" source="5iDYhahTG-n2GmT-U_uV-4" target="29">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="5iDYhahTG-n2GmT-U_uV-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#999999;" parent="1" source="5iDYhahTG-n2GmT-U_uV-4" target="5iDYhahTG-n2GmT-U_uV-80" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
@@ -233,7 +239,7 @@
                     <mxGeometry x="520" y="1000" width="200" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="5iDYhahTG-n2GmT-U_uV-95" value="&lt;b&gt;Isomorphismus in der GR&lt;br&gt;&lt;/b&gt;Bedingungen (oder):&lt;br&gt;- A = (1,a) für ein a&lt;br&gt;- A ist kommutative C^*-algebra =&amp;gt; Isometrie" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="1160" width="200" height="120" as="geometry"/>
+                    <mxGeometry x="520" y="1200" width="200" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="29DH_wFcI-IRwRgDiUtB-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-1" target="29DH_wFcI-IRwRgDiUtB-3" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -523,19 +529,19 @@
                 <mxCell id="87" value="&lt;b&gt;GNS-Kriterium&lt;br&gt;&lt;/b&gt;a selbstajungiert:&lt;br&gt;a in A+ &amp;lt;=&amp;gt; r(a) &amp;gt;= 0 f.a. pos. lin. Funktionale" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-800" y="2960" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="95" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="93" target="94">
+                <mxCell id="95" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="93" target="94" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="97" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="1" source="93" target="96">
+                <mxCell id="97" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" parent="1" source="93" target="96" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="93" value="&lt;b&gt;(Lokal) kompakte Hausdorffräume&lt;br&gt;&lt;/b&gt;Punkte haben kompakte Umgebung, sind trennbar" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                <mxCell id="93" value="&lt;b&gt;(Lokal) kompakte Hausdorffräume&lt;br&gt;&lt;/b&gt;Punkte haben kompakte Umgebung, sind trennbar" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
                     <mxGeometry x="-1000" y="80" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="94" value="&lt;b&gt;Uryson's Lemma&lt;br&gt;&lt;/b&gt;X lokal kompakt Hausdorff&lt;br&gt;K sub X kompakt, F sub X abg.&lt;br&gt;Ex. f: X -&amp;gt; [0,1] mit&lt;br&gt;f|K = 1 und f|F = 0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="94" value="&lt;b&gt;Uryson's Lemma&lt;br&gt;&lt;/b&gt;X lokal kompakt Hausdorff&lt;br&gt;K sub X kompakt, F sub X abg.&lt;br&gt;Ex. f: X -&amp;gt; [0,1] mit&lt;br&gt;f|K = 1 und f|F = 0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-1000" y="280" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="96" value="&lt;b&gt;Alexandroff-Kompaktifizierung&lt;br&gt;&lt;/b&gt;X lokal kompakt Hausdorff&lt;br&gt;X' = X cup inf kompakt mit&lt;br&gt;O_X' = O_X cup { K^compl cup inf}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="96" value="&lt;b&gt;Alexandroff-Kompaktifizierung&lt;br&gt;&lt;/b&gt;X lokal kompakt Hausdorff&lt;br&gt;X' = X cup inf kompakt mit&lt;br&gt;O_X' = O_X cup { K^compl cup inf}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-1320" y="280" width="200" height="120" as="geometry"/>
                 </mxCell>
             </root>
