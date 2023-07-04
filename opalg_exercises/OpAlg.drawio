@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Page-1" id="dF9zNiTmWV5NtSTJ6i_N">
-        <mxGraphModel dx="2807" dy="1353" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="3310" dy="1184" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -190,7 +190,7 @@
                 <mxCell id="5iDYhahTG-n2GmT-U_uV-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="5iDYhahTG-n2GmT-U_uV-83" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="18">
+                <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="5iDYhahTG-n2GmT-U_uV-54" target="18" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="5iDYhahTG-n2GmT-U_uV-54" value="&lt;b&gt;Character&lt;br&gt;&lt;/b&gt;nicht-null homomorphismus A -&amp;gt; C&lt;br&gt;Om(A) = Menge der Character von A&lt;br&gt;auch: Gelfand-Spektrum von A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
@@ -226,7 +226,7 @@
                 <mxCell id="5iDYhahTG-n2GmT-U_uV-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="5iDYhahTG-n2GmT-U_uV-85" target="5iDYhahTG-n2GmT-U_uV-95" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="5iDYhahTG-n2GmT-U_uV-85" target="13">
+                <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="5iDYhahTG-n2GmT-U_uV-85" target="13" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="5iDYhahTG-n2GmT-U_uV-85" value="&lt;b&gt;Geldfand-Repräsentation&lt;br&gt;&lt;/b&gt;A -&amp;gt; C_0(Omega(A)), a -&amp;gt; hat(a) mit&lt;br&gt;hat(a): Omega(A) -&amp;gt; C, chi -&amp;gt; chi(a)&lt;br&gt;ist kontrahierender Homomorphismus mit r(a) = ||hat(a)||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
@@ -274,10 +274,10 @@
                 <mxCell id="29DH_wFcI-IRwRgDiUtB-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="29DH_wFcI-IRwRgDiUtB-15" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="6">
+                <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="6" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="11">
+                <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="11" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="-380" y="1700"/>
@@ -285,16 +285,16 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="13">
+                <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="13" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="29DH_wFcI-IRwRgDiUtB-19">
+                <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="29DH_wFcI-IRwRgDiUtB-19" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="21">
+                <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="21" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="29">
+                <mxCell id="31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;elbow=vertical;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="29" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="-540" y="2440"/>
@@ -302,13 +302,24 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="39">
+                <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="39" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;rounded=0;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="47">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="-540" y="2440"/>
+                            <mxPoint x="-990" y="2440"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-11" target="65">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="29DH_wFcI-IRwRgDiUtB-11" value="&lt;b&gt;C*-Algebra&lt;br&gt;&lt;/b&gt;||a*a|| = ||a||^2&lt;br&gt;=&amp;gt; Insbesondere ||1|| = 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
                     <mxGeometry x="-640" y="1640" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-15" target="9">
+                <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="29DH_wFcI-IRwRgDiUtB-15" target="9" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="29DH_wFcI-IRwRgDiUtB-15" value="&lt;b&gt;Spektralradius&lt;br&gt;&lt;/b&gt;a selbstadjungiert =&amp;gt; r(a) = ||a||&lt;br&gt;&lt;br&gt;=&amp;gt; Es gibt zu einer *-Algebra nur eine Norm, die sie zur C*-Algebra macht" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
@@ -320,88 +331,94 @@
                 <mxCell id="29DH_wFcI-IRwRgDiUtB-17" value="&lt;b&gt;Hinreichend:&lt;br&gt;&lt;/b&gt;||a||^2 &amp;lt;= ||a* a||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-640.0000000000002" y="1400" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29DH_wFcI-IRwRgDiUtB-19" target="44">
+                <mxCell id="45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="29DH_wFcI-IRwRgDiUtB-19" target="44" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="29DH_wFcI-IRwRgDiUtB-19" value="&lt;b&gt;Multiplier-Algebra&lt;br&gt;&lt;/b&gt;Paare (L,R) aus beschränkten linearen Funktionen mit L(a)b = L(ab), aR(b) = R(ab) und R(a)b = aL(b)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
                     <mxGeometry x="-480" y="2280" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="6" target="5iDYhahTG-n2GmT-U_uV-80">
+                <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="6" target="5iDYhahTG-n2GmT-U_uV-80" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="&lt;b&gt;Vereinheitlichung von C*-Algebren&lt;br&gt;&lt;/b&gt;Ist wieder C* mit eindeutiger Fortsetzungsnorm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="6" value="&lt;b&gt;Vereinheitlichung von C*-Algebren&lt;br&gt;&lt;/b&gt;Ist wieder C* mit eindeutiger Fortsetzungsnorm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-320" y="1640" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="&lt;b&gt;Spektrum in C*&lt;br&gt;&lt;/b&gt;selbstadjungiert =&amp;gt; sig(a) reell&lt;br&gt;Oberalgebra erhält Spektrum" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="9" value="&lt;b&gt;Spektrum in C*&lt;br&gt;&lt;/b&gt;selbstadjungiert =&amp;gt; sig(a) reell&lt;br&gt;Oberalgebra erhält Spektrum" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-320" y="1960" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="&lt;b&gt;Charaktere in C*&lt;br&gt;&lt;/b&gt;Selbstadjungiert-erhaltend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="11" value="&lt;b&gt;Charaktere in C*&lt;br&gt;&lt;/b&gt;Selbstadjungiert-erhaltend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-320" y="1400" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="13" target="16">
+                <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="13" target="16" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="&lt;b&gt;Gelfand-Repräsentation von C*&lt;br&gt;&lt;/b&gt;Phi ist isometrischer *-isomorphismus" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="13" value="&lt;b&gt;Gelfand-Repräsentation von C*&lt;br&gt;&lt;/b&gt;Phi ist isometrischer *-isomorphismus" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-320" y="1200" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="&lt;b&gt;Gelfand-Repräsentation eines einzelnen Elements&lt;br&gt;&lt;/b&gt;a normal in unitaler C*-Algebra. Dann ex. ein eindeutiger unitaler isometrischer *-Homomorphismus phi: C(sig(a)) -&amp;gt; C*(1,a)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="16" value="&lt;b&gt;Gelfand-Repräsentation eines einzelnen Elements&lt;br&gt;&lt;/b&gt;a normal in unitaler C*-Algebra. Dann ex. ein eindeutiger unitaler isometrischer *-Homomorphismus phi: C(sig(a)) -&amp;gt; C*(1,a)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-80" y="1320" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="&lt;b&gt;Form des Charakterraumes&lt;br&gt;&lt;/b&gt;Auf kompakten Hausdorff-Räumen ist der Raum aller Charaktere von C(X) gleich X, d.h.&lt;br&gt;Omega(C(X)) = X homöomorph" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="18" value="&lt;b&gt;Form des Charakterraumes&lt;br&gt;&lt;/b&gt;Auf kompakten Hausdorff-Räumen ist der Raum aller Charaktere von C(X) gleich X, d.h.&lt;br&gt;Omega(C(X)) = X homöomorph" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="960" y="840" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="21" target="23">
+                <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="21" target="23" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="21" target="25">
+                <mxCell id="26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="21" target="25" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="21" target="27">
+                <mxCell id="28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="21" target="27" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="21" target="29">
+                <mxCell id="30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="21" target="29" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="&lt;b&gt;Positive Elemente&lt;br&gt;&lt;/b&gt;Selbstadjungiert + Reelles Spektrum &amp;gt;= 0&lt;br&gt;Schreibe: a &amp;gt;= 0&lt;br&gt;Menge: A+&lt;br&gt;&lt;br&gt;Schreibe a &amp;lt;= b falls b - a &amp;gt;= 0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                <mxCell id="48" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="21" target="47">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="21" target="87">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;b&gt;Positive Elemente&lt;br&gt;&lt;/b&gt;Selbstadjungiert + Reelles Spektrum &amp;gt;= 0&lt;br&gt;Schreibe: a &amp;gt;= 0&lt;br&gt;Menge: A+&lt;br&gt;&lt;br&gt;Schreibe a &amp;lt;= b falls b - a &amp;gt;= 0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
                     <mxGeometry x="-640" y="2480" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="&lt;b&gt;Positive Elemente und Subalgebren&lt;br&gt;&lt;/b&gt;B+ = A+ cap B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="23" value="&lt;b&gt;Positive Elemente und Subalgebren&lt;br&gt;&lt;/b&gt;B+ = A+ cap B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-480" y="2640" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" value="&lt;b&gt;Quadratwurzel&lt;br&gt;&lt;/b&gt;a in A+ =&amp;gt; ex. b mit b^2 = a" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="25" value="&lt;b&gt;Quadratwurzel&lt;br&gt;&lt;/b&gt;a in A+ =&amp;gt; ex. b mit b^2 = a" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-480" y="2800" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="&lt;b&gt;Charakterisierung der positiven Elemente&lt;br&gt;&lt;/b&gt;A unital, a selbstadjungiert&lt;br&gt;||a - t|| &amp;lt;= t für ein t in R =&amp;gt; a &amp;gt;= 0&lt;br&gt;||a|| &amp;lt;= t, a&amp;gt;=0 =&amp;gt; ||a - t|| &amp;lt;= t&lt;br&gt;&lt;br&gt;&lt;br&gt;A+ = { aa* | a in A}&lt;br&gt;unter Summe &amp;amp; Produkt abgeschlossen&lt;br&gt;0 &amp;lt;= a &amp;lt;= b =&amp;gt; ||a|| &amp;lt;= ||b||&lt;br&gt;&lt;br&gt;a,b s.a. =&amp;gt; c*ac &amp;lt;= c*bc&lt;br&gt;&lt;br&gt;A unital, a,b &amp;gt;= 0 invert., dann&lt;br&gt;a &amp;lt;= b =&amp;gt; 0 &amp;lt;= b^-1 &amp;lt;= a^-1&lt;br&gt;&lt;br&gt;a, b &amp;gt;= 0, a &amp;lt;= b dann&lt;br&gt;a^1/2 &amp;lt;= b^1/2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="27" value="&lt;b&gt;Charakterisierung der positiven Elemente&lt;br&gt;&lt;/b&gt;A unital, a selbstadjungiert&lt;br&gt;||a - t|| &amp;lt;= t für ein t in R =&amp;gt; a &amp;gt;= 0&lt;br&gt;||a|| &amp;lt;= t, a&amp;gt;=0 =&amp;gt; ||a - t|| &amp;lt;= t&lt;br&gt;&lt;br&gt;&lt;br&gt;A+ = { aa* | a in A}&lt;br&gt;unter Summe &amp;amp; Produkt abgeschlossen&lt;br&gt;0 &amp;lt;= a &amp;lt;= b =&amp;gt; ||a|| &amp;lt;= ||b||&lt;br&gt;&lt;br&gt;a,b s.a. =&amp;gt; c*ac &amp;lt;= c*bc&lt;br&gt;&lt;br&gt;A unital, a,b &amp;gt;= 0 invert., dann&lt;br&gt;a &amp;lt;= b =&amp;gt; 0 &amp;lt;= b^-1 &amp;lt;= a^-1&lt;br&gt;&lt;br&gt;a, b &amp;gt;= 0, a &amp;lt;= b dann&lt;br&gt;a^1/2 &amp;lt;= b^1/2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-800" y="2640" width="200" height="280" as="geometry"/>
                 </mxCell>
-                <mxCell id="33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29" target="32">
+                <mxCell id="33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="29" target="32" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="29" target="35">
+                <mxCell id="36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="29" target="35" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="&lt;b&gt;Approximate units&lt;br&gt;&lt;/b&gt;monoton steigende Folge positiver Elemente u_lam derart, dass&amp;nbsp;&lt;br&gt;lim u_lam a = a = lim a u_lam&lt;br&gt;für alle a in A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                <mxCell id="29" value="&lt;b&gt;Approximate units&lt;br&gt;&lt;/b&gt;monoton steigende Folge positiver Elemente u_lam derart, dass&amp;nbsp;&lt;br&gt;lim u_lam a = a = lim a u_lam&lt;br&gt;für alle a in A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
                     <mxGeometry x="-200" y="2480" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="32" value="&lt;b&gt;Existenz&lt;br&gt;&lt;/b&gt;Jede C*-Algebra hat ein approx. unit&lt;br&gt;&lt;br&gt;Man wähle Lam als alle a in A+ mit ||a|| &amp;lt; 1 (upwards directed)&lt;br&gt;&lt;br&gt;Separabel: Folge!" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="32" value="&lt;b&gt;Existenz&lt;br&gt;&lt;/b&gt;Jede C*-Algebra hat ein approx. unit&lt;br&gt;&lt;br&gt;Man wähle Lam als alle a in A+ mit ||a|| &amp;lt; 1 (upwards directed)&lt;br&gt;&lt;br&gt;Separabel: Folge!" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-40" y="2640" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="35" target="37">
+                <mxCell id="38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="35" target="37" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="35" target="42">
+                <mxCell id="43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="35" target="42" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="35" target="44">
+                <mxCell id="46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;elbow=vertical;" parent="1" source="35" target="44" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="35" value="&lt;b&gt;Ideale und approx units&lt;br&gt;&lt;/b&gt;I links. abg. Ideal hat auch approx. unit&lt;br&gt;&lt;br&gt;I abg. Ideal ist selbstadjungiert und daher eine C*-Subalgebra.&lt;br&gt;||a + I|| = lim ||a - a u_lam||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="35" value="&lt;b&gt;Ideale und approx units&lt;br&gt;&lt;/b&gt;I links. abg. Ideal hat auch approx. unit&lt;br&gt;&lt;br&gt;I abg. Ideal ist selbstadjungiert und daher eine C*-Subalgebra.&lt;br&gt;||a + I|| = lim ||a - a u_lam||" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-40" y="2800" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" value="&lt;b&gt;Quotientenalgebra&lt;br&gt;&lt;/b&gt;Ist C*-Algebra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="37" value="&lt;b&gt;Quotientenalgebra&lt;br&gt;&lt;/b&gt;Ist C*-Algebra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="240" y="2880" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;elbow=vertical;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="39" target="42">
+                <mxCell id="41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;elbow=vertical;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="39" target="42" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="319.99999999999955" y="2590" as="targetPoint"/>
                         <Array as="points">
@@ -410,14 +427,104 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="39" value="&lt;b&gt;Homomorphismen zwischen C*-Algebren&lt;br&gt;&lt;/b&gt;phi: A -&amp;gt; B *-hom&lt;br&gt;Injektiv =&amp;gt; Isometrisch&lt;br&gt;phi(A) ist C*-subalgebra von B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="39" value="&lt;b&gt;Homomorphismen zwischen C*-Algebren&lt;br&gt;&lt;/b&gt;phi: A -&amp;gt; B *-hom&lt;br&gt;Injektiv =&amp;gt; Isometrisch&lt;br&gt;phi(A) ist C*-subalgebra von B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="-480" y="2120" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="42" value="&lt;b&gt;Direkte Summen&lt;br&gt;&lt;/b&gt;B C*-Subalgebra, I abg. Ideal&lt;br&gt;dann B + I C*-Subalgebra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="42" value="&lt;b&gt;Direkte Summen&lt;br&gt;&lt;/b&gt;B C*-Subalgebra, I abg. Ideal&lt;br&gt;dann B + I C*-Subalgebra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="240" y="2720" width="200" height="120" as="geometry"/>
                 </mxCell>
-                <mxCell id="44" value="&lt;b&gt;Multiplier-Algebra von Idealen&lt;br&gt;&lt;/b&gt;I abg. Ideal. Ex. eindeutiger *-Hom&amp;nbsp;&lt;br&gt;phi: A -&amp;gt; M(I)&lt;br&gt;der I -&amp;gt; M(I) fortsetzt.&lt;br&gt;Fall I essentiell, dann phi injektiv." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                <mxCell id="44" value="&lt;b&gt;Multiplier-Algebra von Idealen&lt;br&gt;&lt;/b&gt;I abg. Ideal. Ex. eindeutiger *-Hom&amp;nbsp;&lt;br&gt;phi: A -&amp;gt; M(I)&lt;br&gt;der I -&amp;gt; M(I) fortsetzt.&lt;br&gt;Fall I essentiell, dann phi injektiv." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="240" y="2560" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="47" target="50">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="47" target="52">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="&lt;b&gt;Positive lineare Abbildungen&lt;br&gt;&lt;/b&gt;phi: A -&amp;gt; B linear mit phi(A+) sub B+" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="-1090" y="2480" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="&lt;b&gt;Eigenschaften&lt;br&gt;&lt;/b&gt;&lt;br&gt;phi(A_sa) sub B_sa&lt;br&gt;*hom =&amp;gt; positiv&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-1240" y="2640" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="52" target="54">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="52" target="61">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="52" target="72">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="52" target="58">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="52" target="63">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="52" target="87">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="&lt;b&gt;Positive lineare Funktionale&lt;br&gt;&lt;/b&gt;&lt;br&gt;r: A -&amp;gt; C positiv" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="-1240" y="2800" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="&lt;b&gt;Eigenschaften&lt;br&gt;&lt;/b&gt;positiv =&amp;gt; stetig&lt;br&gt;stetig, A unital: positiv &amp;lt;=&amp;gt; r(1) = ||r||&lt;br&gt;||r + r'|| = ||r|| + ||r'||&lt;br&gt;&lt;br&gt;r(a*a) = 0 &amp;lt;=&amp;gt; r(ba) = 0 f.a. b in A&lt;br&gt;r(b*a*ab) &amp;lt;= ||a*a|| r(b*b)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-1070" y="3120" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1" source="58" target="74">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="58" target="59">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="&lt;b&gt;State&lt;br&gt;&lt;/b&gt;r: A -&amp;gt; C positiv mit ||r|| = 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="-1400" y="2960" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="&lt;b&gt;Existenz&lt;br&gt;&lt;/b&gt;a normal, A != 0.&lt;br&gt;=&amp;gt; Ex. State mit ||a|| = r(a)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-1640" y="2960" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="&lt;b&gt;Fortsetzbarkeit&lt;br&gt;&lt;/b&gt;via Hahn-Banach&lt;br&gt;Fortsetzung normerhaltend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-1070" y="3280" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="&lt;b&gt;Jordan-Zerlegung&lt;br&gt;&lt;/b&gt;r: A -&amp;gt; C selbstadnungiert, linear, stetig&lt;br&gt;=&amp;gt; Ex r+ und r- mit r = r+ - r- und ||r|| = ||r+|| + ||r-|| positive lineare Funktionale" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-1400" y="3120" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="65" target="67">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="65" target="72">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="&lt;b&gt;Darstellung&lt;br&gt;&lt;/b&gt;phi: A -&amp;gt; B(H) mit H Hilbertraum, phi *-Hom." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="-800" y="1800" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="67" target="74">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="67" target="82">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="&lt;b&gt;Treue &amp;amp; direkte Summe&lt;br&gt;&lt;/b&gt;Treu: phi injektiv&lt;br&gt;&lt;br&gt;Direkte Summe ist wieder Darstellung, treu falls für alle a in A mindestens ein phi in der Familie ex. mit phi(a) != 0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="-960" y="1960" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="72" target="74">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="&lt;b&gt;Gelfand-Naimark-Segal&lt;br&gt;&lt;/b&gt;r: A -&amp;gt; positiv, linear.&lt;br&gt;Wähle N_r -&amp;gt; A/N_rmit innerem Produkt (a,b) =&amp;gt; r(b*a)&lt;br&gt;Hilbert-Vervollständigung&lt;br&gt;a -&amp;gt; ((b + N_r) -&amp;gt; ab + N_r) ist repräsentation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-960" y="2280" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="&lt;b&gt;Universelle Repräsenation&lt;br&gt;&lt;/b&gt;Direkte Summe über alle GNS von States" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="-960" y="2120" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="82" target="74">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="&lt;b&gt;Satz von GNS&lt;br&gt;&lt;/b&gt;Es ex. treue Repräsentation =&amp;gt; universelle ist treu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-1200" y="1960" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="&lt;b&gt;GNS-Kriterium&lt;br&gt;&lt;/b&gt;a selbstajungiert:&lt;br&gt;a in A+ &amp;lt;=&amp;gt; r(a) &amp;gt;= 0 f.a. pos. lin. Funktionale" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="-800" y="2960" width="200" height="120" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
