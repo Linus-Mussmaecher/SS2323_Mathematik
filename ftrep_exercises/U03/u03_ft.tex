@@ -120,4 +120,19 @@ In ersterem Fall folgt, da $G$ ein Gebiet und insbesondere zusammenhängend ist,
 
 \end{itemize}
 
+\subsection{Residuen}
+
+Da $f = p/q$ rational, also insbesondere $q \in \mathds{C}[X]$ ein Polynom, ist, hat $f$ nur endlich viele Residuen (nämlich mit Vielfachheit $\deg q$ viele).
+Daher ist die Wahl $r_0 = \max_{a \text{Residuum}} |a|$ wohldefiniert.
+Für ein beliebiges $R > r_0$ liegen daher alle Residuen innerhalb des Kreises $K_R(0)$ und der Residuensatz liefert
+\begin{equation*}
+    \sum_{a \in \mathds{C}} \res(a, f) = \sum_{a \in K_R(0)} \res(a, f) = \frac{1}{2 \pi i} \int_{\partial K_R(0)} f(z) dz
+\end{equation*}
+die Standardabschätzung liefert nun
+\begin{equation*}
+    \frac{1}{2 \pi i}\int_{\partial K_R(0)} f(z) dz = \frac{1}{2 \pi i} 2 \pi R \sup_{|z| = R}\left| \frac{p(z)}{q(z)} \right| dz = i \cdot \sup_{|z| = R} \left| \frac{z \cdot p(z)}{q(z)} \right| \xrightarrow{R \to \infty} 0
+\end{equation*}
+da $X \cdot p$ immer noch einen um $1$ kleineren Grad hat als $q$.
+Da aber dann $\sum_{a \in \mathds{C}} \res(a, f) \to 0$ für $R \to 0$, obwohl die Summe gar nicht von $R$ abhängt, muss bereits $\sum_{a \in \mathds{C}} \res(a, f) = 0$ gelten.
+
 \end{document}
