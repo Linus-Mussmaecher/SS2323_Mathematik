@@ -2871,8 +2871,99 @@ One of the motivating examples:
 	Observe: $S_E = \{ s_\alpha s_\beta^* \mid \alpha, \beta \text{ paths in } E, \pi(\alpha) = \pi(\beta) \} \cup \{0\} $.
 \end{example}
 
+\subsection{$C^*$-algebras of semilattices}
 
+\begin{definition}
+	A \textbf{semilattice} is a commutative inverse semigroup $E$ with $e^2 = e$ for all $e \in E$.
+\end{definition}
 
+\begin{proposition}
+	Let $E$ be a semilattice.
+	Then $C^*(E) \simeq C_0(\hat{E})$ where $\hat{E} = \{\chi: E \to \{0,1\} \}$ endowed with the pointwise convergence topology.
+\end{proposition}
+
+\begin{proof}
+	Since $E$ is commutative, so is $C^*(E)$.
+	Therefore, $C^*(E) \simeq C_0(X)$ where $X \coloneq \Omega(C^*(E))$ $= \{ \chi: C^*(E) \to \mathds{C} \}$ with the pointwise convergence topology.
+	So we only need to show $X \simeq \hat{E}$.
+	But this follows from the universal property of $C^*(E)$, as applying it to $\mathds{C}$ gibes a bijection $\{\chi: E \to \mathds{C} \mid \chi \text{ non-negative homomorphism} \} \to \Omega(C^*(E))$ where $\chi$ is mapped to $\tilde{\chi}(\sum a_e \delta_e) = \sum a_e \chi(e)$.
+	Now, since $e = e^* = e^2$ for all $e \in E$, $\chi(e) = \chi(e^*) = \overline{\chi(e)} = \chi(e)^2$, so $\chi(e) \in \{0,1\}$, as $0,1$ are the projections in $\mathds{C}$.
+	This shows $\Omega(C^*(E)) \simeq \hat{E}$.
+
+	Topology: $\tilde{X_i} \to \tilde{X}$ with the weak-$^*$-topology iff $\tilde{\chi_i}(a) \to \tilde{\chi}(a)$ for all $a \in C^*(E)$ iff $\tilde{\chi}_i(a) \to \tilde{\chi}(a)$ for all $a \in \mathds{C}[E] \subseteq C^*(E)$ iff $\chi_i(e) \to \chi(e)$ for all $e \in E$.
+\end{proof}
+
+\begin{example}
+	Take $(\mathds{N}, \min)$, that is $e \cdot f = \min\{e, f\}$.
+	This is a semilattice.
+	We want to find its $C^*$-algebra $C^*(\mathds{N}, \min) \simeq C_0(\widehat{\mathds{N}, \min})$.
+	Let $\chi: \mathds{N} \to \{0,1\}$ 
+	be a character of $(\mathds{N}, \min)$ (a non-zero homomorphism).
+	If there exists $n_0 \in \mathds{N}$ with $\chi(n_0) = 1$, then $\chi(n) = 1$ for all $n \geq n_0$, otherwise $1 = \chi(n_0) = \chi(n n_0) = \chi(n) \cdot \chi(n_0) = 0 \cdot 1$.
+	So any character $\chi$ of $(\mathds{N}, \min)$ can be uniquely identified as $\chi_n$ where $n = \min\{n_0 \mid \chi(n_0) = 1\}$ and therefore $\widehat{(\mathds{N}, \min)} = \{\chi_n \mid n \in \mathds{N} \} \simeq \mathds{N}$. 
+
+	To see the topology, observe that given $e \in E$ the sets $U_e = \{\chi \in \hat{E} \mid \chi(e) = !$ and $U_e^\complement = \{ \chi \in \hat{E} \mid \chi(e) = 0 \}$ are both open and closed in $\hat{E}$ (indeed, $U_e$ is even compact).
+	Moreover, as $U_e \cap U_f = U_{ef}$ and $U_{e, f_1, \dots, f_n} \coloneq U \cap U_{f_1 }^\complement \cap \dots \cap U_{f_n}^\complement$ for $e, f_1, \dots, f_n \in E$ forms a basis for the topology on $\hat{E}$. 
+
+	So, if we view $\hat{E} \subseteq \{0,1\}^E \simeq \mathcal{P}(E)$.
+	The topology is the product topology from $\{0,1\}^E$ (for $\{0,1\}$ with the discrete topology).
+
+	We call spaces that have a basis of open compact subsets totally disconnected (f.e. discrete spaces).
+
+	Back to the example: We have $U_n = \{ \chi \mid \chi(n) = 1 \} = \{\chi_0, \dots, \chi_n\} \simeq [0,n] \subseteq \mathds{N}$ and $U_n^\complement = \{ \chi_{n+1}, \dots \} \simeq [n+1, \infty] \subseteq \mathds{N}$.
+	Then $U_n \cap U_{n-1}^\complement = \{\chi_n\} \subseteq \mathds{N}$.
+
+	So $\widehat{(\mathds{N}, \min)} \simeq \mathscr{N}$ with the discrete topology and $C^*(\mathds{N}, \min) \simeq C_0(\mathds{N}) = c_0$.
+\end{example}
+
+\begin{example}
+	Take $E = (\mathds{N}, \max)$.
+	Here $\hat{E} = \{ \chi_n \mid n \in \mathds{N}\}$ also, but with $\chi_n(m) = \mathds{1}{m \leq n}$.
+	Then $U_n = \{\chi_n, \chi_{n+1}, \dots \}\simeq [n, \infty) \subseteq \mathds{N}$ and $U_n^\complement = \{\chi_0, \dots, \chi_{n-1}\} = [0, n-1] \subseteq \mathds{N}$.
+	Additionally, there exists a character $\chi_\infty \equiv 1$ in $\hat{E}$.
+	The topology is the discrete topology on $\{ \chi_0, \dots, \chi_n, \dots \} \simeq \mathds{N}$ with the added one-point-compactification of $\chi_\infty \simeq \{\infty\}$.
+	So $\hat{E} \simeq \tilde{\mathds{N}} = \mathds{N} \sqcup \{ \infty \}$.
+	Therefore, $C^*(\mathds{N}, \max) \simeq C(\tilde{\mathds{N}}) \simeq c$, the converging sequences.
+\end{example}
+
+\begin{exercise}
+	Take $E = \{ e_n \mid n \in \mathds{N} \} \sqcup \{0\} \simeq \mathds{N}_0$ with $e_n \cdot e_m = \delta_{n,m} e_n$, so $e_n \bot e_m$ for all $n \neq m$. 
+	So $\hat{E} \simeq \mathds{N}$ discrete.
+
+	Oberserve that if $0 \in E$, then we can also look at
+	\begin{equation*}
+		\hat{E}_0 \coloneq \{ \chi \in \hat{E} \mid \chi(0) = 0 \} 
+	\end{equation*}
+	and thus $C_0^*(E) \simeq C_0(\hat{E}_0)$.
+\end{exercise}
+
+\begin{remark}
+	For semilattices the reduced $C^*$-algebra $C^*_n(E) \simeq C^*(E) \simeq C_0(\hat{E})$ and $C^*_{n,0}(E)$ $\simeq C^*_0(E) \simeq C_0(\hat{E}_0)$.
+\end{remark}kk
+
+\begin{remark}
+	If $S$ is any inverse semigroup we can look at $E = E(S) =\{e \in S \mid e^2 = e\}$ and this is an inverse subgroup of $S$.
+	One can show that there is a unique embedding $C^*(E) \to C^*(S)$.
+	For some inverse semigroups, this, together with some group attached to $S$:
+	The so-called maximum homomorphic group image of $S$:
+	$G_{\max}(S) = S/\sim$ for $s \sim t \iff \exists_{e \in E} se = te$.
+
+\end{remark}
+
+\begin{example}
+	Take $S$ the Toeplitz inverse semigroup, the ISG generated by the shift operators on $\mathcal{B}(\ell^2 \mathds{N}) = \{s^n t^m \mid n,m \in \mathds{N}\}$ with $t^* = s$.
+	Then $E = E(S) = \{s^n t^ \mid n \in \mathds{N} \} \simeq (\mathscr{N}, \max)$.
+
+	Furthermore, $C^*(S) = \tilde{I}$	
+\end{example}
+
+\begin{remark}
+	$S$ is called $e$-unitary if for any $e \in E = E(S)$ and $s \in S$ we have $e \leq s \then s \in E$ (observe that $s \leq t$ in $S$ if by definition $t s^* s = s \iff ss^* t = s \iff \exists_{e \in E} te = s$).
+
+	For an $E$-unitary inverse semigroup we get an exact sequence $E \to S \to G_{\max}(S) =: G$. Moreover, $S \simeq E \rtimes_{\Theta} G$.
+
+	Semidirect product via a canonical ''partial'' action of $G$ on $E$.
+\end{remark}
 
 
 \end{document}
