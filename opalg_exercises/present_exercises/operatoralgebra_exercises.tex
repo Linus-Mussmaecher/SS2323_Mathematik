@@ -10,7 +10,6 @@
 \title{Exercises to Introduction to Operator Algebras}
 \author{Alcides Buss\\Notes by: Linus Mußmächer\\2336440}
 \date{Summer 2023}
-\let\varphi\oldphi
 
 % --- DOCUMENT ---
 
@@ -795,6 +794,72 @@ Somewhere along the way we also solved exercise 04-06.
 
 	
 \end{example}
+
+
+Take $\hat{\algebra{A}} = \{ [\pi] \mid \pi \text{ immediate representation of } \algebra{A} \}$ and $\mathrm{Prim}(\algebra{A}) = \{ \ker(\pi) \mid \pi \in \hat{\algebra{A}} \}$.
+These are topological spaces by taking the ideals of $\algebra{A}$ as open sets.
+
+\begin{exercise}[05-01]
+	$\algebra{A} \to \tilde{\algebra{A}}$.
+	Let $\phi \in S(\algebra{A})$, then there exists a unique $\tilde{\phi} \in S(\tilde{\algebra{A}})$, $\tilde{\phi}(a + \lambda 1) \coloneq \phi(a) + \lambda$.
+	So $S(\tilde{A}) \simeq \{ \tilde{\phi} \mid \phi \in S(\algebra{A}) \} \sqcup \{\phi_\infty\}$ where $\phi_\infty(a + \lambda 1) = \lambda$.
+
+	"$\subseteq$": Take $\psi \in S(\tilde{\algebra{A}})$ and set $\phi = \psi|_\algebra{A}$ so $\psi(a + \lambda 1) = \phi(a) + \lambda$.
+	We have $\phi \geq 0$ and if $\phi \equiv 0$, then we would have $\psi = \phi_\infty$.
+	If $\phi$ is not $ 0$, then $\|\phi\| \leq \|\psi\| = 1$ as $\phi = \psi|_\algebra{A}$.
+	If now $(e_i) \subseteq \algebra{A}$ is an approximate unit, and since $\phi \geq 0$, then $\|\phi\| = \lim_i \phi(e_i)  = \sup_i \phi(e_i)$. 
+	So $\|\phi\| = \psi(1)$ and 
+	\begin{align*}
+		|\phi(e_i (a + \lambda 1))|^2 &\leq \overbrace{\phi(e_i^2)}^{\to \|\phi\|} \psi((a + \lambda 1)^* (a + \lambda 1) ) \text{ (Cauchy-Schwarz)} \\
+		|\phi(e_i(a + \lambda 1))| &= |\phi(e_i a + \lambda e_i)| = |\phi(e_i a) + \lambda \phi(e_i)| \to |\phi(a) + \lambda \| \phi \| |
+	\end{align*}
+	There must exist a $\tilde{\phi}: \tilde{\algebra{A}} \to \mathds{C}$ given by $\tilde{\phi}(a + \lambda 1) = \phi(a) + \|\phi\| \cdot \lambda$.
+
+	We know $\psi(1) = 1$ and $\|\psi\| \geq 1$, but is $\|\psi\| \leq 1$?
+	We have $|\psi(a)| = |\phi(a) + \lambda| \leq \|a\| + |\lambda|$, but this is too much. 
+	Let $(e_i) \subseteq \algebra{A}$ be an approximate unit.
+	Then $|\psi(a + \lambda 1)| = |\phi(a) + \lambda|$.
+	Can we use $\lim \phi(e_i) = \|\phi\| \leq 1$?
+
+
+	Consider the pure states:
+	\begin{equation*}
+		PS(\tilde{\algebra{A}}) = \{ \tilde{\phi} \mid \phi \in PS(\algebra{A}) \} \sqcup \{\phi_\infty\}
+	\end{equation*}
+	"$\supseteq$": $\phi_\infty$ is a character and characters are always pure states.
+	Also: $\phi in PS(\algebra{A})$ yields $\tilde{\phi} \in PS(\algebra{A})$ as $\tilde{\phi}(a + \lambda 1) = \phi(a) + \lambda$.
+	Suppose $\tilde{\phi} = \alpha w_1 + (1 - \alpha)w_2$ where $w_1, w_2 \in S(\tilde{\algebra{A}})$, so $\phi = \alpha w_1|_\algebra{A} + (1 - \alpha) w_2|_\algebra{A}$.
+
+	% Equivalent characteristics of pure states: If $\algebra{B}$ is a $C^*$-algebra then $\omega \in S(\algebra{B})$ is pure iff for all $f \in \algebra{B}^*_+$ we have that $f \leq \omega$ (i.e. $\omega - f \geq 0$) already implies the existence of a $t \in [0,1]$ with $f = t \cdot \omega$. So there are no non-trivial things below pure states -- the only things below are multiples.
+
+	% So we had $\phi = \alpha \omega_1 + (1 - \alpha) \omega_2$ as a state, then 
+	% \begin{align*}
+	% 	\alpha \omega_1 \leq \phi &\wedge (1 - \alpha) \omega_2 \leq \phi \\
+	% 	\alpha \omega_1 = t \phi  &\wedge (1 - \alpha) \omega_2 = s \phi
+	% \end{align*}
+	% so
+	% \begin{equation*}
+	% 	\phi = t \phi + s \phi = (t + s) \phi
+	% \end{equation*}
+	% so $t + s = 1$. 
+
+	Let now $(e_i) \subseteq \algebra{A}$ be an approximate unit. Then 
+	\begin{equation*}
+		\phi(e_i) = \alpha \omega_1(e_i) + (1 - \alpha) \omega_2(e_i) \iff 1 = \alpha \|\omega_1\| + (1 - \alpha) \|\omega_2\|
+	\end{equation*}
+	so $\|\omega_1\| + \|\omega_2\| = 1$ and therefore $\omega_1|_\algebra{A}, \omega_2|_\algebra{A} \in S(\algebra{A})$.
+	Since $\phi$ is pure we have $\omega_1|_\algebra{A} = \omega_2|_\algebra{A} = \phi|_\algebra{A}$ and thus $\tilde{\phi} = \omega_1 = \omega_2$.
+	This shows $\tilde{\phi} \in PS(\algebra{A})$.
+
+	"$\subseteq$": Now if $\psi \in PS(\algebra{A})$, then $\phi \coloneq \psi|_\algebra{A} \in \algebra{A}_+^*$.
+	If $\phi \equiv 0$ then $\psi = \phi_\infty$.
+	If $\phi \neq 0$ we still need to show $\|\phi\| = 1$.
+
+	
+
+
+ 
+\end{exercise}
 
 \end{document}
 
