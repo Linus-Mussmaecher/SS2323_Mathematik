@@ -2966,6 +2966,143 @@ One of the motivating examples:
 \end{remark}
 
 
+\section{Groupoid-$C^*$-Algebras}
+
+\begin{definition}
+	A \textbf{groupoid} is a (small) category where all morphisms (arrows) are invertible.
+	Hence a groupoid consists of a set $G^0$ (objects / units) and a set $G^1$ (morhpisms / arrows), sometimes just called $G$, and functions $s, r: G^1 \to G^0$ (source / range) as well as $\id: G^0 \to G^1, x \mapsto \id_x$, a multiplication $m: G^2 \to G^1, (g, h) \mapsto g \cdot h$ where $G^2 = \{(g,h) \mid s(g) = r(h) \} \subseteq G^1 \times G^1$ and an inversion map $G^1 \to G^1, g \mapsto g^{-1}$ where $g, g^{-1}$ can be multiplied from both sides and $g^{-1} g = 1_{s(g)}$ and $g g^{-1} = 1_{r(g)}$.
+	Furthermore, we demand
+	\begin{itemize}
+		\item $s(g \cdot h) = s(h)$ and $r(g \cdot h) = r(g)$.
+		\item \textbf{Associativity}: $(g \cdot h) \cdot k = g \cdot (h \cdot k)$ for $(g,h), (h,k) \in G^2$.
+		\item $g \cdot 1_{s(g)} = g$ and $1_{r(g)} \cdot g = g$.
+	\end{itemize}
+\end{definition}
+
+\begin{remark}
+	Notice $g g^{-1} g = g$.
+
+	Usually, we just write $G$ for $G^1$ and we identify $G^0 \hookrightarrow G^1 = G$ via $x \mapsto \id_x$, so $G^0 \subseteq G$.
+\end{remark}
+
+\begin{definition}
+	A topological Groupoid is a groupoid where $G^0, G^1$ are topological spaces and all maps $s, r, \id , \inv, m$ are continuous.
+	We say that $G$ is a etale (or $r$-discrete), if $s, r$ are local homeomorphisms.
+	E.g., $s: G^1 \to G^0$ a local homeomorphism means that for all $g \in G^1$ there is an open $U \subseteq G^1$, $g \in U$ such that $s(U)$ is open in $G^0$ and $s|_U: U \to s(U)$ is a homeomorphism on its image.
+\end{definition}
+
+\begin{remark}
+	If a groupoid is etale, $G_x \coloneq \{g \in G = G^1 \mid s(g) = x \}$ and also $G^x = \{g \in G \mid r(g) = x\}$ are discrete. 
+\end{remark}
+
+\begin{example}
+	\begin{enumerate}
+		\item Let $\Gamma$ be a discrete group.
+		Then $\Gamma$ can be viewed as an etale groupoid with only one unit (object): $G^1 = \Gamma$, $G^0 = \{1_\Gamma\}$.
+		We consider the group elements as arrows on this unit.
+		This is etale because it is discrete.
+		\item Let $X$ be a topological space.
+		Then $X$ can be viewed as an etale groupoid with units $G^0 = X$ and $G^1 = \{1_x \mid x \in X\}$ (a topological copy of $X$) with $1_x \cdot 1_y = 1_x$ if and only if $x = y$, otherise $x,y$ are not multiplicative.
+		We also have $s(1_x) = r(1_x) = x$ and $1_x^{-1} = 1_x$.
+
+		In this case, the source and range maps $s,r: G^1 \to G^0$ are already homeomorphisms.
+		\item Let $X$ be a topological space and $R \subseteq X \times X$ an equivalence relaction.
+		Then we can view $R$ as a topological groupoid: $G^1 = R$, $G^0 = X$.
+		Define: $s: G^1 \to G^0 = X, (x,y) \mapsto y$ and $p(x,y) =x$.
+		Also $\id: X \to R, x \mapsto (x,y)$ as well as $(x,y) \cdot (y,z) = (x,z)$ and $(x,y)^{1} = (y,x)$.
+
+		So $R$ is a topological.
+		\item Consider Gropu actions. Let $\Theta \in P \in \mathrm{Homeo}(X)$.
+		Then $G (x,g,y) \in X \times_p P$ and $y = \Theta_g(x) = g \cdot x$ and $\frac{1}{5}$, so $G^1 = \{(x,g,y) \in X \times \hat{I} \mid g \circ com$
+		Also, $(x, g_1, y) \cdot (x, g_2, y) = (x, g_1 g_2, y)$.
+
+		With the topology incuced from the product Topology we have $X \times T \times X$.
+		$G$ is an etale groupoid and $U_g \coloneq \{ (x,y,y) \in \}$ with local homeomorphism  $(x,y,y)\mapsto (x,y) $.
+
+	 	\end{enumerate}
+\end{example}
+
+\subsection{Relation to inverse semigroups}
+
+\begin{theorem}
+	Let $G$ be an etale groupoid.
+	Then
+	\begin{equation*}
+		\mathrm{Bis}(G) \coloneq \{U \subseteq G \mid U \text{ open}, s|_U \text{ homöo} \}
+	\end{equation*}
+	Define $U,V \in B_x(G)$ with $U \cdot V = \{ g \cdot h \mid g \in U , h \in V \}$ and $U^{-1} = \{ g^{-1} \mid g \in U$.
+
+	Then $\mathrm{Bis}(G)$ is an inverse semigroup with operators $U^* = U^{-1}$ and 
+	\begin{equation*}
+		U U^* U = U = \{g h^{-1} k \mid g, h, k \in U \}  = \{g g^{-1} \mid g, k \in U= \} = \{k \mid k \in U\} = U
+	\end{equation*}
+	where $s(g) = s(h)$.
+	So we can identify etale groupoids with ISGs by $G \mapsto \mathrm{Bis}(G)$ (f.e. by taking a semdirect product.)
+\end{theorem}
+
+Now to $C^*$-algebras.
+
+\begin{theorem}
+	Let $G$ be an etale, locally compact Hausdorff groupoid	and $C^*(G) = \closure{C_c(G)}^{\|\cdot\|_{C^*}}$.
+	Consider the vector space $C_c(G) = \{ f: G \to \mathds{C} \mid f \equiv c, \supp(f) \text{ compact} \}$.
+	Then $\delta_h \cdot \delta_k = \delta_{hk}$ if $s(h) = r(k)$, or $0$ otherwise, and $\delta_g^* = \delta_{g^{-1}}$.
+	But his only works if $G$ is discrete, otherwise $\delta_x \notin C_c(G)$. 
+	Furthermore; $\delta_g(h) = 1$ if $g = h$ and $0$ otherwise. 
+
+	For $\xi, \eta \in C_c(G)$ define 
+	\begin{equation*}i
+		(\xi \cdot \eta)(g) = \sum_{g = h \cdot k} \xi(h) \eta(k) = \sum_{r(h) = \pi(g)} \xi(h) \cdot \eta(h^[-1] g) = \sum_{h \in G^{r(g)}} \xi(h) \eta(h^{-1} g)
+	\end{equation*}
+	and $\eta^*(g) = \closure{\xi(g^{-1})}$.
+
+	We need to check: $\xi \cdot \eta$ is well defined and this sum is finite. 
+	The sum is finite as $G^{r(g)}$ is discrete and $\supp(\xi)$ is compact, so the intersection (= all non-zero summands) is finite.
+	To see $\xi \cdot \eta \in C_c(G)$:
+	\begin{enumerate}
+		\item For every $\xi \in C_c(G)$ $\supp(\xi)$ is a compact subset of $\bigcup_{U \in \mathrm{Bis}(G)} U$, so $\supp(\xi) \subseteq \bigcup_{i = 1}^n U_i$ for some $U_i \in \mathrm{Bis}(G)$.
+		By partition and Uryson, we have $\eta = \sum_{i = 1}^{n} \xi_i$ and $\supp(\xi_i) \subseteq U_i$.
+		\item If $\xi, \eta \in C_c(G)$, then $\supp(\xi) \subseteq U \in \mathrm{Bis}(G)$ and $\supp(\eta) \subseteq V \in \mathrm(Bis)(G)$, then
+		\begin{equation*}
+			(\xi \cdot \eta)(g) = \left\{ \begin{matrix}
+				\xi(h) \eta(k) & h \in U, k \in V, hk = g \\
+				0 & \text{otherwise}
+			\end{matrix} \right.
+		\end{equation*}
+		so $\xi \cdot \eta \in C_c(G)$ (it is continuous and has compact support), and $\supp(\xi \cdot \eta) \subseteq U \cdot V$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	There is a largest $C^*$-Norm on $C_c(G)$. Define $C^*(G) = \closure{C_c(G)}^{\|\cdot\|}$.
+\end{theorem}
+
+\begin{example}~
+	\begin{enumerate}
+		\item $\Gamma$ a group, then $C^*(\Gamma) = \closure{\mathds{C}(\Gamma)}^{\|\cdot\|}$.
+		\item $X$ locally compact Hausdorff.
+		Take $G = X = G^0$ (only units).
+		For $C_c(X) \ni \xi, \eta$ we have $yz = x$ only for $y = z = x$, so 
+		\begin{equation*}
+			\xi \cdot \eta(x) = \sum_{xy = z} \xi(y) \eta(z) = \xi(x) \eta(x)
+		\end{equation*}
+		so $C^*(X) = C_0(X)$ and $C_K(X) = \{ \eta \in C_c(X) \mid \supp(\eta) \subseteq K \} \subseteq C_c(X)$.
+		\item Take $R \subseteq X \times X$ and the full equivalence relation on a discrete $X$, so $x \sim y$ for all $x,y \in X$.
+		Then $C_c(R) = \span \{ \delta_{x,y} \mid (x,y) \in R\}$ and
+		\begin{equation*}
+			\delta_{(x,y)} \cdot \delta_{(z,w)} = \left\{ \begin{matrix}
+				\delta_{x, w} & y = z \\ 0 & \text{otherwise}
+			\end{matrix} \right.
+		\end{equation*}
+		and $\delta_{(x,y)}^* = \delta_{(y,x)}$.
+		Illegible\dots
+		\item Take a group action. There are many cases!
+		
+		
+	\end{enumerate}
+\end{example}
+
+
+
 \end{document}
 
 
