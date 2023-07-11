@@ -1,0 +1,159 @@
+\documentclass[a4paper, twocolumn, 10pt]{article}
+
+% --- PREAMBLE ---
+
+\usepackage[english]{babel}	% language specific quotation marks etc.
+\input{../../preambles/exercise_preamble.tex}
+\geometry{left=1.0cm, top=1.0cm, right=1.0cm, bottom=1.0cm}
+
+
+\begin{document}
+
+\section{Banach Algebras}
+
+\begin{definition}
+    Algebra, Subalgebra, Norm, Complete, Banach algebra, unital, homomorphisms    
+\end{definition}
+
+\begin{theorem}
+    Closed subspace of Banach is Banach.
+\end{theorem}
+
+\begin{theorem}
+    $I$ closed ideal $\then$ $A/I$ normed algebra with norm $\|a + I\| = \inf_{b \in I} \|a + b\|$.
+\end{theorem}
+
+\section{Spectrum and Spectral Radius}
+
+Considering unital normed algebras.
+
+\begin{definition}
+    Invertible elements, spectrum, spectral radius.
+\end{definition}
+
+\begin{remark}
+    $1 - ab$ invertible iff $1 - ba$ invertible. $\sigma(ba) \setminus 0 = \sigma(ba) \setminus 0$.
+\end{remark}
+
+\begin{theorem}
+    $\sigma(a)$ non-empty and $p \in \mathds{C}[z]$ $\then$ $\sigma(p(a)) = p(\sigma(a))$.
+\end{theorem}
+
+\begin{theorem}
+    $\|a\| < 1 \then 1 - a \in \inv(A), (1-a)^{-1} = \sum_{n=0}^\infty a^n$.
+\end{theorem}
+
+\begin{theorem}
+    $\inv(A)$ open and $a \mapsto a^{-1}$ differentiable.
+\end{theorem}
+
+\begin{theorem}
+    $\sigma(a)$ non-empty, closed and $\subseteq \overline{K_{\|a\|}(0)}$, $\mathds{C}\setminus \sigma(a) \to A, \lambda \mapsto (a - \lambda)^{-1}$ differentiable.
+\end{theorem}
+
+\begin{theorem}
+    $A$ unital, Banach and $\inv(A) = A \setminus \{0\} \then A = \mathds{C}1$.
+\end{theorem}
+
+\begin{theorem}
+    $r(a) = \lim_{n \to \infty} \|a^n\|^{1/n} = \inf_{n \geq 1} \|a^n\|^{1/n}$.
+\end{theorem}
+
+\begin{theorem}
+    $1 \in B \leq A$ closed, $A$ Banach. Then $\inv(B) = B \cap \inv(A)$ closed. $\sigma_A(b) \subseteq \sigma_B(b)$, also for boundaries. Equality if $\sigma_A(b)$ has no holes or both are $C^*$.
+\end{theorem}
+
+\section{Gelfand Representation}
+
+\begin{definition}
+    Ideal, characters, character space.
+\end{definition}
+
+\begin{theorem}
+    $A$ Banach.
+    Proper ideals have proper closure.
+    Maximal ideals are closed.
+    If $A$ abelian, unital: Quotients of maximal ideals are fields.
+\end{theorem}
+
+\begin{theorem}
+    $A$ Banach, abelian, unital. If $r \in \Omega(A) \then \|r\| = 1$. $\Omega(A)$ non-empty and $r \mapsto \ker(r)$ is a bijection between $\Omega(A)$ and the maximal ideals in $A$.
+\end{theorem}
+
+\begin{theorem}
+    $A$ Banach, abelian. $A$ unital $\then \sigma(a) = \Omega(A)(a)$. $A$ non-unital $\then \sigma(a) = \Omega(A)(a) \cup \{0\}$. 
+\end{theorem}
+
+\begin{theorem}
+    $A$ Banach, abelian $\then \Omega(A)$ locally compact Hausdorff space. $A$ unital $\then \Omega(A)$ compact.
+\end{theorem}
+
+\begin{theorem}
+    $A$ Banach, abelian, $\Omega(A) \neq \emptyset$.
+    \begin{equation*}
+        \Phi: A \to C_0(\Omega(A)), a \mapsto (\hat{a}: \Omega(A) \to \mathds{C}, r \mapsto r(a))
+    \end{equation*}
+    norm-decreasing homomorphism and $r(a) = \|\hat{a}\|_\infty$.
+    $A$ unital $\then \sigma(a) = \hat{a}(\Omega(A))$.
+    $A$ non-unital $\then \sigma(a) = \hat{a}(\Omega(A)) \cup \{0\}$.
+
+    $A$ Banach, $A = (1,a) \then A$ abelian and $\hat{a}$ homeomorphism.
+
+    $A$ $C^* \then \Phi$ isometric isomorphism with weak-$^*$-topology.
+\end{theorem}
+
+\section{$C^*$-algebras}
+
+\begin{definition}
+    Involution, $^*$-algebra, $C^*$-algebra, self- adjoint, unital (isometry, co-isometry), normal, projection.
+\end{definition}
+
+\begin{theorem}
+    $a =b + ic \frac{1}{2} (a + a^*) + i \frac{1}{2i} (a - a^*)$ with $b,c$ self-adjoint.
+\end{theorem}
+
+From now on: $C^*$-algebras, so $\|a a^*\| = \|a\|^2$ ($\geq$ enough).
+
+\begin{theorem}
+    If $A$ is self-adjoint then $\sigma(a) \subseteq \mathds{R}$ and $r(a) = \|a\|$. On every $^*$-algebra, there is at most one norm to make it $C^*$.
+\end{theorem}
+
+\begin{theorem}
+    Multiplier-algebra of $C^*$: Largest unitization, $\|L\| = \|R\|$.
+    Extension of norm of $C^*$ makes $\tilde{A}$ into $C^*$.
+\end{theorem}
+
+\begin{theorem}
+    $^*$-hom between $^*$-alg and $C^*$ are norm-decreasing. $^*$-hom between $C^*$ are isometric if injective.
+\end{theorem}
+
+\begin{theorem}
+    Characters on $C^*$ preserve adjoints.
+\end{theorem}
+
+\begin{theorem}
+    $B$ $C^*$-subalgebra. $\sigma_B(b) = \sigma_A(a)$.
+\end{theorem}
+
+\begin{theorem}
+    $a$ normal in unital $C^*$ $A$ $\then$ exists $\phi: C(\sigma(a)) \to C^*(1,a)$ unital isometric $^*$-iso with $\phi(\id) = a$.
+    Write $f(a) \in A$ for $\phi(f)$.
+\end{theorem}
+
+\begin{theorem}
+    $a$ normal, $f \in C(\sigma(a)) \then f(\sigma(a)) = \sigma(f(a))$. If $g \in C(\sigma(f(a))) \then (g \circ f)(a) = g(f(a))$.
+\end{theorem}
+
+\begin{theorem}
+    $X$ compact Hausdorff. $X \simeq \Omega(C(X))$.
+\end{theorem}
+
+\section{Positive Elements in $C^*$}
+
+\begin{definition}
+    Positive elements, ordered elements, approximate units.
+\end{definition}
+
+
+
+\end{document}
