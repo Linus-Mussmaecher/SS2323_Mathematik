@@ -158,7 +158,32 @@ Somit besitzt $V$ in $(0,0)$ ein (striktes) lokales Minimum und nach Lyapunov is
     Somit existiert in jeder Umgebung von $x_0 = -1$ ein $x$ mit $V(x) < V(x_0)$ und nach dem Instabilitätskriterium von Lyapunov ist $x_0 = -1$ somit ein instabiler Gleichgewichtspunkt von der DGL.
 \end{enumerate}
 
+\subsection{V-9}
 
+Angenommen, es wäre $x: \mathds{R} \to \mathds{R}$ eine periodische Lösung der DGL mit Periode $T$, d.h. $x(t) = x(t + T)$ für alle $t \in \mathds{R}$ (man beachte, dass eine periodische Lösung immer auf ganz $\mathds{R}$ existiert).
+Dann sind auch $x'$ und $x''$ periodisch mit gleicher Periode.
+Aufgrund des Mittelwertsatzes existiert im Intervall $[0,T]$ ein $t_0$ mit $x'(t_0) = 0$.
+O.B.d.A. sei $t_0 = 0$ (denn sonst ist $y(t) = x(t + t_0)$ ebenfalls eine periodische Lösung mit gleicher Periode).
+
+Aus Multiplikation der DGL mit $x'$ folgt
+\begin{equation*}
+    x'' x' + f(x') x' + x = 0 \iff f(x') x' = - x' (x'' + x)
+\end{equation*}
+Wir betrachten das Integral
+\begin{equation*}
+    \int_0^T f(x'(t))x'(t) dt \geq 0
+\end{equation*}
+(aufgrund von $f(x'(t)) x'(t) \geq 0$), wobei Gleichheit genau für $x' \equiv 0$ gilt, denn falls ein $t_0 \in [0,T]$ mit $x'(t_0) > 0$ existiert, so ist $f(x'(t_0)) x'(t_0) > 0$ und der Integrand somit auf einer Umgebung von $t_0$ strikt positiv, womit das Integral nicht mehr $0$ sein kann.
+Andererseits gilt
+\begin{align*}
+    \int_0^T f(x'(t))x'(t) dt &= - \int_0^T x'(t) (x''(t) + x(t)) dt = - \int_0^T x'(t) x''(t) dt  - \int_0^T x'(t) x(t) dt\\
+    &= - \frac{1}{2} \left( \int_0^T 2 x'(t) x''(t) dt + \int_0^T 2 x(t) x'(t) \right)\\
+    &= - \frac{1}{2} \left( \left[(x'(t))^2\right]_0^T + \left[(x(t))^2\right]_0^T  \right)\\
+    &= - \frac{1}{2} (0 + 0) = 0
+\end{align*}
+da $x(t)^2$ und $x'(t)^2$ selbst wiederum $T$-periodische Funktionen sind.
+Dies zeigt $x' \equiv 0$, also muss $x$ konstant sein.
+Damit ist auch $x'' \equiv 0$ und unsere DGL wird zu $0 + f(0) + x = 0$, also $x = 0$ und somit ist $x \equiv 0$ die einzige periodische Lösung der Differenzialgleichung.
 
 
 
