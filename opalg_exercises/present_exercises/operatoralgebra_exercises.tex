@@ -857,8 +857,70 @@ These are topological spaces by taking the ideals of $\algebra{A}$ as open sets.
 
 	
 
+	Some things on sheet 5 are wrong.
+	The correct version is $\S(\tilde{A}) = \{ \tilde{\phi} \mid \phi \in \algebra{A}^*_{+,1}\}$. 
+\end{exercise}
 
- 
+
+\begin{remark}[Exam]
+	Exam: First three sheets! Commutative stuff. Deal with commutative banach algebras, spectrum and so on. Nothing about (reducible) representations. Could ask about states, but probably not.
+
+	Focus: commutative (70 - 80)\%. Maybe on other question. Spectrum, characters result for commutative algebras, gelfand-neymark-theorem (if commutative) ($A \simeq C_0(\Omega(A))$), positive, normal, continuous functional calculus. Easy. Five questions (simple questions).
+
+	8-10.
+\end{remark}
+
+\begin{exercise}[05-03]
+	\begin{enumerate}[label=(\alph*)]
+		\item If $0 \neq A \subseteq \mathcal{B}(H)$ irreducible. 
+		(That is, for any$K \subseteq H$, $A(K) \subseteq K$, then $K = 0$ or $K = H$).
+		Take $0 \neq \xi \in H$, then $K = \closure{A(\xi)} = \closure{\{a(\xi) \mid a \in A\}} \subseteq H$.
+		This is the smallest $A$-invariant subspace containing $\xi$.
+		Since $A$ is irreducible, we have $K = \closure{A(\xi)} = H$.
+
+		Assume now that $\dim(A) < \infty$.
+		Then $K = A(\xi)$ and therefore $H$ is also finite-dimensional.
+
+		Moreover: Recall that if $A \subseteq \mathcal{B}(H)$ irreducible, and if $A \cup K(H) \neq 0$ then $K(H) \subseteq A$.
+
+		Using dimensions and $K(H) = \mathcal{B}(H)$ if $\dim H = n < \infty$ we can conclude $A = \mathcal{B}(H) \simeq M_n(\mathds{C})$.
+
+		\item If $A$ is simple (as a $C^*$-algebra) and $\dim A < \infty$.
+		Then $A \simeq M_n(\mathds{C})$ for some $n \in \mathds{N}$.
+		
+		Use: Every $C^*$-algebra has an irreducible representation $\neq 0$.
+
+		So there exists $\pi: A \to \mathcal{B}(H)$ irreducible and non-zero.
+		Since $A$ is simple, $\ker \pi = A$, so $\pi$ is faithful.
+		So $A \simeq \pi(A) \subseteq \mathcal{B}(H)$ irreducible $C^*$-subalgebra.
+		This leads us to case (a), so
+		\begin{equation*}
+			A \simeq \pi(A) = \mathcal{B}(H) \simeq M_n(\mathds{C})\text{.}
+		\end{equation*}
+		\item If $0 < \dim A < \infty$ and $A$ a $C^*$-algebra there exists $\pi: A \to \mathcal{B}(H)$ and $\dim H = n < \infty$.
+		Then $A^* = \Span S(A)$, and because of $\dim A^* = \dim A < \infty$ there is a finite (algebraic) basis of $A^*$ consisting of states.
+		Let $B = \{ \phi_1, \dots, \phi_n \}$ be this basis.
+		Consider the GNS-representation with $\pi_i = \pi_{\phi_i}: A \to \mathcal{B}(H_i)$ where $H_i = H_{\phi_i} = A/N_{\phi_i}$ (note $\dim H_i < \infty$).
+
+		Claim: $\pi = \bigoplus_{i = 1}^n \pi_i$ is a faithful representation of $A$. Suppose $\pi(a) = 0$ for some $a \in A$.
+		We have
+		\begin{equation*}
+			\pi: A \to \mathcal{B}(H), H = \bigoplus_{i = 1}^n, a \mapsto (\bigoplus \xi_i \mapsto \bigoplus \pi_i(a) \xi_i ) 
+		\end{equation*}
+		so $\pi(a) = 0$ iff $\pi_i(a) = 0$ for all $i$, so $\phi_i(a) = 0$ for all $i$ and therefore $\phi(a) = 0$ for all $a \in A^*$ and thus $a = 0$.
+		So $\pi$ is indeed faithful.
+		\item Let $\pi: A \to \mathcal{B}(H)$ a representation, $A$ a $C^*$-algebra and $\dim H = n < \infty$.
+		Prove: $\pi \simeq \bigoplus_{i = 1}^n \pi_i$ for irreducible $\pi_i$ by unitary equivalency.
+
+		If $K \leq H$ is $\pi$-invariant then $K^\bot$ is also $\pi$-invariant because $\langle \pi(a) \xi, \eta \rangle = \langle \xi, \pi(a^*), \eta \rangle = 0$.
+
+		Using this and $\dim H < \infty$ the result follows: $H = K \oplus K^\bot$ (with $\pi|_K$ and $\pi|_{K^\bot})$, potentially breaking those further into $K = K_1 \oplus K_1^\bot$, etc.
+
+		\item Prove: If $\dim A < \infty$ and $A$ a $C^*$-algebra, we have $A \simeq M_{n_1}(\mathds{C}) \oplus \dots \oplus M_{n_k}(\mathds{C})$ for some $n_i \in \mathds{N}$, $k \in \mathds{N}$.
+		
+		By the previous steps there is a faithful representation $\pi: A \to \mathcal{B}(H)$, $\pi \simeq \bigoplus_{i = 1}^n \pi_i$ where $\pi_i: A \to \mathcal{B}(H_i)$ is irreducible.
+		So $A \simeq \pi(A) \simeq \bigoplus_{i = 1}^n \pi_i(A) \simeq \bigoplus_{i = 1}^n M_{n_i}(\mathds{C})$.
+	\end{enumerate}
 \end{exercise}
 
 \end{document}
