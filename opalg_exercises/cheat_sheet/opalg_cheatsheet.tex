@@ -9,6 +9,8 @@
 
 \begin{document}
 
+\pagestyle{empty}
+
 \section{Banach Algebras}
 
 \begin{definition}
@@ -124,7 +126,7 @@ From now on: $C^*$-algebras, so $\|a a^*\| = \|a\|^2$ ($\geq$ enough).
 \end{theorem}
 
 \begin{theorem}
-    $^*$-hom between $^*$-alg and $C^*$ are norm-decreasing. $^*$-hom between $C^*$ are isometric if injective.
+    $^*$-hom between $^*$-alg and $C^*$ are norm-decreasing. $^*$-hom between $C^*$ are isometric if injective and the image is a $C^*$-subalgebra.
 \end{theorem}
 
 \begin{theorem}
@@ -151,8 +153,72 @@ From now on: $C^*$-algebras, so $\|a a^*\| = \|a\|^2$ ($\geq$ enough).
 \section{Positive Elements in $C^*$}
 
 \begin{definition}
-    Positive elements, ordered elements, approximate units.
+    Positive elements (hermitsch und $\sigma(a) \subseteq \mathds{R}^+_0$), ordered elements
 \end{definition}
+
+\begin{theorem}
+    $B^+ = A^+ \cap B$.
+    $A^+ \subseteq A_{sa}$.
+    $A^+ = \{a^* a \mid a \in A\}$.
+    Conjugation self-adjoint elements keeps their order. 
+    $a \leq b \then \|a\| \leq \|b\|$
+    Inverting invertes order, square roots keep it (and square roots exist).
+\end{theorem}
+
+\section{Ideals in $C^*$}
+
+\begin{definition}
+    Approximate units (increasing net of positive elements ), essential ideals.
+\end{definition}
+
+\begin{theorem}
+    $C^*$-algebras have approximate units (take $A^+$ with $\|a\| < 1$.)
+\end{theorem}
+
+\begin{theorem}
+    Quotients and approximate units.
+    Quotient of closed ideal is $C^*$-algebra.
+    If $B$ is a $C^*$-subalgebra and $I$ a closed ideal, then $B+I$ is a $C^*$-subalgebra.
+\end{theorem}
+
+\begin{theorem}
+    $I$ closed in $C^*$ $A \then \exists$ unique $^*$-extension $A \to M(I)$ of $I \to M(I)$, injective if $I$ essential.
+\end{theorem}
+
+\section{Positive linear functionals}
+\begin{definition}
+    Positive maps, positive linear functionals, states
+\end{definition}
+
+\begin{theorem}
+    $^*$-homs are positive. $\phi(A_{sa}) \subseteq \phi(B_{sa})$ and $\phi|_{A_{sa}}$ is increasing.
+\end{theorem}
+
+\begin{theorem}
+    PLFs are bounded and $r(a^*) = r(a)^-$ and $|r(a)|^2 \leq \|r\| r(a^* a)$.
+    $\|r + r'\| = \|r\| + \|r'\|$.
+    $r(a^* a) = 0 \iff r(ba) = 0$ for all $b \in A$.
+    $r(b^* a^* ab) \leq \|a^*a\| r(b^*b)$.
+\end{theorem}
+
+\begin{theorem}
+    For a bounded linear functional $r$, these are equivalent: $r$ is positive for each/some approx. unit we have $\|r\| = \lim_\lambda r(e_\lambda)$.
+    If $A$ is unital, $r$ is positive iff $r(1) = \|r\|$ 
+\end{theorem}
+
+\begin{theorem}
+    There exists a state $r$ of $A$ such that $\|a\| = |r(a)|$.
+\end{theorem}
+
+\begin{theorem}
+    You can extend linear functionals on $C^*$-subalgebras to the whole algebra while keeping the norm.
+\end{theorem}
+
+\begin{theorem}
+    Self-adjoint bounded linear functionals can be decomposed to positive linear functionals with $r = r_+ = r_-$ and $\|r\| = \|r_+\| + \|r_-\|$.
+\end{theorem}
+
+\section{Gelfand-Neymark-Representation}
 
 
 
