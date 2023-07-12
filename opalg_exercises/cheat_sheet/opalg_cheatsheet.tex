@@ -199,6 +199,7 @@ From now on: $C^*$-algebras, so $\|a a^*\| = \|a\|^2$ ($\geq$ enough).
     $\|r + r'\| = \|r\| + \|r'\|$.
     $r(a^* a) = 0 \iff r(ba) = 0$ for all $b \in A$.
     $r(b^* a^* ab) \leq \|a^*a\| r(b^*b)$.
+    $a \in A^+ \iff r(a) \geq 0$ for all PLFs. 
 \end{theorem}
 
 \begin{theorem}
@@ -219,6 +220,24 @@ From now on: $C^*$-algebras, so $\|a a^*\| = \|a\|^2$ ($\geq$ enough).
 \end{theorem}
 
 \section{Gelfand-Neymark-Representation}
+
+\begin{definition}
+    Representation, faithful, direct sums
+\end{definition}
+
+\begin{theorem}
+    Hilbert space completion.
+    Linears functionals induce representations: Take a positive linear functional, set $N_r = \{ a \in A \mid r(a^* a) = 0\}$ (closed left ideal) and perform the Hilbert space completion $H_r$ of $A/N_r$ with innter product $(\overline{a}, \overline{b}) \mapsto r(b^* a)$.
+    Then define an operator $\phi(a) \in B(A/N_r)$ as $\phi(a)(\overline{b}) = \overline{ab}$ and uniquely extend to $H_r$. Then $\phi$ is a $^*$-homomorphism.
+
+    Doing this for all states and taking the direct product yields the univesal representation.
+
+    Any $C^*$-algebra has a faithful representation and its universal representation is faithful.
+\end{theorem}
+
+\begin{theorem}
+    $A$ $C^*$ $\then$ exists unique norm on $M_n(A)$ to make it $C^*$.
+\end{theorem}
 
 
 
